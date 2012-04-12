@@ -105,12 +105,19 @@
             </ul>
           </div>
           <div class='span10'>
-            <h1>Implement the Plugin interface</h1>
-            <p>The first thing you must do in order to create a forge plugin, is create a new class and implement the org.jboss.seam.forge.shell.plugins.Plugin interface. Notice that the interface has no methods, this is because you will be adding your own custom commands later.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">import org.jboss.seam.forge.shell.plugins.Plugin;&#x000A;public class ExamplePlugin implements Plugin&#x000A;{&#x000A;}</code></pre>
-            <p>You might also use the &#8220;plugins new-plugin&#8221; command to do this a little more quickly:</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">[example] example $ plugins new-plugin --named ExamplePlugin&#x000A;? In which package would you like to create [ExamplePlugin], or enter for default: [com.example]</code>&#x000A;&#x000A;<code class="prettyprint linenums">Wrote ~/example/src/main/java/com/example/ExamplePlugin.java&#x000A;Picked up type &lt;JavaResource&gt;: com.example.ExamplePlugin</code>&#x000A;&#x000A;<code class="prettyprint linenums">[example] ExamplePlugin.java $ ls -a</code>&#x000A;&#x000A;<code class="prettyprint linenums">package com.example;&#x000A;import javax.inject.Inject;&#x000A;import org.jboss.forge.shell.ShellPrompt;import org.jboss.forge.shell.plugins.Plugin;&#x000A;import org.jboss.forge.shell.plugins.Alias;&#x000A;import org.jboss.forge.shell.plugins.PipeOut;&#x000A;import org.jboss.forge.shell.plugins.Option;&#x000A;import org.jboss.forge.shell.plugins.Command;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePlugin implements Plugin {</code>&#x000A; &#x000A;<code class="prettyprint linenums">  @Inject private ShellPrompt prompt;</code>&#x000A; &#x000A;<code class="prettyprint linenums">  @Command("run")&#x000A;  public void run(PipeOut out, @Option(name="value") final String arg){&#x000A;    out.println("Executed command with value: " + arg);&#x000A;  }&#x000A;}             </code>&#x000A; &#x000A;<code class="prettyprint linenums">[example] ExamplePlugin.java $</code></pre>
-            <p>As you can see, in addition to creating the Plugin class, this action has already created a blank command for us to customize.</p>
+            <h1>Writing documentation</h1>
+            <p>We need your help! Good documentation is one of the most important things for broad adoption of Forge. It&#8217;s really easy to help, so if you feel we are missing something in the docs, please add it :-)</p>
+            <p>The documentation is written in Textile, which is a lightweight markup language. <br />
+            Follow these steps to conribute documentation:</p>
+            <ol>
+            	<li>Clone http://github.com/forge/website on GitHub.</li>
+            	<li>Add a new .textile file in one of the sub directories of the docs directory.</li>
+            	<li>Push the empty Textile file to your GitHub repository.</li>
+            	<li>Use the GitHub Textile editor to write your docs and preview changes. Of course you can use your own editor if you prefer so.</li>
+            </ol>
+            <p>The Textile Wikipedia &#8216;page&#8217;:http://en.wikipedia.org/wiki/Textile_(markup_language) gives a good introduction about the markup language.</p>
+            <h3>Some technical details</h3>
+            <p>The Forge website is built using Awestruct, and the sources are on http://github.com/forge/website. However you don&#8217;t have to install anything to contribute documentation! If you are interested in Awestruct anyway, you&#8217;ll find a guide on the github page about how to setup and use Awestruct.</p>
           </div>
         </div>
       </div>

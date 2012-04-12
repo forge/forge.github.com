@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>JBoss Forge | Implement the Plugin interface</title>
+    <title>JBoss Forge | Add Commands to your Plugin</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
     <style type='text/css'>
       /*<![CDATA[*/
@@ -105,12 +105,22 @@
             </ul>
           </div>
           <div class='span10'>
-            <h1>Implement the Plugin interface</h1>
-            <p>The first thing you must do in order to create a forge plugin, is create a new class and implement the org.jboss.seam.forge.shell.plugins.Plugin interface. Notice that the interface has no methods, this is because you will be adding your own custom commands later.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">import org.jboss.seam.forge.shell.plugins.Plugin;&#x000A;public class ExamplePlugin implements Plugin&#x000A;{&#x000A;}</code></pre>
-            <p>You might also use the &#8220;plugins new-plugin&#8221; command to do this a little more quickly:</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">[example] example $ plugins new-plugin --named ExamplePlugin&#x000A;? In which package would you like to create [ExamplePlugin], or enter for default: [com.example]</code>&#x000A;&#x000A;<code class="prettyprint linenums">Wrote ~/example/src/main/java/com/example/ExamplePlugin.java&#x000A;Picked up type &lt;JavaResource&gt;: com.example.ExamplePlugin</code>&#x000A;&#x000A;<code class="prettyprint linenums">[example] ExamplePlugin.java $ ls -a</code>&#x000A;&#x000A;<code class="prettyprint linenums">package com.example;&#x000A;import javax.inject.Inject;&#x000A;import org.jboss.forge.shell.ShellPrompt;import org.jboss.forge.shell.plugins.Plugin;&#x000A;import org.jboss.forge.shell.plugins.Alias;&#x000A;import org.jboss.forge.shell.plugins.PipeOut;&#x000A;import org.jboss.forge.shell.plugins.Option;&#x000A;import org.jboss.forge.shell.plugins.Command;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePlugin implements Plugin {</code>&#x000A; &#x000A;<code class="prettyprint linenums">  @Inject private ShellPrompt prompt;</code>&#x000A; &#x000A;<code class="prettyprint linenums">  @Command("run")&#x000A;  public void run(PipeOut out, @Option(name="value") final String arg){&#x000A;    out.println("Executed command with value: " + arg);&#x000A;  }&#x000A;}             </code>&#x000A; &#x000A;<code class="prettyprint linenums">[example] ExamplePlugin.java $</code></pre>
-            <p>As you can see, in addition to creating the Plugin class, this action has already created a blank command for us to customize.</p>
+            <h1>Add Commands to your Plugin</h1>
+            <p>Now that you have implemented the <code>Plugin</code> interface, it&#8217;s time to add some functionality. This is done by adding &#8220;Commands&#8221; to your plugin class. Commands are plain Java methods in your plugin Class. Plugin methods must be annotated as either a <code>@DefaultCommand</code>, the method to be invoked if the plugin is called by name (with no additional commands), or <code>@Command("...")</code>, in which case the plugin name and command name must both be used to invoke the method.</p>
+            <p>Commands also accept <code>@Options</code> parameters as arguments. These are described in detail later in this section.</p>
+            <h2>Default commands</h2>
+            <p>Default commands must be annotated with <code>@DefaultCommand</code>, and are not named; you may still provide help text or command metadata. Each plugin may have only one <code>@DefaultCommand</code>.</p>
+            <p>The following default command would be executed by executing the plugin by its name:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @DefaultCommand&#x000A;   public void exampleDefaultCommand( @Option String opt, PipeOut out) {&#x000A;      out.println("&gt;&gt; invoked default command with option value: " + opt);&#x000A;      // this method will be invoked, and 'opt' will be passed from the command line&#x000A;      // 'out' is your handle to this plugin's output stream.&#x000A;   }&#x000A;}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin some-input</code></pre>
+            <p>In this case, the value of <code>opt</code> will be &#8220;some-input&#8221;. <code>@Options</code> are described in detail later in this section.</p>
+            <h2>Named commands</h2>
+            <p>Named commands must, to little surprise, be given a name with which they are invoked. This is done by placing the {{@Command(&#8220;&#8230;&#8221;)}} annotation on a public Java method in your {{Plugin}} class.</p>
+            <p>The following command would be executed by executing the plugin by its name, followed by the name of the command:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand( @Option String opt, PipeOut out) {&#x000A;       out.println("&gt;&gt; the command \"perform\" was invoked with the value: " + opt);&#x000A;   }&#x000A;}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin perform&#x000A;&gt;&gt; the command "perform" was invoked with the value: null{code}</code></pre>
+            <p>Notice that our command method has a parameter called <code>PipeOut</code> in addition to our &#8216;opt&#8217; parameter. <code>PipeOut</code> is a special parameter, which can be placed in any order. It provides access to a variety of shell output functions, including enabling color and controlling piping between plugins.</p>
+            <p>Along with <code>PipeOut</code>, there is also a <code>@PipeIn InputStream stream</code> annotation, which is used to inject a piped input stream (output from another Plugin&#8217;s <code>PipeOut</code>.) These concepts will be described more in the section on piping, but for now, you should just know that <code>PipeOut</code> is used to write output to the Forge console.</p>
           </div>
         </div>
       </div>

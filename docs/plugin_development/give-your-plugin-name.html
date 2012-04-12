@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>JBoss Forge | Implement the Plugin interface</title>
+    <title>JBoss Forge | Give your Plugin a name</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
     <style type='text/css'>
       /*<![CDATA[*/
@@ -105,12 +105,14 @@
             </ul>
           </div>
           <div class='span10'>
-            <h1>Implement the Plugin interface</h1>
-            <p>The first thing you must do in order to create a forge plugin, is create a new class and implement the org.jboss.seam.forge.shell.plugins.Plugin interface. Notice that the interface has no methods, this is because you will be adding your own custom commands later.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">import org.jboss.seam.forge.shell.plugins.Plugin;&#x000A;public class ExamplePlugin implements Plugin&#x000A;{&#x000A;}</code></pre>
-            <p>You might also use the &#8220;plugins new-plugin&#8221; command to do this a little more quickly:</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">[example] example $ plugins new-plugin --named ExamplePlugin&#x000A;? In which package would you like to create [ExamplePlugin], or enter for default: [com.example]</code>&#x000A;&#x000A;<code class="prettyprint linenums">Wrote ~/example/src/main/java/com/example/ExamplePlugin.java&#x000A;Picked up type &lt;JavaResource&gt;: com.example.ExamplePlugin</code>&#x000A;&#x000A;<code class="prettyprint linenums">[example] ExamplePlugin.java $ ls -a</code>&#x000A;&#x000A;<code class="prettyprint linenums">package com.example;&#x000A;import javax.inject.Inject;&#x000A;import org.jboss.forge.shell.ShellPrompt;import org.jboss.forge.shell.plugins.Plugin;&#x000A;import org.jboss.forge.shell.plugins.Alias;&#x000A;import org.jboss.forge.shell.plugins.PipeOut;&#x000A;import org.jboss.forge.shell.plugins.Option;&#x000A;import org.jboss.forge.shell.plugins.Command;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePlugin implements Plugin {</code>&#x000A; &#x000A;<code class="prettyprint linenums">  @Inject private ShellPrompt prompt;</code>&#x000A; &#x000A;<code class="prettyprint linenums">  @Command("run")&#x000A;  public void run(PipeOut out, @Option(name="value") final String arg){&#x000A;    out.println("Executed command with value: " + arg);&#x000A;  }&#x000A;}             </code>&#x000A; &#x000A;<code class="prettyprint linenums">[example] ExamplePlugin.java $</code></pre>
-            <p>As you can see, in addition to creating the Plugin class, this action has already created a blank command for us to customize.</p>
+            <h1>Give your Plugin a name</h1>
+            <p>Each plugin should be given a name. This is done by adding the <code>@org.jboss.seam.forge.shell.plugins.Alias</code> annotation to your plugin class.</p>
+            <p>By default, if no <code>@Alias</code> annotation is found, the lower-case Class name will be used; for instance, our <code>ExamplePlugin</code>, above, would be executed by typing:</p>
+            <pre class="command"><code class="command">$ exampleplugin</code></pre>
+            <p>Now we will add a name to our plugin.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Alias("example")&#x000A;public class ExamplePlugin implements Plugin {&#x000A;   // commands&#x000A;}</code></pre>
+            <p>Our named <code>@Alias("example") ExamplePlugin</code> would be executed by typing:</p>
+            <pre class="command"><code class="command">$ example{code}</code></pre>
           </div>
         </div>
       </div>
