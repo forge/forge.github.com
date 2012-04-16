@@ -74,6 +74,9 @@
               <li>
                 <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
               </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
               <li class='nav-header'>Developing plugins</li>
               <li>
                 <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
@@ -102,6 +105,15 @@
               <li>
                 <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
               </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
             </ul>
           </div>
           <div class='span10'>
@@ -120,7 +132,7 @@
             <p></p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">@Command("example-command")&#x000A;   public void exampleCommand(&#x000A;            @PipeIn final String in,&#x000A;            @Option(required = false) final boolean option,&#x000A;            PipeOut out)&#x000A;   { ... }</code></pre>
             <p>Take the <code>grep</code> command itself, for example, which supports two methods of invocation: Invocation on one or more <code>Resource&lt;?&gt;</code> objects, or invocation on a piped <code>InputStream</code>.</p>
-            <p>If no piping is invoked (e.g: via standalone execution of the plugin), a piped {{InputStream}} will be null. In addition, piped {{InputStream}}s do not need to be closed; Forge will handle cleanup of these streams.</p>
+            <div class="alert alert-success">If no piping is invoked (e.g: via standalone execution of the plugin), a piped {{InputStream}} will be null. In addition, piped {{InputStream}}s do not need to be closed; Forge will handle cleanup of these streams.</div>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">@Alias("grep")&#x000A;@Topic("File &amp; Resources")&#x000A;@Help("print lines matching a pattern")&#x000A;public class GrepPlugin implements Plugin&#x000A;{&#x000A;   @DefaultCommand&#x000A;   public void run(&#x000A;         @PipeIn final InputStream pipeIn,&#x000A;         @Option(name = "ignore-case", shortName = "i", flagOnly = true) boolean ignoreCase,&#x000A;         @Option(name = "regexp", shortName = "e") String regExp,&#x000A;         @Option(description = "PATTERN") String pattern,&#x000A;         @Option(description = "FILE ...") Resource&lt;?&gt;[] resources,&#x000A;         final PipeOut pipeOut&#x000A;   ) throws IOException&#x000A;   {&#x000A;      Pattern matchPattern = /* determine pattern (omitted for space) */;</code>&#x000A;&#x000A;<code class="prettyprint linenums">      if (resources != null) {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* User passed file(s) on the command line; grep those. */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         for (Resource&lt;?&gt; r : resources) {&#x000A;            InputStream inputStream = r.getResourceInputStream();&#x000A;            try {&#x000A;               match(inputStream, matchPattern, pipeOut, ignoreCase);&#x000A;            }&#x000A;            finally {&#x000A;               inputStream.close();&#x000A;            }&#x000A;         }&#x000A;      }&#x000A;      else if (pipeIn != null) {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* No files were passed on the command line; check for a&#x000A;          * piped InputStream and use that.&#x000A;          */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         match(pipeIn, matchPattern, pipeOut, ignoreCase);&#x000A;      }&#x000A;      else {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* No input was passed to the plugin. */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         throw new RuntimeException("Error: arguments required");&#x000A;      }&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   private void match(InputStream instream, Pattern pattern, PipeOut pipeOut, boolean caseInsensitive) throws IOException {&#x000A;      StringAppender buf = new StringAppender();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      int c;&#x000A;      while ((c = instream.read()) != -1) { /* Read from the given stream. */&#x000A;         switch (c) {&#x000A;         case '\r':&#x000A;         case '\n':&#x000A;            String s = caseInsensitive ? buf.toString().toLowerCase() : buf.toString();</code>&#x000A;&#x000A;<code class="prettyprint linenums">            if (pattern.matcher(s).matches()) {&#x000A;               pipeOut.println(s); /* Write to the output pipe. */&#x000A;            }&#x000A;            buf.reset();&#x000A;            break;&#x000A;         default:&#x000A;            buf.append((char) c);&#x000A;            break;&#x000A;         }&#x000A;      }&#x000A;   }&#x000A;}</code></pre>
           </div>
         </div>

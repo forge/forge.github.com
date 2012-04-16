@@ -74,6 +74,9 @@
               <li>
                 <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
               </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
               <li class='nav-header'>Developing plugins</li>
               <li>
                 <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
@@ -102,20 +105,31 @@
               <li>
                 <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
               </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
             </ul>
           </div>
           <div class='span10'>
             <h1>Ensure all referenced libraries are on the <span class="caps">CLASSPATH</span></h1>
-            <p><strong>As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin <span class="caps">POM</span> file and create the proper dependency references</strong></p>
+            <div class="alert alert-info">As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin <span class="caps">POM</span> file and create the proper dependency references</div>
             <p>If you are experiencing overwhelming issues with a ClassLoader, and cannot work around the modular environment, Forge offers an alternate Plugin packaging mode that can be activated by setting a flag in your Plugin&#8217;s src/main/resources/<span class="caps">META</span>-<span class="caps">INF</span>/forge.xml file:</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;forge&gt;&#x000A;  &lt;dependencies-as-resource-root/&gt;&#x000A;&lt;/forge&gt;</code></pre>
             <p>This will cause Forge to bundle all dependencies for your Plugin in the Plugin module itself, instead of creating a separate &#8220;dependencies&#8221; module, with a separate ClassLoader.</p>
             <p>As a last resort, you may also shade code into your plugin&#8217;s <span class="caps">JAR</span> file; however, this is extremely discouraged, since you may cause ClassCastExceptions at runtime, and this increases the burden on Class scanning at boot time, because <span class="caps">CDI</span> will scan all classes in your Plugin <span class="caps">JAR</span> file.</p>
-            <p><strong>This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies <span class="caps">WILL</span> <span class="caps">NOT</span> BE <span class="caps">INSTALLED</span> with your plugin; they must be packaged via shade.</strong></p>
+            <div class="alert alert-danger">This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies <span class="caps">WILL</span> <span class="caps">NOT</span> BE <span class="caps">INSTALLED</span> with your plugin; they must be packaged via shade.</div>
             <p>Using Forge to set up Shading</p>
             <pre class="command"><code class="command">[example-plugin] example-plugin $ shade setup&#x000A;***SUCCESS*** Shade plugin is installed.&#x000A;[example-plugin] example-plugin $&#x000A;[example-plugin] example-plugin $ shade include commons-collections:commons-collections:3.2.1</code></pre>
             <p>Notice that the pom.xml file has been modified and now includes a shade configuration including commons-collections.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;plugin&gt;&#x000A;        &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.4&lt;/version&gt;&#x000A;        &lt;executions&gt;&#x000A;          &lt;execution&gt;&#x000A;            &lt;phase&gt;package&lt;/phase&gt;&#x000A;            &lt;goals&gt;&#x000A;              &lt;goal&gt;shade&lt;/goal&gt;&#x000A;            &lt;/goals&gt;&#x000A;            &lt;configuration&gt;&#x000A;              &lt;artifactSet&gt;&#x000A;                &lt;includes&gt;&#x000A;                  &lt;include&gt;commons-collections:commons-collections&lt;/include&gt;&#x000A;                &lt;/includes&gt;&#x000A;              &lt;/artifactSet&gt;&#x000A;            &lt;/configuration&gt;&#x000A;          &lt;/execution&gt;&#x000A;        &lt;/executions&gt;&#x000A;      &lt;/plugin&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">*Do NOT include Forge provided libraries with shade, or you will very likely create a non-functional plugin.*</code>&#x000A;&#x000A;<code class="prettyprint linenums">It it also recommended, however, to relocate shaded class files to a new package. Your code will access the bundled code at this new location, and will prevent version conflicts if another plugin bundles a different version of the same library. For this, we use the following command.</code></pre>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;plugin&gt;&#x000A;        &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.4&lt;/version&gt;&#x000A;        &lt;executions&gt;&#x000A;          &lt;execution&gt;&#x000A;            &lt;phase&gt;package&lt;/phase&gt;&#x000A;            &lt;goals&gt;&#x000A;              &lt;goal&gt;shade&lt;/goal&gt;&#x000A;            &lt;/goals&gt;&#x000A;            &lt;configuration&gt;&#x000A;              &lt;artifactSet&gt;&#x000A;                &lt;includes&gt;&#x000A;                  &lt;include&gt;commons-collections:commons-collections&lt;/include&gt;&#x000A;                &lt;/includes&gt;&#x000A;              &lt;/artifactSet&gt;&#x000A;            &lt;/configuration&gt;&#x000A;          &lt;/execution&gt;&#x000A;        &lt;/executions&gt;&#x000A;      &lt;/plugin&gt;</code></pre>
+            <div class="alert alert-danger">Do <span class="caps">NOT</span> include Forge provided libraries with shade, or you will very likely create a non-functional plugin.</div>
+            <p>It it also recommended, however, to relocate shaded class files to a new package. Your code will access the bundled code at this new location, and will prevent version conflicts if another plugin bundles a different version of the same library. For this, we use the following command.</p>
             <pre class="command"><code class="command">$ shade relocate --pattern {ORIGINAL PGK} --shadedPattern {NEW PKG} --excludes {EXCLUDED PKGS...}</code></pre>
             <p>For the purposes of this example, let us assume that our Plugin depends on the Apache Commons Collections library (org.apache.commons.collections), and we want to make sure that no conflicts occur.</p>
             <pre class="command"><code class="command">[example-plugin] example-plugin $ shade relocate --pattern org.apache.commons.collections --shadedPattern ~.shaded.apache.collections&#x000A;***SUCCESS*** Relocating [org.apache.commons.collections] to [com.example.forge.plugin.shaded.apache.collections]&#x000A;[example-plugin] example-plugin $</code></pre>

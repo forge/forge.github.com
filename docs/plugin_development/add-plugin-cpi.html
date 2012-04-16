@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>JBoss Forge | Test your Plugin</title>
+    <title>JBoss Forge | Add your Plugin to the Central Plugin Index</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
     <style type='text/css'>
       /*<![CDATA[*/
@@ -117,19 +117,23 @@
             </ul>
           </div>
           <div class='span10'>
-            <h1>Test your Plugin</h1>
-            <p>When developing plugins, it is recommended to use the provide Unit and Integration Test Harness (based on <a href="http://www.jboss.org/arquillian">Arquillian</a>.) Not only do your plugin&#8217;s Unit and Integration tests ensure that your plugin will function on your computer, but because tests are run when plugins are <em>installed</em> into a Forge runtime, they also ensure that your plugin will function on your users computers.</p>
-            <h2>Install the Test Harness</h2>
-            <p>This step should already have been completed if you used the &#8216;plugins setup&#8217; command in the section titled: [Reference the Forge APIs]. If not, paste the following dependencies into your pom.xml file.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-test-harness&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-shell&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;</code></pre>
-            <h2>Extend AbstractShellTest or SingletonAbstractShellTest</h2>
-            <p>AbstractShellTest boots the Shell for each individual test method, while SingletonAbsractShellTest boots the Shell only once per test class, where each method operates on the same instance.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">package com.example.plugin;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import javax.inject.Inject;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import org.jboss.arquillian.api.Deployment;&#x000A;import org.jboss.forge.project.Project;&#x000A;import org.jboss.forge.project.dependencies.DependencyResolver;&#x000A;import org.jboss.forge.test.AbstractShellTest;&#x000A;import org.jboss.shrinkwrap.api.spec.JavaArchive;&#x000A;import org.junit.Assert;&#x000A;import org.junit.Test;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePluginTest extends AbstractShellTest&#x000A;{&#x000A;   // Notice that you may use injection to do verification of the internal state of the system.&#x000A;   // Or to perform additional operations.&#x000A;   @Inject&#x000A;   private DependencyResolver resolver;</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Deployment&#x000A;   public static JavaArchive getDeployment()&#x000A;   {&#x000A;      // The deployment method is where you must add references to your classes, packages, and&#x000A;      // configuration files, via  Arquillian.&#x000A;      return AbstractShellTest.getDeployment().addPackages(true, ExamplePlugin.class.getPackage());&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Test&#x000A;   public void testInstallPrettyfaces() throws Exception&#x000A;   {&#x000A;      // Create a new barebones Java project&#x000A;      Project p = initializeJavaProject();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Queue input lines to be read as the Shell executes.&#x000A;      queueInputLines("y");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Execute a command. If any input is required, it will be read from queued input.&#x000A;      getShell().execute("echo hi there");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      Assert.assertNotNull(resolver);&#x000A;   }&#x000A;}</code></pre>
-            <h2>Run your Build</h2>
-            <p>If done properly, you should now see your test execute during the Plugin build lifecycle.</p>
-            <pre class="command"><code class="command">$ build</code></pre>
-            <h2>Write more tests</h2>
-            <p>The more tests, the merrier! Tests make happy code.</p>
+            <h1>Add your Plugin to the Central Plugin Index (<span class="caps">CPI</span>)</h1>
+            <p>Forge incorporates the concept of a &#8220;plugin market&#8221; for conveniently searching and installing available plugins, but in order to take advantage of this, you must first register your plugin in the Central Plugin Index.</p>
+            <h2>What is the Central Plugin Index?</h2>
+            <p>The Central Plugin Index (<span class="caps">CPI</span>) is a listing of known plugins for Forge to be able to download and install. There are currently two supported methods of <a href="make-plugin-available.html">Making your Plugin available to Forge</a>. You can host project sources that must be manually downloaded, unzipped and installed, or plugins may be automatically downloaded and installed from a Git repository.</p>
+            <p>We strongly recommend using a public git repository to host your plugin, since it promotes sharing and collaboration. It&#8217;s more likely that someone will contribute back to your project if they automatically have access to your sources, and have a path to contribute back.</p>
+            <p>The <span class="caps">CPI</span> file itself is hosted on GitHub, and is structured with the <span class="caps">YAML</span> format; this is what the <span class="caps">CPI</span> file looks like:</p>
+            <pre class="command"><code class="command">---&#x000A;name: jboss-arquillian&#x000A;author: Paul Bakker &lt;paul.bakker.nl@gmail.com&gt;&#x000A;website: http://www.jboss.org/arquillian&#x000A;description: Integration Testing Framework&#x000A;artifact: org.arquillian.forge:arquillian-plugin:1.0.0-SNAPSHOT&#x000A;gitrepo: git://github.com/forge/plugin-arquillian.git&#x000A;tags: arquillian, jboss, testing, junit, testng, integration testing, tests, CDI, java ee&#x000A;---&#x000A;name: seam-jms&#x000A;author: John Ament&#x000A;website: http://seamframework.org/Seam3/JMSModule&#x000A;description: Seam JMS Plugin&#x000A;artifact: org.jboss.seam.jms:seam-jms-forge-plugin:1.0.0-SNAPSHOT&#x000A;gitrepo: git://github.com/forge/plugin-seam-jms.git&#x000A;tags: seam, jms, mq, messaging, jboss&#x000A;---</code></pre>
+            <h2>Adding your Plugin to the Central Plugin Index</h2>
+            <div class="alert alert-info"><strong>Before you continue</strong><br />
+            In order to ensure compatibility with  the latest Forge release versions &#8211; you <strong><span class="caps">MUST</span></strong> update your Plugin  to use the corresponding <a href="https://github.com/forge/core/tags">Forge <span class="caps">API</span> version</a>. You should also create a git branch in your Plugin repository &#8211; the name of this branch should be <strong>exactly the same</strong> as the Forge <span class="caps">API</span> version you wish to support. <strong>Repeat this task for each Forge <span class="caps">API</span> version you wish to support.</strong><br />
+            We  recommend using branches instead of tags, because branches allow bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
+            <p>Since the <span class="caps">CPI</span> file is hosted in GitHub, the method for adding a plugin is to fork the <span class="caps">CPI</span> repository: https://github.com/forge/plugin-repository, add or update your entry, and send a pull request.</p>
+            <pre class="command"><code class="command">git clone git://github.com/forge/plugin-repository.git&#x000A;cd plugin-repository/&#x000A;# add or edit your plugin entry&#x000A;git add repository.yaml&#x000A;git commit -m "Added ExamplePlugin Entry"</code></pre>
+            <p>We <strong>strongly</strong> recommend using GitHub to host your plugin, since it makes Forking and sending Pull Requests <em>much</em> easier than using the Git command line: http://help.github.com/send-pull-requests/</p>
+            <p>Once our Plugin team has verified that your meta-information is correct, and tested your plugin for compatibility, we will merge your request; your plugin will be available to users who type:</p>
+            <p><code>$ forge find-plugin *</code></p>
+            <p>If you need instruction in Git, we recommend reading <a href="http://progit.org/book/">Pro Git</a>.</p>
           </div>
         </div>
       </div>

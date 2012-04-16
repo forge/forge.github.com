@@ -74,6 +74,9 @@
               <li>
                 <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
               </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
               <li class='nav-header'>Developing plugins</li>
               <li>
                 <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
@@ -102,6 +105,15 @@
               <li>
                 <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
               </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
             </ul>
           </div>
           <div class='span10'>
@@ -115,10 +127,10 @@
             <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one", shortName="o") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
             <p>The above command, when executed, would produce the following output:</p>
             <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog</code></pre>
-            <p>Named parameters can be called in any order. Notice that we could have also called the command with options &#8216;one&#8217; and &#8216;two&#8217; in reverse order, or by using their short names. These commands are equivalent:<br />
+            <div class="alert alert-success">Named parameters can be called in any order. Notice that we could have also called the command with options &#8216;one&#8217; and &#8216;two&#8217; in reverse order, or by using their short names. These commands are equivalent:<br />
             bc(command). $ exampleplugin perform &#8212;one cat &#8212;two dog<br />
             $ exampleplugin perform &#8212;two dog &#8212;one cat<br />
-            $ exampleplugin perform &#8212;two dog -o cat</p>
+            $ exampleplugin perform &#8212;two dog -o cat</div>
             <h2>Ordered options</h2>
             <p>In addition to <code>--named</code> option parameters, as described above, parameters may also be passed on the command line by the order in which they are entered. These are called &#8220;ordered option parameters&#8221;, and do not require any parameters other than help or description information.</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value</code></pre>
