@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>JBoss Forge |</title>
+    <title>JBoss Forge | Release Guide</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
     <style type='text/css'>
       /*<![CDATA[*/
@@ -155,25 +155,13 @@
             </ul>
           </div>
           <div class='span10'>
-            <h1>Writing documentation</h1>
-            We need your help! Good documentation is one of the most important things for broad adoption of Forge. It's really easy to help, so if you feel we are missing something in the docs, please add it :-)
-            <p></p>
-            The documentation is written in Textile, which is a lightweight markup language.
-            <br />
-            Follow these steps to conribute documentation:
-            <ol>
-              <li>Clone http://github.com/forge/website on GitHub.</li>
-              <li>Add a new .textile file in one of the sub directories of the docs directory.</li>
-              <li>Push the empty Textile file to your GitHub repository.</li>
-              <li>Use the GitHub Textile editor to write your docs and preview changes. Of course you can use your own editor if you prefer so.</li>
-            </ol>
-            The Textile Wikipedia
-            <a href='http://en.wikipedia.org/wiki/Textile_(markup_language)'>page</a>
-            gives a good introduction about the markup language.
-            <br />
-            <br />
-            <h3>Some technical details</h3>
-            The Forge website is built using Awestruct, and the sources are on http://github.com/forge/website. However you don't have to install anything to contribute documentation! If you are interested in Awestruct anyway, you'll find a guide on the github page about how to setup and use Awestruct.
+            <h1>Release Guide</h1>
+            <h2>Updating Plugin Tags</h2>
+            <p>If you are a Plugin author who wishes to ensure compatibility with the latest Forge release versions &#8211; ensure that you update your Plugin to use the corresponding <a href="https://github.com/forge/core/tags">Forge <span class="caps">API</span> version</a>. You should also create a git branch in your Plugin repository &#8211; the name of this branch should be <strong>exactly the same</strong> as the Forge <span class="caps">API</span> version you wish to support.</p>
+            <div class="alert alert-info">We recommend using branches instead of tags, because branches allow  bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
+            <h2>Uploading Release Documentation</h2>
+            <p>You must have access to project documentation servers in order to upload project documentation:</p>
+            <pre class="command"><code class="command">cd core/git checkout {TAG}&#x000A;mvn clean javadoc:aggregate -Pjavadoc&#x000A;rsync -rv --protocol=28  target/javadoc/ forge@filemgmt.jboss.org:/docs_htdocs/forge/javadoc/&#x000A;</code></pre>
           </div>
         </div>
       </div>

@@ -47,6 +47,9 @@
               <li>
                 <a href='/docs/index.html'>Documentation</a>
               </li>
+              <li>
+                <a href='https://community.jboss.org/en/forge'>Forums</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -75,9 +78,44 @@
                 <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
               </li>
               <li>
+                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href='/docs/using/samples.html'>Samples</a>
+              </li>
+              <li>
                 <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
               </li>
+              <li>
+                <a href='/docs/using/debuggin-foge.html'>Debugging Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/faq.html'>FAQ</a>
+              </li>
+              <li>
+                <a href='/docs/using/affiliation.html'>Affiliation</a>
+              </li>
+              <li class='nav-header'>Get involved</li>
+              <li>
+                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+              </li>
+              <li class='nav-header'>Important plugins</li>
+              <li>
+                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/seam.html'>Seam</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+              </li>
               <li class='nav-header'>Developing plugins</li>
+              <li>
+                <a href='/docs/plugin_development/'>Developing a plugin</a>
+              </li>
               <li>
                 <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
               </li>
@@ -120,7 +158,14 @@
             <h1>Enable modular functionality with Facets</h1>
             <p>Frequently when writing plugins, it is not beneficial (sometimes detrimental) to enable all functionality of a plugin at the same time. For instance, let&#8217;s say you have written a plugin that adds security to an existing web application. Your plugin handles setup of the security dependencies, creation of database tables, and also supports class-configuration of an authentication/authorization provider. It does not make sense for you to create the configuration classes before the dependencies have been installed, because you will likely create compilation errors in the project due to missing APIs. <strong>This might be a good time to use facets.</strong></p>
             <h2>What is a Facet?</h2>
-            <p>Facets are classes that represent the state of a Project (or a portion thereof.) They serve as encapsulation of several purposes:</p>
+            <p>Facets are classes that provide access to the state and resources of the current project (or a portion thereof) and generally useful operations on it&#8217;s resources. Some information about Facets in short terms:</p>
+            <ul>
+            	<li>Facets represent project state and provide operations (e.g. Git is installed, <span class="caps">JSF</span> is installed, access Java source, manipulate pom)</li>
+            	<li>Facets do not work outside of projects.</li>
+            	<li>Facets avoid doing anything that prints to the shell output (sometimes it is unavoidable)</li>
+            	<li>Facets are for encapsulating additional functionality that is usable in one or more plugins</li>
+            </ul>
+            <p>As a practical example the security plugin is implement as a Facet to show the most important design principles.</p>
             <h3>Constraining Plugins &amp; Commands</h3>
             <p>Let&#8217;s assume that we are writing our security plugin. First, we need our plugin (command implementations omitted for brevity.)</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">public class SecurityPlugin implements Plugin {</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Command public void setup() {};&#x000A;   @Command public void configureDatabase() {};&#x000A;   @Command public void configureAuthentication() {};&#x000A;   @Command public void addRole() {};</code>&#x000A;&#x000A;<code class="prettyprint linenums">}</code></pre>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>JBoss Forge | Test your Plugin</title>
+    <title>JBoss Forge | Writing Basic Java EE App</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
     <style type='text/css'>
       /*<![CDATA[*/
@@ -155,19 +155,46 @@
             </ul>
           </div>
           <div class='span10'>
-            <h1>Test your Plugin</h1>
-            <p>When developing plugins, it is recommended to use the provide Unit and Integration Test Harness (based on <a href="http://www.jboss.org/arquillian">Arquillian</a>.) Not only do your plugin&#8217;s Unit and Integration tests ensure that your plugin will function on your computer, but because tests are run when plugins are <em>installed</em> into a Forge runtime, they also ensure that your plugin will function on your users computers.</p>
-            <h2>Install the Test Harness</h2>
-            <p>This step should already have been completed if you used the &#8216;plugins setup&#8217; command in the section titled: [Reference the Forge APIs]. If not, paste the following dependencies into your pom.xml file.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-test-harness&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-shell&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;</code></pre>
-            <h2>Extend AbstractShellTest or SingletonAbstractShellTest</h2>
-            <p>AbstractShellTest boots the Shell for each individual test method, while SingletonAbsractShellTest boots the Shell only once per test class, where each method operates on the same instance.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">package com.example.plugin;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import javax.inject.Inject;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import org.jboss.arquillian.api.Deployment;&#x000A;import org.jboss.forge.project.Project;&#x000A;import org.jboss.forge.project.dependencies.DependencyResolver;&#x000A;import org.jboss.forge.test.AbstractShellTest;&#x000A;import org.jboss.shrinkwrap.api.spec.JavaArchive;&#x000A;import org.junit.Assert;&#x000A;import org.junit.Test;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePluginTest extends AbstractShellTest&#x000A;{&#x000A;   // Notice that you may use injection to do verification of the internal state of the system.&#x000A;   // Or to perform additional operations.&#x000A;   @Inject&#x000A;   private DependencyResolver resolver;</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Deployment&#x000A;   public static JavaArchive getDeployment()&#x000A;   {&#x000A;      // The deployment method is where you must add references to your classes, packages, and&#x000A;      // configuration files, via  Arquillian.&#x000A;      return AbstractShellTest.getDeployment().addPackages(true, ExamplePlugin.class.getPackage());&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Test&#x000A;   public void testInstallPrettyfaces() throws Exception&#x000A;   {&#x000A;      // Create a new barebones Java project&#x000A;      Project p = initializeJavaProject();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Queue input lines to be read as the Shell executes.&#x000A;      queueInputLines("y");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Execute a command. If any input is required, it will be read from queued input.&#x000A;      getShell().execute("echo hi there");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      Assert.assertNotNull(resolver);&#x000A;   }&#x000A;}</code></pre>
-            <h2>Run your Build</h2>
-            <p>If done properly, you should now see your test execute during the Plugin build lifecycle.</p>
+            <h1>Writing Basic Java EE Application</h1>
+            <p>For the most part, people interested in Forge are likely interested in creating web-applications. Thusly, this chapter will overview the basic steps to generate such an application using Forge.</p>
+            <h2>Get Started with Scaffolding</h2>
+            <p>Assuming you have already completed the steps to install Forge, the first thing you&#8217;ll need to do is download and install a Java EE application server, for example <a href="http://www.jboss.org/jbossas/downloads.html">JBoss Application Server 7</a>. This server will host your application once it is built.</p>
+            <p>Next, follow these steps to create your skeleton web-application; be sure to replace any {ARGS} with your own personal values. Also keep in mind that while typing commands, you may press <TAB> at any time to see command completion options:</p>
+            <h2>Start Forge</h2>
+            <p>Execute <code>forge</code> from a command prompt, or open your shortcut, if you created one during the installation process.</p>
+            <h2>Create a new project</h2>
+            <pre class="command"><code class="command">$ new-project --named {name} --topLevelPackage {com.example.project} --projectFolder {/directory/path}</code></pre>
+            <h2>Set up scaffolding</h2>
+            <p>Press <span class="caps">ENTER</span> to confirm installation of any required facet dependencies and/or packaging types: ﻿﻿</p>
+            <div class="alert alert-info">We recommend using the latest stable (non-<span class="caps">SNAPSHOT</span>) versions of necessary libraries.</div>
+            <pre class="command"><code class="command">$ scaffold setup</code>&#x000A;&#x000A;<code class="command">? No scaffold type was provided, use Forge default? [Y/n]</code></pre>
+            <h2>Set up persistence (<span class="caps">JPA</span>)</h2>
+            <p>Press <span class="caps">ENTER</span> to confirm installation of any required facet dependencies and/or packaging types, and remember to press <span class="caps">TAB</span> if you are not sure what comes next.</p>
+            <pre class="command"><code class="command">$ persistence setup --provider {your JPA implementation} --container {your container}</code></pre>
+            <p>If you do not wish to use a Java EE container default data-source, you can also specify additional connection parameters such as <span class="caps">JNDI</span> data-source names, <span class="caps">JDBC</span> connection information, and data-source types. Note, however, that this means you will probably need configure your application server to provide this new data-source and/or database connection.</p>
+            <h2>Create some <span class="caps">JPA</span> entities:</h2>
+            <pre class="command"><code class="command">$ entity --named Customer</code></pre>
+            <p>At which point Forge will automatically pick-up the newly created entity, and will be ready to add fields. We refer to this as &#8220;holding&#8221; an entity, or &#8220;holding&#8221; a file.</p>
+            <pre class="command"><code class="command">Customer.java $ field string --named firstName&#x000A;Customer.java $ field string --named lastName</code></pre>
+            <h3>While &#8220;holding&#8221; most files, you may inspect them using &#8216;ls&#8217;.</h3>
+            <pre class="command"><code class="command">Customer.java $ ls</code>&#x000A;&#x000A;<code class="command">[fields]&#x000A;private::String::firstName;       private::String::lastName;&#x000A;private::int::version;               private::long::id;</code>&#x000A;&#x000A;<code class="command">[methods]&#x000A;public::getFirstName()::String                                               public::getId()::long&#x000A;public::getLastName()::String                                                public::getVersion()::int&#x000A;public::setFirstName(final String firstName)::void                    public::setId(final long id)::void&#x000A;public::setLastName(final String lastName)::void                     public::setVersion(final int version)::void&#x000A;public::toString()::String</code>&#x000A;&#x000A;<code class="command">Customer.java $</code></pre>
+            <h2>Generate some UI scaffolding!</h2>
+            <p>Once you have created fields in the entity, it&#8217;s time to generate some scaffolding. Since we have already installed our scaffold, this step is easy. While &#8220;holding&#8221; Customer.java, type:</p>
+            <pre class="command"><code class="command">Customer.java $ scaffold from-entity</code>&#x000A;&#x000A;<code class="command">? No scaffold type was selected, use default (JSF)? [Y/n]&#x000A;Wrote /src/main/java/com/scaffold/domain/Customer.java&#x000A;Wrote /src/main/java/com/scaffold/view/CustomerBean.java&#x000A;Wrote /src/main/webapp/scaffold/customer/view.xhtml&#x000A;Wrote /src/main/webapp/scaffold/customer/create.xhtml&#x000A;Wrote /src/main/webapp/scaffold/customer/list.xhtml&#x000A;***SUCCESS*** Generated UI for [com.scaffold.domain.Customer]</code>&#x000A;&#x000A;<code class="command">Customer.java $</code></pre>
+            <h2>That&#8217;s it! Now build your project and deploy it onto your JBoss Application Server instance:</h2>
             <pre class="command"><code class="command">$ build</code></pre>
-            <h2>Write more tests</h2>
-            <p>The more tests, the merrier! Tests make happy code.</p>
+            <p>Or, if you want to control the build more finely, you can also build your new project using Maven. (If you do not have maven installed, Forge will use its provided embedded Maven support.)</p>
+            <pre class="command"><code class="command">$ mvn clean package</code></pre>
+            <h2>Deploy/undeploy to AS7</h2>
+            <p>First you need to install the AS7 Forge Plugin by typing the following command:</p>
+            <pre class="command"><code class="command">$ forge install-plugin jboss-as-7</code></pre>
+            <p>Next, set up the plugin in your project:</p>
+            <pre class="command"><code class="command">$ as7 setup</code></pre>
+            <p>Then you will be able to deploy, redeploy, and un-deploy as desired using the following commands:</p>
+            <pre class="command"><code class="command">$ as7 deploy&#x000A;$ as7 redeploy&#x000A;$ as7 undeploy</code></pre>
+            <div class="alert alert-info">The server must be running.</div>
+            <h2>That&#8217;s it! Access your deployed application at:</h2>
+            <p><em>http://localhost:8080/<strong>projectname</strong></em></p>
           </div>
         </div>
       </div>
