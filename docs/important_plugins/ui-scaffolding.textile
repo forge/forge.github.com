@@ -1,0 +1,63 @@
+---
+layout: docs
+title: UI Scaffolding
+index: 2
+---
+
+h1. UI Scaffolding
+
+h2. Introduction
+
+Forge's default UI scaffolding generates a pure Java EE application with a JavaServer Faces User Interface. This UI includes support for creating, updating, deleting, pagination and searching. It also supports one-to-many, many-to-many, many-to-one and one-to-one relationships. The scaffolding uses pure JSF tags, with no runtime dependencies on any non-Java EE libraries.
+
+h2. Getting Started
+
+The default scaffold comes as part of the Forge distribution; therefore, it does not need to be installed separately. You can get up and running in just a few simple commands! To begin, you must first create (or have already created) an @Entity such as the following example.
+
+
+bc(command). entity --named Customer
+field string --named firstName
+
+p. You can now set up scaffolding, and generate CRUD pages for the entity using the following command, which will create UI scaffolding for the currently selected entity (you can select an entity by using the 'cd' or 'pick up' commands):
+
+bc(command). scaffold setup
+scaffold from-entity
+
+p. To generate scaffolding for another entity (even if it is not selected), just provide its fully qualified name, or package name wildcards for multiple entities:
+
+bc(command). scaffold from-entity com.test.domain.Customer
+scaffold from-entity com.test.domain.*
+
+h2. Structure of Generated Scaffold
+
+The scaffolding is generated in two main parts: Facelets pages and Java backing beans.
+
+The Facelets pages are generated under _src/main/webapp/scaffold/{entity-name}_. There are three pages per entity:
+* *create.xhtml* - an editable view of the entity. This page is reused for both creating new entities and editing existing entities. Includes support for: adding/removing one-to-one, one-to-many and many-to-many relationships; selecting many-to-one relationships; in-place validation messages.
+* *view.xhtml* - a read-only view of the entity. Includes support for navigating many-to-one relationships from parent to child.
+* *search.xhtml* - an entity search screen with a list of results. Includes support for: searching mixtures of different fields; paginating the results.
+
+The backing beans are generated under _src/main/java/com/test/view/{entity-name}Bean.java_. There is one backing bean per entity. Each backing bean focuses purely on Java EE 6 standards, rather than introducing a CRUD framework or custom base class. Important Java EE 6 constructs include:
+* *@Named* - so that the bean is exposed through CDI to the Facelets pages. We use @Named rather than @ManagedBean, in order to take advantage of CDI scopes.
+* *@ConversationScoped* - so that important hidden fields (such as @Id and @Version fields) are retained during the view/edit/update lifecycle without requiring them to be POSTed back as part of the Facelets page (e.g. using h:inputHidden, or storing them into the JSF ViewState). We use @ConversationScoped rather than @ViewScoped, in order to take advantage of CDI's transaction management.
+* *@PersistenceContext* - so that we can inject the EntityManager. We used @PersistenceContext rather than @Inject, so that we can use an extended PersistenceContext.
+* *PersistenceContext.EXTENDED* - so that transactions are bound to the conversation scope of the bean. This allows the bean to save an entity and then display it as a read-only view, without incurring lazy loading problems on one-to-many relationships.
+* *@Stateful* - so that we can use an extended PersistenceContext.
+* *conversation.begin* - conversations are started during entity retrieval, and ended upon update, delete or cancel. This allows fields that are not POSTed back (@Id and @Version fields, contents of one-to-many relations) to survive page refreshes in the face of validation errors.
+* *CriteriaBuilder* - so that we can build queries having arbitrary mixtures of search criteria. CriteriaBuilder provides a cleaner API for constructing mixtures of fields than using pure JPA-QL.
+* *Converter* - so that entities can be presented in many-to-one dropdowns. We use an inner class rather than @FacesConverter, so that we can take advantage of an injected EntityManager.
+
+All resources related to the look and feel of the generated UI, including CSS files and images, are generated under _src/main/webapp/resources._
+
+In all, we think this makes for a well designed, pure Java EE 6 web application. It supports most CRUD use cases with minimal dependencies or 'magic' in the generated code. The few exceptions are:
+* *ViewUtils* - JSF lacks a way to display Sets (as opposed to Lists) of Objects. We resolve this by introducing an EL function _ViewUtils.asList_ that can be wrapped around a Collection to turn it into a List.
+
+h2. Customizing the Scaffold
+
+The generated code itself is free of non-Java EE dependencies or 'magic' code, so can be readily edited in any text editor. However, such edits will be overwritten if the scaffold is ever regenerated.
+
+To customize the generation process itself, there are a number of options:
+* All look and feel related resources, including CSS files and images, are located under _src/main/resource/org/jboss/forge/scaffold/faces/static_. These can be readily replaced to provide alternate look and feels.
+* All static templates, including error pages and the paginator control, are located under _src/main/resource/org/jboss/forge/scaffold/faces/templates_. These are pure Facelets files, and can be readily edited.
+* All scaffolding files, including CRUD Facelets pages and Java backing beans, are located under _src/main/resource/org/jboss/forge/faces/scaffold_. These are [Seam Render|https://github.com/seam/render] templates. Much of the templates are static text which can be edited in any text editor. The dynamic portions are embedded in the text using _@{...}_ expressions.
+* The dynamic generation of the JSF tags, as well as some portions of the Java code, is performed using "Metawidget":http://metawidget.org. Metawidget defines a pluggable pipeline that allows you to customize many aspects of the generation, including: what entity annotations/metadata are inspected; what JSF components are chosen; how the JSF components are laid out. Full details on writing Metawidget plugins are available "here":http://metawidget.org/doc/reference/en/html/ch02.html.

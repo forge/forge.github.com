@@ -1,0 +1,56 @@
+---
+layout: docs
+title: Seam
+index: 1
+---
+
+h1. Seam
+
+h2. Introduction
+
+Seam 3 is very modular because it's a set of CDI extensions. You don't have (and shouldn't) pull in everything of Seam 3 just because you need small parts of it. Instead you pull in one module at a time.
+
+Each module comes with some additional Maven dependencies and some configuration file changes. Forge helps you setting this up automatically. This page describes the Seam related plugins.
+
+h2. Seam Persistence
+
+"Seam Persistence":http://seamframework.org/Seam3/PersistenceModule makes working with JPA easier and brings declarative transaction management to plain beans (no EJB required). You can watch "this video":http://vimeo.com/24215263 for more details. 
+
+h3. Seam Managed Persistence Context
+
+If you're using Seam outside of a Java EE environment, you can't rely upon the container to manage the persistence context lifecycle for you. Even if you are in an EE environment, you might have a complex application with many loosely coupled components that collaborate together in the scope of a single conversation, and in this case you might find that propagation of the persistence context between component is tricky and error-prone. Another example is using lazy loading on JSF pages.
+
+In either case, you'll need to use a managed persistence context (for JPA) or a managed session (for Hibernate) in your components. A Seam-managed persistence context is just a built-in Seam component that manages an instance of EntityManager or Session in the conversation (or any other) context. You can inject it with @Inject.
+
+You can set up the Seam Managed Persistence context using Forge:
+
+bc(command). seam-persistence install-managed-persistence-context
+
+p. The Seam Persistence Maven dependencies are added and and a new class that acts as the Persistence Unit Producer is generated.
+
+Now inject the managed Persistence Context in your code:
+
+bc(prettyprint linenum).. @Inject EntityManager entityManager;
+
+p. Now try lazy loading on a JSF page and see that it magically works!
+
+h3. Declarative transactions
+
+This Seam Persistence feature brings EJB 3 style declarative transactions to plain beans. This even works outside of a Java EE container where EJB is not available at all.
+
+To use Transaction Management you need some configuration in beans.xml, Forge will add that for you. Simply type:
+
+bc(command). seam-persistence enable-declarative-tx
+
+p. Now you can use declarative TX management.
+
+bc(prettyprint linenum).. @TransactionAttribute /*Defaults to TransactionAttributeType.REQUIRED */
+public class TransactionaBean {
+   public void doWork() {
+   }
+
+   @TransactionAttributeType(TransactionAttributeType.SUPPORTED)
+   public void doMoreWork() {
+
+   }
+}

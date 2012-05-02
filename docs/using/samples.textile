@@ -1,0 +1,41 @@
+---
+layout: docs
+title: Samples
+index: 3
+---
+
+h1. Samples
+
+Want to get started using Forge, but now quite sure how to do the things you want? Check out some of these sample scripts for common use-cases.
+
+h2. Forge Quickstart
+
+Want to see a "full example":https://github.com/jbossas/quickstart/tree/master/forge-from-scratch, a quick-start using much of the Forge built-in scaffolding and commands? You can find the full tutorial and instructions "here":https://github.com/jbossas/quickstart/tree/master/forge-from-scratch.
+
+
+h2. Create a new JPA @Entity class
+
+# new-project --named example --topLevelPackage com.example
+# persistence setup --provider HIBERNATE --container JBOSS_AS7
+# entity --named SampleEntity
+# field string --named sampleField
+# field temporal --named createdOn --type TIMESTAMP
+# ls
+
+h2. Add an @N-To-N relationship between two @Entity classes
+
+# new-project --named example --topLevelPackage com.example
+# persistence setup --provider HIBERNATE --container JBOSS_AS7
+# entity --named Hurricane
+# entity --named Continent
+# field manyToMany --named hurricanes --fieldType com.example.domain.Hurricane --inverseFieldName continents
+# ls
+
+h2. Create a REST endpoint from @Entity
+
+# new-project --named example --topLevelPackage com.example
+# persistence setup --provider HIBERNATE --container JBOSS_AS7
+# rest setup
+# entity --named SampleEntity
+# field string --named sampleField
+# rest endpoint-from-entity

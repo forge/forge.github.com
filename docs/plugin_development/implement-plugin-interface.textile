@@ -1,0 +1,46 @@
+---
+layout: docs
+title: Implement the Plugin interface
+index: 2
+---
+
+h1. Implement the Plugin interface
+
+The first thing you must do in order to create a forge plugin, is create a new class and implement the org.jboss.seam.forge.shell.plugins.Plugin interface. Notice that the interface has no methods, this is because you will be adding your own custom commands later.
+
+bc(prettyprint linenums).. import org.jboss.seam.forge.shell.plugins.Plugin;
+public class ExamplePlugin implements Plugin
+{
+}
+
+p. You might also use the "plugins new-plugin" command to do this a little more quickly:
+
+bc(prettyprint linenums).. [example] example $ plugins new-plugin --named ExamplePlugin
+? In which package would you like to create [ExamplePlugin], or enter for default: [com.example]
+
+Wrote ~/example/src/main/java/com/example/ExamplePlugin.java
+Picked up type <JavaResource>: com.example.ExamplePlugin
+
+[example] ExamplePlugin.java $ ls -a
+
+package com.example;
+import javax.inject.Inject;
+import org.jboss.forge.shell.ShellPrompt;import org.jboss.forge.shell.plugins.Plugin;
+import org.jboss.forge.shell.plugins.Alias;
+import org.jboss.forge.shell.plugins.PipeOut;
+import org.jboss.forge.shell.plugins.Option;
+import org.jboss.forge.shell.plugins.Command;
+
+public class ExamplePlugin implements Plugin {
+ 
+  @Inject private ShellPrompt prompt;
+ 
+  @Command("run")
+  public void run(PipeOut out, @Option(name="value") final String arg){
+    out.println("Executed command with value: " + arg);
+  }
+}             
+ 
+[example] ExamplePlugin.java $
+
+p. As you can see, in addition to creating the Plugin class, this action has already created a blank command for us to customize.

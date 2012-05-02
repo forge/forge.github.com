@@ -1,0 +1,109 @@
+---
+layout: docs
+title: Reference Libraries
+index: 9
+---
+
+h1. Ensure all referenced libraries are on the CLASSPATH
+
+div(alert alert-info). As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin POM file and create the proper dependency references
+
+If you are experiencing overwhelming issues with a ClassLoader, and cannot work around the modular environment, Forge offers an alternate Plugin packaging mode that can be activated by setting a flag in your Plugin's src/main/resources/META-INF/forge.xml file:
+
+bc(prettyprint linenums).. <forge>
+  <dependencies-as-resource-root/>
+</forge>
+
+p. This will cause Forge to bundle all dependencies for your Plugin in the Plugin module itself, instead of creating a separate "dependencies" module, with a separate ClassLoader.
+
+As a last resort, you may also shade code into your plugin's JAR file; however, this is extremely discouraged, since you may cause ClassCastExceptions at runtime, and this increases the burden on Class scanning at boot time, because CDI will scan all classes in your Plugin JAR file.
+
+div(alert alert-danger). This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies WILL NOT BE INSTALLED with your plugin; they must be packaged via shade.
+
+p. Using Forge to set up Shading
+
+bc(command). [example-plugin] example-plugin $ shade setup
+***SUCCESS*** Shade plugin is installed.
+[example-plugin] example-plugin $
+[example-plugin] example-plugin $ shade include commons-collections:commons-collections:3.2.1
+
+p. Notice that the pom.xml file has been modified and now includes a shade configuration including commons-collections.
+
+bc(prettyprint linenums).. <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <includes>
+                  <include>commons-collections:commons-collections</include>
+                </includes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+div(alert alert-danger). Do NOT include Forge provided libraries with shade, or you will very likely create a non-functional plugin.
+
+It it also recommended, however, to relocate shaded class files to a new package. Your code will access the bundled code at this new location, and will prevent version conflicts if another plugin bundles a different version of the same library. For this, we use the following command.
+
+bc(command). $ shade relocate --pattern {ORIGINAL PGK} --shadedPattern {NEW PKG} --excludes {EXCLUDED PKGS...}
+
+p. For the purposes of this example, let us assume that our Plugin depends on the Apache Commons Collections library (org.apache.commons.collections), and we want to make sure that no conflicts occur.
+
+bc(command). [example-plugin] example-plugin $ shade relocate --pattern org.apache.commons.collections --shadedPattern ~.shaded.apache.collections
+***SUCCESS*** Relocating [org.apache.commons.collections] to [com.example.forge.plugin.shaded.apache.collections]
+[example-plugin] example-plugin $
+
+p. This should be repeated for each dependency as necessary. Notice that our POM has been updated with the configuration:
+
+bc(prettyprint linenums).. <plugin>
+     <artifactId>maven-shade-plugin</artifactId>
+     <version>1.4</version>
+     <executions>
+       <execution>
+         <phase>package</phase>
+         <goals>
+           <goal>shade</goal>
+         </goals>
+         <configuration>
+           <artifactSet>
+             <includes>
+               <include>commons-collections:commons-collections</include>
+             </includes>
+           </artifactSet>
+           <relocations>
+             <relocation>
+               <pattern>org.apache.commons.collections</pattern>
+               <shadedPattern>com.example.forge.plugin.shaded.apache.collections</shadedPattern>
+             </relocation>
+           </relocations>
+         </configuration>
+       </execution>
+     </executions>
+   </plugin>
+
+p. When you build your plugin, you should see confirmation output from the Maven Shade Plugin looking something like this:
+
+bc(command). [INFO] --- maven-shade-plugin:1.4:shade (default) @ example-plugin ---
+[INFO] Excluding org.jboss.seam.forge:forge-shell-api:jar:{version} from the shaded jar.
+[INFO] Excluding org.jboss.seam.forge:forge-parser-java-api:jar:{version} from the shaded jar.
+[INFO] Excluding org.jboss.seam.forge:forge-parser-xml:jar:{version} from the shaded jar.
+[INFO] Excluding org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api:jar:{version} from the shaded jar.
+[INFO] Excluding javax.enterprise:cdi-api:jar:{version} from the shaded jar.
+[INFO] Excluding org.jboss.spec.javax.interceptor:jboss-interceptors-api:jar:{version} from the shaded jar.
+[INFO] Excluding javax.annotation:jsr250-api:jar:{version} from the shaded jar.
+[INFO] Excluding javax.inject:javax.inject:jar:{version} from the shaded jar.
+[INFO] Including commons-collections:commons-collections:jar:3.2.1 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing ~/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT.jar
+   with ~/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT-shaded.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------

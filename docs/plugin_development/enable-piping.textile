@@ -1,0 +1,119 @@
+---
+layout: docs
+title: Enable Piping between Commands
+index: 6
+---
+
+h1. Enable Piping between Commands
+
+Much like a standard UNIX-style shell, the Forge shell supports piping IO between executables; however in the case of forge, piping actually occurs between plugins, commands, for example:
+
+bc(command). $ cat /home/username/.forge/config | grep automatic
+@/* Automatically generated config file */;
+
+p. This might look like a typical BASH command, but if you run forge and try it, you may be surprised to find that the results are the same as on your system command prompt, and in this example, we are demonstrating the pipe: '|'
+
+In order to enable piping in your plugins, you must use one or both of the @@PipeIn InputStream stream@ or @PipeOut out@ command arguments. Notice that @PipeOut@ is a java type that must be used as a Method parameter, whereas @@PipeIn@ is an annotation that must be placed on a Java @@PipeIn InputStream stream@ or @@PipeIn String in@ Method parameter.
+
+@PipeOut out@ - by default - is used to print output to the shell console; however, if the plugin on the left-hand-side is piped to a secondary plugin on the command line, the output will be written to the @@PipeIn InputStream stream@ of the plugin on the right-hand-side:
+
+bc(command). $ left | right
+
+p. Or in terms of pipes, this could be thought of as a flow of data from left to right:
+
+bc(command). $ PipeOut out -> @PipeIn InputStream stream
+
+p. Notice that you can pipe output between any number of plugins as long as each uses both a {{@PipeIn InputStream}} and {{PipeOut}}:
+
+bc(command). $ first command | second command | third command
+
+
+bc(prettyprint linenums).. @Command("example-command")
+   public void exampleCommand(
+            @PipeIn final InputStream in,
+            @Option(required = false) final boolean option,
+            PipeOut out)
+   { ... }
+
+p. 
+
+bc(prettyprint linenums).. @Command("example-command")
+   public void exampleCommand(
+            @PipeIn final String in,
+            @Option(required = false) final boolean option,
+            PipeOut out)
+   { ... }
+
+p. Take the @grep@ command itself, for example, which supports two methods of invocation: Invocation on one or more @Resource<?>@ objects, or invocation on a piped @InputStream@.
+
+div(alert alert-success). If no piping is invoked (e.g: via standalone execution of the plugin), a piped {{InputStream}} will be null. In addition, piped {{InputStream}}s do not need to be closed; Forge will handle cleanup of these streams.
+
+bc(prettyprint linenums).. @Alias("grep")
+@Topic("File & Resources")
+@Help("print lines matching a pattern")
+public class GrepPlugin implements Plugin
+{
+   @DefaultCommand
+   public void run(
+         @PipeIn final InputStream pipeIn,
+         @Option(name = "ignore-case", shortName = "i", flagOnly = true) boolean ignoreCase,
+         @Option(name = "regexp", shortName = "e") String regExp,
+         @Option(description = "PATTERN") String pattern,
+         @Option(description = "FILE ...") Resource<?>[] resources,
+         final PipeOut pipeOut
+   ) throws IOException
+   {
+      Pattern matchPattern = /* determine pattern (omitted for space) */;
+
+      if (resources != null) {
+
+         /* User passed file(s) on the command line; grep those. */
+
+         for (Resource<?> r : resources) {
+            InputStream inputStream = r.getResourceInputStream();
+            try {
+               match(inputStream, matchPattern, pipeOut, ignoreCase);
+            }
+            finally {
+               inputStream.close();
+            }
+         }
+      }
+      else if (pipeIn != null) {
+
+         /* No files were passed on the command line; check for a
+          * piped InputStream and use that.
+          */
+
+         match(pipeIn, matchPattern, pipeOut, ignoreCase);
+      }
+      else {
+
+         /* No input was passed to the plugin. */
+
+         throw new RuntimeException("Error: arguments required");
+      }
+   }
+
+   private void match(InputStream instream, Pattern pattern, PipeOut pipeOut, boolean caseInsensitive) throws IOException {
+      StringAppender buf = new StringAppender();
+
+      int c;
+      while ((c = instream.read()) != -1) { /* Read from the given stream. */
+         switch (c) {
+         case '\r':
+         case '\n':
+            String s = caseInsensitive ? buf.toString().toLowerCase() : buf.toString();
+
+            if (pattern.matcher(s).matches()) {
+               pipeOut.println(s); /* Write to the output pipe. */
+            }
+            buf.reset();
+            break;
+         default:
+            buf.append((char) c);
+            break;
+         }
+      }
+   }
+}

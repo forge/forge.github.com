@@ -1,0 +1,95 @@
+---
+layout: docs
+title: Contribute or Get Involved
+index: 0
+---
+
+h1. Contribute or Get Involved
+
+h2. Build Forge from source
+
+Got an idea? Want to get your feet wet? Do some "ForgeStorming":https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&jqlQuery=project+%3D+FORGE+AND+status+in+%28Open%2C+%22Coding+In+Progress%22%2C+Reopened%2C+Resolved%2C+%22Pull+Request+Sent%22%29+ORDER+BY+priority+DESC 
+
+bq. def: forgestorm (v.) [for-ge-st-orm] - The act of brainstorming when applied to Forge; create or grab an "existing issue":https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&jqlQuery=project+%3D+FORGE+AND+status+in+%28Open%2C+%22Coding+In+Progress%22%2C+Reopened%2C+Resolved%2C+%22Pull+Request+Sent%22%29+ORDER+BY+priority+DESC, and see what can be done!
+
+1. Check out the code:
+
+bc(command). git clone git://github.com/forge/core.git forge
+
+2. 'cd' into the project directory:
+
+bc(command). cd forge
+
+3. Build the code (requires maven, or run from within an existing Forge installation):
+
+bc(command). mvn clean install
+
+4. "Install":../using/index.html the resulting zip file, or use the provided convenience script for installing a distribution (*power users only*):
+
+bc(command). chmod a+x forge-install.bsh
+./forge-install.bsh dist/target/forge-distribution-1.0.0-SNAPSHOT.zip
+
+5. Execute Forge:
+
+bc(command). forge
+
+h2. Share your work (send a pull request)
+
+div(alert alert-info). Before you begin, we recommend that you configure Git to "automatically rebase merge-commits":http://www.viget.com/extend/only-you-can-prevent-git-merge-commits/, otherwise you may have to deal with noise in the commit logs.
+
+1. Fork the repository on GitHub: [http://github.com/forge/core|http://github.com/forge/core] and clone it to your local PC
+
+bc(command). git clone git@github.com:{your user}/{your forge repo}.git
+
+2. If you haven't done so already, sign the JBoss CLA: "https://cla.jboss.org/":https://cla.jboss.org/
+
+3. Create an issue in the "issue tracker":https://issues.jboss.org/browse/FORGE
+
+4. Create a branch for your issue, where XX is the issue number:
+
+bc(command). git branch FORGE-XX
+git checkout FORGE-XX
+
+5. Make your changes and *write unit tests* for them.
+
+6. Commit your changes
+
+bc(command). git add -A
+git commit -m "Implemented FORGE-XX"
+
+7. Add the forge/core repository as a remote repository (this only needs to happen once.)
+
+bc(command). git remote add upstream git://github.com/forge/core.git
+
+8. Pull from upstream and fix any merge conflicts you may have locally:
+
+bc(command). git pull upstream master
+
+9. If you made multiple commits, or if there were any merge commits created when you pulled from upstream, use rebase to squash them into a single commit, where 5 is the number of commits to rebase:
+
+bc(command). git rebase -i HEAD~5
+
+Change 'pick' to 's' for each commit you wish to squash upwards. (If you do not change a line, it will not be modified.)
+
+pre.   1 pick ade2b1a Implemented FORGE-XX
+  2 s c3ae0a2 almost done
+  3 s c863bfb did more work
+  4 s af793ae Started working on FORGE-XX
+  5 pick 368bbb9 Previous commit written by someone else
+
+Once you are done, your commits should look like this:
+
+pre.   1 ade2b1a Implemented FORGE-XX
+  2 368bbb9 Previous commit written by someone else
+
+You can view your commits by typing 'git log'.
+
+10. Push to your branch:
+
+bc(command). git push origin FORGE-XX
+
+11. Submit a pull request from your branch.  The pull request should include one single commit changing all of your  changes. If you have more than one commit, then you did not rebase  correctly.
+
+bc(command). http://github.com/{your user}/{your forge repo}/tree/{FORGE-XX}
+
+12. Link the pull request to the JIRA via Workflow -> Link Pull Request

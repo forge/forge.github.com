@@ -1,0 +1,53 @@
+---
+layout: docs
+title: Add Commands to your Plugin
+index: 4
+---
+
+h1. Add Commands to your Plugin
+
+Now that you have implemented the @Plugin@ interface, it's time to add some functionality. This is done by adding "Commands" to your plugin class. Commands are plain Java methods in your plugin Class. Plugin methods must be annotated as either a @@DefaultCommand@, the method to be invoked if the plugin is called by name (with no additional commands), or @@Command("...")@, in which case the plugin name and command name must both be used to invoke the method.
+
+Commands also accept @@Options@ parameters as arguments. These are described in detail later in this section.
+
+
+h2. Default commands
+
+Default commands must be annotated with @@DefaultCommand@, and are not named; you may still provide help text or command metadata. Each plugin may have only one @@DefaultCommand@.
+
+The following default command would be executed by executing the plugin by its name:
+
+bc(prettyprint linenums).. public class ExamplePlugin implements Plugin {
+   @DefaultCommand
+   public void exampleDefaultCommand( @Option String opt, PipeOut out) {
+      out.println(">> invoked default command with option value: " + opt);
+      // this method will be invoked, and 'opt' will be passed from the command line
+      // 'out' is your handle to this plugin's output stream.
+   }
+}
+
+bc(command). $ exampleplugin some-input
+
+p. In this case, the value of @opt@ will be "some-input". @@Options@ are described in detail later in this section.
+
+
+h2. Named commands
+
+Named commands must, to little surprise, be given a name with which they are invoked. This is done by placing the {{@Command("...")}} annotation on a public Java method in your {{Plugin}} class.
+
+The following command would be executed by executing the plugin by its name, followed by the name of the command:
+
+bc(prettyprint linenums).. public class ExamplePlugin implements Plugin {
+   @Command("perform")
+   public void exampleCommand( @Option String opt, PipeOut out) {
+       out.println(">> the command \"perform\" was invoked with the value: " + opt);
+   }
+}
+
+bc(command). $ exampleplugin perform
+>> the command "perform" was invoked with the value: null{code}
+
+
+p. Notice that our command method has a parameter called @PipeOut@ in addition to our 'opt' parameter. @PipeOut@ is a special parameter, which can be placed in any order. It provides access to a variety of shell output functions, including enabling color and controlling piping between plugins.
+
+Along with @PipeOut@, there is also a @@PipeIn InputStream stream@ annotation, which is used to inject a piped input stream (output from another Plugin's @PipeOut@.) These concepts will be described more in the section on piping, but for now, you should just know that @PipeOut@ is used to write output to the Forge console.

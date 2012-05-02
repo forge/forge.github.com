@@ -1,0 +1,9 @@
+---
+layout: docs
+title: Affiliation
+index: 99
+---
+
+h1. Affiliation
+
+This reference guide was written for Forge: a tool from JBoss by Red Hat, Inc.

@@ -1,0 +1,54 @@
+---
+layout: docs
+title: FAQ
+index: 98
+---
+
+h1. FAQ
+
+# "How is forge different from Spring Roo":faq.html#roo
+# "﻿How is Forge different from seam-gen":faq.html#seam-gen
+# "I found an issue, where can I report it?":faq.html#issue
+# "How can I contribute to forge?":faq.html#contribute
+
+<a name="roo">
+</a>
+
+h3. ﻿How is Forge different from Spring Roo?
+
+The tools are similar in the way that they are both command line tools that help setting up and configuring a project, and both have the ability to generate code. There are some major design differences however:
+
+1) Forge is designed to be used on any kind of Maven project. Roo is pretty much tied to Spring. Because Forge is more general you can find or write plugins for any kind of technology that you use in projects. This is also true for Roo, but only technology on top of Spring. You could say that Forge is a (more) generic framework for building plugins that work on Maven projects, while Roo is (just) a Spring tool.
+
+2) Roo is also a programming framework, not only a tool. The code generation makes heavy use of AspectJ to make the code generation almost invisible to the programmer, and gives features that are otherwise only found in frameworks based on dynamic languages (e.g. dynamic finder methods on entities). This can be both a good and a bad thing. It's good because it's powerful and more elegant because you don't "see" the generated code. The bad point is that it gives a massive lock-in on Roo. This is technically not true, because it's just "plain" AspectJ, but it's far from normal Java/Spring code. AspectJ also doesn't work well in all IDEs (Eclipse and IntelliJ are fine). Because of this programming model I would never use Roo. If I want a framework with dynamic language features I use Grails, not something halfway there. Of course this is just my personal opinion.
+
+Code generation in Forge is more of the traditional kind, with all its flaws, but you will never lock into anything non-standard. The built-in code generation is based on plain Java EE 6.
+
+<a name="seam-gen">
+</a>
+
+h3. ﻿How is Forge different from seam-gen?
+
+* seam-gen was oriented at Seam 2; Forge at standard Java EE 6 and Java SE projects.
+* seam-gen is a batch process built over Ant; Forge is an interactive shell built over Maven.
+* seam-gen is a one-time generation; Forge allows you to add new Entities, fields within them, and so on, at any time.
+
+In fact, Forge is much more dynamic, allowing you to load new plug-ins while running, and extend the framework with any functionality that can be written in Java.
+
+<a name="issue">
+</a>
+
+h3. I found an issue, where can I report it?
+
+Create an issue in the "issue tracker":https://issues.jboss.org/browse/FORGE
+
+<a name="contribute">
+</a>
+
+h3. How can I contribute to forge?
+
+Forge is entirely plug-in based. To write your own plug-in, see "this":../plugin_development/index.html.
+
+More generally, see "this":../get_involved/contribute.html
+
+Please give a link to the forge community rules.

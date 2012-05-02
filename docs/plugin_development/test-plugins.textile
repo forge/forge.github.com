@@ -1,0 +1,84 @@
+---
+layout: docs
+title: Test your Plugin
+index: 8
+---
+
+h1. Test your Plugin
+
+When developing plugins, it is recommended to use the provide Unit and Integration Test Harness (based on "Arquillian":http://www.jboss.org/arquillian.) Not only do your plugin's Unit and Integration tests ensure that your plugin will function on your computer, but because tests are run when plugins are _installed_ into a Forge runtime, they also ensure that your plugin will function on your users computers.
+
+h2. Install the Test Harness
+
+This step should already have been completed if you used the 'plugins setup' command in the section titled: [Reference the Forge APIs]. If not, paste the following dependencies into your pom.xml file.
+
+
+bc(prettyprint linenums).. <dependency>
+    <groupId>org.jboss.forge</groupId>
+    <artifactId>forge-test-harness</artifactId>
+    <version>${forge.api.version}</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.forge</groupId>
+    <artifactId>forge-shell</artifactId>
+    <version>${forge.api.version}</version>
+    <scope>test</scope>
+</dependency>
+
+h2. Extend AbstractShellTest or SingletonAbstractShellTest
+
+AbstractShellTest boots the Shell for each individual test method, while SingletonAbsractShellTest boots the Shell only once per test class, where each method operates on the same instance.
+
+bc(prettyprint linenums).. package com.example.plugin;
+
+import javax.inject.Inject;
+
+import org.jboss.arquillian.api.Deployment;
+import org.jboss.forge.project.Project;
+import org.jboss.forge.project.dependencies.DependencyResolver;
+import org.jboss.forge.test.AbstractShellTest;
+import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class ExamplePluginTest extends AbstractShellTest
+{
+   // Notice that you may use injection to do verification of the internal state of the system.
+   // Or to perform additional operations.
+   @Inject
+   private DependencyResolver resolver;
+
+   @Deployment
+   public static JavaArchive getDeployment()
+   {
+      // The deployment method is where you must add references to your classes, packages, and
+      // configuration files, via  Arquillian.
+      return AbstractShellTest.getDeployment().addPackages(true, ExamplePlugin.class.getPackage());
+   }
+
+   @Test
+   public void testInstallPrettyfaces() throws Exception
+   {
+      // Create a new barebones Java project
+      Project p = initializeJavaProject();
+
+      // Queue input lines to be read as the Shell executes.
+      queueInputLines("y");
+
+      // Execute a command. If any input is required, it will be read from queued input.
+      getShell().execute("echo hi there");
+
+      Assert.assertNotNull(resolver);
+   }
+}
+
+h2. Run your Build
+
+If done properly, you should now see your test execute during the Plugin build lifecycle.
+
+bc(command). $ build
+
+h2. Write more tests
+
+The more tests, the merrier! Tests make happy code.

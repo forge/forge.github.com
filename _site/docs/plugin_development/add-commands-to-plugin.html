@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>JBoss Forge | Add Commands to your Plugin</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          padding-top: 60px;
+        }
+      /*]]>*/
+    </style>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+    <script src='/javascripts/bootstrap.min.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(document).ready(function() {
+          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+          prettyPrint();
+        });
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='/index.html'>JBoss Forge</a>
+          <div class='nav-collapse'>
+            <ul class='nav'>
+              <li>
+                <a href='/index.html'>Home</a>
+              </li>
+              <li>
+                <a href='/docs/index.html'>Documentation</a>
+              </li>
+              <li>
+                <a href='https://community.jboss.org/en/forge'>Forums</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='content'>
+      <script type='text/javascript'>
+        //<![CDATA[
+          $(document).ready(function() {
+            var pathname = window.location.pathname;
+            console.log(pathname);
+            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+          });
+        //]]>
+      </script>
+      <div class='container-fluid'>
+        <div class='row-fluid'>
+          <div class='span2'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>Using Forge</li>
+              <li>
+                <a href='/docs/using/'>Installation</a>
+              </li>
+              <li>
+                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+              </li>
+              <li>
+                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href='/docs/using/samples.html'>Samples</a>
+              </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href='/docs/using/debuggin-foge.html'>Debugging Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/faq.html'>FAQ</a>
+              </li>
+              <li>
+                <a href='/docs/using/affiliation.html'>Affiliation</a>
+              </li>
+              <li class='nav-header'>Get involved</li>
+              <li>
+                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+              </li>
+              <li class='nav-header'>Important plugins</li>
+              <li>
+                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/seam.html'>Seam</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+              </li>
+              <li class='nav-header'>Developing plugins</li>
+              <li>
+                <a href='/docs/plugin_development/'>Developing a plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class='span10'>
+            <h1>Add Commands to your Plugin</h1>
+            <p>Now that you have implemented the <code>Plugin</code> interface, it&#8217;s time to add some functionality. This is done by adding &#8220;Commands&#8221; to your plugin class. Commands are plain Java methods in your plugin Class. Plugin methods must be annotated as either a <code>@DefaultCommand</code>, the method to be invoked if the plugin is called by name (with no additional commands), or <code>@Command("...")</code>, in which case the plugin name and command name must both be used to invoke the method.</p>
+            <p>Commands also accept <code>@Options</code> parameters as arguments. These are described in detail later in this section.</p>
+            <h2>Default commands</h2>
+            <p>Default commands must be annotated with <code>@DefaultCommand</code>, and are not named; you may still provide help text or command metadata. Each plugin may have only one <code>@DefaultCommand</code>.</p>
+            <p>The following default command would be executed by executing the plugin by its name:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @DefaultCommand&#x000A;   public void exampleDefaultCommand( @Option String opt, PipeOut out) {&#x000A;      out.println("&gt;&gt; invoked default command with option value: " + opt);&#x000A;      // this method will be invoked, and 'opt' will be passed from the command line&#x000A;      // 'out' is your handle to this plugin's output stream.&#x000A;   }&#x000A;}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin some-input</code></pre>
+            <p>In this case, the value of <code>opt</code> will be &#8220;some-input&#8221;. <code>@Options</code> are described in detail later in this section.</p>
+            <h2>Named commands</h2>
+            <p>Named commands must, to little surprise, be given a name with which they are invoked. This is done by placing the {{@Command(&#8220;&#8230;&#8221;)}} annotation on a public Java method in your {{Plugin}} class.</p>
+            <p>The following command would be executed by executing the plugin by its name, followed by the name of the command:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand( @Option String opt, PipeOut out) {&#x000A;       out.println("&gt;&gt; the command \"perform\" was invoked with the value: " + opt);&#x000A;   }&#x000A;}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin perform&#x000A;&gt;&gt; the command "perform" was invoked with the value: null{code}</code></pre>
+            <p>Notice that our command method has a parameter called <code>PipeOut</code> in addition to our &#8216;opt&#8217; parameter. <code>PipeOut</code> is a special parameter, which can be placed in any order. It provides access to a variety of shell output functions, including enabling color and controlling piping between plugins.</p>
+            <p>Along with <code>PipeOut</code>, there is also a <code>@PipeIn InputStream stream</code> annotation, which is used to inject a piped input stream (output from another Plugin&#8217;s <code>PipeOut</code>.) These concepts will be described more in the section on piping, but for now, you should just know that <code>PipeOut</code> is used to write output to the Forge console.</p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <footer>
+        <p>&copy; JBoss 2012</p>
+      </footer>
+    </div>
+  </body>
+</html>

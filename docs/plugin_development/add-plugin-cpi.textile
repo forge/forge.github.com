@@ -1,0 +1,58 @@
+---
+layout: docs
+title: Add your Plugin to the Central Plugin Index
+index: 11
+---
+
+h1. Add your Plugin to the Central Plugin Index (CPI)
+
+Forge incorporates the concept of a "plugin market" for conveniently searching and installing available plugins, but in order to take advantage of this, you must first register your plugin in the Central Plugin Index.
+
+h2. What is the Central Plugin Index?
+
+The Central Plugin Index (CPI) is a listing of known plugins for Forge to be able to download and install. There are currently two supported methods of "Making your Plugin available to Forge":make-plugin-available.html. You can host project sources that must be manually downloaded, unzipped and installed, or plugins may be automatically downloaded and installed from a Git repository.
+
+We strongly recommend using a public git repository to host your plugin, since it promotes sharing and collaboration. It's more likely that someone will contribute back to your project if they automatically have access to your sources, and have a path to contribute back.
+
+The CPI file itself is hosted on GitHub, and is structured with the YAML format; this is what the CPI file looks like:
+
+bc(command). ---
+name: jboss-arquillian
+author: Paul Bakker <paul.bakker.nl@gmail.com>
+website: http://www.jboss.org/arquillian
+description: Integration Testing Framework
+artifact: org.arquillian.forge:arquillian-plugin:1.0.0-SNAPSHOT
+gitrepo: git://github.com/forge/plugin-arquillian.git
+tags: arquillian, jboss, testing, junit, testng, integration testing, tests, CDI, java ee
+---
+name: seam-jms
+author: John Ament
+website: http://seamframework.org/Seam3/JMSModule
+description: Seam JMS Plugin
+artifact: org.jboss.seam.jms:seam-jms-forge-plugin:1.0.0-SNAPSHOT
+gitrepo: git://github.com/forge/plugin-seam-jms.git
+tags: seam, jms, mq, messaging, jboss
+---
+
+h2. Adding your Plugin to the Central Plugin Index
+
+div(alert alert-info). *Before you continue*
+In order to ensure compatibility with  the latest Forge release versions - you *MUST* update your Plugin  to use the corresponding "Forge API version":https://github.com/forge/core/tags. You should also create a git branch in your Plugin repository - the name of this branch should be *exactly the same* as the Forge API version you wish to support. *Repeat this task for each Forge API version you wish to support.*
+We  recommend using branches instead of tags, because branches allow bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.
+
+Since the CPI file is hosted in GitHub, the method for adding a plugin is to fork the CPI repository: https://github.com/forge/plugin-repository, add or update your entry, and send a pull request.
+
+bc(command). git clone git://github.com/forge/plugin-repository.git
+cd plugin-repository/
+# add or edit your plugin entry
+git add repository.yaml
+git commit -m "Added ExamplePlugin Entry"
+
+We *strongly* recommend using GitHub to host your plugin, since it makes Forking and sending Pull Requests _much_ easier than using the Git command line: http://help.github.com/send-pull-requests/
+
+
+Once our Plugin team has verified that your meta-information is correct, and tested your plugin for compatibility, we will merge your request; your plugin will be available to users who type:
+
+@$ forge find-plugin *@
+
+If you need instruction in Git, we recommend reading "Pro Git":http://progit.org/book/.

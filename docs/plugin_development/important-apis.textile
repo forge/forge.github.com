@@ -1,0 +1,117 @@
+---
+layout: docs
+title: Important APIs
+index: 12
+---
+
+h1. Important APIs
+
+h2. Dependency Facet
+
+A lot of Forge plugins make it easy to install extra libraries or frameworks to your project. In a Maven project this almost always result in adding new dependencies to your POM by copy pasting from some website. Make installing a framework easier by letting Forge do the POM work for the user.&nbsp;
+
+h3. Creating dependencies
+
+Dependencies can easily be created using the DependencyBuilder.
+
+bc(prettyprint linenums).. Dependency dep = DependencyBuilder.create()
+                      .setGroupId("my.group.id")
+                      .setArtifactId("artifact-id")
+                      .setVersion("1.0")
+                      .setScopeType(ScopeType.PROVIDED);
+
+p. The Dependency class is also input for many other Forge APIs.
+
+h3. Prompting for versions
+
+Of course it's a bad idea to couple your plugin directly to a specific version of the Maven dependency. To let the user choose a version Forge can list all available versions in the repository and prompt the user.
+
+bc(prettyprint linenums).. DependencyFacet dependencyFacet = project.getFacet(DependencyFacet.class);
+Dependency myDep = DependencyBuilder.create()
+                .setGroupId("commons-httpclient")
+                .setArtifactId("commons-httpclient");
+List<Dependency> versions = dependencyFacet.resolveAvailableVersions(myDep);
+Dependency dependency = shell.promptChoiceTyped("What version do you want to install?", versions);
+
+p. You can also limit the versions using a range:
+
+bc(prettyprint linenums).. dependencyFacet.resolveAvailableVersions("org.jboss.forge:example:[1.0.0,)");
+
+dependencyFacet.resolveAvailableVersions("org.jboss.forge:example:(1.0.0,3.0.0]");
+
+h3. Adding a dependency to the POM
+
+Now that we have our dependency we can add it to the POM file. Maven supports different ways to work with plugin; you can either have _managed_ dependencies or _direct_ dependencies. Managed dependencies are an indirection where you specify the version of a dependency in the parent POM. For multi-module projects this is often preferred. Forge can do both however.
+
+bc(prettyprint linenums).. dependencyFacet.addDirectDependency(Dependency dep);
+dependencyFacet.addManagedDependency(Dependency dep);
+
+h2. Maven Plugin Facet
+
+A little more advanced is creating Maven Plugin configuration from your plugin.
+First of all your plugin needs the forge-maven-api.
+
+bc(prettyprint linenums).. <dependency>
+    <groupId>org.jboss.forge</groupId>
+    <artifactId>forge-maven-api</artifactId>
+    <version>${forge.version}</version>
+    <scope>provided</scope>
+</dependency>
+
+h3. Creating a plugin
+
+Now let's start building the plugin. You use the MavenPluginBuilder for this. First of all a plugin needs a dependency (group id and artifact id).
+
+bc(prettyprint linenums).. DependencyBuilder findbugsDependencyBuilder = DependencyBuilder.create()
+              .setGroupId("org.codehaus.mojo")
+              .setArtifactId("findbugs-maven-plugin");
+
+MavenPluginBuilder findbugsPlugin = MavenPluginBuilder.create()
+              .setDependency(findbugsDependency)
+
+h3. Add a plugin to the POM
+
+After building a plugin you can add it to the POM.
+
+bc(prettyprint linenums).. MavenPluginFacet pluginFacet = project.getFacet(MavenPluginFacet.class);
+pluginFacet.addPlugin(findbugsPlugin);
+
+h3. Plugin Configuration
+
+Most Maven plugins need some kind of configuration. Each configuration element is also a XML element in the POM and can potentialy be deeply nested. This makes the API a little tricky to work with, so try to make small steps.
+
+So for example, let's add a xmlOutput configuration element to the plugin.
+
+bc(prettyprint linenums).. MavenPluginBuilder findbugsPlugin = MavenPluginBuilder.create()
+              .setDependency(findbugsDependency)
+              .createConfiguration()
+              .createConfigurationElement("xmlOutput")
+              .setText("true").getParentPluginConfig().getOrigin();
+
+h2. Resource Facet
+
+The Resource Facet gives access to resources (files) in a project. It understands the Maven directory structure (e.g. src/test/resources).
+
+bc(prettyprint linenums).. FileResource<?> resource = (FileResource<?>) resources.getTestResourceFolder().getChild("example.xml");
+
+resource.setContents("new string");
+
+h2. XML parsing and generation
+
+Many plugins will have to read/write XML files (e.g. to generate configuration files). Forge has a convenient XML API.
+
+bc(prettyprint linenums).. Node xml = XMLParser.parse(resource.getResourceInputStream());
+Node config = xml.getOrCreate("someelement");
+config.createChild("sub").createChild("property@name=test").text("hello");
+
+resource.setContents(XMLParser.toXMLString(xml));
+
+p. This will result in the following XML:
+
+bc(prettyprint linenums).. <someelement>
+  <sub>
+     <property name="test">hello</property>
+  </sub>
+</someelement>
+
+h2. Code templates

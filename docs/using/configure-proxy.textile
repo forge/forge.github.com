@@ -1,0 +1,41 @@
+---
+layout: docs
+title: Configure HTTP Proxy
+index: 4
+---
+
+h1. Configure HTTP Proxy
+
+If you are behind a firewall and require the use of an HTTP Proxy, you must configure several settings in Forge and Maven:
+
+1. Open the user configuration in ~/.forge/config.xml (located in your home directory.)
+
+2. Add the 'proxy' tag and required information:
+
+bc(prettyprint linenums).. <proxy>
+  <host>proxy-host-name</host>
+  <port>proxy-port</port>
+  <!-- The entries below are necessary only if your proxy needs authentication -->
+  <username>proxy-user-name</username>
+  <password>proxy-password</password>
+</proxy>
+
+p. 3. Set up the proxy information in your Maven settings.xml. For detailed instructions, follow the Maven proxy guide "here":http://maven.apache.org/guides/mini/guide-proxies.html.
+
+bc(prettyprint linenums).. <settings>
+ <proxies>
+  <proxy>
+   <active>true</active>
+   <protocol>http</protocol>
+   <host>proxy.somewhere.com</host>
+   <port>8080</port>
+   <username>proxyuser</username>
+   <password>somepassword</password>
+   <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
+  </proxy>
+ </proxies>
+</settings>
+
+p. 4. Restart Forge
+
+Once the above steps have been completed, you may use Forge in your corporate environment

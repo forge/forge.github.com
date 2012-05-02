@@ -1,0 +1,37 @@
+---
+layout: docs
+title: Debugging Forge
+index: 5
+---
+
+h1. Debugging Forge
+
+h2. Forge logfiles
+
+As of CR1 (and SNAPSHOTS since Beta5,) Forge produces a debug logfile located at:
+
+bc(command). $HOME/.forge/runtime.log
+
+h2. Enable debug mode
+
+In order to debug a "live" Forge installation, you need to set the following FORGE_OPTS (JVM arguments) in your console before starting Forge (this does not work when running Forge in the IDE - it must be run from the command line).
+
+For Unix:
+
+bc(command). export FORGE_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
+
+p. For Windows (note no quotes):
+
+bc(command). set FORGE_OPTS=-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+
+p. Then run Forge. If you've done this step correctly, Java should state that it is waiting for the debugger to attach on port 8000.
+
+h2. Connect the debugger
+
+If you are using Eclipse, in addition to having the "Forge sources":http://github.com/forge/core imported as projects in your workspace, you will need to create a new project (for this example, call it 'maven-debug'), then right-click on that project, and click "Debug as -> Remote Java Application"
+
+Make sure the remote debugger port is set to 8000 (or the port you've selected,) much like "debugging Maven":http://docs.codehaus.org/display/MAVENUSER/Dealing+with+Eclipse-based+IDE.
+
+h2. Attach the sources
+
+If Eclipse complains that it cannot find the source attachment for a breakpoint, make sure to add all related Forge projects as source attachments to your new 'maven-debug' project by clicking the "Attach Sources" button.

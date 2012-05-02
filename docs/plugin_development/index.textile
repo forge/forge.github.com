@@ -1,0 +1,13 @@
+---
+layout: docs
+title: Developing a plugin
+index: 0
+---
+
+h1. Developing a Plugin
+
+Part of Forge's architecture is to allow extensions to be created with extreme ease. This is done using the same programming model that you would use for any CDI or Java EE application, and you should quickly recognize the annotation-driven patterns and practices applied.
+
+A Forge plugin could be as simple as a tool to print files to the console, or as complex as deploying an application to a server, 'tweet'ing the status of your latest source-code commit, or even sending commands to a home-automation system; the sky is the limit\!
+
+"Get started now!":reference-forge-api.html

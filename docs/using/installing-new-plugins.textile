@@ -1,0 +1,110 @@
+---
+layout: docs
+title: Installing new Plugins
+index: 1
+---
+
+h1. Installing new Plugins
+
+One of the best features of Forge is the ability to install third-party plugins, adding features or behavior that do not come standard in Forge itself. Installing plugins is easy, and takes only a few moments - it should feel familiar, since it was designed after the "App Store" concept, and uses Unix package-manager style commands.
+
+h2. Find a Plugin in the Central Plugin Index (CPI)
+
+Finding a plugin is simple, just choose a search term - "jsf", JavaServer Faces, for example - and pass that term to the "forge find-plugin" command.
+
+bc(command). $ forge find-plugin jsf
+
+Which results in:
+
+bc(output).. [no project] ~/Desktop $ forge find-plugin jsf
+Connecting to remote repository [https://raw.github.com/forge/plugin-repository/master/repository.yaml]... connected!
+ 
+ - richfaces (org.jboss.seam.persistence:plugin-seam-persistence:::1.0.0-SNAPSHOT)
+    Author: Brian Leathem <bleathem@gmail.com>
+    Website: http://www.jboss.org/richfaces/
+    Location: git://github.com/forge/plugin-richfaces.git
+    Tags: jsf, jsf2, richfaces, component library, jboss
+    Description: RichFaces Plugin - Streamlines installation of the JBoss RichFaces component library for JSF
+ 
+ - prettyfaces (com.ocpsoft.forge:prettyfaces-plugin:::1.0.0.Alpha4)
+    Author: Lincoln Baxter, III <lincoln@ocpsoft.com>
+    Website: http://ocpsoft.com/prettyfaces/
+    Location: git://github.com/ocpsoft/prettyfaces-forge-plugin.git
+    Tags: url-rewrite, urlrewrite, prettyfaces, servlet, javaee, java ee, jsf, jsf2, ocpsoft
+    Description: PrettyFaces Plugin - Streamlines installation of the OCPSoft PrettyFaces URL-rewriting library
+                 for Servlet, Java EE, and JSF. Also provides streamlined commands for generating configuration
+                 and URL-mappings.
+ 
+[no project] ~/Desktop $
+
+p. This provides a list of all available plugins matching your search term.
+
+h2. Installing a Plugin from the Central Plugin Index (CPI)
+
+Once you have found a plugin you'd like to install, you must type the "forge install-plugin" command, passing the name of the plugin you'd like to install:
+
+bc(output).. [no project] Desktop $ forge install-plugin richfaces
+Connecting to remote repository [https://raw.github.com/forge/plugin-repository/master/repository.yaml]... connected!
+***INFO*** Preparing to install plugin: richfaces
+***INFO*** Checking out plugin source files to [/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo] via 'git'
+***INFO*** Invoking build with underlying build system.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building richfaces-forge-plugin 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ richfaces-forge-plugin ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ richfaces-forge-plugin ---
+[INFO] Copying 5 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ richfaces-forge-plugin ---
+[INFO] Compiling 3 source files to /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.4.3:testResources (default-testResources) @ richfaces-forge-plugin ---
+[INFO] skip non existing resourceDirectory /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ richfaces-forge-plugin ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- maven-surefire-plugin:2.7.1:test (default-test) @ richfaces-forge-plugin ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/surefire-reports
+ 
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+ 
+Results :
+ 
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+ 
+[INFO]
+[INFO] Building jar: /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/richfaces-forge-plugin-1.0.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.565s
+[INFO] Finished at: Thu Aug 04 13:32:34 EDT 2011
+[INFO] Final Memory: 10M/81M
+[INFO] ------------------------------------------------------------------------
+***SUCCESS*** Build successful.
+***INFO*** Installing plugin artifact.
+***SUCCESS*** Installed from [git://github.com/forge/plugin-richfaces.git] successfully.
+***INFO*** Please restart Forge to complete plugin installation.
+Wrote /var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/pom.xml
+Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/1.0.0-SNAPSHOT/richfaces-forge-plugin.jar
+Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/1.0.0-SNAPSHOT/module.xml
+Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/dependencies/1.0.0-SNAPSHOT/module.xml
+Wrote ~/.forge/plugins/org/jboss/forge/plugins/main/module.xml
+[no project] Desktop $
+
+h2. Remove a Plugin
+
+If you ever need to remove a plugin, you may type the "forge remove-plugin" command, which supports <TAB> auto-completion. Repeat this process for each plugin you wish to remove.
+
+bc(output).. [no project] Desktop $ forge remove-plugin org.jboss.forge.seam.persistence.plugin-seam-persistence:1.0.0-SNAPSHOT
+***SUCCESS*** Removed org.jboss.forge.seam.persistence.plugin-seam-persistence:1.0.0-SNAPSHOT
+[no project] Desktop $

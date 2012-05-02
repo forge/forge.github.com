@@ -1,0 +1,34 @@
+---
+layout: base
+---
+:javascript
+  $(document).ready(function() {
+    var pathname = window.location.pathname;
+    console.log(pathname);
+    $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+    $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+  });
+
+
+.container-fluid
+  .row-fluid   
+    .span2
+      %ul.nav.nav-list
+        %li.nav-header Using Forge
+        - for doc in site.docs_using
+          %li
+            %a{ :href=>doc.url}= doc.title        
+        %li.nav-header Get involved
+        - for doc in site.docs_get_involved
+          %li
+            %a{ :href=>doc.url}= doc.title        
+        %li.nav-header Important plugins
+        - for doc in site.docs_important_plugins
+          %li
+            %a{ :href=>doc.url}= doc.title
+        %li.nav-header Developing plugins
+        - for doc in site.docs_plugin_development
+          %li
+            %a{ :href=>doc.url}= doc.title
+    .span10 
+      ~ content

@@ -1,0 +1,129 @@
+---
+layout: docs
+title: Arquillian Testing
+index: 0
+---
+
+h1. Arquillian Testing
+
+h2. Introduction
+
+"Arquillian":http://arquillian.org makes it easy to run automated tests in a container. If you haven't heard about Arquillian yet, you should have a look at "one of the videos":http://vimeo.com/22696384.
+
+One of the cool things about Arquillian is that you can run tests in many different containers ranging from full blown Java EE6 application servers to an embedded CDI container or Tomcat. Unfortunately this flexibility comes with a configuration price. For each container you have to create a Maven profile with a set of dependencies and some container specific configuration. A typical POM file with Arquillian could look as follows.
+
+bc(prettyprint linenums).. <dependencies>
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <artifactId>shrinkwrap-descriptors-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.protocol</groupId>
+            <artifactId>arquillian-protocol-servlet</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <!-- all tests are failing -->
+            <id>arq-jbossas-managed-7</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.as</groupId>
+                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.spec</groupId>
+                    <artifactId>jboss-javaee-web-6.0</artifactId>
+                    <type>pom</type>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <!-- all tests are failing -->
+            <id>arq-jbossas-remote-7</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.as</groupId>
+                    <artifactId>jboss-as-arquillian-container-remote</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.spec</groupId>
+                    <artifactId>jboss-javaee-web-6.0</artifactId>
+                    <type>pom</type>
+                </dependency>
+            </dependencies>
+        </profile>
+   </profiles>
+
+p. Copy pasting this configuration isn't a very fun task, luckily Forge comes to the rescue\! The Arquillian plugin let you configure containers and generate test classes with single commands
+
+h2. Installation
+
+Installation is very easy because the Arquillian plugin is in the Forge plugin repository. Simply type the following command and you're good to go\!
+
+bc(command). forge install-plugin arquillian
+
+h2. Setting up containers
+
+Before you can start writing tests you first need to add Arquillian to your project and set up a container to test in.
+
+bc(command). arquillian setup --container <TAB>
+
+p. Upon the tab key the plugin will list all containers that are currently supported. Start typing one of the container names and remember to hit the <TAB> key a lot to make your live easy.
+
+The plugin will now prompt you which versions you want to use for Arquillian, JUnit and the container connector. Depending on which container you are installing Forge will prompt for information such as the installation directory of the container.
+
+That's it! Arquillian is fully set up now. Take a look at your pom file and notice the new dependencies for JUnit and Arquillian and a profile for the selected container.
+
+h3. Adding multiple containers
+
+It is possible to add several containers to the same project for testing. Just use the _arquillian setup_ command again. The plugin will recognize that Arquillian is already installed and will only add a new profile for the new container.
+
+h2. Generating test classes
+
+Now that Arquillian is installed you can start writing tests. Arquillian uses an extended test runner in JUnit to do it's magic. Your test code will be mostly plain JUnit code, but there is some Arquillian specifics again.
+The most important thing here is creating a micro deployment. Forge helps you with this!
+
+bc(command). arquillian create-test --class demo.MyClass
+
+p. The test is created in _src/test/java_ in the same package as the class under test as looks as follows:
+
+bc(prettyprint linenums).. @RunWith(Arquillian.class) public class MyClassTest {
+  @Inject private MyClass my class;
+
+  @Deployment public static JavaArchive createDeployment(){
+    return ShrinkWrap.create(JavaArchive.class,"test.jar")
+       .addClass(MyClass.class)
+       .addAsManifestResource(EmptyAsset.INSTANCE,"beans.xml");
+  }
+
+  @Test public void testIsDeployed(){
+    Assert.assertNotNull(myclass);
+  }
+}
+
+p. The class under test is added to the archive together with an empty beans.xml file so CDI can be used in your test. Remember to add each class that your class depends on to the archive too, together with additional configuration files.
+
+h2. Exporting deployments
+
+Arquillian uses the Shrinkwrap API to create micro deployments. A micro deployment is an actual package (e.g. war file). In some cases it's convenient to access those packages directly. You can do this by exporting a Deployment.
+
+First navigate to the test class that you want to export, then use the arquillian export command to create the jar/war file.
+
+bc(command). cd src/test/java/demo/CoolBeanTest.java
+arquillian export

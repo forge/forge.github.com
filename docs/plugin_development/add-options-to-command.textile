@@ -1,0 +1,111 @@
+---
+layout: docs
+title: Add Options to your Commands
+index: 5
+---
+
+h1. Add Options to your Commands
+
+Once we have a command or two in our Plugin, it's time to give our users some control over what it does; to do this, we use @@Option@ params; options enable users to pass information of various types into our commands. Options can be named, in which case they are set by passing the @--name@ followed immediately by the value, or if the option is a boolean flag, simply passing the flag will signal a `true` value. Named parameters may be passed into a command in any order, while unnamed parameters must be passed into the command in the order with which they were defined.
+
+
+h2. @--named@ options
+
+As mentioned above, options can be given both a long-name and/or a short-name.  in which case, they would be defined like this:
+
+bc(prettyprint linenums).. @Option(name="one", shortName="o")
+
+p. Short named parameters are called using a single dash followed by the letter assigned: @-o@, whereas long-named parameters are called using a double dash immediately followed by the name of the option: @--one@
+
+For example, the following command accepts several options, named 'one', and 'two':
+
+bc(prettyprint linenums).. public class ExamplePlugin implements Plugin {
+   @Command("perform")
+   public void exampleCommand(
+                  @Option(name="one", shortName="o") String one,
+                  @Option(name="two") String two,
+                  PipeOut out) {
+       out.println(">> option one equals: " + one);
+       out.println(">> option two equals: " + two);
+   }
+}
+
+p. The above command, when executed, would produce the following output:
+
+bc(command). $ exampleplugin perform --one cat --two dog
+>> option one equals: cat
+>> option two equals: dog
+
+div(alert alert-success). Named parameters can be called in any order. Notice that we could have also called the command with options 'one' and 'two' in reverse order, or by using their short names. These commands are equivalent:
+bc(command). $ exampleplugin perform --one cat --two dog
+$ exampleplugin perform --two dog --one cat
+$ exampleplugin perform --two dog -o cat
+
+h2. Ordered options
+
+In addition to @--named@ option parameters, as described above, parameters may also be passed on the command line by the order in which they are entered. These are called "ordered option parameters", and do not require any parameters other than help or description information.
+
+bc(prettyprint linenums).. @Option String value
+
+p. The order of the options in the method signature controls how values are assigned from parsed Forge shell command statements.
+
+For example, the following command accepts several options, named 'one', and 'two':
+
+bc(prettyprint linenums).. public class ExamplePlugin implements Plugin {
+   @Command("perform")
+   public void exampleCommand(
+                  @Option String one,
+                  @Option String two,
+                  PipeOut out) {
+       out.println(">> option one equals: " + one);
+       out.println(">> option two equals: " + two);
+   }
+}
+
+p. The above command, when executed, would produce the following output:
+
+bc(command). $ exampleplugin perform cat dog
+>> option one equals: cat
+>> option two equals: dog{code}
+
+h2. Combining @--named@ and ordered options
+
+Both @--named@ and ordered option parameters can be mixed in the same command; there are some constraints on how commands must be typed, but there is a great deal of flexibility as well.
+
+bc(prettyprint linenums).. @Option String value,
+@Option(name="num") int number{code}
+
+p. The order of ordered options in the method signature controls how values are assigned from the command line shell, whereas the named options have no bearing on the order in which inputs are provided on the command line.
+
+For example, the following command accepts several options, named 'one', 'two', and several more options that are not named:
+
+bc(prettyprint linenums).. public class ExamplePlugin implements Plugin {
+   @Command("perform")
+   public void exampleCommand(
+                  @Option(name="one") String one,
+                  @Option(name="two") String two,
+                  @Option String three,
+                  @Option String four,
+                  PipeOut out) {
+       out.println(">> option one equals: " + one);
+       out.println(">> option two equals: " + two);
+       out.println(">> option three equals: " + three);
+       out.println(">> option four equals: " + four);
+   }
+}
+
+p. The above command, when executed, would produce the following output:
+
+bc(command). $ exampleplugin perform --one cat --two dog bird lizard
+>> option one equals: cat
+>> option two equals: dog
+>> option three equals: bird
+>> option four equals: lizard{code}
+
+p. However, we could also achieve the same result by re-arranging parameters, and as long as the name-value pairs remain together, and the ordered values are passed in the correct order, interpretation will remain the same:
+
+bc(command). $ exampleplugin --two dog bird --one cat lizard
+>> option one equals: cat
+>> option two equals: dog
+>> option three equals: bird
+>> option four equals: lizard{code}

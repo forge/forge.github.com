@@ -1,0 +1,75 @@
+---
+layout: docs
+title: Make your Plugin available to Forge
+index: 10
+---
+
+h1. Make your Plugin available to Forge
+
+div(alert alert-success). After following all of the steps in this section, you should now be ready to install your Plugin into the Forge environment. There are several methods for installing and distributing your plugin; these methods are described below.
+
+All plugin installation should take place using the @$ forge@ meta-command. For more information on this command, type:@$ help forge@
+
+*After installation, Forge automatically hot-loads plugin classes and makes them available for use. There is no need to restart Forge when installing or updating plugins.*
+
+h2. As local source files (for development)
+
+Perhaps the simplest form of plugin installation is when the plugin source files are stored locally in a project on the local computer. If a plugin project is already checked out locally, it may be built and installed using the following command:{code}$ forge source-plugin {PATH}{code}
+
+bc(command). [no project] Desktop $ forge source-plugin ~/Desktop/example-plugin/
+***INFO*** Invoking build with underlying build system.
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building example-plugin 1.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] Compiling 1 source file to ~/Desktop/example-plugin/target/classes
+[INFO]
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+[INFO] --- maven-jar-plugin:2.3.1:jar (default-jar) @ example-plugin ---
+[INFO] Building jar: /home/lb3/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-shade-plugin:1.4:shade (default) @ example-plugin ---
+[INFO] Excluding org.jboss.seam.forge:forge-shell-api:jar:1.0.0-SNAPSHOT from the shaded jar.
+[INFO] Excluding org.jboss.seam.forge:forge-parser-java-api:jar:1.0.0-SNAPSHOT from the shaded jar.
+[INFO] Excluding org.jboss.seam.forge:forge-parser-xml:jar:1.0.0-SNAPSHOT from the shaded jar.
+[INFO] Excluding org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api:jar:0.1.4 from the shaded jar.
+[INFO] Excluding javax.enterprise:cdi-api:jar:1.0-SP4 from the shaded jar.
+[INFO] Excluding org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:jar:1.0.0.Beta1 from the shaded jar.
+[INFO] Excluding javax.annotation:jsr250-api:jar:1.0 from the shaded jar.
+[INFO] Excluding javax.inject:javax.inject:jar:1 from the shaded jar.
+[INFO] Including commons-collections:commons-collections:jar:3.2.1 in the shaded jar.
+[INFO] Replacing original artifact with shaded artifact.
+[INFO] Replacing /home/lb3/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT.jar with /home/lb3/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT-shaded.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+***SUCCESS*** Build successful.{code}
+If you are installing an updated version of an existing plugin, Forge will prompt for confirmation to continue installation.
+
+bc(command). An existing version of this plugin was found. Replace it? [Y/n] y
+***INFO*** Installing plugin artifact.
+Wrote ~/.forge/plugins/com.example.forge.plugin$example-plugin$1$1.0.0-SNAPSHOT.jar
+***SUCCESS*** Installed from [example-plugin] successfully.
+[no project] Desktop ${code}
+Your plugin is now installed and ready to use:
+
+bc(command). $ exampleplugin perform --one cat --two dog bird lizard
+>> option one equals: cat
+>> option two equals: dog
+>> option three equals: bird
+>> option four equals: lizard{code}
+
+h2. As a Git repository
+
+Plugins may be installed directly from a Git repository. This feature simply automates the source code checkout and installation, much like the $ forge source-plugin command. Your plugin will be built and installed while Forge runs.
+
+@$ forge git-plugin git://github.com/username/repository.git --ref 1.0.0.Alpha1@
+
+Notice that a --ref may be specified if a specific branch or tag should be built. This is recommended, since snapshots are more likely to contain unstable code.
+
+div(alert alert-info). Note that your Plugin must reference the correct Forge API version in order to be activated at runtime.

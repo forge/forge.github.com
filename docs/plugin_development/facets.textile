@@ -1,0 +1,266 @@
+---
+layout: docs
+title: Enable modular functionality with Facets
+index: 7
+---
+
+h1. Enable modular functionality with Facets
+
+Frequently when writing plugins, it is not beneficial (sometimes detrimental) to enable all functionality of a plugin at the same time. For instance, let's say you have written a plugin that adds security to an existing web application. Your plugin handles setup of the security dependencies, creation of database tables, and also supports class-configuration of an authentication/authorization provider. It does not make sense for you to create the configuration classes before the dependencies have been installed, because you will likely create compilation errors in the project due to missing APIs. *This might be a good time to use facets.*
+
+h2. What is a Facet?
+
+Facets are classes that provide access to the state and resources of the current project (or a portion thereof) and generally useful operations on it's resources. Some information about Facets in short terms:
+
+* Facets represent project state and provide operations (e.g. Git is installed, JSF is installed, access Java source, manipulate pom)
+* Facets do not work outside of projects.
+* Facets avoid doing anything that prints to the shell output (sometimes it is unavoidable)
+* Facets are for encapsulating additional functionality that is usable in one or more plugins
+
+As a practical example the security plugin is implement as a Facet to show the most important design principles.
+
+h3. Constraining Plugins & Commands
+
+Let's assume that we are writing our security plugin. First, we need our plugin (command implementations omitted for brevity.)
+
+bc(prettyprint linenums).. public class SecurityPlugin implements Plugin {
+
+   @Command public void setup() {};
+   @Command public void configureDatabase() {};
+   @Command public void configureAuthentication() {};
+   @Command public void addRole() {};
+
+}
+
+p. But as things stand, all of these commands will be available no matter the state of the project. This may not be a good thing if a user attempts to configure the authentication system before the security dependencies have been installed; they may unintentionally introduce compilation errors into their project. In order to prevent this, we can add @@RequiresFacet(SecurityFacet.class)@ to our Plugin. We have not yet created our @SecurityFacet@, but that will be our next step.
+
+bc(prettyprint linenums).. @RequiresFacet(SecurityFacet.class)
+public class SecurityPlugin implements Plugin {
+}
+
+p. The addition of @@RequiresFacet@ to our Plugin does several things.
+* The plugin and enclosed commands cannot be run unless @SecurityFacet@ is installed in the project.
+* The plugin and enclosed commands cannot be run unless there is a project active.
+
+bc(prettyprint linenums).. public class SecurityFacet extends BaseFacet {
+   public boolean isInstalled();
+   public boolean install();
+
+p. Notice that we only need to implement two additional methods, @install()@ and @isInstalled()@, since we have extended a base class (we will discuss these methods in the next section,) but we have a small problem now; since we have added a Facet constraint to our plugin, we can no longer call any of the commands in our plugin! This means that since we can no longer call our "setup" command, we have no way of installing the facet (except manually by editing project source files.) What we really want is for the "setup" command to be available even if the required Facets are not. To do this, we use the @@SetupCommand@ annotation:
+
+bc(prettyprint linenums).. @RequiresFacet(SecurityFacet.class)
+public class SecurityPlugin implements Plugin {
+
+   @SetupCommand public void setup() {};
+
+   //...
+
+}
+
+p. Now our "setup" command will be available even if the @SecurityFacet@ is not installed, which gives us the perfect opportunity to actually perform the installation.
+
+h3. Installation of new functionality
+
+Once we have constrained our Plugin, we probably want to think about how to install our Facet, and what that means in our Project. Since Facets represent modular pieces of functionality in our project, we need to decide what functionality our Facet is going to represent; in this case, we know our Facet represents the availability of the security system for which we are writing this plugin, so the first thing we need to be able to do is install our Facet using our @@SetupCommand@.
+
+bc(prettyprint linenums).. @RequiresFacet(SecurityFacet.class)
+public class SecurityPlugin implements Plugin {
+
+   @Inject
+   private Event<InstallFacets> event;
+
+   @Inject
+   private Project project;
+
+   @SetupCommand
+   public void setup(PipeOut out) {
+       if (!project.hasFacet(SecurityFacet.class))
+           event.fire(new InstallFacets(SecurityFacet.class));
+       else
+           ShellMessages.info(out, "Security is installed.");
+   };
+
+   //...
+
+}
+
+p. We first test to ensure that the Facet is not already installed; if it is not, we fire an @InstallFacets@ event (with our Facet type as a payload) - this will ask Forge to perform the installation, in turn installing any addition Facets that may be required as a dependency of our @SecurityFacet@.
+
+
+Consequently, once the @InstallFacets@ event has been fired and all dependencies satisfied, Forge will invoke the @install()@ method in our Facet. This is where we will update our Project in order to actually make sure that it is set up in a way that our Facet will accept as "installed." To do this, we typically need to add libraries or update source configuration, and we have several tools at our disposal. If installation was successful, return true, otherwise, return false.
+
+The @DependencyInstaller@ is a utility construct that allows us to easily configure and query our project's dependencies. To use it, we simply @@Inject@ it into our Facet. Note that we do not need to @@Inject@ the current Project, because all facets are already associated with a single instance of a Project, and have access to that project via the @getProject()@ method on the Facet interface (or directly via the @protected@ field).
+
+bc(prettyprint linenums).. @RequiresFacet(SecurityFacet.class)
+public class SecurityPlugin implements Plugin {
+
+    private static final Dependency SECURITY_DEPENDENCY = DependencyBuilder.create()
+                                                             .setGroupId("com.security")
+                                                             .setArtifactId("security-system");
+    
+    @Inject
+    public DependencyInstaller installer;
+    
+    public boolean install() {
+        installer.install(project, SECURITY_DEPENDENCY);
+        return true;
+    }
+
+    public boolean isInstalled() {
+        return installer.isInstalled(project, SECURITY_DEPENDENCY);
+    }
+
+   //...
+
+}
+
+p. Notice that we can use @DependencyInstaller@ both to install, but also to query against our project's dependencies; the @DependencyInstaller@ will resolve available versions of a dependency against the Project's configured dependency repositories, and guide the user through selection of the proper version.
+
+We may also wish to create or modify project source or configuration files, in which case, we can (in addition to adding or removing dependencies) also utilize some of the Forge built-in facets such as the @ResourceFacet@:
+
+bc(prettyprint linenums).. public boolean install() {
+    installer.install(project, SECURITY_DEPENDENCY);
+
+    FileResource<?> config = project.getFacet(ResourceFacet.class).getResource("com/security/config.xml");
+    if(!config.exists()) {
+        if(!config.createNewFile())
+            return false;
+        config.setContents("<security/>");
+    }
+
+    return true;
+}
+
+public boolean isInstalled() {
+    return installer.isInstalled(project, SECURITY_DEPENDENCY)
+           && project.getFacet(ResourceFacet.class).getResource("com/security/config.xml").exists();
+}
+
+p. Additionally, the following facets are built in to the Forge core API:
+* *DependencyFacet*
+* *JavaExecutionFacet*
+* *JavaSourceFacet*
+* *MetadataFacet*
+* *PackagingFacet*
+* *ResourceFacet*
+* *WebResourceFacet*
+
+h3. Extension of existing Forge APIs
+
+Since Facets effectively provide a slice of information about a project, they are also the natural place to add functionality to a Project. For instance, now that we have our security system installed, it makes sense to centralize configuration of that system within our Facet, so that any plugins we (or anyone else) writes that depends on our {{{*}SecurityFacet{*}}} will use the methods, and we effectively respect the DRY (Don't Repeat Yourself) principle of software development.
+
+Any public (or visible) method placed on a Facet, will be available for use in other Facets or Plugins - to demonstrate this, we will create a utility method for accessing the security configuration file shown in the previous section:
+
+bc(prettyprint linenums).. public boolean install() {
+    installer.install(project, SECURITY_DEPENDENCY);
+
+    FileResource<?> config = getConfig()
+    return config != null;
+}
+
+public boolean isInstalled() {
+    return installer.isInstalled(project, SECURITY_DEPENDENCY)
+           && getConfig() != null;
+}
+
+public FileResource<?> getConfig() {   
+   FileResource<?> config = project.getFacet(ResourceFacet.class).getResource("com/security/config.xml");
+   if(!config.exists()) {
+       if(!config.createNewFile())
+           return null;
+       config.setContents("<security/>");
+   }
+   return config;
+}
+
+p. We may now use this method in our plugin commands. When combined with the Forge {{{*}XMLParser{*}}} utilities, we have a powerful mechanism for editing our hypothetical configuration file:
+
+bc(prettyprint linenums).. public class SecurityPlugin implements Plugin {
+
+   @Inject Project project;
+
+   @Command public void addRole(@Option String role) {
+      FileResource<?> config = project.getFacet(SecurityFacet.class).getConfig();
+      Node xml = XMLParser.parse(config.getResourceInputStream());
+      xml.getOrCreate("role").text(role);
+      config.setContents(XMLParser.toXMLInputStream(xml));
+   };
+
+}
+
+p. This is one example how Facets can be used to centralize and encapsulate functionality - in reality, Facets can be used for anything you can think of - your imagination is the limit.
+
+
+h2. Facets may require other facets
+
+For instance, if a database is required in order to use this particular security system, then we may wish to add @@RequiresFacet(PersistenceFacet.class)@ to our @SecurityFacet@. (Note that in order to reference @PersistenceFacet@, you must add the Forge Java EE API and test dependency to your plugin project POM)
+
+bc(prettyprint linenums).. 
+<dependency>
+    <groupId>org.jboss.forge</groupId>
+    <artifactId>forge-javaee-api</artifactId>
+    <version>${forge.api.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.jboss.forge</groupId>
+    <artifactId>forge-javaee-impl</artifactId>
+    <version>${forge.api.version}</version>
+    <scope>test</scope>
+</dependency>
+
+p. Now we may add the constraint:
+
+bc(prettyprint linenums).. @RequiresFacet(PersistenceFacet.class)
+public class SecurityFacet extends BaseFacet {
+   // ...
+}
+
+p. Once we have constrained our Facet, it will only be available if @PersistenceFacet@ is also available. Likewise, when we request to install our @SecurityFacet@, all required dependencies of our facet (in this case, @PersistenceFacet@) will also be installed.
+
+h2. Facet inheritance
+
+Facets need to be installed. Sometimes there are several very different ways to install a Facet. For example, JAX-RS can either be installed by registering a Servlet in web.xml, or by adding an annotated Application class to the project. Depending on the way of installation, further configuration will also be very different and even the features of the Facets might vary.
+
+To prevent ending up with a lot of conditional code in the Facet you can use the concept of Facet inheritance. As an example we look at the RestFacet. The RestFacet installs a dependency and registers JAX-RS in either web.xml or an Application class. For this we have three Facets:
+# RestFacet (the base Facet, only installs the dependency)
+# RestApplicationFacet (installs an Application class, and uses this for further configuration)
+# RestWebXmlFacet (installs a Servlet in web.xml and uses this for further configuration)
+
+RestFacet is always used. Whatever way of installing we use, this is always required. All common functionality of the Facet is also part of this base Facet. Most other plugins that need to integrate with the REST functionality will only depend on this base Facet too.
+
+For further installation of the REST functionality we also install one of the other Facets, for example depending on user input:
+
+bc(prettyprint linenums).. if (activatorType == null || activatorType == RestActivatorType.WEB_XML && !project.hasFacet(RestWebXmlFacetImpl.class)) 
+ {
+   request.fire(new InstallFacets(RestWebXmlFacetImpl.class));
+ } else if (activatorType == RestActivatorType.APP_CLASS && !project.hasFacet(RestApplicationFacet.class))
+ {
+   request.fire(new InstallFacets(RestApplicationFacet.class));
+ }
+
+p. 
+
+bc(prettyprint linenums).. @Alias("forge.spec.jaxrs.applicationclass")
+@RequiresFacet({RestFacet.class, JavaSourceFacet.class})
+public class RestApplicationFacetImpl extends BaseFacet implements RestApplicationFacet{code}
+
+h2. User input in Facets
+
+It's a bad practice depend on the shell in a Facet, this work should be part of a plugin instead. Facets often do need input from a user to configure the Facet correctly when installing. There are two easy ways to pass data from a Plugin to a Facet.&nbsp;
+# Using the Configuration API
+# Using @ApplicationScoped objects
+
+The Plugin prompts the user for input and stores this input as configuration or, if it shouldn't be persistent as an @@ApplicationScoped@ object. It then fires the install Facet event, and the Facet simply reads the input from the stored configuration/object again. The Plugin and Facet are still decoupled, and the Facet is not using the Shell.
+
+bc(prettyprint linenums).. String rootpath = prompt.prompt("What root path do you want to use for your resources?", "/rest");
+configuration.addProperty(RestFacet.ROOTPATH, rootpath);
+
+request.fire(new InstallFacets(RestWebXmlFacetImpl.class));
+
+p. 
+
+bc(prettyprint linenums).. @Inject
+public RestApplicationFacetImpl(Configuration configuration)
+{
+   rootpath = configuration.getString(RestFacet.ROOTPATH);
+}
