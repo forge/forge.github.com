@@ -1,7 +1,33 @@
 ---
 layout: base
 ---
-%table.table.table-striped.table-bordered.table-condensed
+%script
+  var source = [
+  - for plugin in site.plugins    
+    =String.new(plugin.name).insert(0,"\"").concat("\",")
+  ];
+  
+  console.log(source);
+  
+:javascript
+  $(document).ready(function() {
+    var filterInput = $('#filterInput');
+    filterInput.keyup(function() {      
+      $("#pluginTable tr").show();
+      $("#pluginTable tr").slice(1).each(function() {
+
+      var tdValue = $.trim($(this).children().first().text());
+      
+        if(tdValue.indexOf(filterInput.val()) == -1) {
+          $(this).hide();
+        } 
+      });
+    });
+  });
+
+%input{:type=>'text', :id=>'filterInput'}
+
+%table.table.table-striped.table-bordered.table-condensed{:id=>'pluginTable'}
   %tr
     %th
       Plugin
