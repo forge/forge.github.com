@@ -19,7 +19,7 @@ module Awestruct
             end            
           end
           
-          docs.sort! {|a,b| a.index <=> b.index}
+          docs.sort! {|a,b| (a.index? || 100) <=> (b.index? || 101)}
         
           site.send( "#{@assign_to}=", docs )
         end
