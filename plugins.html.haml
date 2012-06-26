@@ -1,0 +1,19 @@
+---
+layout: base
+---
+%table.table.table-striped.table-bordered.table-condensed
+  %tr
+    %th
+      Plugin
+    %th
+      Author
+    %th
+      Description
+  - for plugin in site.plugins
+    %tr
+      %td     
+        =plugin.name
+      %td 
+        =plugin.author
+      %td
+        =plugin.description
