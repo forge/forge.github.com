@@ -1,0 +1,118 @@
+<h1>JBoss Forge Website Source</h1>
+<p>This repository contains the source of the Forge website.</p>
+<p>The website is built using <a href="awestruct.org">Awestruct</a>. The develop branch contains the unprocessed website source. From that content, Awestruct generates a static website under the <code>_site</code> directory. The website is published to the public site by pushing the contents of the <code>_site</code> directory to the master branch.</p>
+<h2>Setting Up Awestruct</h2>
+<p>You need to have Awestruct installed on your machine to preview the website locally. Awestruct is a available as Ruby gem in the GemCutter repository. You can install it into either a native Ruby or a JRuby installation. The instructions here will cover setting up Awestruct in both native Ruby and JRuby installation for Linux environment.</p>
+<p>Begin by installing the package for Ruby and RubyGems.</p>
+<h3>Installing Ruby and RubyGems on MacOs</h3>
+<p>The easiest way to set up Ruby and RubyGems on MacOs is to use JewelryBox, which is a UI for <span class="caps">RVM</span>. From here you can install versions of Ruby and manages Gemsets. Of course you can do this from the command line too.</p>
+<h3>Installing Ruby and RubyGems on Ubuntu</h3>
+<p>If you have Ubuntu, use this command to install Ruby and RubyGems:</p>
+<pre><code>$ sudo apt-get install rubygems</code></pre>
+<p>Ubuntu does not currently add the RubyGems bin directory to your path. Put the following files in your shell configuration file (.bashrc) and restart the shell.</p>
+<pre><code>$ export GEM_HOME=/var/lib/gems/1.8 \ 
+export PATH=$PATH:$GEM_HOME/bin</code></pre>
+<p>Now the executables for any gem you install will be available on your path.</p>
+<h3>Installing JRuby on Ubuntu</h3>
+<p>It might happen that you will face <a href="https://gist.github.com/1392032">similar problem</a> while trying to install awestruct using Ruby on Ubuntu. In that case using JRuby as an alternative might solve it.</p>
+<p>First, download and unpack latest stable version of JRuby: (The one available in Ubuntu repositories is too old and does not support Awestruct)</p>
+<pre><code>$ wget http://jruby.org.s3.amazonaws.com/downloads/1.6.5/jruby-bin-1.6.5.tar.gz \
+tar -xzvf jruby-bin-1.6.5.tar.gz  </code></pre>
+<p>Optionally, you can copy it to <code>/usr/lib/jvm</code> and create symbolic link for convenience:</p>
+<pre><code>$ sudo mv jruby-1.6.5/ /usr/lib/jvm \
+cd /usr/lib/jvm/ \
+sudo ln -s jruby-1.6.5/ jruby </code></pre>
+<p>Last step is adding JRuby to path (for instance in <code>.bashrc</code>)</p>
+<pre><code>$ export JRUBY_HOME=/usr/lib/jvm/jruby \
+export PATH="$JRUBY_HOME/bin:$PATH"</code></pre>
+<p>That&#8217;s it. Just install all required gems described in subsequent sections and you are ready to run awestruct backed by JRuby!</p>
+<p><strong><span class="caps">NOTE</span>:</strong> Use <code>jgem</code> instead of <code>sudo gem</code> for this purpose.</p>
+<h3>Installing Ruby and RubyGems on Fedora</h3>
+<p>If you have Fedora, use this command to install Ruby and RubyGems:</p>
+<pre><code>$ sudo yum install ruby ruby-devel ruby-irb rubygems</code></pre>
+<p>Optionally, you can install RubyGems manually to use a newer version (was once a requirement for installing Awestruct, but has since been fixed):</p>
+<pre><code>$ wget -q http://production.cf.rubygems.org/rubygems/rubygems-1.8.15.tgz \
+tar xzf rubygems-1.8.15.tgz \
+cd rubygems-1.8.15 \
+sudo ruby setup.rb</code></pre>
+<p>In Fedora, RubyGems properly links applications such as awestruct to /usr/bin when the corresponding gem is installed, so no need for messing with the <span class="caps">PATH</span>.</p>
+<h3>Installing the Awestruct Gem</h3>
+<p>Now you are ready to install awestruct. The remainder of the commands work on any Ruby installation. If you&#8217;re using JRuby, remember to use <code>jgem</code> instead of <code>sudo gem</code>.</p>
+<p>Use this command to install the awestruct gem and its dependencies:</p>
+<pre><code>$ sudo gem install awestruct</code></pre>
+<p>If you get a compiler error when RedCloth is installing, use this command instead:</p>
+<pre><code>$ sudo gem install awestruct -- --with-cflags=\"-O2 -pipe -march=native -Wno-unused-but-set-variable\"</code></pre>
+<p>You&#8217;re all set!</p>
+<p>If you&#8217;ve previously installed awestruct, make sure you have Awestruct &gt;= 0.2.5. You can update it update it using this command:</p>
+<pre><code>$ sudo gem update awestruct</code></pre>
+<p><strong><span class="caps">NOTE</span>:</strong> Make sure you are using RedCloth-4.2.9 to properly support international characters in guides.</p>
+<h3>Additional Required Gems</h3>
+<p>As the website matures, more gems will be required. This section documents the required third-party gems not already installed by Awestruct.</p>
+<p>Install these Gems using the <code>sudo gem install</code> command (or <code>jgem install</code> command for JRuby) as you did above.</p>
+<ul>
+	<li>rest-client</li>
+	<li>git</li>
+	<li>sassy-buttons</li>
+	<li>vpim</li>
+	<li>json</li>
+	<li>jruby-openssl (if using jruby)</li>
+	<li>rb-inotify (if using linux)</li>
+</ul>
+<h3>Installing Awestruct and Required Gems using Bundler</h3>
+<p>Now there&#8217;s an even easier way to get setup. First, make sure you have the Bundler gem installed:</p>
+<pre><code>$ sudo gem install bundler</code></pre>
+<p>Now Bundler can handle the rest of the setup automatically:</p>
+<pre><code>$ sudo bundle install</code></pre>
+<p>At this point, you are ready to pull down the site and run it.</p>
+<h2>Previewing the Site Locally</h2>
+<p>Now that you have awestruct installed, you can preview the website locally by running it in development mode. Development mode uses a file monitor to automatically update the site when you make a change to the source files.</p>
+<p>To run the site, you first need the source code. Begin by cloning the website source code from git:</p>
+<pre><code>git clone git://github.com/forge/website.git</code></pre>
+<p>Then, switch to the develop branch (the master branch holds the published site only):</p>
+<pre><code>git checkout develop</code></pre>
+<p>Run the following command to launch the preview server:</p>
+<pre><code>awestruct -d</code></pre>
+<p>Visit the following page in your browser:</p>
+<p><a href="http://localhost:4242">http://localhost:4242</a></p>
+<p>You&#8217;re now awestruct!</p>
+<p>If you only want to generate once when you start the server, use this command:</p>
+<pre><code>awestruct --server -P development</code></pre>
+<p>Add the <code>--force</code> flag to either command to regenerate the site from scratch. You can also remove the _tmp and _site directories to clean the generated files.</p>
+<h2>Conventions</h2>
+<p><a href="http://haml-lang.com">Haml</a> is the preferred abstract <span class="caps">HTML</span> markup language.</p>
+<ul>
+	<li><a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html">Haml Reference</a></li>
+</ul>
+<a href="http://redcloth.org/textile">Textile</a> is the preferred text markup language.
+<ul>
+	<li><a href="http://redcloth.org/textile">Textile Reference</a></li>
+</ul>
+<p>Source files are indented using 2 spaces. Haml files require the same indentation size throughout. Ruby hashes should have no leading or trailing spaces and options such be seperated by a comma followed by a space (e.g., <code>{:href=&gt;"http://jboss.org/forge", title=&gt;"Forge Project Site"}</code>).</p>
+<p>Note: In a <span class="caps">HAML</span> document, if you use the equals seperator (=) rather than a greater than equals (=&gt;) in a hash key-value assignment, Awestruct will crash.</p>
+<h2>Writing documentation</h2>
+<p>Contribution documentation is very easy. You simply create a new .textile file in one of the /docs sub directories. The directory structure is used to structure documentation. At the top of the file you should add some prolog and your documentation page will show up in the menu automatically.</p>
+<h3>Prolog</h3>
+<p>The prolog is a set of name/value pairs defined at the top of the file in between two lines containing three dashes. In this section you define the following metadata:</p>
+<ul>
+	<li>layout (always &#8220;docs&#8221;)</li>
+	<li>title (use sentence capitalization)</li>
+	<li>author</li>
+</ul>
+<p>Here&#8217;s an example (refer to <span class="caps">HTML</span> output):</p>
+<pre>---
+layout: docs
+title: Writing docs
+author: Paul Bakker
+--- &lt;&lt; only copy the hyphens and the lines of text between them</pre>
+<h3>Content</h3>
+<p>Below the prolog, you just type in textile format.</p>
+<h3>Code</h3>
+<p><strong><span class="caps">NOTE</span>:</strong> Please follow the <a href="https://github.com/jboss/ide-config#readme">JBoss Community syntax conventions</a> when formatting the code (to ensure all posts look consistent).</p>
+<p>To insert syntax highlighted code, followed by paragraph text, use the following syntax (refer to <span class="caps">HTML</span> output of this guide):</p>
+<pre class="prettify"><code class="prettify">public class Alien {
+    public String getName() {
+        return "Ike";
+    }
+}</code></pre>
+<p>This sentence will appear below the code. The language is detected automatically.</p>
+<p>You don&#8217;t normally need to use the p. prefix to enter a paragrah. However, it&#8217;s required after a code block to indicate to the parser that the code snippet has ended. If the content following the code is not paragraph text (for instance, a list item), use notextile. instead of p., but include one space at the end of the line.</p>
