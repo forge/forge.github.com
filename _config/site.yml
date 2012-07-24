@@ -1,6 +1,6 @@
 profiles: 
    production: 
-      base_url: http://forge.github.com/ 
+      base_url: http://forge.jboss.org/ 
       deploy:
          host: github_pages 
          branch: master
