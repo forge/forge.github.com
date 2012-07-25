@@ -5,13 +5,6 @@ layout: base
   %p Installing plugins in Forge is simple - you need only use the built-in `forge find-plugin` and `forge install-plugin` commands to search and install any of the plugins listed below. Alternatively, you may use `forge git-plugin` and `forge source-plugin` to install plugins from third party repositories, or from your local filesystem.
 
 %script
-  var source = [
-  - for plugin in site.plugins    
-    =String.new(plugin.name).insert(0,"\"").concat("\",")
-  ];
-  
-  console.log(source);
-  
 :javascript
   $(document).ready(function() {
     var filterInput = $('#filterInput');
