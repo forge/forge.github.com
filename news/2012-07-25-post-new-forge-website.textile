@@ -1,0 +1,20 @@
+---
+layout: news
+title: New Forge Website
+author: Paul Bakker, Lincoln Baxter III
+tags: [ website, announcement ]
+---
+
+We have a new website, and would like to thank several of our community members for making this possible.
+
+h3. Thanks to...
+* *Paul Bakker* - for getting the initial project started and doing the plugin search pages
+* *Ivan St. Ivanov* - for migrating the documentation
+* *And many more* - for their ideas and help over the past few months.
+
+h3. Getting involved
+
+If you would like to get involved and help with the web site, please feel free to "fork our repository":http://github.com/forge/forge.github.com on github and send pull requests. You will need to "install Awestruct":http://awestruct.org to build and run the website locally (`awestruct -d`).
+
+Good luck and we welcome your feedback!
+-The Forge Team

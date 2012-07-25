@@ -1,7 +1,0 @@
----
-layout: news
-title: New Forge website
-author: Paul Bakker
-tags: [ website, announcement ]
----
-We have a new website!
