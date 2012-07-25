@@ -1,6 +1,9 @@
 ---
 layout: base
 ---
+.container
+  %p Installing plugins in Forge is simple - you need only use the built-in `forge find-plugin` and `forge install-plugin` commands to search and install any of the plugins listed below. Alternatively, you may use `forge git-plugin` and `forge source-plugin` to install plugins from third party repositories, or from your local filesystem.
+
 %script
   var source = [
   - for plugin in site.plugins    
@@ -16,30 +19,33 @@ layout: base
       $("#pluginTable tr").show();
       $("#pluginTable tr").slice(1).each(function() {
 
-      var tdValue = $.trim($(this).children().first().text());
+      var name = $.trim($(this).children().first().text()).toLowerCase();
+      var desc = $.trim($(this).children().last().text()).toLowerCase();
       
-        if(tdValue.indexOf(filterInput.val()) == -1) {
+        if(name.indexOf(filterInput.val().toLowerCase()) == -1 
+           && desc.indexOf(filterInput.val().toLowerCase()) == -1) {
           $(this).hide();
         } 
       });
     });
   });
 
-%input{:type=>'text', :id=>'filterInput'}
+.container
+  %input{:type=>'text', :id=>'filterInput'}
 
-%table.table.table-striped.table-bordered.table-condensed{:id=>'pluginTable'}
-  %tr
-    %th
-      Plugin
-    %th
-      Author
-    %th
-      Description
-  - for plugin in site.plugins
+  %table.table.table-striped.table-bordered.table-condensed{:id=>'pluginTable'}
     %tr
-      %td     
-        =plugin.name
-      %td 
-        =plugin.author
-      %td
-        =plugin.description
+      %th
+        Plugin
+      %th
+        Author
+      %th
+        Description
+    - for plugin in site.plugins
+      %tr
+        %td     
+          =plugin.name
+        %td 
+          =plugin.author
+        %td
+          =plugin.description
