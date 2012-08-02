@@ -118,7 +118,7 @@ Now that you have awestruct installed, you can preview the website locally by ru
 
 To run the site, you first need the source code. Begin by cloning the website source code from git:
 
-bc. git clone git://github.com/forge/website.git
+bc. git clone git://github.com/forge/forge.github.com.git
 
 Then, switch to the develop branch (the master branch holds the published site only):
 
