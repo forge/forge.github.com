@@ -14,7 +14,11 @@ bc(command). $HOME/.forge/runtime.log
 
 h2. Enable debug mode
 
-In order to debug a "live" Forge installation, you need to set the following FORGE_OPTS (JVM arguments) in your console before starting Forge (this does not work when running Forge in the IDE - it must be run from the command line).
+Start Forge by using the following parameter:
+
+bc(command). forge --debug
+
+If you don't want to use the --debug parameter, you need to set the following FORGE_OPTS (JVM arguments) in your console before starting Forge (this does not work when running Forge in the IDE - it must be run from the command line).
 
 For Unix:
 
