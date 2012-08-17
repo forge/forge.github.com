@@ -34,6 +34,11 @@
     <div class='navbar navbar-fixed-top'>
       <div class='navbar-inner'>
         <div class='container'>
+          <div class='github-banner'>
+            <a href='https://github.com/forge/core'>
+              <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position:absolute;top:0;right:0;border:0;' />
+            </a>
+          </div>
           <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
@@ -61,124 +66,124 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Add your Plugin to the Central Plugin Index (<span class="caps">CPI</span>)</h1>
-            <p>Forge incorporates the concept of a &#8220;plugin market&#8221; for conveniently searching and installing available plugins, but in order to take advantage of this, you must first register your plugin in the Central Plugin Index.</p>
-            <h2>What is the Central Plugin Index?</h2>
-            <p>The Central Plugin Index (<span class="caps">CPI</span>) is a listing of known plugins for Forge to be able to download and install. There are currently two supported methods of <a href="make-plugin-available.html">Making your Plugin available to Forge</a>. You can host project sources that must be manually downloaded, unzipped and installed, or plugins may be automatically downloaded and installed from a Git repository.</p>
-            <p>We strongly recommend using a public git repository to host your plugin, since it promotes sharing and collaboration. It&#8217;s more likely that someone will contribute back to your project if they automatically have access to your sources, and have a path to contribute back.</p>
-            <p>The <span class="caps">CPI</span> file itself is hosted on GitHub, and is structured with the <span class="caps">YAML</span> format; this is what the <span class="caps">CPI</span> file looks like:</p>
-            <pre class="command"><code class="command">---&#x000A;name: jboss-arquillian&#x000A;author: Paul Bakker &lt;paul.bakker.nl@gmail.com&gt;&#x000A;website: http://www.jboss.org/arquillian&#x000A;description: Integration Testing Framework&#x000A;artifact: org.arquillian.forge:arquillian-plugin:1.0.0-SNAPSHOT&#x000A;gitrepo: git://github.com/forge/plugin-arquillian.git&#x000A;tags: arquillian, jboss, testing, junit, testng, integration testing, tests, CDI, java ee&#x000A;---&#x000A;name: seam-jms&#x000A;author: John Ament&#x000A;website: http://seamframework.org/Seam3/JMSModule&#x000A;description: Seam JMS Plugin&#x000A;artifact: org.jboss.seam.jms:seam-jms-forge-plugin:1.0.0-SNAPSHOT&#x000A;gitrepo: git://github.com/forge/plugin-seam-jms.git&#x000A;tags: seam, jms, mq, messaging, jboss&#x000A;---</code></pre>
-            <h2>Adding your Plugin to the Central Plugin Index</h2>
-            <div class="alert alert-info"><strong>Before you continue</strong><br />
-            In order to ensure compatibility with  the latest Forge release versions &#8211; you <strong><span class="caps">MUST</span></strong> update your Plugin  to use the corresponding <a href="https://github.com/forge/core/tags">Forge <span class="caps">API</span> version</a>. You should also create a git branch in your Plugin repository &#8211; the name of this branch should be <strong>exactly the same</strong> as the Forge <span class="caps">API</span> version you wish to support. <strong>Repeat this task for each Forge <span class="caps">API</span> version you wish to support.</strong><br />
-            We  recommend using branches instead of tags, because branches allow bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
-            <p>Since the <span class="caps">CPI</span> file is hosted in GitHub, the method for adding a plugin is to fork the <span class="caps">CPI</span> repository: https://github.com/forge/plugin-repository, add or update your entry, and send a pull request.</p>
-            <pre class="command"><code class="command">git clone git://github.com/forge/plugin-repository.git&#x000A;cd plugin-repository/&#x000A;# add or edit your plugin entry&#x000A;git add repository.yaml&#x000A;git commit -m "Added ExamplePlugin Entry"</code></pre>
-            <p>We <strong>strongly</strong> recommend using GitHub to host your plugin, since it makes Forking and sending Pull Requests <em>much</em> easier than using the Git command line: http://help.github.com/send-pull-requests/</p>
-            <p>Once our Plugin team has verified that your meta-information is correct, and tested your plugin for compatibility, we will merge your request; your plugin will be available to users who type:</p>
-            <p><code>$ forge find-plugin *</code></p>
-            <p>If you need instruction in Git, we recommend reading <a href="http://progit.org/book/">Pro Git</a>.</p>
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Add your Plugin to the Central Plugin Index (<span class="caps">CPI</span>)</h1>
+<p>Forge incorporates the concept of a &#8220;plugin market&#8221; for conveniently searching and installing available plugins, but in order to take advantage of this, you must first register your plugin in the Central Plugin Index.</p>
+<h2>What is the Central Plugin Index?</h2>
+<p>The Central Plugin Index (<span class="caps">CPI</span>) is a listing of known plugins for Forge to be able to download and install. There are currently two supported methods of <a href="make-plugin-available.html">Making your Plugin available to Forge</a>. You can host project sources that must be manually downloaded, unzipped and installed, or plugins may be automatically downloaded and installed from a Git repository.</p>
+<p>We strongly recommend using a public git repository to host your plugin, since it promotes sharing and collaboration. It&#8217;s more likely that someone will contribute back to your project if they automatically have access to your sources, and have a path to contribute back.</p>
+<p>The <span class="caps">CPI</span> file itself is hosted on GitHub, and is structured with the <span class="caps">YAML</span> format; this is what the <span class="caps">CPI</span> file looks like:</p>
+<pre class="command"><code class="command">---&#x000A;name: jboss-arquillian&#x000A;author: Paul Bakker &lt;paul.bakker.nl@gmail.com&gt;&#x000A;website: http://www.jboss.org/arquillian&#x000A;description: Integration Testing Framework&#x000A;artifact: org.arquillian.forge:arquillian-plugin:1.0.0-SNAPSHOT&#x000A;gitrepo: git://github.com/forge/plugin-arquillian.git&#x000A;tags: arquillian, jboss, testing, junit, testng, integration testing, tests, CDI, java ee&#x000A;---&#x000A;name: seam-jms&#x000A;author: John Ament&#x000A;website: http://seamframework.org/Seam3/JMSModule&#x000A;description: Seam JMS Plugin&#x000A;artifact: org.jboss.seam.jms:seam-jms-forge-plugin:1.0.0-SNAPSHOT&#x000A;gitrepo: git://github.com/forge/plugin-seam-jms.git&#x000A;tags: seam, jms, mq, messaging, jboss&#x000A;---</code></pre>
+<h2>Adding your Plugin to the Central Plugin Index</h2>
+<div class="alert alert-info"><strong>Before you continue</strong><br />
+In order to ensure compatibility with  the latest Forge release versions &#8211; you <strong><span class="caps">MUST</span></strong> update your Plugin  to use the corresponding <a href="https://github.com/forge/core/tags">Forge <span class="caps">API</span> version</a>. You should also create a git branch in your Plugin repository &#8211; the name of this branch should be <strong>exactly the same</strong> as the Forge <span class="caps">API</span> version you wish to support. <strong>Repeat this task for each Forge <span class="caps">API</span> version you wish to support.</strong><br />
+We  recommend using branches instead of tags, because branches allow bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
+<p>Since the <span class="caps">CPI</span> file is hosted in GitHub, the method for adding a plugin is to fork the <span class="caps">CPI</span> repository: https://github.com/forge/plugin-repository, add or update your entry, and send a pull request.</p>
+<pre class="command"><code class="command">git clone git://github.com/forge/plugin-repository.git&#x000A;cd plugin-repository/&#x000A;# add or edit your plugin entry&#x000A;git add repository.yaml&#x000A;git commit -m "Added ExamplePlugin Entry"</code></pre>
+<p>We <strong>strongly</strong> recommend using GitHub to host your plugin, since it makes Forking and sending Pull Requests <em>much</em> easier than using the Git command line: http://help.github.com/send-pull-requests/</p>
+<p>Once our Plugin team has verified that your meta-information is correct, and tested your plugin for compatibility, we will merge your request; your plugin will be available to users who type:</p>
+<p><code>$ forge find-plugin *</code></p>
+<p>If you need instruction in Git, we recommend reading <a href="http://progit.org/book/">Pro Git</a>.</p>
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>

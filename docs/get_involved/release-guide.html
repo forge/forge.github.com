@@ -34,6 +34,11 @@
     <div class='navbar navbar-fixed-top'>
       <div class='navbar-inner'>
         <div class='container'>
+          <div class='github-banner'>
+            <a href='https://github.com/forge/core'>
+              <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position:absolute;top:0;right:0;border:0;' />
+            </a>
+          </div>
           <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
             <span class='icon-bar'></span>
             <span class='icon-bar'></span>
@@ -61,114 +66,114 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Release Guide</h1>
-            <h2>Updating Plugin Tags</h2>
-            <p>If you are a Plugin author who wishes to ensure compatibility with the latest Forge release versions &#8211; ensure that you update your Plugin to use the corresponding <a href="https://github.com/forge/core/tags">Forge <span class="caps">API</span> version</a>. You should also create a git branch in your Plugin repository &#8211; the name of this branch should be <strong>exactly the same</strong> as the Forge <span class="caps">API</span> version you wish to support.</p>
-            <div class="alert alert-info">We recommend using branches instead of tags, because branches allow  bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
-            <h2>Uploading Release Documentation</h2>
-            <p>You must have access to project documentation servers in order to upload project documentation:</p>
-            <pre class="command"><code class="command">cd core/git checkout {TAG}&#x000A;mvn clean javadoc:aggregate -Pjavadoc&#x000A;rsync -rv --protocol=28  target/javadoc/ forge@filemgmt.jboss.org:/docs_htdocs/forge/javadoc/&#x000A;</code></pre>
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Release Guide</h1>
+<h2>Updating Plugin Tags</h2>
+<p>If you are a Plugin author who wishes to ensure compatibility with the latest Forge release versions &#8211; ensure that you update your Plugin to use the corresponding <a href="https://github.com/forge/core/tags">Forge <span class="caps">API</span> version</a>. You should also create a git branch in your Plugin repository &#8211; the name of this branch should be <strong>exactly the same</strong> as the Forge <span class="caps">API</span> version you wish to support.</p>
+<div class="alert alert-info">We recommend using branches instead of tags, because branches allow  bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
+<h2>Uploading Release Documentation</h2>
+<p>You must have access to project documentation servers in order to upload project documentation:</p>
+<pre class="command"><code class="command">cd core/git checkout {TAG}&#x000A;mvn clean javadoc:aggregate -Pjavadoc&#x000A;rsync -rv --protocol=28  target/javadoc/ forge@filemgmt.jboss.org:/docs_htdocs/forge/javadoc/&#x000A;</code></pre>
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>
