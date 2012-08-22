@@ -6,7 +6,7 @@ index: 9
 
 h1. Ensure all referenced libraries are on the CLASSPATH
 
-div(alert alert-info). As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin POM file and create the proper dependency references
+div(alert alert-info). As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin POM file and create the proper dependency references; subsequently, any dependencies with the groupId, "*org.jboss.forge*" are considered to be *reserved* by Forge, and will be marked as "*provided*" scope, and thus, ignored if not provided as part of the core runtime.
 
 If you are experiencing overwhelming issues with a ClassLoader, and cannot work around the modular environment, Forge offers an alternate Plugin packaging mode that can be activated by setting a flag in your Plugin's src/main/resources/META-INF/forge.xml file:
 
@@ -17,8 +17,6 @@ bc(prettyprint linenums).. <forge>
 p. This will cause Forge to bundle all dependencies for your Plugin in the Plugin module itself, instead of creating a separate "dependencies" module, with a separate ClassLoader.
 
 As a last resort, you may also shade code into your plugin's JAR file; however, this is extremely discouraged, since you may cause ClassCastExceptions at runtime, and this increases the burden on Class scanning at boot time, because CDI will scan all classes in your Plugin JAR file.
-
-div(alert alert-danger). This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies WILL NOT BE INSTALLED with your plugin; they must be packaged via shade.
 
 p. Using Forge to set up Shading
 

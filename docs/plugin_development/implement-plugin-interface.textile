@@ -6,9 +6,9 @@ index: 2
 
 h1. Implement the Plugin interface
 
-The first thing you must do in order to create a forge plugin, is create a new class and implement the org.jboss.seam.forge.shell.plugins.Plugin interface. Notice that the interface has no methods, this is because you will be adding your own custom commands later.
+The first thing you must do in order to create a forge plugin, is create a new class and implement the org.jboss.forge.shell.plugins.Plugin interface. Notice that the interface has no methods, this is because you will be adding your own custom commands later.
 
-bc(prettyprint linenums).. import org.jboss.seam.forge.shell.plugins.Plugin;
+bc(prettyprint linenums).. import org.jboss.forge.shell.plugins.Plugin;
 public class ExamplePlugin implements Plugin
 {
 }
