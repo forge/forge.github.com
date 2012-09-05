@@ -74,6 +74,9 @@
               <li>
                 <a href='https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' target='roadmap'>Roadmap</a>
               </li>
+              <li>
+                <a href='/events.html'>Plugins</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -81,127 +84,127 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-  //<![CDATA[
-    $(document).ready(function() {
-      var pathname = window.location.pathname;
-      console.log(pathname);
-      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-    });
-  //]]>
-</script>
-<div class='container-fluid'>
-  <div class='row-fluid'>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>Using Forge</li>
-        <li>
-          <a href='/docs/using/'>Installation</a>
-        </li>
-        <li>
-          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-        </li>
-        <li>
-          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href='/docs/using/samples.html'>Samples</a>
-        </li>
-        <li>
-          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/faq.html'>FAQ</a>
-        </li>
-        <li>
-          <a href='/docs/using/affiliation.html'>Affiliation</a>
-        </li>
-        <li class='nav-header'>Get involved</li>
-        <li>
-          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-        </li>
-        <li class='nav-header'>Important plugins</li>
-        <li>
-          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-        </li>
-        <li>
-          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-        </li>
-        <li class='nav-header'>Developing plugins</li>
-        <li>
-          <a href='/docs/plugin_development/'>Developing a plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class='span10'>
-      <h1>Ensure all referenced libraries are on the <span class="caps">CLASSPATH</span></h1>
-<div class="alert alert-info">As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin <span class="caps">POM</span> file and create the proper dependency references</div>
-<p>If you are experiencing overwhelming issues with a ClassLoader, and cannot work around the modular environment, Forge offers an alternate Plugin packaging mode that can be activated by setting a flag in your Plugin&#8217;s src/main/resources/<span class="caps">META</span>-<span class="caps">INF</span>/forge.xml file:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;forge&gt;&#x000A;  &lt;dependencies-as-resource-root/&gt;&#x000A;&lt;/forge&gt;</code></pre>
-<p>This will cause Forge to bundle all dependencies for your Plugin in the Plugin module itself, instead of creating a separate &#8220;dependencies&#8221; module, with a separate ClassLoader.</p>
-<p>As a last resort, you may also shade code into your plugin&#8217;s <span class="caps">JAR</span> file; however, this is extremely discouraged, since you may cause ClassCastExceptions at runtime, and this increases the burden on Class scanning at boot time, because <span class="caps">CDI</span> will scan all classes in your Plugin <span class="caps">JAR</span> file.</p>
-<div class="alert alert-danger">This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies <span class="caps">WILL</span> <span class="caps">NOT</span> BE <span class="caps">INSTALLED</span> with your plugin; they must be packaged via shade.</div>
-<p>Using Forge to set up Shading</p>
-<pre class="command"><code class="command">[example-plugin] example-plugin $ shade setup&#x000A;***SUCCESS*** Shade plugin is installed.&#x000A;[example-plugin] example-plugin $&#x000A;[example-plugin] example-plugin $ shade include commons-collections:commons-collections:3.2.1</code></pre>
-<p>Notice that the pom.xml file has been modified and now includes a shade configuration including commons-collections.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;plugin&gt;&#x000A;        &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.4&lt;/version&gt;&#x000A;        &lt;executions&gt;&#x000A;          &lt;execution&gt;&#x000A;            &lt;phase&gt;package&lt;/phase&gt;&#x000A;            &lt;goals&gt;&#x000A;              &lt;goal&gt;shade&lt;/goal&gt;&#x000A;            &lt;/goals&gt;&#x000A;            &lt;configuration&gt;&#x000A;              &lt;artifactSet&gt;&#x000A;                &lt;includes&gt;&#x000A;                  &lt;include&gt;commons-collections:commons-collections&lt;/include&gt;&#x000A;                &lt;/includes&gt;&#x000A;              &lt;/artifactSet&gt;&#x000A;            &lt;/configuration&gt;&#x000A;          &lt;/execution&gt;&#x000A;        &lt;/executions&gt;&#x000A;      &lt;/plugin&gt;</code></pre>
-<div class="alert alert-danger">Do <span class="caps">NOT</span> include Forge provided libraries with shade, or you will very likely create a non-functional plugin.</div>
-<p>It it also recommended, however, to relocate shaded class files to a new package. Your code will access the bundled code at this new location, and will prevent version conflicts if another plugin bundles a different version of the same library. For this, we use the following command.</p>
-<pre class="command"><code class="command">$ shade relocate --pattern {ORIGINAL PGK} --shadedPattern {NEW PKG} --excludes {EXCLUDED PKGS...}</code></pre>
-<p>For the purposes of this example, let us assume that our Plugin depends on the Apache Commons Collections library (org.apache.commons.collections), and we want to make sure that no conflicts occur.</p>
-<pre class="command"><code class="command">[example-plugin] example-plugin $ shade relocate --pattern org.apache.commons.collections --shadedPattern ~.shaded.apache.collections&#x000A;***SUCCESS*** Relocating [org.apache.commons.collections] to [com.example.forge.plugin.shaded.apache.collections]&#x000A;[example-plugin] example-plugin $</code></pre>
-<p>This should be repeated for each dependency as necessary. Notice that our <span class="caps">POM</span> has been updated with the configuration:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;plugin&gt;&#x000A;     &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&#x000A;     &lt;version&gt;1.4&lt;/version&gt;&#x000A;     &lt;executions&gt;&#x000A;       &lt;execution&gt;&#x000A;         &lt;phase&gt;package&lt;/phase&gt;&#x000A;         &lt;goals&gt;&#x000A;           &lt;goal&gt;shade&lt;/goal&gt;&#x000A;         &lt;/goals&gt;&#x000A;         &lt;configuration&gt;&#x000A;           &lt;artifactSet&gt;&#x000A;             &lt;includes&gt;&#x000A;               &lt;include&gt;commons-collections:commons-collections&lt;/include&gt;&#x000A;             &lt;/includes&gt;&#x000A;           &lt;/artifactSet&gt;&#x000A;           &lt;relocations&gt;&#x000A;             &lt;relocation&gt;&#x000A;               &lt;pattern&gt;org.apache.commons.collections&lt;/pattern&gt;&#x000A;               &lt;shadedPattern&gt;com.example.forge.plugin.shaded.apache.collections&lt;/shadedPattern&gt;&#x000A;             &lt;/relocation&gt;&#x000A;           &lt;/relocations&gt;&#x000A;         &lt;/configuration&gt;&#x000A;       &lt;/execution&gt;&#x000A;     &lt;/executions&gt;&#x000A;   &lt;/plugin&gt;</code></pre>
-<p>When you build your plugin, you should see confirmation output from the Maven Shade Plugin looking something like this:</p>
-<pre class="command"><code class="command">[INFO] --- maven-shade-plugin:1.4:shade (default) @ example-plugin ---&#x000A;[INFO] Excluding org.jboss.seam.forge:forge-shell-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.seam.forge:forge-parser-java-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.seam.forge:forge-parser-xml:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding javax.enterprise:cdi-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.spec.javax.interceptor:jboss-interceptors-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding javax.annotation:jsr250-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding javax.inject:javax.inject:jar:{version} from the shaded jar.&#x000A;[INFO] Including commons-collections:commons-collections:jar:3.2.1 in the shaded jar.&#x000A;[INFO] Replacing original artifact with shaded artifact.&#x000A;[INFO] Replacing ~/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT.jar&#x000A;   with ~/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT-shaded.jar&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] BUILD SUCCESS&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;</code></pre>
-    </div>
-  </div>
-</div>
+        //<![CDATA[
+          $(document).ready(function() {
+            var pathname = window.location.pathname;
+            console.log(pathname);
+            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+          });
+        //]]>
+      </script>
+      <div class='container-fluid'>
+        <div class='row-fluid'>
+          <div class='span2'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>Using Forge</li>
+              <li>
+                <a href='/docs/using/'>Installation</a>
+              </li>
+              <li>
+                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+              </li>
+              <li>
+                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href='/docs/using/samples.html'>Samples</a>
+              </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/faq.html'>FAQ</a>
+              </li>
+              <li>
+                <a href='/docs/using/affiliation.html'>Affiliation</a>
+              </li>
+              <li class='nav-header'>Get involved</li>
+              <li>
+                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+              </li>
+              <li class='nav-header'>Important plugins</li>
+              <li>
+                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+              </li>
+              <li class='nav-header'>Developing plugins</li>
+              <li>
+                <a href='/docs/plugin_development/'>Developing a plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class='span10'>
+            <h1>Ensure all referenced libraries are on the <span class="caps">CLASSPATH</span></h1>
+            <div class="alert alert-info">As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin <span class="caps">POM</span> file and create the proper dependency references</div>
+            <p>If you are experiencing overwhelming issues with a ClassLoader, and cannot work around the modular environment, Forge offers an alternate Plugin packaging mode that can be activated by setting a flag in your Plugin&#8217;s src/main/resources/<span class="caps">META</span>-<span class="caps">INF</span>/forge.xml file:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;forge&gt;&#x000A;  &lt;dependencies-as-resource-root/&gt;&#x000A;&lt;/forge&gt;</code></pre>
+            <p>This will cause Forge to bundle all dependencies for your Plugin in the Plugin module itself, instead of creating a separate &#8220;dependencies&#8221; module, with a separate ClassLoader.</p>
+            <p>As a last resort, you may also shade code into your plugin&#8217;s <span class="caps">JAR</span> file; however, this is extremely discouraged, since you may cause ClassCastExceptions at runtime, and this increases the burden on Class scanning at boot time, because <span class="caps">CDI</span> will scan all classes in your Plugin <span class="caps">JAR</span> file.</p>
+            <div class="alert alert-danger">This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies <span class="caps">WILL</span> <span class="caps">NOT</span> BE <span class="caps">INSTALLED</span> with your plugin; they must be packaged via shade.</div>
+            <p>Using Forge to set up Shading</p>
+            <pre class="command"><code class="command">[example-plugin] example-plugin $ shade setup&#x000A;***SUCCESS*** Shade plugin is installed.&#x000A;[example-plugin] example-plugin $&#x000A;[example-plugin] example-plugin $ shade include commons-collections:commons-collections:3.2.1</code></pre>
+            <p>Notice that the pom.xml file has been modified and now includes a shade configuration including commons-collections.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;plugin&gt;&#x000A;        &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.4&lt;/version&gt;&#x000A;        &lt;executions&gt;&#x000A;          &lt;execution&gt;&#x000A;            &lt;phase&gt;package&lt;/phase&gt;&#x000A;            &lt;goals&gt;&#x000A;              &lt;goal&gt;shade&lt;/goal&gt;&#x000A;            &lt;/goals&gt;&#x000A;            &lt;configuration&gt;&#x000A;              &lt;artifactSet&gt;&#x000A;                &lt;includes&gt;&#x000A;                  &lt;include&gt;commons-collections:commons-collections&lt;/include&gt;&#x000A;                &lt;/includes&gt;&#x000A;              &lt;/artifactSet&gt;&#x000A;            &lt;/configuration&gt;&#x000A;          &lt;/execution&gt;&#x000A;        &lt;/executions&gt;&#x000A;      &lt;/plugin&gt;</code></pre>
+            <div class="alert alert-danger">Do <span class="caps">NOT</span> include Forge provided libraries with shade, or you will very likely create a non-functional plugin.</div>
+            <p>It it also recommended, however, to relocate shaded class files to a new package. Your code will access the bundled code at this new location, and will prevent version conflicts if another plugin bundles a different version of the same library. For this, we use the following command.</p>
+            <pre class="command"><code class="command">$ shade relocate --pattern {ORIGINAL PGK} --shadedPattern {NEW PKG} --excludes {EXCLUDED PKGS...}</code></pre>
+            <p>For the purposes of this example, let us assume that our Plugin depends on the Apache Commons Collections library (org.apache.commons.collections), and we want to make sure that no conflicts occur.</p>
+            <pre class="command"><code class="command">[example-plugin] example-plugin $ shade relocate --pattern org.apache.commons.collections --shadedPattern ~.shaded.apache.collections&#x000A;***SUCCESS*** Relocating [org.apache.commons.collections] to [com.example.forge.plugin.shaded.apache.collections]&#x000A;[example-plugin] example-plugin $</code></pre>
+            <p>This should be repeated for each dependency as necessary. Notice that our <span class="caps">POM</span> has been updated with the configuration:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;plugin&gt;&#x000A;     &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&#x000A;     &lt;version&gt;1.4&lt;/version&gt;&#x000A;     &lt;executions&gt;&#x000A;       &lt;execution&gt;&#x000A;         &lt;phase&gt;package&lt;/phase&gt;&#x000A;         &lt;goals&gt;&#x000A;           &lt;goal&gt;shade&lt;/goal&gt;&#x000A;         &lt;/goals&gt;&#x000A;         &lt;configuration&gt;&#x000A;           &lt;artifactSet&gt;&#x000A;             &lt;includes&gt;&#x000A;               &lt;include&gt;commons-collections:commons-collections&lt;/include&gt;&#x000A;             &lt;/includes&gt;&#x000A;           &lt;/artifactSet&gt;&#x000A;           &lt;relocations&gt;&#x000A;             &lt;relocation&gt;&#x000A;               &lt;pattern&gt;org.apache.commons.collections&lt;/pattern&gt;&#x000A;               &lt;shadedPattern&gt;com.example.forge.plugin.shaded.apache.collections&lt;/shadedPattern&gt;&#x000A;             &lt;/relocation&gt;&#x000A;           &lt;/relocations&gt;&#x000A;         &lt;/configuration&gt;&#x000A;       &lt;/execution&gt;&#x000A;     &lt;/executions&gt;&#x000A;   &lt;/plugin&gt;</code></pre>
+            <p>When you build your plugin, you should see confirmation output from the Maven Shade Plugin looking something like this:</p>
+            <pre class="command"><code class="command">[INFO] --- maven-shade-plugin:1.4:shade (default) @ example-plugin ---&#x000A;[INFO] Excluding org.jboss.seam.forge:forge-shell-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.seam.forge:forge-parser-java-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.seam.forge:forge-parser-xml:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding javax.enterprise:cdi-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding org.jboss.spec.javax.interceptor:jboss-interceptors-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding javax.annotation:jsr250-api:jar:{version} from the shaded jar.&#x000A;[INFO] Excluding javax.inject:javax.inject:jar:{version} from the shaded jar.&#x000A;[INFO] Including commons-collections:commons-collections:jar:3.2.1 in the shaded jar.&#x000A;[INFO] Replacing original artifact with shaded artifact.&#x000A;[INFO] Replacing ~/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT.jar&#x000A;   with ~/Desktop/example-plugin/target/example-plugin-1.0.0-SNAPSHOT-shaded.jar&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] BUILD SUCCESS&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;</code></pre>
+          </div>
+        </div>
+      </div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>

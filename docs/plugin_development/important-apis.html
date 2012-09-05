@@ -74,6 +74,9 @@
               <li>
                 <a href='https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' target='roadmap'>Roadmap</a>
               </li>
+              <li>
+                <a href='/events.html'>Plugins</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -81,145 +84,145 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-  //<![CDATA[
-    $(document).ready(function() {
-      var pathname = window.location.pathname;
-      console.log(pathname);
-      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-    });
-  //]]>
-</script>
-<div class='container-fluid'>
-  <div class='row-fluid'>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>Using Forge</li>
-        <li>
-          <a href='/docs/using/'>Installation</a>
-        </li>
-        <li>
-          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-        </li>
-        <li>
-          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href='/docs/using/samples.html'>Samples</a>
-        </li>
-        <li>
-          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/faq.html'>FAQ</a>
-        </li>
-        <li>
-          <a href='/docs/using/affiliation.html'>Affiliation</a>
-        </li>
-        <li class='nav-header'>Get involved</li>
-        <li>
-          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-        </li>
-        <li class='nav-header'>Important plugins</li>
-        <li>
-          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-        </li>
-        <li>
-          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-        </li>
-        <li class='nav-header'>Developing plugins</li>
-        <li>
-          <a href='/docs/plugin_development/'>Developing a plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class='span10'>
-      <h1>Important APIs</h1>
-<h2>Dependency Facet</h2>
-<p>A lot of Forge plugins make it easy to install extra libraries or frameworks to your project. In a Maven project this almost always result in adding new dependencies to your <span class="caps">POM</span> by copy pasting from some website. Make installing a framework easier by letting Forge do the <span class="caps">POM</span> work for the user.&nbsp;</p>
-<h3>Creating dependencies</h3>
-<p>Dependencies can easily be created using the DependencyBuilder.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">Dependency dep = DependencyBuilder.create()&#x000A;                      .setGroupId("my.group.id")&#x000A;                      .setArtifactId("artifact-id")&#x000A;                      .setVersion("1.0")&#x000A;                      .setScopeType(ScopeType.PROVIDED);</code></pre>
-<p>The Dependency class is also input for many other Forge APIs.</p>
-<h3>Prompting for versions</h3>
-<p>Of course it&#8217;s a bad idea to couple your plugin directly to a specific version of the Maven dependency. To let the user choose a version Forge can list all available versions in the repository and prompt the user.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">DependencyFacet dependencyFacet = project.getFacet(DependencyFacet.class);&#x000A;Dependency myDep = DependencyBuilder.create()&#x000A;                .setGroupId("commons-httpclient")&#x000A;                .setArtifactId("commons-httpclient");&#x000A;List&lt;Dependency&gt; versions = dependencyFacet.resolveAvailableVersions(myDep);&#x000A;Dependency dependency = shell.promptChoiceTyped("What version do you want to install?", versions);</code></pre>
-<p>You can also limit the versions using a range:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">dependencyFacet.resolveAvailableVersions("org.jboss.forge:example:[1.0.0,)");</code>&#x000A;&#x000A;<code class="prettyprint linenums">dependencyFacet.resolveAvailableVersions("org.jboss.forge:example:(1.0.0,3.0.0]");</code></pre>
-<h3>Adding a dependency to the <span class="caps">POM</span></h3>
-<p>Now that we have our dependency we can add it to the <span class="caps">POM</span> file. Maven supports different ways to work with plugin; you can either have <em>managed</em> dependencies or <em>direct</em> dependencies. Managed dependencies are an indirection where you specify the version of a dependency in the parent <span class="caps">POM</span>. For multi-module projects this is often preferred. Forge can do both however.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">dependencyFacet.addDirectDependency(Dependency dep);&#x000A;dependencyFacet.addManagedDependency(Dependency dep);</code></pre>
-<h2>Maven Plugin Facet</h2>
-<p>A little more advanced is creating Maven Plugin configuration from your plugin.<br />
-First of all your plugin needs the forge-maven-api.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-maven-api&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;provided&lt;/scope&gt;&#x000A;&lt;/dependency&gt;</code></pre>
-<h3>Creating a plugin</h3>
-<p>Now let&#8217;s start building the plugin. You use the MavenPluginBuilder for this. First of all a plugin needs a dependency (group id and artifact id).</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">DependencyBuilder findbugsDependencyBuilder = DependencyBuilder.create()&#x000A;              .setGroupId("org.codehaus.mojo")&#x000A;              .setArtifactId("findbugs-maven-plugin");</code>&#x000A;&#x000A;<code class="prettyprint linenums">MavenPluginBuilder findbugsPlugin = MavenPluginBuilder.create()&#x000A;              .setDependency(findbugsDependency)</code></pre>
-<h3>Add a plugin to the <span class="caps">POM</span></h3>
-<p>After building a plugin you can add it to the <span class="caps">POM</span>.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">MavenPluginFacet pluginFacet = project.getFacet(MavenPluginFacet.class);&#x000A;pluginFacet.addPlugin(findbugsPlugin);</code></pre>
-<h3>Plugin Configuration</h3>
-<p>Most Maven plugins need some kind of configuration. Each configuration element is also a <span class="caps">XML</span> element in the <span class="caps">POM</span> and can potentialy be deeply nested. This makes the <span class="caps">API</span> a little tricky to work with, so try to make small steps.</p>
-<p>So for example, let&#8217;s add a xmlOutput configuration element to the plugin.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">MavenPluginBuilder findbugsPlugin = MavenPluginBuilder.create()&#x000A;              .setDependency(findbugsDependency)&#x000A;              .createConfiguration()&#x000A;              .createConfigurationElement("xmlOutput")&#x000A;              .setText("true").getParentPluginConfig().getOrigin();</code></pre>
-<h2>Resource Facet</h2>
-<p>The Resource Facet gives access to resources (files) in a project. It understands the Maven directory structure (e.g. src/test/resources).</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">FileResource&lt;?&gt; resource = (FileResource&lt;?&gt;) resources.getTestResourceFolder().getChild("example.xml");</code>&#x000A;&#x000A;<code class="prettyprint linenums">resource.setContents("new string");</code></pre>
-<h2><span class="caps">XML</span> parsing and generation</h2>
-<p>Many plugins will have to read/write <span class="caps">XML</span> files (e.g. to generate configuration files). Forge has a convenient <span class="caps">XML</span> <span class="caps">API</span>.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">Node xml = XMLParser.parse(resource.getResourceInputStream());&#x000A;Node config = xml.getOrCreate("someelement");&#x000A;config.createChild("sub").createChild("property@name=test").text("hello");</code>&#x000A;&#x000A;<code class="prettyprint linenums">resource.setContents(XMLParser.toXMLString(xml));</code></pre>
-<p>This will result in the following <span class="caps">XML</span>:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;someelement&gt;&#x000A;  &lt;sub&gt;&#x000A;     &lt;property name="test"&gt;hello&lt;/property&gt;&#x000A;  &lt;/sub&gt;&#x000A;&lt;/someelement&gt;</code></pre>
-<h2>Code templates</h2>
-    </div>
-  </div>
-</div>
+        //<![CDATA[
+          $(document).ready(function() {
+            var pathname = window.location.pathname;
+            console.log(pathname);
+            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+          });
+        //]]>
+      </script>
+      <div class='container-fluid'>
+        <div class='row-fluid'>
+          <div class='span2'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>Using Forge</li>
+              <li>
+                <a href='/docs/using/'>Installation</a>
+              </li>
+              <li>
+                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+              </li>
+              <li>
+                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href='/docs/using/samples.html'>Samples</a>
+              </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/faq.html'>FAQ</a>
+              </li>
+              <li>
+                <a href='/docs/using/affiliation.html'>Affiliation</a>
+              </li>
+              <li class='nav-header'>Get involved</li>
+              <li>
+                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+              </li>
+              <li class='nav-header'>Important plugins</li>
+              <li>
+                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+              </li>
+              <li class='nav-header'>Developing plugins</li>
+              <li>
+                <a href='/docs/plugin_development/'>Developing a plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class='span10'>
+            <h1>Important APIs</h1>
+            <h2>Dependency Facet</h2>
+            <p>A lot of Forge plugins make it easy to install extra libraries or frameworks to your project. In a Maven project this almost always result in adding new dependencies to your <span class="caps">POM</span> by copy pasting from some website. Make installing a framework easier by letting Forge do the <span class="caps">POM</span> work for the user.&nbsp;</p>
+            <h3>Creating dependencies</h3>
+            <p>Dependencies can easily be created using the DependencyBuilder.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">Dependency dep = DependencyBuilder.create()&#x000A;                      .setGroupId("my.group.id")&#x000A;                      .setArtifactId("artifact-id")&#x000A;                      .setVersion("1.0")&#x000A;                      .setScopeType(ScopeType.PROVIDED);</code></pre>
+            <p>The Dependency class is also input for many other Forge APIs.</p>
+            <h3>Prompting for versions</h3>
+            <p>Of course it&#8217;s a bad idea to couple your plugin directly to a specific version of the Maven dependency. To let the user choose a version Forge can list all available versions in the repository and prompt the user.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">DependencyFacet dependencyFacet = project.getFacet(DependencyFacet.class);&#x000A;Dependency myDep = DependencyBuilder.create()&#x000A;                .setGroupId("commons-httpclient")&#x000A;                .setArtifactId("commons-httpclient");&#x000A;List&lt;Dependency&gt; versions = dependencyFacet.resolveAvailableVersions(myDep);&#x000A;Dependency dependency = shell.promptChoiceTyped("What version do you want to install?", versions);</code></pre>
+            <p>You can also limit the versions using a range:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">dependencyFacet.resolveAvailableVersions("org.jboss.forge:example:[1.0.0,)");</code>&#x000A;&#x000A;<code class="prettyprint linenums">dependencyFacet.resolveAvailableVersions("org.jboss.forge:example:(1.0.0,3.0.0]");</code></pre>
+            <h3>Adding a dependency to the <span class="caps">POM</span></h3>
+            <p>Now that we have our dependency we can add it to the <span class="caps">POM</span> file. Maven supports different ways to work with plugin; you can either have <em>managed</em> dependencies or <em>direct</em> dependencies. Managed dependencies are an indirection where you specify the version of a dependency in the parent <span class="caps">POM</span>. For multi-module projects this is often preferred. Forge can do both however.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">dependencyFacet.addDirectDependency(Dependency dep);&#x000A;dependencyFacet.addManagedDependency(Dependency dep);</code></pre>
+            <h2>Maven Plugin Facet</h2>
+            <p>A little more advanced is creating Maven Plugin configuration from your plugin.<br />
+            First of all your plugin needs the forge-maven-api.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-maven-api&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;provided&lt;/scope&gt;&#x000A;&lt;/dependency&gt;</code></pre>
+            <h3>Creating a plugin</h3>
+            <p>Now let&#8217;s start building the plugin. You use the MavenPluginBuilder for this. First of all a plugin needs a dependency (group id and artifact id).</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">DependencyBuilder findbugsDependencyBuilder = DependencyBuilder.create()&#x000A;              .setGroupId("org.codehaus.mojo")&#x000A;              .setArtifactId("findbugs-maven-plugin");</code>&#x000A;&#x000A;<code class="prettyprint linenums">MavenPluginBuilder findbugsPlugin = MavenPluginBuilder.create()&#x000A;              .setDependency(findbugsDependency)</code></pre>
+            <h3>Add a plugin to the <span class="caps">POM</span></h3>
+            <p>After building a plugin you can add it to the <span class="caps">POM</span>.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">MavenPluginFacet pluginFacet = project.getFacet(MavenPluginFacet.class);&#x000A;pluginFacet.addPlugin(findbugsPlugin);</code></pre>
+            <h3>Plugin Configuration</h3>
+            <p>Most Maven plugins need some kind of configuration. Each configuration element is also a <span class="caps">XML</span> element in the <span class="caps">POM</span> and can potentialy be deeply nested. This makes the <span class="caps">API</span> a little tricky to work with, so try to make small steps.</p>
+            <p>So for example, let&#8217;s add a xmlOutput configuration element to the plugin.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">MavenPluginBuilder findbugsPlugin = MavenPluginBuilder.create()&#x000A;              .setDependency(findbugsDependency)&#x000A;              .createConfiguration()&#x000A;              .createConfigurationElement("xmlOutput")&#x000A;              .setText("true").getParentPluginConfig().getOrigin();</code></pre>
+            <h2>Resource Facet</h2>
+            <p>The Resource Facet gives access to resources (files) in a project. It understands the Maven directory structure (e.g. src/test/resources).</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">FileResource&lt;?&gt; resource = (FileResource&lt;?&gt;) resources.getTestResourceFolder().getChild("example.xml");</code>&#x000A;&#x000A;<code class="prettyprint linenums">resource.setContents("new string");</code></pre>
+            <h2><span class="caps">XML</span> parsing and generation</h2>
+            <p>Many plugins will have to read/write <span class="caps">XML</span> files (e.g. to generate configuration files). Forge has a convenient <span class="caps">XML</span> <span class="caps">API</span>.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">Node xml = XMLParser.parse(resource.getResourceInputStream());&#x000A;Node config = xml.getOrCreate("someelement");&#x000A;config.createChild("sub").createChild("property@name=test").text("hello");</code>&#x000A;&#x000A;<code class="prettyprint linenums">resource.setContents(XMLParser.toXMLString(xml));</code></pre>
+            <p>This will result in the following <span class="caps">XML</span>:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;someelement&gt;&#x000A;  &lt;sub&gt;&#x000A;     &lt;property name="test"&gt;hello&lt;/property&gt;&#x000A;  &lt;/sub&gt;&#x000A;&lt;/someelement&gt;</code></pre>
+            <h2>Code templates</h2>
+          </div>
+        </div>
+      </div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>
