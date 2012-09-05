@@ -84,124 +84,124 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Enable Piping between Commands</h1>
-            <p>Much like a standard <span class="caps">UNIX</span>-style shell, the Forge shell supports piping IO between executables; however in the case of forge, piping actually occurs between plugins, commands, for example:</p>
-            <pre class="command"><code class="command">$ cat /home/username/.forge/config | grep automatic&#x000A;@/* Automatically generated config file */;</code></pre>
-            <p>This might look like a typical <span class="caps">BASH</span> command, but if you run forge and try it, you may be surprised to find that the results are the same as on your system command prompt, and in this example, we are demonstrating the pipe: &#8216;|&#8217;</p>
-            <p>In order to enable piping in your plugins, you must use one or both of the <code>@PipeIn InputStream stream</code> or <code>PipeOut out</code> command arguments. Notice that <code>PipeOut</code> is a java type that must be used as a Method parameter, whereas <code>@PipeIn</code> is an annotation that must be placed on a Java <code>@PipeIn InputStream stream</code> or <code>@PipeIn String in</code> Method parameter.</p>
-            <p><code>PipeOut out</code> &#8211; by default &#8211; is used to print output to the shell console; however, if the plugin on the left-hand-side is piped to a secondary plugin on the command line, the output will be written to the <code>@PipeIn InputStream stream</code> of the plugin on the right-hand-side:</p>
-            <pre class="command"><code class="command">$ left | right</code></pre>
-            <p>Or in terms of pipes, this could be thought of as a flow of data from left to right:</p>
-            <pre class="command"><code class="command">$ PipeOut out -&gt; @PipeIn InputStream stream</code></pre>
-            <p>Notice that you can pipe output between any number of plugins as long as each uses both a {{@PipeIn InputStream}} and {{PipeOut}}:</p>
-            <pre class="command"><code class="command">$ first command | second command | third command</code></pre>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Command("example-command")&#x000A;   public void exampleCommand(&#x000A;            @PipeIn final InputStream in,&#x000A;            @Option(required = false) final boolean option,&#x000A;            PipeOut out)&#x000A;   { ... }</code></pre>
-            <p></p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Command("example-command")&#x000A;   public void exampleCommand(&#x000A;            @PipeIn final String in,&#x000A;            @Option(required = false) final boolean option,&#x000A;            PipeOut out)&#x000A;   { ... }</code></pre>
-            <p>Take the <code>grep</code> command itself, for example, which supports two methods of invocation: Invocation on one or more <code>Resource&lt;?&gt;</code> objects, or invocation on a piped <code>InputStream</code>.</p>
-            <div class="alert alert-success">If no piping is invoked (e.g: via standalone execution of the plugin), a piped {{InputStream}} will be null. In addition, piped {{InputStream}}s do not need to be closed; Forge will handle cleanup of these streams.</div>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Alias("grep")&#x000A;@Topic("File &amp; Resources")&#x000A;@Help("print lines matching a pattern")&#x000A;public class GrepPlugin implements Plugin&#x000A;{&#x000A;   @DefaultCommand&#x000A;   public void run(&#x000A;         @PipeIn final InputStream pipeIn,&#x000A;         @Option(name = "ignore-case", shortName = "i", flagOnly = true) boolean ignoreCase,&#x000A;         @Option(name = "regexp", shortName = "e") String regExp,&#x000A;         @Option(description = "PATTERN") String pattern,&#x000A;         @Option(description = "FILE ...") Resource&lt;?&gt;[] resources,&#x000A;         final PipeOut pipeOut&#x000A;   ) throws IOException&#x000A;   {&#x000A;      Pattern matchPattern = /* determine pattern (omitted for space) */;</code>&#x000A;&#x000A;<code class="prettyprint linenums">      if (resources != null) {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* User passed file(s) on the command line; grep those. */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         for (Resource&lt;?&gt; r : resources) {&#x000A;            InputStream inputStream = r.getResourceInputStream();&#x000A;            try {&#x000A;               match(inputStream, matchPattern, pipeOut, ignoreCase);&#x000A;            }&#x000A;            finally {&#x000A;               inputStream.close();&#x000A;            }&#x000A;         }&#x000A;      }&#x000A;      else if (pipeIn != null) {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* No files were passed on the command line; check for a&#x000A;          * piped InputStream and use that.&#x000A;          */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         match(pipeIn, matchPattern, pipeOut, ignoreCase);&#x000A;      }&#x000A;      else {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* No input was passed to the plugin. */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         throw new RuntimeException("Error: arguments required");&#x000A;      }&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   private void match(InputStream instream, Pattern pattern, PipeOut pipeOut, boolean caseInsensitive) throws IOException {&#x000A;      StringAppender buf = new StringAppender();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      int c;&#x000A;      while ((c = instream.read()) != -1) { /* Read from the given stream. */&#x000A;         switch (c) {&#x000A;         case '\r':&#x000A;         case '\n':&#x000A;            String s = caseInsensitive ? buf.toString().toLowerCase() : buf.toString();</code>&#x000A;&#x000A;<code class="prettyprint linenums">            if (pattern.matcher(s).matches()) {&#x000A;               pipeOut.println(s); /* Write to the output pipe. */&#x000A;            }&#x000A;            buf.reset();&#x000A;            break;&#x000A;         default:&#x000A;            buf.append((char) c);&#x000A;            break;&#x000A;         }&#x000A;      }&#x000A;   }&#x000A;}</code></pre>
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Enable Piping between Commands</h1>
+<p>Much like a standard <span class="caps">UNIX</span>-style shell, the Forge shell supports piping IO between executables; however in the case of forge, piping actually occurs between plugins, commands, for example:</p>
+<pre class="command"><code class="command">$ cat /home/username/.forge/config | grep automatic&#x000A;@/* Automatically generated config file */;</code></pre>
+<p>This might look like a typical <span class="caps">BASH</span> command, but if you run forge and try it, you may be surprised to find that the results are the same as on your system command prompt, and in this example, we are demonstrating the pipe: &#8216;|&#8217;</p>
+<p>In order to enable piping in your plugins, you must use one or both of the <code>@PipeIn InputStream stream</code> or <code>PipeOut out</code> command arguments. Notice that <code>PipeOut</code> is a java type that must be used as a Method parameter, whereas <code>@PipeIn</code> is an annotation that must be placed on a Java <code>@PipeIn InputStream stream</code> or <code>@PipeIn String in</code> Method parameter.</p>
+<p><code>PipeOut out</code> &#8211; by default &#8211; is used to print output to the shell console; however, if the plugin on the left-hand-side is piped to a secondary plugin on the command line, the output will be written to the <code>@PipeIn InputStream stream</code> of the plugin on the right-hand-side:</p>
+<pre class="command"><code class="command">$ left | right</code></pre>
+<p>Or in terms of pipes, this could be thought of as a flow of data from left to right:</p>
+<pre class="command"><code class="command">$ PipeOut out -&gt; @PipeIn InputStream stream</code></pre>
+<p>Notice that you can pipe output between any number of plugins as long as each uses both a {{@PipeIn InputStream}} and {{PipeOut}}:</p>
+<pre class="command"><code class="command">$ first command | second command | third command</code></pre>
+<pre class="prettyprint linenums"><code class="prettyprint linenums">@Command("example-command")&#x000A;   public void exampleCommand(&#x000A;            @PipeIn final InputStream in,&#x000A;            @Option(required = false) final boolean option,&#x000A;            PipeOut out)&#x000A;   { ... }</code></pre>
+<p></p>
+<pre class="prettyprint linenums"><code class="prettyprint linenums">@Command("example-command")&#x000A;   public void exampleCommand(&#x000A;            @PipeIn final String in,&#x000A;            @Option(required = false) final boolean option,&#x000A;            PipeOut out)&#x000A;   { ... }</code></pre>
+<p>Take the <code>grep</code> command itself, for example, which supports two methods of invocation: Invocation on one or more <code>Resource&lt;?&gt;</code> objects, or invocation on a piped <code>InputStream</code>.</p>
+<div class="alert alert-success">If no piping is invoked (e.g: via standalone execution of the plugin), a piped {{InputStream}} will be null. In addition, piped {{InputStream}}s do not need to be closed; Forge will handle cleanup of these streams.</div>
+<pre class="prettyprint linenums"><code class="prettyprint linenums">@Alias("grep")&#x000A;@Topic("File &amp; Resources")&#x000A;@Help("print lines matching a pattern")&#x000A;public class GrepPlugin implements Plugin&#x000A;{&#x000A;   @DefaultCommand&#x000A;   public void run(&#x000A;         @PipeIn final InputStream pipeIn,&#x000A;         @Option(name = "ignore-case", shortName = "i", flagOnly = true) boolean ignoreCase,&#x000A;         @Option(name = "regexp", shortName = "e") String regExp,&#x000A;         @Option(description = "PATTERN") String pattern,&#x000A;         @Option(description = "FILE ...") Resource&lt;?&gt;[] resources,&#x000A;         final PipeOut pipeOut&#x000A;   ) throws IOException&#x000A;   {&#x000A;      Pattern matchPattern = /* determine pattern (omitted for space) */;</code>&#x000A;&#x000A;<code class="prettyprint linenums">      if (resources != null) {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* User passed file(s) on the command line; grep those. */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         for (Resource&lt;?&gt; r : resources) {&#x000A;            InputStream inputStream = r.getResourceInputStream();&#x000A;            try {&#x000A;               match(inputStream, matchPattern, pipeOut, ignoreCase);&#x000A;            }&#x000A;            finally {&#x000A;               inputStream.close();&#x000A;            }&#x000A;         }&#x000A;      }&#x000A;      else if (pipeIn != null) {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* No files were passed on the command line; check for a&#x000A;          * piped InputStream and use that.&#x000A;          */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         match(pipeIn, matchPattern, pipeOut, ignoreCase);&#x000A;      }&#x000A;      else {</code>&#x000A;&#x000A;<code class="prettyprint linenums">         /* No input was passed to the plugin. */</code>&#x000A;&#x000A;<code class="prettyprint linenums">         throw new RuntimeException("Error: arguments required");&#x000A;      }&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   private void match(InputStream instream, Pattern pattern, PipeOut pipeOut, boolean caseInsensitive) throws IOException {&#x000A;      StringAppender buf = new StringAppender();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      int c;&#x000A;      while ((c = instream.read()) != -1) { /* Read from the given stream. */&#x000A;         switch (c) {&#x000A;         case '\r':&#x000A;         case '\n':&#x000A;            String s = caseInsensitive ? buf.toString().toLowerCase() : buf.toString();</code>&#x000A;&#x000A;<code class="prettyprint linenums">            if (pattern.matcher(s).matches()) {&#x000A;               pipeOut.println(s); /* Write to the output pipe. */&#x000A;            }&#x000A;            buf.reset();&#x000A;            break;&#x000A;         default:&#x000A;            buf.append((char) c);&#x000A;            break;&#x000A;         }&#x000A;      }&#x000A;   }&#x000A;}</code></pre>
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>

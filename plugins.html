@@ -84,320 +84,320 @@
     </div>
     <div class='content'>
       <div class='container'>
-        <p>Installing plugins in Forge is simple - you need only use the built-in `forge find-plugin` and `forge install-plugin` commands to search and install any of the plugins listed below. Alternatively, you may use `forge git-plugin` and `forge source-plugin` to install plugins from third party repositories, or from your local filesystem.</p>
-      </div>
-      <script></script>
-      <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var filterInput = $('#filterInput');
-            filterInput.keyup(function() {      
-              $("#pluginTable tr").show();
-              $("#pluginTable tr").slice(1).each(function() {
-          
-              var name = $.trim($(this).children().first().text()).toLowerCase();
-              var desc = $.trim($(this).children().last().text()).toLowerCase();
-              
-                if(name.indexOf(filterInput.val().toLowerCase()) == -1 
-                   && desc.indexOf(filterInput.val().toLowerCase()) == -1) {
-                  $(this).hide();
-                } 
-              });
-            });
-          });
-        //]]>
-      </script>
-      <div class='container'>
-        <input id='filterInput' type='text' />
-        <table class='table table-striped table-bordered table-condensed' id='pluginTable'>
-          <tr>
-            <th>
-              Plugin
-            </th>
-            <th>
-              Author
-            </th>
-            <th>
-              Description
-            </th>
-          </tr>
-          <tr>
-            <td>
-              arquillian
-            </td>
-            <td>
-              Paul Bakker <paul.bakker.nl@gmail.com>
-            </td>
-            <td>
-              Integration Testing Framework
-            </td>
-          </tr>
-          <tr>
-            <td>
-              seam-catch
-            </td>
-            <td>
-              Jason Porter
-            </td>
-            <td>
-              Seam Catch Plugin
-            </td>
-          </tr>
-          <tr>
-            <td>
-              seam-jms
-            </td>
-            <td>
-              John Ament
-            </td>
-            <td>
-              Seam JMS Plugin
-            </td>
-          </tr>
-          <tr>
-            <td>
-              seam-persistence
-            </td>
-            <td>
-              Paul Bakker <paul.bakker.nl@gmail.com>
-            </td>
-            <td>
-              Seam Persistence Plugin - Easy JPA integration, Seam-managed transactions, transactional annotations
-            </td>
-          </tr>
-          <tr>
-            <td>
-              hibernate-tools
-            </td>
-            <td>
-              Max Andersen
-            </td>
-            <td>
-              Database reverse engineering utilities
-            </td>
-          </tr>
-          <tr>
-            <td>
-              richfaces
-            </td>
-            <td>
-              Brian Leathem <bleathem@gmail.com>
-            </td>
-            <td>
-              RichFaces Plugin - Streamlines installation of the JBoss RichFaces component library for JSF
-            </td>
-          </tr>
-          <tr>
-            <td>
-              ocpsoft-rewrite
-            </td>
-            <td>
-              Lincoln Baxter, III <lincoln@ocpsoft.com>
-            </td>
-            <td>
-              Rewrite Plugin - Streamlines installation of the OCPSoft Rewrite URL-rewriting library for Servlet, Java EE, and Web Frameworks. Also provides streamlined commands for generating configuration providers.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              ocpsoft-prettyfaces
-            </td>
-            <td>
-              Lincoln Baxter, III <lincoln@ocpsoft.com>
-            </td>
-            <td>
-              PrettyFaces Plugin - Streamlines installation of the OCPSoft PrettyFaces URL-rewriting library for Servlet, Java EE, and JSF. Also provides streamlined commands for generating configuration and URL-mappings.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              jrebel
-            </td>
-            <td>
-              Thomas Hug <thomas.hug@ctp-consulting.com>
-            </td>
-            <td>
-              JRebel Plugin - JRebel integration into build and container (via the Cargo Maven plugin)
-            </td>
-          </tr>
-          <tr>
-            <td>
-              seam-reports
-            </td>
-            <td>
-              George Gastaldi <gegastaldi@gmail.com>
-            </td>
-            <td>
-              Seam Reports Plugin - Reporting engine CDI integration
-            </td>
-          </tr>
-          <tr>
-            <td>
-              seam-jcr
-            </td>
-            <td>
-              George Gastaldi <gegastaldi@gmail.com>
-            </td>
-            <td>
-              Seam JCR Plugin - Seam JCR is a portable extension for CDI to a JCR (Java Content Repository) 2.0 compliant implementation (JSR-283).
-            </td>
-          </tr>
-          <tr>
-            <td>
-              osgi
-            </td>
-            <td>
-              Paul Bakker <paul.bakker.nl@gmail.com>
-            </td>
-            <td>
-              Plugin to simplify Maven Bundle plugin usage
-            </td>
-          </tr>
-          <tr>
-            <td>
-              primefaces
-            </td>
-            <td>
-              Rudy De Busscher <rdebusscher@gmail.com>
-            </td>
-            <td>
-              Streamlines installation of the PrimeFaces component library for JSF
-            </td>
-          </tr>
-          <tr>
-            <td>
-              navigation
-            </td>
-            <td>
-              Pablo Palazon <pablo.palazon@gmail.com>
-            </td>
-            <td>
-              Quick project navigation with resources bookmarks
-            </td>
-          </tr>
-          <tr>
-            <td>
-              jboss-as-7
-            </td>
-            <td>
-              Lincoln Baxter, III <lincolnbaxter@gmail.com>
-            </td>
-            <td>
-              JBoss AS7 Deployment / Management
-            </td>
-          </tr>
-          <tr>
-            <td>
-              gwt
-            </td>
-            <td>
-              Sandro Sonntag <sso@adorsys.de>
-            </td>
-            <td>
-              Generate full-stack GWT Project (RESTful Services with JAX-RS, Dependeny-Injection with GIN, Bean-Validation, Event-Bus), MVP generation, event wiring, model based UI-Generator and DEV-Mode running
-            </td>
-          </tr>
-          <tr>
-            <td>
-              rxlist
-            </td>
-            <td>
-              Pablo Palazon <pablo.palazon@gmail.com>
-            </td>
-            <td>
-              Collect key properties list from source code with regular expressions
-            </td>
-          </tr>
-          <tr>
-            <td>
-              slf4j
-            </td>
-            <td>
-              Sandro Sonntag <sso@adorsys.de>
-            </td>
-            <td>
-              This plugin adds slf4j dependencies to your project and generates a initial logging configuration
-            </td>
-          </tr>
-          <tr>
-            <td>
-              openshift
-            </td>
-            <td>
-              Pete Muir <pmuir@redhat.com>
-            </td>
-            <td>
-              Plugins for creating cloud instances, managing existing clouds, and deploying applications to the Red Hat express cloud.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              jdf
-            </td>
-            <td>
-              Rafael Benevides <benevides@redhat.com>
-            </td>
-            <td>
-              Plugin to deal with JDF - JBoss Developer Framework BOMs
-            </td>
-          </tr>
-          <tr>
-            <td>
-              formatter
-            </td>
-            <td>
-              Thomas Hug <thomas.hug@ctp-consulting.com>
-            </td>
-            <td>
-              Formats Java code based on predefined settings or an Eclipse formatter XML.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              spring
-            </td>
-            <td>
-              Ryan Bradley <ryan.k.bradley@gmail.com>
-            </td>
-            <td>
-              Plugin to create/configure Spring MVC web applications.  This contains both a ScaffoldProvider implementation, to work with the existing ScaffoldPlugin, as well as a SpringPlugin to modify existing projects.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              switchyard
-            </td>
-            <td>
-              Keith Babo <kbabo@redhat.com>
-            </td>
-            <td>
-              Plugin to create/configure SwitchYard applications.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              undo
-            </td>
-            <td>
-              Jevgeni Zelenkov <jevgeni.zelenkov@gmail.com>
-            </td>
-            <td>
-              Reverts changes introduced by other forge commands.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              hint
-            </td>
-            <td>
-              George Gastaldi <gastaldi@redhat.com>
-            </td>
-            <td>
-              Displays hints based on the current state of the project.
-            </td>
-          </tr>
-        </table>
-      </div>
+  <p>Installing plugins in Forge is simple - you need only use the built-in `forge find-plugin` and `forge install-plugin` commands to search and install any of the plugins listed below. Alternatively, you may use `forge git-plugin` and `forge source-plugin` to install plugins from third party repositories, or from your local filesystem.</p>
+</div>
+<script></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(document).ready(function() {
+      var filterInput = $('#filterInput');
+      filterInput.keyup(function() {      
+        $("#pluginTable tr").show();
+        $("#pluginTable tr").slice(1).each(function() {
+    
+        var name = $.trim($(this).children().first().text()).toLowerCase();
+        var desc = $.trim($(this).children().last().text()).toLowerCase();
+        
+          if(name.indexOf(filterInput.val().toLowerCase()) == -1 
+             && desc.indexOf(filterInput.val().toLowerCase()) == -1) {
+            $(this).hide();
+          } 
+        });
+      });
+    });
+  //]]>
+</script>
+<div class='container'>
+  <input id='filterInput' type='text' />
+  <table class='table table-striped table-bordered table-condensed' id='pluginTable'>
+    <tr>
+      <th>
+        Plugin
+      </th>
+      <th>
+        Author
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+    <tr>
+      <td>
+        arquillian
+      </td>
+      <td>
+        Paul Bakker <paul.bakker.nl@gmail.com>
+      </td>
+      <td>
+        Integration Testing Framework
+      </td>
+    </tr>
+    <tr>
+      <td>
+        seam-catch
+      </td>
+      <td>
+        Jason Porter
+      </td>
+      <td>
+        Seam Catch Plugin
+      </td>
+    </tr>
+    <tr>
+      <td>
+        seam-jms
+      </td>
+      <td>
+        John Ament
+      </td>
+      <td>
+        Seam JMS Plugin
+      </td>
+    </tr>
+    <tr>
+      <td>
+        seam-persistence
+      </td>
+      <td>
+        Paul Bakker <paul.bakker.nl@gmail.com>
+      </td>
+      <td>
+        Seam Persistence Plugin - Easy JPA integration, Seam-managed transactions, transactional annotations
+      </td>
+    </tr>
+    <tr>
+      <td>
+        hibernate-tools
+      </td>
+      <td>
+        Max Andersen
+      </td>
+      <td>
+        Database reverse engineering utilities
+      </td>
+    </tr>
+    <tr>
+      <td>
+        richfaces
+      </td>
+      <td>
+        Brian Leathem <bleathem@gmail.com>
+      </td>
+      <td>
+        RichFaces Plugin - Streamlines installation of the JBoss RichFaces component library for JSF
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ocpsoft-rewrite
+      </td>
+      <td>
+        Lincoln Baxter, III <lincoln@ocpsoft.com>
+      </td>
+      <td>
+        Rewrite Plugin - Streamlines installation of the OCPSoft Rewrite URL-rewriting library for Servlet, Java EE, and Web Frameworks. Also provides streamlined commands for generating configuration providers.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ocpsoft-prettyfaces
+      </td>
+      <td>
+        Lincoln Baxter, III <lincoln@ocpsoft.com>
+      </td>
+      <td>
+        PrettyFaces Plugin - Streamlines installation of the OCPSoft PrettyFaces URL-rewriting library for Servlet, Java EE, and JSF. Also provides streamlined commands for generating configuration and URL-mappings.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        jrebel
+      </td>
+      <td>
+        Thomas Hug <thomas.hug@ctp-consulting.com>
+      </td>
+      <td>
+        JRebel Plugin - JRebel integration into build and container (via the Cargo Maven plugin)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        seam-reports
+      </td>
+      <td>
+        George Gastaldi <gegastaldi@gmail.com>
+      </td>
+      <td>
+        Seam Reports Plugin - Reporting engine CDI integration
+      </td>
+    </tr>
+    <tr>
+      <td>
+        seam-jcr
+      </td>
+      <td>
+        George Gastaldi <gegastaldi@gmail.com>
+      </td>
+      <td>
+        Seam JCR Plugin - Seam JCR is a portable extension for CDI to a JCR (Java Content Repository) 2.0 compliant implementation (JSR-283).
+      </td>
+    </tr>
+    <tr>
+      <td>
+        osgi
+      </td>
+      <td>
+        Paul Bakker <paul.bakker.nl@gmail.com>
+      </td>
+      <td>
+        Plugin to simplify Maven Bundle plugin usage
+      </td>
+    </tr>
+    <tr>
+      <td>
+        primefaces
+      </td>
+      <td>
+        Rudy De Busscher <rdebusscher@gmail.com>
+      </td>
+      <td>
+        Streamlines installation of the PrimeFaces component library for JSF
+      </td>
+    </tr>
+    <tr>
+      <td>
+        navigation
+      </td>
+      <td>
+        Pablo Palazon <pablo.palazon@gmail.com>
+      </td>
+      <td>
+        Quick project navigation with resources bookmarks
+      </td>
+    </tr>
+    <tr>
+      <td>
+        jboss-as-7
+      </td>
+      <td>
+        Lincoln Baxter, III <lincolnbaxter@gmail.com>
+      </td>
+      <td>
+        JBoss AS7 Deployment / Management
+      </td>
+    </tr>
+    <tr>
+      <td>
+        gwt
+      </td>
+      <td>
+        Sandro Sonntag <sso@adorsys.de>
+      </td>
+      <td>
+        Generate full-stack GWT Project (RESTful Services with JAX-RS, Dependeny-Injection with GIN, Bean-Validation, Event-Bus), MVP generation, event wiring, model based UI-Generator and DEV-Mode running
+      </td>
+    </tr>
+    <tr>
+      <td>
+        rxlist
+      </td>
+      <td>
+        Pablo Palazon <pablo.palazon@gmail.com>
+      </td>
+      <td>
+        Collect key properties list from source code with regular expressions
+      </td>
+    </tr>
+    <tr>
+      <td>
+        slf4j
+      </td>
+      <td>
+        Sandro Sonntag <sso@adorsys.de>
+      </td>
+      <td>
+        This plugin adds slf4j dependencies to your project and generates a initial logging configuration
+      </td>
+    </tr>
+    <tr>
+      <td>
+        openshift
+      </td>
+      <td>
+        Pete Muir <pmuir@redhat.com>
+      </td>
+      <td>
+        Plugins for creating cloud instances, managing existing clouds, and deploying applications to the Red Hat express cloud.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        jdf
+      </td>
+      <td>
+        Rafael Benevides <benevides@redhat.com>
+      </td>
+      <td>
+        Plugin to deal with JDF - JBoss Developer Framework BOMs
+      </td>
+    </tr>
+    <tr>
+      <td>
+        formatter
+      </td>
+      <td>
+        Thomas Hug <thomas.hug@ctp-consulting.com>
+      </td>
+      <td>
+        Formats Java code based on predefined settings or an Eclipse formatter XML.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        spring
+      </td>
+      <td>
+        Ryan Bradley <ryan.k.bradley@gmail.com>
+      </td>
+      <td>
+        Plugin to create/configure Spring MVC web applications.  This contains both a ScaffoldProvider implementation, to work with the existing ScaffoldPlugin, as well as a SpringPlugin to modify existing projects.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        switchyard
+      </td>
+      <td>
+        Keith Babo <kbabo@redhat.com>
+      </td>
+      <td>
+        Plugin to create/configure SwitchYard applications.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        undo
+      </td>
+      <td>
+        Jevgeni Zelenkov <jevgeni.zelenkov@gmail.com>
+      </td>
+      <td>
+        Reverts changes introduced by other forge commands.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        hint
+      </td>
+      <td>
+        George Gastaldi <gastaldi@redhat.com>
+      </td>
+      <td>
+        Displays hints based on the current state of the project.
+      </td>
+    </tr>
+  </table>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>
