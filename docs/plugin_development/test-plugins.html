@@ -46,7 +46,7 @@
     <div class='navbar navbar-fixed-top'>
       <div class='navbar-inner'>
         <div class='container'>
-          <div class='github-banner'>
+          <div class='github-banner hidden-phone'>
             <a href='https://github.com/forge/forge.github.com'>
               <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position:absolute;top:0;right:0;border:0;' />
             </a>
@@ -84,120 +84,120 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Test your Plugin</h1>
-            <p>When developing plugins, it is recommended to use the provide Unit and Integration Test Harness (based on <a href="http://www.jboss.org/arquillian">Arquillian</a>.) Not only do your plugin&#8217;s Unit and Integration tests ensure that your plugin will function on your computer, but because tests are run when plugins are <em>installed</em> into a Forge runtime, they also ensure that your plugin will function on your users computers.</p>
-            <h2>Install the Test Harness</h2>
-            <p>This step should already have been completed if you used the &#8216;plugins setup&#8217; command in the section titled: [Reference the Forge APIs]. If not, paste the following dependencies into your pom.xml file.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-test-harness&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-shell&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;</code></pre>
-            <h2>Extend AbstractShellTest or SingletonAbstractShellTest</h2>
-            <p>AbstractShellTest boots the Shell for each individual test method, while SingletonAbsractShellTest boots the Shell only once per test class, where each method operates on the same instance.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">package com.example.plugin;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import javax.inject.Inject;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import org.jboss.arquillian.api.Deployment;&#x000A;import org.jboss.forge.project.Project;&#x000A;import org.jboss.forge.project.dependencies.DependencyResolver;&#x000A;import org.jboss.forge.test.AbstractShellTest;&#x000A;import org.jboss.shrinkwrap.api.spec.JavaArchive;&#x000A;import org.junit.Assert;&#x000A;import org.junit.Test;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePluginTest extends AbstractShellTest&#x000A;{&#x000A;   // Notice that you may use injection to do verification of the internal state of the system.&#x000A;   // Or to perform additional operations.&#x000A;   @Inject&#x000A;   private DependencyResolver resolver;</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Deployment&#x000A;   public static JavaArchive getDeployment()&#x000A;   {&#x000A;      // The deployment method is where you must add references to your classes, packages, and&#x000A;      // configuration files, via  Arquillian.&#x000A;      return AbstractShellTest.getDeployment().addPackages(true, ExamplePlugin.class.getPackage());&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Test&#x000A;   public void testInstallPrettyfaces() throws Exception&#x000A;   {&#x000A;      // Create a new barebones Java project&#x000A;      Project p = initializeJavaProject();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Queue input lines to be read as the Shell executes.&#x000A;      queueInputLines("y");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Execute a command. If any input is required, it will be read from queued input.&#x000A;      getShell().execute("echo hi there");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      Assert.assertNotNull(resolver);&#x000A;   }&#x000A;}</code></pre>
-            <h2>Run your Build</h2>
-            <p>If done properly, you should now see your test execute during the Plugin build lifecycle.</p>
-            <pre class="command"><code class="command">$ build</code></pre>
-            <h2>Write more tests</h2>
-            <p>The more tests, the merrier! Tests make happy code.</p>
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Test your Plugin</h1>
+<p>When developing plugins, it is recommended to use the provide Unit and Integration Test Harness (based on <a href="http://www.jboss.org/arquillian">Arquillian</a>.) Not only do your plugin&#8217;s Unit and Integration tests ensure that your plugin will function on your computer, but because tests are run when plugins are <em>installed</em> into a Forge runtime, they also ensure that your plugin will function on your users computers.</p>
+<h2>Install the Test Harness</h2>
+<p>This step should already have been completed if you used the &#8216;plugins setup&#8217; command in the section titled: [Reference the Forge APIs]. If not, paste the following dependencies into your pom.xml file.</p>
+<pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-test-harness&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.forge&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;forge-shell&lt;/artifactId&gt;&#x000A;    &lt;version&gt;${forge.api.version}&lt;/version&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;</code></pre>
+<h2>Extend AbstractShellTest or SingletonAbstractShellTest</h2>
+<p>AbstractShellTest boots the Shell for each individual test method, while SingletonAbsractShellTest boots the Shell only once per test class, where each method operates on the same instance.</p>
+<pre class="prettyprint linenums"><code class="prettyprint linenums">package com.example.plugin;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import javax.inject.Inject;</code>&#x000A;&#x000A;<code class="prettyprint linenums">import org.jboss.arquillian.api.Deployment;&#x000A;import org.jboss.forge.project.Project;&#x000A;import org.jboss.forge.project.dependencies.DependencyResolver;&#x000A;import org.jboss.forge.test.AbstractShellTest;&#x000A;import org.jboss.shrinkwrap.api.spec.JavaArchive;&#x000A;import org.junit.Assert;&#x000A;import org.junit.Test;</code>&#x000A;&#x000A;<code class="prettyprint linenums">public class ExamplePluginTest extends AbstractShellTest&#x000A;{&#x000A;   // Notice that you may use injection to do verification of the internal state of the system.&#x000A;   // Or to perform additional operations.&#x000A;   @Inject&#x000A;   private DependencyResolver resolver;</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Deployment&#x000A;   public static JavaArchive getDeployment()&#x000A;   {&#x000A;      // The deployment method is where you must add references to your classes, packages, and&#x000A;      // configuration files, via  Arquillian.&#x000A;      return AbstractShellTest.getDeployment().addPackages(true, ExamplePlugin.class.getPackage());&#x000A;   }</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Test&#x000A;   public void testInstallPrettyfaces() throws Exception&#x000A;   {&#x000A;      // Create a new barebones Java project&#x000A;      Project p = initializeJavaProject();</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Queue input lines to be read as the Shell executes.&#x000A;      queueInputLines("y");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      // Execute a command. If any input is required, it will be read from queued input.&#x000A;      getShell().execute("echo hi there");</code>&#x000A;&#x000A;<code class="prettyprint linenums">      Assert.assertNotNull(resolver);&#x000A;   }&#x000A;}</code></pre>
+<h2>Run your Build</h2>
+<p>If done properly, you should now see your test execute during the Plugin build lifecycle.</p>
+<pre class="command"><code class="command">$ build</code></pre>
+<h2>Write more tests</h2>
+<p>The more tests, the merrier! Tests make happy code.</p>
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>
