@@ -215,8 +215,8 @@
 <pre class="command"><code class="command">git pull upstream master</code></pre>
 <p>9. If you made multiple commits, or if there were any merge commits created when you pulled from upstream, use rebase to squash them into a single commit, where 5 is the number of commits to rebase:</p>
 <pre class="command"><code class="command">git rebase -i HEAD~5</code></pre>
-<p>Change &#8216;pick&#8217; to &#8216;s&#8217; for each commit you wish to squash upwards. (If you do not change a line, it will not be modified.)</p>
-<pre>  1 pick ade2b1a Implemented FORGE-XX&#x000A;  2 s c3ae0a2 almost done&#x000A;  3 s c863bfb did more work&#x000A;  4 s af793ae Started working on FORGE-XX&#x000A;  5 pick 368bbb9 Previous commit written by someone else</pre>
+<p>Change &#8216;pick&#8217; to &#8216;f&#8217; for each commit you wish to fixup upwards. (If you do not change a line, it will not be modified.)</p>
+<pre>  1 pick ade2b1a Implemented FORGE-XX&#x000A;  2 f c3ae0a2 almost done&#x000A;  3 f c863bfb did more work&#x000A;  4 f af793ae Started working on FORGE-XX&#x000A;  5 pick 368bbb9 Previous commit written by someone else</pre>
 <p>Once you are done, your commits should look like this:</p>
 <pre>  1 ade2b1a Implemented FORGE-XX&#x000A;  2 368bbb9 Previous commit written by someone else</pre>
 <p>You can view your commits by typing &#8216;git log&#8217;.</p>
