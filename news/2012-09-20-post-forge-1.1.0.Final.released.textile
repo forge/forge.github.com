@@ -1,0 +1,47 @@
+---
+layout: news
+title: Forge 1.1.0.Final Released !
+author: George Gastaldi
+tags: [ website, announcement ]
+---
+
+It is with great pleasure that I announce that *JBoss Forge 1.1.0.Final* has just been released ! 
+
+This version is loaded with new features (That's why we decided to change the minor version - :) ). Check out the <a href='https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12311820&version=12319934'>Full Release Notes</a> or, if you just want to catch up with what's new, keep reading :
+
+* *SNAPSHOTS ? No siree !!* - Now Forge won't prompt for SNAPSHOT dependencies when you need to choose a dependency.
+
+* *Forge Update* - Yes!!! Now you can update your Forge installation by simply typing <code>forge update</code>. 
+Forge will automatically detect the latest version and prompt you for update;
+
+* *Metamodel Generation* - When you run <code>persistence setup</code>, you will now be asked to install a JPA 2 metamodel generator *BASED ON YOUR PERSISTENCE PROVIDER !! :)*
+Many thanks to Thomas Hug for making this happen;
+
+* *Class attributes in the right place* - When you create a new field, the newly created attribute will be placed near to the others, and no longer in the end of the class;
+
+* *Improvements to the "Did you mean ?" feature* - If you typed something wrong, Forge will suggest you which command may be similar to what you were looking for. 
+Now supporting aliased commands;
+
+* *Plugins Diff* - Now when you install a plugin, Forge will show you the newly available commands, as well the removed commands when you uninstall;
+
+* *open http://www.sesame.com (or _cat_)* - Now you can open any URL inside Forge using <code>open http://forge.jboss.org</code>. 
+You can also <code>cat http://forge.jboss.org</code> as well;
+
+* *Colossal changes* to our *most beloved plugins ever* !!!
+** *Hibernate-Tools*: Now you can count on a database reverse engineering plugin that supports oracle databases in addition to the plethora of others already included;
+** *AS7* : This little piece of love will download, install, start, stop, deploy, undeploy, execute CLI commands *ALL-IN-ONE ! YOU CAN'T AFFORD TO MISS IT !*
+
+and much more ... 
+
+h3. Thanks to...
+* *Thomas Hug* - for getting the JPA 2 metamodel generator done
+* *Ivan 'The Enforcer' St. Ivanov* - for correctly configuring the maven enforcer plugin and making us relieved while building the sources; 
+* *And many more* - for their ideas and help over the past few months.
+
+Also many thanks to everyone who attended the Forge Hack Night. We couldn't have done it without your help !
+
+So what are you waiting for ? <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.1.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.1.0.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone while using this great tool !
+
+Good luck and we welcome your feedback!
+
+-The Forge Team
