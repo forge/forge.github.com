@@ -10,7 +10,7 @@ Want to get started using Forge, but now quite sure how to do the things you wan
 
 h2. Forge Quickstart
 
-Want to see a "full example":https://github.com/jbossas/quickstart/tree/master/forge-from-scratch, a quick-start using much of the Forge built-in scaffolding and commands? You can find the full tutorial and instructions "here":https://github.com/jbossas/quickstart/tree/master/forge-from-scratch.
+Want to see a "full example":https://github.com/jboss-jdf/jboss-as-quickstart/tree/master/forge-from-scratch, a quick-start using much of the Forge built-in scaffolding and commands? You can find the full tutorial and instructions "here":https://github.com/jboss-jdf/jboss-as-quickstart/tree/master/forge-from-scratch.
 
 
 h2. Create a new JPA @Entity class
