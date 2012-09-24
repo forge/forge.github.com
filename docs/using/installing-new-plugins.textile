@@ -39,6 +39,10 @@ Connecting to remote repository [https://raw.github.com/forge/plugin-repository/
 
 p. This provides a list of all available plugins matching your search term.
 
+div(alert alert-info). You may also use <TAB> completion support when typing, "forge install-plugin"
+
+!/images/install-plugin-autocomplete.png(Install plugin autocomplete)!
+
 h2. Installing a Plugin from the Central Plugin Index (CPI)
 
 Once you have found a plugin you'd like to install, you must type the "forge install-plugin" command, passing the name of the plugin you'd like to install:
