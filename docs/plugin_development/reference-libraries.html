@@ -183,12 +183,11 @@
     </div>
     <div class='span10'>
       <h1>Ensure all referenced libraries are on the <span class="caps">CLASSPATH</span></h1>
-<div class="alert alert-info">As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin <span class="caps">POM</span> file and create the proper dependency references</div>
+<div class="alert alert-info">As of Forge 1.0.0.Beta1, no special action is required to include plugin dependencies. Forge will read your Plugin <span class="caps">POM</span> file and create the proper dependency references; subsequently, any dependencies with the groupId, &#8220;<strong>org.jboss.forge</strong>&#8221; are considered to be <strong>reserved</strong> by Forge, and will be marked as &#8220;<strong>provided</strong>&#8221; scope, and thus, ignored if not provided as part of the core runtime.</div>
 <p>If you are experiencing overwhelming issues with a ClassLoader, and cannot work around the modular environment, Forge offers an alternate Plugin packaging mode that can be activated by setting a flag in your Plugin&#8217;s src/main/resources/<span class="caps">META</span>-<span class="caps">INF</span>/forge.xml file:</p>
 <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;forge&gt;&#x000A;  &lt;dependencies-as-resource-root/&gt;&#x000A;&lt;/forge&gt;</code></pre>
 <p>This will cause Forge to bundle all dependencies for your Plugin in the Plugin module itself, instead of creating a separate &#8220;dependencies&#8221; module, with a separate ClassLoader.</p>
 <p>As a last resort, you may also shade code into your plugin&#8217;s <span class="caps">JAR</span> file; however, this is extremely discouraged, since you may cause ClassCastExceptions at runtime, and this increases the burden on Class scanning at boot time, because <span class="caps">CDI</span> will scan all classes in your Plugin <span class="caps">JAR</span> file.</p>
-<div class="alert alert-danger">This is required even if dependencies are specified directly in your pom.xml file. Transitive dependencies <span class="caps">WILL</span> <span class="caps">NOT</span> BE <span class="caps">INSTALLED</span> with your plugin; they must be packaged via shade.</div>
 <p>Using Forge to set up Shading</p>
 <pre class="command"><code class="command">[example-plugin] example-plugin $ shade setup&#x000A;***SUCCESS*** Shade plugin is installed.&#x000A;[example-plugin] example-plugin $&#x000A;[example-plugin] example-plugin $ shade include commons-collections:commons-collections:3.2.1</code></pre>
 <p>Notice that the pom.xml file has been modified and now includes a shade configuration including commons-collections.</p>
