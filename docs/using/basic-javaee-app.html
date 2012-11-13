@@ -84,158 +84,158 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Writing Basic Java EE Application</h1>
-            <p>For the most part, people interested in Forge are likely interested in creating web-applications. Thusly, this chapter will overview the basic steps to generate such an application using Forge.</p>
-            <h2>Get Started with Scaffolding</h2>
-            <p>Assuming you have already completed the steps to install Forge, the first thing you&#8217;ll need to do is download and install a Java EE application server, for example <a href="http://www.jboss.org/jbossas/downloads.html">JBoss Application Server 7</a>. This server will host your application once it is built.</p>
-            <p>Next, follow these steps to create your skeleton web-application; be sure to replace any {ARGS} with your own personal values. Also keep in mind that while typing commands, you may press <TAB> at any time to see command completion options:</p>
-            <h2>Start Forge</h2>
-            <p>Execute <code>forge</code> from a command prompt, or open your shortcut, if you created one during the installation process.</p>
-            <h2>Create a new project</h2>
-            <pre class="command"><code class="command">$ new-project --named {name} --topLevelPackage {com.example.project} --projectFolder {/directory/path}</code></pre>
-            <h2>Set up scaffolding</h2>
-            <p>Press <span class="caps">ENTER</span> to confirm installation of any required facet dependencies and/or packaging types. You should get these 3 questions: ﻿﻿</p>
-            <div class="alert alert-info">We recommend using the latest stable (non-<span class="caps">SNAPSHOT</span>) versions of necessary libraries.</div>
-            <pre class="command"><code class="command">$ scaffold setup</code></pre>
-            <pre class="command"><code class="command">? No scaffold type was selected, use default [JavaServer Faces]? [Y/n]&#x000A;? Scaffold provider [faces] is not installed. Install it? [Y/n] &#x000A;? Facet [forge.maven.WebResourceFacet] requires packaging type(s) [war], but is currently [jar]. Update packaging? (Note: this could deactivate other plugins in your project.) [Y/n] </code></pre>
-            <p>Press <span class="caps">ENTER</span> for those 3 questions. Next, we have:</p>
-            <pre class="command"><code class="command">Use which version of 'jboss-javaee-6.0' ?</code></pre>
-            <p>Again, press <span class="caps">ENTER</span> for the default value:</p>
-            <pre class="command"><code class="command">? Choose an option by typing the number of the selection [*-default] </code></pre>
-            <p>Keep on pressing <span class="caps">ENTER</span> to choose default values for the next questions:</p>
-            <pre class="command"><code class="command">? Create scaffold in which sub-directory of web-root? (e.g. http://localhost:8080/ForgeTest/DIR) [/]</code></pre>
-            <h2>Set up persistence (<span class="caps">JPA</span>)</h2>
-            <p>Press <span class="caps">ENTER</span> to confirm installation of any required facet dependencies and/or packaging types, and remember to press <span class="caps">TAB</span> if you are not sure what comes next.</p>
-            <pre class="command"><code class="command">$ persistence setup --provider {your JPA implementation} --container {your container}</code></pre>
-            <p>If you choose a Java EE container, press <span class="caps">ENTER</span> to answer default values for the next questions:</p>
-            <pre class="command"><code class="command">? Do you want to install a JPA 2 metamodel generator? [y/N]</code></pre>
-            <p>If you choose <span class="caps">HIBERNATE</span>:</p>
-            <pre class="command"><code class="command">? The JPA provider [HIBERNATE], also supplies extended APIs. Install these as well? [y/N]</code></pre>
-            <p>If you do not wish to use a Java EE container default data-source, you can also specify additional connection parameters such as <span class="caps">JNDI</span> data-source names, <span class="caps">JDBC</span> connection information, and data-source types. Note, however, that this means you will probably need configure your application server to provide this new data-source and/or database connection.</p>
-            <h2>Create some <span class="caps">JPA</span> entities:</h2>
-            <pre class="command"><code class="command">$ entity --named Customer</code></pre>
-            <p>At which point Forge will automatically pick-up the newly created entity, and will be ready to add fields. We refer to this as &#8220;holding&#8221; an entity, or &#8220;holding&#8221; a file.</p>
-            <pre class="command"><code class="command">Customer.java $ field string --named firstName&#x000A;Customer.java $ field string --named lastName</code></pre>
-            <h3>While &#8220;holding&#8221; most files, you may inspect them using &#8216;ls&#8217;.</h3>
-            <pre class="command"><code class="command">Customer.java $ ls</code>&#x000A;&#x000A;<code class="command">[fields]&#x000A;private::String::firstName;       private::String::lastName;&#x000A;private::int::version;               private::long::id;</code>&#x000A;&#x000A;<code class="command">[methods]&#x000A;public::getFirstName()::String                                               public::getId()::long&#x000A;public::getLastName()::String                                                public::getVersion()::int&#x000A;public::setFirstName(final String firstName)::void                    public::setId(final long id)::void&#x000A;public::setLastName(final String lastName)::void                     public::setVersion(final int version)::void&#x000A;public::toString()::String</code>&#x000A;&#x000A;<code class="command">Customer.java $</code></pre>
-            <h2>Generate some UI scaffolding!</h2>
-            <p>Once you have created fields in the entity, it&#8217;s time to generate some scaffolding. Since we have already installed our scaffold, this step is easy. While &#8220;holding&#8221; Customer.java, type:</p>
-            <pre class="command"><code class="command">Customer.java $ scaffold from-entity</code>&#x000A;&#x000A;<code class="command">? No scaffold type was selected, use default (JSF)? [Y/n]&#x000A;Wrote /src/main/java/com/scaffold/domain/Customer.java&#x000A;Wrote /src/main/java/com/scaffold/view/CustomerBean.java&#x000A;Wrote /src/main/webapp/scaffold/customer/view.xhtml&#x000A;Wrote /src/main/webapp/scaffold/customer/create.xhtml&#x000A;Wrote /src/main/webapp/scaffold/customer/list.xhtml&#x000A;***SUCCESS*** Generated UI for [com.scaffold.domain.Customer]</code>&#x000A;&#x000A;<code class="command">Customer.java $</code></pre>
-            <h2>That&#8217;s it! Now build your project and deploy it onto your JBoss Application Server instance:</h2>
-            <pre class="command"><code class="command">$ build</code></pre>
-            <p>Or, if you want to control the build more finely, you can also build your new project using Maven. (If you do not have maven installed, Forge will use its provided embedded Maven support.)</p>
-            <pre class="command"><code class="command">$ mvn clean package</code></pre>
-            <h2>Deploy/undeploy to AS7</h2>
-            <p>First you need to install the AS7 Forge Plugin by typing the following command:</p>
-            <pre class="command"><code class="command">$ forge install-plugin jboss-as-7</code></pre>
-            <p>Next, set up the plugin in your project:</p>
-            <pre class="command"><code class="command">$ as7 setup</code></pre>
-            <p>Then you will be able to deploy, redeploy, and un-deploy as desired using the following commands:</p>
-            <pre class="command"><code class="command">$ as7 deploy&#x000A;$ as7 redeploy&#x000A;$ as7 undeploy</code></pre>
-            <div class="alert alert-info">The server must be running.</div>
-            <h2>That&#8217;s it! Access your deployed application at:</h2>
-            <p><em>http://localhost:8080/<strong>projectname</strong></em></p>
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Writing Basic Java EE Application</h1>
+<p>For the most part, people interested in Forge are likely interested in creating web-applications. Thusly, this chapter will overview the basic steps to generate such an application using Forge.</p>
+<h2>Get Started with Scaffolding</h2>
+<p>Assuming you have already completed the steps to install Forge, the first thing you&#8217;ll need to do is download and install a Java EE application server, for example <a href="http://www.jboss.org/jbossas/downloads.html">JBoss Application Server 7</a>. This server will host your application once it is built.</p>
+<p>Next, follow these steps to create your skeleton web-application; be sure to replace any {ARGS} with your own personal values. Also keep in mind that while typing commands, you may press <TAB> at any time to see command completion options:</p>
+<h2>Start Forge</h2>
+<p>Execute <code>forge</code> from a command prompt, or open your shortcut, if you created one during the installation process.</p>
+<h2>Create a new project</h2>
+<pre class="command"><code class="command">$ new-project --named {name} --topLevelPackage {com.example.project} --projectFolder {/directory/path}</code></pre>
+<h2>Set up scaffolding</h2>
+<p>Press <span class="caps">ENTER</span> to confirm installation of any required facet dependencies and/or packaging types. You should get these 3 questions: ﻿﻿</p>
+<div class="alert alert-info">We recommend using the latest stable (non-<span class="caps">SNAPSHOT</span>) versions of necessary libraries.</div>
+<pre class="command"><code class="command">$ scaffold setup</code></pre>
+<pre class="command"><code class="command">? No scaffold type was selected, use default [JavaServer Faces]? [Y/n]&#x000A;? Scaffold provider [faces] is not installed. Install it? [Y/n] &#x000A;? Facet [forge.maven.WebResourceFacet] requires packaging type(s) [war], but is currently [jar]. Update packaging? (Note: this could deactivate other plugins in your project.) [Y/n] </code></pre>
+<p>Press <span class="caps">ENTER</span> for those 3 questions. Next, we have:</p>
+<pre class="command"><code class="command">Use which version of 'jboss-javaee-6.0' ?</code></pre>
+<p>Again, press <span class="caps">ENTER</span> for the default value:</p>
+<pre class="command"><code class="command">? Choose an option by typing the number of the selection [*-default] </code></pre>
+<p>Keep on pressing <span class="caps">ENTER</span> to choose default values for the next questions:</p>
+<pre class="command"><code class="command">? Create scaffold in which sub-directory of web-root? (e.g. http://localhost:8080/ForgeTest/DIR) [/]</code></pre>
+<h2>Set up persistence (<span class="caps">JPA</span>)</h2>
+<p>Press <span class="caps">ENTER</span> to confirm installation of any required facet dependencies and/or packaging types, and remember to press <span class="caps">TAB</span> if you are not sure what comes next.</p>
+<pre class="command"><code class="command">$ persistence setup --provider {your JPA implementation} --container {your container}</code></pre>
+<p>If you choose a Java EE container, press <span class="caps">ENTER</span> to answer default values for the next questions:</p>
+<pre class="command"><code class="command">? Do you want to install a JPA 2 metamodel generator? [y/N]</code></pre>
+<p>If you choose <span class="caps">HIBERNATE</span>:</p>
+<pre class="command"><code class="command">? The JPA provider [HIBERNATE], also supplies extended APIs. Install these as well? [y/N]</code></pre>
+<p>If you do not wish to use a Java EE container default data-source, you can also specify additional connection parameters such as <span class="caps">JNDI</span> data-source names, <span class="caps">JDBC</span> connection information, and data-source types. Note, however, that this means you will probably need configure your application server to provide this new data-source and/or database connection.</p>
+<h2>Create some <span class="caps">JPA</span> entities:</h2>
+<pre class="command"><code class="command">$ entity --named Customer</code></pre>
+<p>At which point Forge will automatically pick-up the newly created entity, and will be ready to add fields. We refer to this as &#8220;holding&#8221; an entity, or &#8220;holding&#8221; a file.</p>
+<pre class="command"><code class="command">Customer.java $ field string --named firstName&#x000A;Customer.java $ field string --named lastName</code></pre>
+<h3>While &#8220;holding&#8221; most files, you may inspect them using &#8216;ls&#8217;.</h3>
+<pre class="command"><code class="command">Customer.java $ ls</code>&#x000A;&#x000A;<code class="command">[fields]&#x000A;private::String::firstName;       private::String::lastName;&#x000A;private::int::version;               private::long::id;</code>&#x000A;&#x000A;<code class="command">[methods]&#x000A;public::getFirstName()::String                                               public::getId()::long&#x000A;public::getLastName()::String                                                public::getVersion()::int&#x000A;public::setFirstName(final String firstName)::void                    public::setId(final long id)::void&#x000A;public::setLastName(final String lastName)::void                     public::setVersion(final int version)::void&#x000A;public::toString()::String</code>&#x000A;&#x000A;<code class="command">Customer.java $</code></pre>
+<h2>Generate some UI scaffolding!</h2>
+<p>Once you have created fields in the entity, it&#8217;s time to generate some scaffolding. Since we have already installed our scaffold, this step is easy. While &#8220;holding&#8221; Customer.java, type:</p>
+<pre class="command"><code class="command">Customer.java $ scaffold from-entity</code>&#x000A;&#x000A;<code class="command">? No scaffold type was selected, use default (JSF)? [Y/n]&#x000A;Wrote /src/main/java/com/scaffold/domain/Customer.java&#x000A;Wrote /src/main/java/com/scaffold/view/CustomerBean.java&#x000A;Wrote /src/main/webapp/scaffold/customer/view.xhtml&#x000A;Wrote /src/main/webapp/scaffold/customer/create.xhtml&#x000A;Wrote /src/main/webapp/scaffold/customer/list.xhtml&#x000A;***SUCCESS*** Generated UI for [com.scaffold.domain.Customer]</code>&#x000A;&#x000A;<code class="command">Customer.java $</code></pre>
+<h2>That&#8217;s it! Now build your project and deploy it onto your JBoss Application Server instance:</h2>
+<pre class="command"><code class="command">$ build</code></pre>
+<p>Or, if you want to control the build more finely, you can also build your new project using Maven. (If you do not have maven installed, Forge will use its provided embedded Maven support.)</p>
+<pre class="command"><code class="command">$ mvn clean package</code></pre>
+<h2>Deploy/undeploy to AS7</h2>
+<p>First you need to install the AS7 Forge Plugin by typing the following command:</p>
+<pre class="command"><code class="command">$ forge install-plugin jboss-as-7</code></pre>
+<p>Next, set up the plugin in your project:</p>
+<pre class="command"><code class="command">$ as7 setup</code></pre>
+<p>Then you will be able to deploy, redeploy, and un-deploy as desired using the following commands:</p>
+<pre class="command"><code class="command">$ as7 deploy&#x000A;$ as7 redeploy&#x000A;$ as7 undeploy</code></pre>
+<div class="alert alert-info">The server must be running.</div>
+<h2>That&#8217;s it! Access your deployed application at:</h2>
+<p><em>http://localhost:8080/<strong>projectname</strong></em></p>
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>
