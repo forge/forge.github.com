@@ -18,7 +18,7 @@ Follow these steps to install a Forge distribution:
 
 *1. Ensure that you have already installed a ["Java 6+ JDK":http://www.oracle.com/technetwork/java/javase/downloads/index.html].*
 
-*2. ["Download":https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand] and Un-zip Forge (or a recent ["snapshot build":https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand]) into a folder on your hard-disk, this folder will be your FORGE_HOME*
+*2. <a href='https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.&#42;.Final'>Download</a> and Un-zip Forge (or a recent ["snapshot build":https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand]) into a folder on your hard-disk, this folder will be your FORGE_HOME*
 
 *3. Add '$FORGE_HOME/bin' to your path (["windows":http://www.google.com/search?q=windows+edit+path], ["linux":http://www.google.com/search?q=linux+set+path], ["mac osx":http://www.google.com/search?q=mac+osx+edit+path])*
 
