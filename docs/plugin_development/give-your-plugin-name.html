@@ -186,13 +186,13 @@
     </div>
     <div class='span10'>
       <h1>Give your Plugin a name</h1>
-<p>Each plugin should be given a name. This is done by adding the <code>@org.jboss.seam.forge.shell.plugins.Alias</code> annotation to your plugin class.</p>
+<p>Each plugin should be given a name. This is done by adding the <code>@org.jboss.forge.shell.plugins.Alias</code> annotation to your plugin class.</p>
 <p>By default, if no <code>@Alias</code> annotation is found, the lower-case Class name will be used; for instance, our <code>ExamplePlugin</code>, above, would be executed by typing:</p>
 <pre class="command"><code class="command">$ exampleplugin</code></pre>
 <p>Now we will add a name to our plugin.</p>
 <pre class="prettyprint linenums"><code class="prettyprint linenums">@Alias("example")&#x000A;public class ExamplePlugin implements Plugin {&#x000A;   // commands&#x000A;}</code></pre>
 <p>Our named <code>@Alias("example") ExamplePlugin</code> would be executed by typing:</p>
-<pre class="command"><code class="command">$ example{code}</code></pre>
+<pre class="command"><code class="command">$ example{code}&#x000A;</code></pre>
     </div>
   </div>
 </div>
