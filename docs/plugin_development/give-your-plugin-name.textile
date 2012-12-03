@@ -6,7 +6,7 @@ index: 3
 
 h1. Give your Plugin a name
 
-Each plugin should be given a name. This is done by adding the @@org.jboss.seam.forge.shell.plugins.Alias@ annotation to your plugin class.
+Each plugin should be given a name. This is done by adding the @@org.jboss.forge.shell.plugins.Alias@ annotation to your plugin class.
 
 By default, if no @@Alias@ annotation is found, the lower-case Class name will be used; for instance, our @ExamplePlugin@, above, would be executed by typing:
 
