@@ -12,6 +12,18 @@ As of CR1 (and SNAPSHOTS since Beta5,) Forge produces a debug logfile located at
 
 bc(command). $HOME/.forge/runtime.log
 
+h2. Eclipse integrated debugging
+
+A new feature of JBoss Tools 4.0 is the debug option of the Forge plugin. 
+
+Under Window > Preferences > Forge the option "Start Forge in Debug Mode" enables you to fully debug the Forge runtime. Hitting the famous [CTRL+4] keys will then launch Forge in Eclipse debugger. This way you may watch Forge registering and launching your plugin. Don't forget to switch to Debug perspective.
+
+Depending of your use case you may additionally change the Forge runtime by registering your current Forge core source tree under "Installed Forge Runtimes".
+
+h3. Current Shortcomings
+
+The current eclipse plugin does not yet associate sources automatically, so you have to add relevant sources using "Edit Source Lookup" on the debug configuration. The generated debug configuration is available during the Forge debug session and will be cleaned up afterwards.
+
 h2. Enable debug mode
 
 Start Forge by using the following parameter:
