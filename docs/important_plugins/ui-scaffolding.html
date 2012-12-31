@@ -87,150 +87,150 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-  //<![CDATA[
-    $(document).ready(function() {
-      var pathname = window.location.pathname;
-      console.log(pathname);
-      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-    });
-  //]]>
-</script>
-<div class='container-fluid'>
-  <div class='row-fluid'>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>Using Forge</li>
-        <li>
-          <a href='/docs/using/'>Installation</a>
-        </li>
-        <li>
-          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-        </li>
-        <li>
-          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href='/docs/using/samples.html'>Samples</a>
-        </li>
-        <li>
-          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/faq.html'>FAQ</a>
-        </li>
-        <li>
-          <a href='/docs/using/affiliation.html'>Affiliation</a>
-        </li>
-        <li class='nav-header'>Get involved</li>
-        <li>
-          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-        </li>
-        <li class='nav-header'>Important plugins</li>
-        <li>
-          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-        </li>
-        <li>
-          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-        </li>
-        <li class='nav-header'>Developing plugins</li>
-        <li>
-          <a href='/docs/plugin_development/'>Developing a plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class='span10'>
-      <h1>UI Scaffolding</h1>
-<h2>Introduction</h2>
-<p>Forge&#8217;s default UI scaffolding generates a pure Java EE application with a JavaServer Faces User Interface. This UI includes support for creating, updating, deleting, pagination and searching. It also supports one-to-many, many-to-many, many-to-one and one-to-one relationships. The scaffolding uses pure <span class="caps">JSF</span> tags, with no runtime dependencies on any non-Java EE libraries.</p>
-<h2>Getting Started</h2>
-<p>The default scaffold comes as part of the Forge distribution; therefore, it does not need to be installed separately. You can get up and running in just a few simple commands! To begin, you must first create (or have already created) an @Entity such as the following example.</p>
-<pre class="command"><code class="command">entity --named Customer&#x000A;field string --named firstName</code></pre>
-<p>You can now set up scaffolding, and generate <span class="caps">CRUD</span> pages for the entity using the following command, which will create UI scaffolding for the currently selected entity (you can select an entity by using the &#8216;cd&#8217; or &#8216;pick up&#8217; commands):</p>
-<pre class="command"><code class="command">scaffold setup&#x000A;scaffold from-entity</code></pre>
-<p>To generate scaffolding for another entity (even if it is not selected), just provide its fully qualified name, or package name wildcards for multiple entities:</p>
-<pre class="command"><code class="command">scaffold from-entity com.test.domain.Customer&#x000A;scaffold from-entity com.test.domain.*</code></pre>
-<h2>Structure of Generated Scaffold</h2>
-<p>The scaffolding is generated in two main parts: Facelets pages and Java backing beans.</p>
-<p>The Facelets pages are generated under <em>src/main/webapp/scaffold/{entity-name}</em>. There are three pages per entity:</p>
-<ul>
-	<li><strong>create.xhtml</strong> &#8211; an editable view of the entity. This page is reused for both creating new entities and editing existing entities. Includes support for: adding/removing one-to-one, one-to-many and many-to-many relationships; selecting many-to-one relationships; in-place validation messages.</li>
-	<li><strong>view.xhtml</strong> &#8211; a read-only view of the entity. Includes support for navigating many-to-one relationships from parent to child.</li>
-	<li><strong>search.xhtml</strong> &#8211; an entity search screen with a list of results. Includes support for: searching mixtures of different fields; paginating the results.</li>
-</ul>
-<p>The backing beans are generated under <em>src/main/java/com/test/view/{entity-name}Bean.java</em>. There is one backing bean per entity. Each backing bean focuses purely on Java EE 6 standards, rather than introducing a <span class="caps">CRUD</span> framework or custom base class. Important Java EE 6 constructs include:</p>
-<ul>
-	<li><strong>@Named</strong> &#8211; so that the bean is exposed through <span class="caps">CDI</span> to the Facelets pages. We use @Named rather than @ManagedBean, in order to take advantage of <span class="caps">CDI</span> scopes.</li>
-	<li><strong>@ConversationScoped</strong> &#8211; so that important hidden fields (such as @Id and @Version fields) are retained during the view/edit/update lifecycle without requiring them to be POSTed back as part of the Facelets page (e.g. using h:inputHidden, or storing them into the <span class="caps">JSF</span> ViewState). We use @ConversationScoped rather than @ViewScoped, in order to take advantage of CDI&#8217;s transaction management.</li>
-	<li><strong>@PersistenceContext</strong> &#8211; so that we can inject the EntityManager. We used @PersistenceContext rather than @Inject, so that we can use an extended PersistenceContext.</li>
-	<li><strong>PersistenceContext.<span class="caps">EXTENDED</span></strong> &#8211; so that transactions are bound to the conversation scope of the bean. This allows the bean to save an entity and then display it as a read-only view, without incurring lazy loading problems on one-to-many relationships.</li>
-	<li><strong>@Stateful</strong> &#8211; so that we can use an extended PersistenceContext.</li>
-	<li><strong>conversation.begin</strong> &#8211; conversations are started during entity retrieval, and ended upon update, delete or cancel. This allows fields that are not POSTed back (@Id and @Version fields, contents of one-to-many relations) to survive page refreshes in the face of validation errors.</li>
-	<li><strong>CriteriaBuilder</strong> &#8211; so that we can build queries having arbitrary mixtures of search criteria. CriteriaBuilder provides a cleaner <span class="caps">API</span> for constructing mixtures of fields than using pure <span class="caps">JPA</span>-QL.</li>
-	<li><strong>Converter</strong> &#8211; so that entities can be presented in many-to-one dropdowns. We use an inner class rather than @FacesConverter, so that we can take advantage of an injected EntityManager.</li>
-</ul>
-<p>All resources related to the look and feel of the generated UI, including <span class="caps">CSS</span> files and images, are generated under <em>src/main/webapp/resources.</em></p>
-<p>In all, we think this makes for a well designed, pure Java EE 6 web application. It supports most <span class="caps">CRUD</span> use cases with minimal dependencies or &#8216;magic&#8217; in the generated code. The few exceptions are:</p>
-<ul>
-	<li><strong>ViewUtils</strong> &#8211; <span class="caps">JSF</span> lacks a way to display Sets (as opposed to Lists) of Objects. We resolve this by introducing an EL function <em>ViewUtils.asList</em> that can be wrapped around a Collection to turn it into a List.</li>
-</ul>
-<h2>Customizing the Scaffold</h2>
-<p>The generated code itself is free of non-Java EE dependencies or &#8216;magic&#8217; code, so can be readily edited in any text editor. However, such edits will be overwritten if the scaffold is ever regenerated.</p>
-<p>To customize the generation process itself, there are a number of options:</p>
-<ul>
-	<li>All look and feel related resources, including <span class="caps">CSS</span> files and images, are located under <em>src/main/resource/org/jboss/forge/scaffold/faces/static</em>. These can be readily replaced to provide alternate look and feels.</li>
-	<li>All static templates, including error pages and the paginator control, are located under <em>src/main/resource/org/jboss/forge/scaffold/faces/templates</em>. These are pure Facelets files, and can be readily edited.</li>
-	<li>All scaffolding files, including <span class="caps">CRUD</span> Facelets pages and Java backing beans, are located under <em>src/main/resource/org/jboss/forge/faces/scaffold</em>. These are [Seam Render|https://github.com/seam/render] templates. Much of the templates are static text which can be edited in any text editor. The dynamic portions are embedded in the text using <em>@{&#8230;}</em> expressions.</li>
-	<li>The dynamic generation of the <span class="caps">JSF</span> tags, as well as some portions of the Java code, is performed using <a href="http://metawidget.org">Metawidget</a>. Metawidget defines a pluggable pipeline that allows you to customize many aspects of the generation, including: what entity annotations/metadata are inspected; what <span class="caps">JSF</span> components are chosen; how the <span class="caps">JSF</span> components are laid out. Full details on writing Metawidget plugins are available <a href="http://metawidget.org/doc/reference/en/html/ch02.html">here</a>.</li>
-</ul>
-    </div>
-  </div>
-</div>
+        //<![CDATA[
+          $(document).ready(function() {
+            var pathname = window.location.pathname;
+            console.log(pathname);
+            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+          });
+        //]]>
+      </script>
+      <div class='container-fluid'>
+        <div class='row-fluid'>
+          <div class='span2'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>Using Forge</li>
+              <li>
+                <a href='/docs/using/'>Installation</a>
+              </li>
+              <li>
+                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+              </li>
+              <li>
+                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href='/docs/using/samples.html'>Samples</a>
+              </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/faq.html'>FAQ</a>
+              </li>
+              <li>
+                <a href='/docs/using/affiliation.html'>Affiliation</a>
+              </li>
+              <li class='nav-header'>Get involved</li>
+              <li>
+                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+              </li>
+              <li class='nav-header'>Important plugins</li>
+              <li>
+                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+              </li>
+              <li class='nav-header'>Developing plugins</li>
+              <li>
+                <a href='/docs/plugin_development/'>Developing a plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class='span10'>
+            <h1>UI Scaffolding</h1>
+            <h2>Introduction</h2>
+            <p>Forge&#8217;s default UI scaffolding generates a pure Java EE application with a JavaServer Faces User Interface. This UI includes support for creating, updating, deleting, pagination and searching. It also supports one-to-many, many-to-many, many-to-one and one-to-one relationships. The scaffolding uses pure <span class="caps">JSF</span> tags, with no runtime dependencies on any non-Java EE libraries.</p>
+            <h2>Getting Started</h2>
+            <p>The default scaffold comes as part of the Forge distribution; therefore, it does not need to be installed separately. You can get up and running in just a few simple commands! To begin, you must first create (or have already created) an @Entity such as the following example.</p>
+            <pre class="command"><code class="command">entity --named Customer&#x000A;field string --named firstName</code></pre>
+            <p>You can now set up scaffolding, and generate <span class="caps">CRUD</span> pages for the entity using the following command, which will create UI scaffolding for the currently selected entity (you can select an entity by using the &#8216;cd&#8217; or &#8216;pick up&#8217; commands):</p>
+            <pre class="command"><code class="command">scaffold setup&#x000A;scaffold from-entity</code></pre>
+            <p>To generate scaffolding for another entity (even if it is not selected), just provide its fully qualified name, or package name wildcards for multiple entities:</p>
+            <pre class="command"><code class="command">scaffold from-entity com.test.domain.Customer&#x000A;scaffold from-entity com.test.domain.*</code></pre>
+            <h2>Structure of Generated Scaffold</h2>
+            <p>The scaffolding is generated in two main parts: Facelets pages and Java backing beans.</p>
+            <p>The Facelets pages are generated under <em>src/main/webapp/scaffold/{entity-name}</em>. There are three pages per entity:</p>
+            <ul>
+            	<li><strong>create.xhtml</strong> &#8211; an editable view of the entity. This page is reused for both creating new entities and editing existing entities. Includes support for: adding/removing one-to-one, one-to-many and many-to-many relationships; selecting many-to-one relationships; in-place validation messages.</li>
+            	<li><strong>view.xhtml</strong> &#8211; a read-only view of the entity. Includes support for navigating many-to-one relationships from parent to child.</li>
+            	<li><strong>search.xhtml</strong> &#8211; an entity search screen with a list of results. Includes support for: searching mixtures of different fields; paginating the results.</li>
+            </ul>
+            <p>The backing beans are generated under <em>src/main/java/com/test/view/{entity-name}Bean.java</em>. There is one backing bean per entity. Each backing bean focuses purely on Java EE 6 standards, rather than introducing a <span class="caps">CRUD</span> framework or custom base class. Important Java EE 6 constructs include:</p>
+            <ul>
+            	<li><strong>@Named</strong> &#8211; so that the bean is exposed through <span class="caps">CDI</span> to the Facelets pages. We use @Named rather than @ManagedBean, in order to take advantage of <span class="caps">CDI</span> scopes.</li>
+            	<li><strong>@ConversationScoped</strong> &#8211; so that important hidden fields (such as @Id and @Version fields) are retained during the view/edit/update lifecycle without requiring them to be POSTed back as part of the Facelets page (e.g. using h:inputHidden, or storing them into the <span class="caps">JSF</span> ViewState). We use @ConversationScoped rather than @ViewScoped, in order to take advantage of CDI&#8217;s transaction management.</li>
+            	<li><strong>@PersistenceContext</strong> &#8211; so that we can inject the EntityManager. We used @PersistenceContext rather than @Inject, so that we can use an extended PersistenceContext.</li>
+            	<li><strong>PersistenceContext.<span class="caps">EXTENDED</span></strong> &#8211; so that transactions are bound to the conversation scope of the bean. This allows the bean to save an entity and then display it as a read-only view, without incurring lazy loading problems on one-to-many relationships.</li>
+            	<li><strong>@Stateful</strong> &#8211; so that we can use an extended PersistenceContext.</li>
+            	<li><strong>conversation.begin</strong> &#8211; conversations are started during entity retrieval, and ended upon update, delete or cancel. This allows fields that are not POSTed back (@Id and @Version fields, contents of one-to-many relations) to survive page refreshes in the face of validation errors.</li>
+            	<li><strong>CriteriaBuilder</strong> &#8211; so that we can build queries having arbitrary mixtures of search criteria. CriteriaBuilder provides a cleaner <span class="caps">API</span> for constructing mixtures of fields than using pure <span class="caps">JPA</span>-QL.</li>
+            	<li><strong>Converter</strong> &#8211; so that entities can be presented in many-to-one dropdowns. We use an inner class rather than @FacesConverter, so that we can take advantage of an injected EntityManager.</li>
+            </ul>
+            <p>All resources related to the look and feel of the generated UI, including <span class="caps">CSS</span> files and images, are generated under <em>src/main/webapp/resources.</em></p>
+            <p>In all, we think this makes for a well designed, pure Java EE 6 web application. It supports most <span class="caps">CRUD</span> use cases with minimal dependencies or &#8216;magic&#8217; in the generated code. The few exceptions are:</p>
+            <ul>
+            	<li><strong>ViewUtils</strong> &#8211; <span class="caps">JSF</span> lacks a way to display Sets (as opposed to Lists) of Objects. We resolve this by introducing an EL function <em>ViewUtils.asList</em> that can be wrapped around a Collection to turn it into a List.</li>
+            </ul>
+            <h2>Customizing the Scaffold</h2>
+            <p>The generated code itself is free of non-Java EE dependencies or &#8216;magic&#8217; code, so can be readily edited in any text editor. However, such edits will be overwritten if the scaffold is ever regenerated.</p>
+            <p>To customize the generation process itself, there are a number of options:</p>
+            <ul>
+            	<li>All look and feel related resources, including <span class="caps">CSS</span> files and images, are located under <em>src/main/resource/org/jboss/forge/scaffold/faces/static</em>. These can be readily replaced to provide alternate look and feels.</li>
+            	<li>All static templates, including error pages and the paginator control, are located under <em>src/main/resource/org/jboss/forge/scaffold/faces/templates</em>. These are pure Facelets files, and can be readily edited.</li>
+            	<li>All scaffolding files, including <span class="caps">CRUD</span> Facelets pages and Java backing beans, are located under <em>src/main/resource/org/jboss/forge/faces/scaffold</em>. These are [Seam Render|https://github.com/seam/render] templates. Much of the templates are static text which can be edited in any text editor. The dynamic portions are embedded in the text using <em>@{&#8230;}</em> expressions.</li>
+            	<li>The dynamic generation of the <span class="caps">JSF</span> tags, as well as some portions of the Java code, is performed using <a href="http://metawidget.org">Metawidget</a>. Metawidget defines a pluggable pipeline that allows you to customize many aspects of the generation, including: what entity annotations/metadata are inspected; what <span class="caps">JSF</span> components are chosen; how the <span class="caps">JSF</span> components are laid out. Full details on writing Metawidget plugins are available <a href="http://metawidget.org/doc/reference/en/html/ch02.html">here</a>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>

@@ -87,129 +87,129 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-  //<![CDATA[
-    $(document).ready(function() {
-      var pathname = window.location.pathname;
-      console.log(pathname);
-      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-    });
-  //]]>
-</script>
-<div class='container-fluid'>
-  <div class='row-fluid'>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>Using Forge</li>
-        <li>
-          <a href='/docs/using/'>Installation</a>
-        </li>
-        <li>
-          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-        </li>
-        <li>
-          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href='/docs/using/samples.html'>Samples</a>
-        </li>
-        <li>
-          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-        </li>
-        <li>
-          <a href='/docs/using/faq.html'>FAQ</a>
-        </li>
-        <li>
-          <a href='/docs/using/affiliation.html'>Affiliation</a>
-        </li>
-        <li class='nav-header'>Get involved</li>
-        <li>
-          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-        </li>
-        <li class='nav-header'>Important plugins</li>
-        <li>
-          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-        </li>
-        <li>
-          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-        </li>
-        <li class='nav-header'>Developing plugins</li>
-        <li>
-          <a href='/docs/plugin_development/'>Developing a plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class='span10'>
-      <h1>Installing Forge</h1>
-<p>Installing Forge is a relatively short process, and this guide will take you through the fundamentals (providing links to external materials if required;) however, if you encounter any issues with this process, please ask in the Forge Users mailing list, or if you think something is wrong with this guide, report a defect under &#8220;Documentation&#8221;.</p>
-<h3>Get involved!</h3>
-<p>If you would like to get involved, stop by the Forge Dev mailing list, file an issue, or come find us on irc.freenode.net, in channel #forge.</p>
-<h2>Install a Forge Distribution</h2>
-<p>Follow these steps to install a Forge distribution:</p>
-<p><strong>1. Ensure that you have already installed a <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java 6+ <span class="caps">JDK</span></a>.</strong></p>
-<p><strong>2. <a href='https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.&#42;.Final'>Download</a> and Un-zip Forge (or a recent <a href="https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand">snapshot build</a>) into a folder on your hard-disk, this folder will be your FORGE_HOME</strong></p>
-<p><strong>3. Add &#8216;$FORGE_HOME/bin&#8217; to your path (<a href="http://www.google.com/search?q=windows+edit+path">windows</a>, <a href="http://www.google.com/search?q=linux+set+path">linux</a>, <a href="http://www.google.com/search?q=mac+osx+edit+path">mac osx</a>)</strong></p>
-<p>On Unix based operating systems, this typically means editing your <code>~/.bashrc</code> or <code>~/.profile;</code> you will need to the following entries:</p>
-<pre class="command"><code class="command">export FORGE_HOME=~/forge/&#x000A;export PATH=$PATH:$FORGE_HOME/bin</code></pre>
-<p>While on Windows, you will need to right-click on open the &#8220;Control Panel&#8221;, then click &#8220;System Properties&#8221;, open the &#8220;Advanced&#8221; tab, then click &#8220;Environment Variables&#8221; and add these two entries visually. It is recommended to set User variables for Forge, unless you have placed the unzipped distribution in a folder where all users can access it.</p>
-<div class="alert alert-success">You may also simply create a shortcut to bin\forge (Unix,) or bin\forge.bat (Windows,) and place it on your Desktop.</div>
-<p><strong>4. Consider installing <a href="http://git-scm.com/">Git</a> and <a href="http://maven.apache.org/">Maven 3.0+</a> (both optional)</strong></p>
-<p><strong>5. Open a command prompt and run &#8216;forge&#8217; (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)</strong></p>
-<pre class="command"><code class="command">localhost:~ $ forge&#x000A;[no project] ~ $</code></pre>
-<h2>That&#8217;s it! You&#8217;ve got Forge installed, but what to do next?</h2>
-<p>You can start by Forging your first Java EE webapp in about five minutes, and there are a few things you should probably check-out. If you are confused at any time, try pressing <TAB>. For instance, if you have not yet seen the Forge built-in commands, you may either press <TAB> to see a list of the currently available commands, or get a more descriptive list by typing:</p>
-<pre class="command"><code class="command">$ list-commands --all</code></pre>
-<p>You may also use the &#8216;help&#8217; command for more detailed information about available Forge, a plugin, or a command.</p>
-<pre class="command"><code class="command">$ help {plugin-name} {command-name}</code></pre>
-<div class="alert alert-danger">Having problems? <a href="https://issues.jboss.org/secure/CreateIssue.jspa?pid=12311820&amp;issuetype=1">Click here and tell us</a>.</div>
-    </div>
-  </div>
-</div>
+        //<![CDATA[
+          $(document).ready(function() {
+            var pathname = window.location.pathname;
+            console.log(pathname);
+            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+          });
+        //]]>
+      </script>
+      <div class='container-fluid'>
+        <div class='row-fluid'>
+          <div class='span2'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>Using Forge</li>
+              <li>
+                <a href='/docs/using/'>Installation</a>
+              </li>
+              <li>
+                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+              </li>
+              <li>
+                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href='/docs/using/samples.html'>Samples</a>
+              </li>
+              <li>
+                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+              </li>
+              <li>
+                <a href='/docs/using/faq.html'>FAQ</a>
+              </li>
+              <li>
+                <a href='/docs/using/affiliation.html'>Affiliation</a>
+              </li>
+              <li class='nav-header'>Get involved</li>
+              <li>
+                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+              </li>
+              <li class='nav-header'>Important plugins</li>
+              <li>
+                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+              </li>
+              <li>
+                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+              </li>
+              <li class='nav-header'>Developing plugins</li>
+              <li>
+                <a href='/docs/plugin_development/'>Developing a plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class='span10'>
+            <h1>Installing Forge</h1>
+            <p>Installing Forge is a relatively short process, and this guide will take you through the fundamentals (providing links to external materials if required;) however, if you encounter any issues with this process, please ask in the Forge Users mailing list, or if you think something is wrong with this guide, report a defect under &#8220;Documentation&#8221;.</p>
+            <h3>Get involved!</h3>
+            <p>If you would like to get involved, stop by the Forge Dev mailing list, file an issue, or come find us on irc.freenode.net, in channel #forge.</p>
+            <h2>Install a Forge Distribution</h2>
+            <p>Follow these steps to install a Forge distribution:</p>
+            <p><strong>1. Ensure that you have already installed a <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java 6+ <span class="caps">JDK</span></a>.</strong></p>
+            <p><strong>2. <a href='https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.&#42;.Final'>Download</a> and Un-zip Forge (or a recent <a href="https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand">snapshot build</a>) into a folder on your hard-disk, this folder will be your FORGE_HOME</strong></p>
+            <p><strong>3. Add &#8216;$FORGE_HOME/bin&#8217; to your path (<a href="http://www.google.com/search?q=windows+edit+path">windows</a>, <a href="http://www.google.com/search?q=linux+set+path">linux</a>, <a href="http://www.google.com/search?q=mac+osx+edit+path">mac osx</a>)</strong></p>
+            <p>On Unix based operating systems, this typically means editing your <code>~/.bashrc</code> or <code>~/.profile;</code> you will need to the following entries:</p>
+            <pre class="command"><code class="command">export FORGE_HOME=~/forge/&#x000A;export PATH=$PATH:$FORGE_HOME/bin</code></pre>
+            <p>While on Windows, you will need to right-click on open the &#8220;Control Panel&#8221;, then click &#8220;System Properties&#8221;, open the &#8220;Advanced&#8221; tab, then click &#8220;Environment Variables&#8221; and add these two entries visually. It is recommended to set User variables for Forge, unless you have placed the unzipped distribution in a folder where all users can access it.</p>
+            <div class="alert alert-success">You may also simply create a shortcut to bin\forge (Unix,) or bin\forge.bat (Windows,) and place it on your Desktop.</div>
+            <p><strong>4. Consider installing <a href="http://git-scm.com/">Git</a> and <a href="http://maven.apache.org/">Maven 3.0+</a> (both optional)</strong></p>
+            <p><strong>5. Open a command prompt and run &#8216;forge&#8217; (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)</strong></p>
+            <pre class="command"><code class="command">localhost:~ $ forge&#x000A;[no project] ~ $</code></pre>
+            <h2>That&#8217;s it! You&#8217;ve got Forge installed, but what to do next?</h2>
+            <p>You can start by Forging your first Java EE webapp in about five minutes, and there are a few things you should probably check-out. If you are confused at any time, try pressing <TAB>. For instance, if you have not yet seen the Forge built-in commands, you may either press <TAB> to see a list of the currently available commands, or get a more descriptive list by typing:</p>
+            <pre class="command"><code class="command">$ list-commands --all</code></pre>
+            <p>You may also use the &#8216;help&#8217; command for more detailed information about available Forge, a plugin, or a command.</p>
+            <pre class="command"><code class="command">$ help {plugin-name} {command-name}</code></pre>
+            <div class="alert alert-danger">Having problems? <a href="https://issues.jboss.org/secure/CreateIssue.jspa?pid=12311820&amp;issuetype=1">Click here and tell us</a>.</div>
+          </div>
+        </div>
+      </div>
       <hr />
       <footer>
         <p>&copy; JBoss 2012</p>
