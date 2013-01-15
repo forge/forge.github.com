@@ -105,15 +105,15 @@ Wrote /src/main/webapp/scaffold/customer/list.xhtml
 
 Customer.java $
 
-h2. That's it! Now build your project and deploy it onto your JBoss Application Server instance:
+h2. That's it! Now build your project and deploy it onto your Java EE Application Server of choice:
 
 bc(command). $ build
 
-Or, if you want to control the build more finely, you can also build your new project using Maven. (If you do not have maven installed, Forge will use its provided embedded Maven support.)
+Or, to control the build more finely, you can also build your new project using native Maven commands. (If you do not have maven installed, Forge will use its provided embedded Maven support.)
 
 bc(command). $ mvn clean package
 
-h2. Deploy/undeploy to AS7
+h2. (Optional) Deploy/undeploy to AS7
 
 First you need to install the AS7 Forge Plugin by typing the following command:
 
