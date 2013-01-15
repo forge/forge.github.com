@@ -1,0 +1,84 @@
+---
+layout: news
+title: Forge 1.2.0.Final Released !
+author: Lincoln Baxter, III
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.2.0.Final* is now available for download ! 
+
+h2. Release Notes
+
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-621'>FORGE-621</a>] -         Support Weblogic 12c as a container in the Persistence plugin
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-727'>FORGE-727</a>] -         Starting forge with debug flag results in an error
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-740'>FORGE-740</a>] -         BeansPlugin:  &#39;new-bean --overwrite&#39; broken
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-743'>FORGE-743</a>] -         NamedValueOptionParser should reject varargs options
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-747'>FORGE-747</a>] -         ForgePlugin list-plugins ignores GREP
+</li>
+</ul>
+                
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-119'>FORGE-119</a>] -         org.jboss.forge.parser.java.Parameter should support examining annotations
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-613'>FORGE-613</a>] -         Create a XML Schema for forge.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-722'>FORGE-722</a>] -         JavaParser should support parsing and creating annotations on annotations.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-723'>FORGE-723</a>] -         JavaPlugin: add new command &#39;new-annotation&#39;
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-730'>FORGE-730</a>] -         annotation order enhancements
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-731'>FORGE-731</a>] -         API support for nested annotations as annotation element values
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-746'>FORGE-746</a>] -         fully handle annotation elements of enum, class, and arrays of each, type
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-748'>FORGE-748</a>] -         org.jboss.forge.parser.java.util.Types does not handle type names that combine generics and arrays
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-224'>FORGE-224</a>] -         Create means for measuring usage via analytics
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-436'>FORGE-436</a>] -         JavaSource needs a way to parse nested annotations
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-726'>FORGE-726</a>] -         EnumType should implement FieldHolder, MethodHolder and InterfaceCapable
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-729'>FORGE-729</a>] -         re-adding a named element to a &quot;normal&quot; annotation should replace rather than accumulate
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-732'>FORGE-732</a>] -         All JavaSource types should allow inner classes
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-733'>FORGE-733</a>] -         API for annotation elements in JavaAnnotation type definitions
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-739'>FORGE-739</a>] -         BeansPlugin: add new command &#39;new-qualifier&#39;
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-741'>FORGE-741</a>] -         JavaPlugin: new-annotation-type += retentionPolicy, documented options
+</li>
+</ul>
+        
+<h2>        Patch
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-735'>FORGE-735</a>] -         make result of MethodImpl.getParameters() unmodifiable
+</li>
+</ul>
+
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.0.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+You can also automatically update your current forge installation by typing the following command inside a Forge console:
+
+bc(prettyprint).. forge update
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
