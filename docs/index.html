@@ -87,126 +87,126 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Writing documentation</h1>
-            We need your help! Good documentation is one of the most important things for broad adoption of Forge. It's really easy to help, so if you feel we are missing something in the docs, please add it :-)
-            <p></p>
-            The documentation is written in Textile, which is a lightweight markup language.
-            <br />
-            Follow these steps to conribute documentation:
-            <ol>
-              <li>Clone http://github.com/forge/forge.github.com on GitHub.</li>
-              <li>Add a new .textile file in one of the sub directories of the docs directory.</li>
-              <li>Push the empty Textile file to your GitHub repository.</li>
-              <li>Use the GitHub Textile editor to write your docs and preview changes. Of course you can use your own editor if you prefer so.</li>
-            </ol>
-            The Textile Wikipedia
-            <a href='http://en.wikipedia.org/wiki/Textile_(markup_language)'>page</a>
-            gives a good introduction about the markup language.
-            <br />
-            <br />
-            <h3>Some technical details</h3>
-            The Forge website is built using Awestruct, and the sources are on http://github.com/forge/forge.github.com. However you don't have to install anything to contribute documentation! If you are interested in Awestruct anyway, you'll find a guide on the github page about how to setup and use Awestruct.
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Writing documentation</h1>
+We need your help! Good documentation is one of the most important things for broad adoption of Forge. It's really easy to help, so if you feel we are missing something in the docs, please add it :-)
+<p></p>
+The documentation is written in Textile, which is a lightweight markup language.
+<br />
+Follow these steps to conribute documentation:
+<ol>
+  <li>Clone http://github.com/forge/forge.github.com on GitHub.</li>
+  <li>Add a new .textile file in one of the sub directories of the docs directory.</li>
+  <li>Push the empty Textile file to your GitHub repository.</li>
+  <li>Use the GitHub Textile editor to write your docs and preview changes. Of course you can use your own editor if you prefer so.</li>
+</ol>
+The Textile Wikipedia
+<a href='http://en.wikipedia.org/wiki/Textile_(markup_language)'>page</a>
+gives a good introduction about the markup language.
+<br />
+<br />
+<h3>Some technical details</h3>
+The Forge website is built using Awestruct, and the sources are on http://github.com/forge/forge.github.com. However you don't have to install anything to contribute documentation! If you are interested in Awestruct anyway, you'll find a guide on the github page about how to setup and use Awestruct.
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2013</p>

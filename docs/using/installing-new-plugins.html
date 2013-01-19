@@ -87,123 +87,123 @@
     </div>
     <div class='content'>
       <script type='text/javascript'>
-        //<![CDATA[
-          $(document).ready(function() {
-            var pathname = window.location.pathname;
-            console.log(pathname);
-            $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
-            $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
-          });
-        //]]>
-      </script>
-      <div class='container-fluid'>
-        <div class='row-fluid'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>Using Forge</li>
-              <li>
-                <a href='/docs/using/'>Installation</a>
-              </li>
-              <li>
-                <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
-              </li>
-              <li>
-                <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
-              </li>
-              <li>
-                <a href='/docs/using/samples.html'>Samples</a>
-              </li>
-              <li>
-                <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
-              </li>
-              <li>
-                <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
-              </li>
-              <li>
-                <a href='/docs/using/faq.html'>FAQ</a>
-              </li>
-              <li>
-                <a href='/docs/using/affiliation.html'>Affiliation</a>
-              </li>
-              <li class='nav-header'>Get involved</li>
-              <li>
-                <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
-              </li>
-              <li>
-                <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
-              </li>
-              <li class='nav-header'>Important plugins</li>
-              <li>
-                <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
-              </li>
-              <li>
-                <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
-              </li>
-              <li class='nav-header'>Developing plugins</li>
-              <li>
-                <a href='/docs/plugin_development/'>Developing a plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
-              </li>
-              <li>
-                <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
-              </li>
-            </ul>
-          </div>
-          <div class='span10'>
-            <h1>Installing new Plugins</h1>
-            <p>One of the best features of Forge is the ability to install third-party plugins, adding features or behavior that do not come standard in Forge itself. Installing plugins is easy, and takes only a few moments &#8211; it should feel familiar, since it was designed after the &#8220;App Store&#8221; concept, and uses Unix package-manager style commands.</p>
-            <h2>Find a Plugin in the Central Plugin Index (<span class="caps">CPI</span>)</h2>
-            <p>Finding a plugin is simple, just choose a search term &#8211; &#8220;jsf&#8221;, JavaServer Faces, for example &#8211; and pass that term to the &#8220;forge find-plugin&#8221; command.</p>
-            <pre class="command"><code class="command">$ forge find-plugin jsf</code></pre>
-            <p>Which results in:</p>
-            <pre class="output"><code class="output">[no project] ~/Desktop $ forge find-plugin jsf&#x000A;Connecting to remote repository [https://raw.github.com/forge/plugin-repository/master/repository.yaml]... connected!</code>&#x000A; &#x000A;<code class="output"> - richfaces (org.jboss.seam.persistence:plugin-seam-persistence:::1.0.0-SNAPSHOT)&#x000A;    Author: Brian Leathem &lt;bleathem@gmail.com&gt;&#x000A;    Website: http://www.jboss.org/richfaces/&#x000A;    Location: git://github.com/forge/plugin-richfaces.git&#x000A;    Tags: jsf, jsf2, richfaces, component library, jboss&#x000A;    Description: RichFaces Plugin - Streamlines installation of the JBoss RichFaces component library for JSF</code>&#x000A; &#x000A;<code class="output"> - prettyfaces (com.ocpsoft.forge:prettyfaces-plugin:::1.0.0.Alpha4)&#x000A;    Author: Lincoln Baxter, III &lt;lincoln@ocpsoft.com&gt;&#x000A;    Website: http://ocpsoft.com/prettyfaces/&#x000A;    Location: git://github.com/ocpsoft/prettyfaces-forge-plugin.git&#x000A;    Tags: url-rewrite, urlrewrite, prettyfaces, servlet, javaee, java ee, jsf, jsf2, ocpsoft&#x000A;    Description: PrettyFaces Plugin - Streamlines installation of the OCPSoft PrettyFaces URL-rewriting library&#x000A;                 for Servlet, Java EE, and JSF. Also provides streamlined commands for generating configuration&#x000A;                 and URL-mappings.</code>&#x000A; &#x000A;<code class="output">[no project] ~/Desktop $</code></pre>
-            <p>This provides a list of all available plugins matching your search term.</p>
-            <div class="alert alert-info">You may also use <TAB> completion support when typing, &#8220;forge install-plugin&#8221;</div>
-            <p><img src="/images/install-plugin-autocomplete.png" title="Install plugin autocomplete" alt="Install plugin autocomplete" /></p>
-            <h2>Installing a Plugin from the Central Plugin Index (<span class="caps">CPI</span>)</h2>
-            <p>Once you have found a plugin you&#8217;d like to install, you must type the &#8220;forge install-plugin&#8221; command, passing the name of the plugin you&#8217;d like to install:</p>
-            <pre class="output"><code class="output">[no project] Desktop $ forge install-plugin richfaces&#x000A;Connecting to remote repository [https://raw.github.com/forge/plugin-repository/master/repository.yaml]... connected!&#x000A;***INFO*** Preparing to install plugin: richfaces&#x000A;***INFO*** Checking out plugin source files to [/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo] via 'git'&#x000A;***INFO*** Invoking build with underlying build system.&#x000A;[INFO] Scanning for projects...&#x000A;[INFO]                                                                         &#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] Building richfaces-forge-plugin 1.0.0-SNAPSHOT&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO]&#x000A;[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ richfaces-forge-plugin ---&#x000A;[INFO]&#x000A;[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ richfaces-forge-plugin ---&#x000A;[INFO] Copying 5 resources&#x000A;[INFO]&#x000A;[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ richfaces-forge-plugin ---&#x000A;[INFO] Compiling 3 source files to /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/classes&#x000A;[INFO]&#x000A;[INFO] --- maven-resources-plugin:2.4.3:testResources (default-testResources) @ richfaces-forge-plugin ---&#x000A;[INFO] skip non existing resourceDirectory /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/src/test/resources&#x000A;[INFO]&#x000A;[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ richfaces-forge-plugin ---&#x000A;[INFO] No sources to compile&#x000A;[INFO]&#x000A;[INFO] --- maven-surefire-plugin:2.7.1:test (default-test) @ richfaces-forge-plugin ---&#x000A;[INFO] No tests to run.&#x000A;[INFO] Surefire report directory: /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/surefire-reports</code>&#x000A; &#x000A;<code class="output">-------------------------------------------------------&#x000A; T E S T S&#x000A;-------------------------------------------------------&#x000A;There are no tests to run.</code>&#x000A; &#x000A;<code class="output">Results :</code>&#x000A; &#x000A;<code class="output">Tests run: 0, Failures: 0, Errors: 0, Skipped: 0</code>&#x000A; &#x000A;<code class="output">[INFO]&#x000A;[INFO] Building jar: /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/richfaces-forge-plugin-1.0.0-SNAPSHOT.jar&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] BUILD SUCCESS&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] Total time: 3.565s&#x000A;[INFO] Finished at: Thu Aug 04 13:32:34 EDT 2011&#x000A;[INFO] Final Memory: 10M/81M&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;***SUCCESS*** Build successful.&#x000A;***INFO*** Installing plugin artifact.&#x000A;***SUCCESS*** Installed from [git://github.com/forge/plugin-richfaces.git] successfully.&#x000A;***INFO*** Please restart Forge to complete plugin installation.&#x000A;Wrote /var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/pom.xml&#x000A;Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/1.0.0-SNAPSHOT/richfaces-forge-plugin.jar&#x000A;Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/1.0.0-SNAPSHOT/module.xml&#x000A;Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/dependencies/1.0.0-SNAPSHOT/module.xml&#x000A;Wrote ~/.forge/plugins/org/jboss/forge/plugins/main/module.xml&#x000A;[no project] Desktop $</code></pre>
-            <h2>Remove a Plugin</h2>
-            <p>If you ever need to remove a plugin, you may type the &#8220;forge remove-plugin&#8221; command, which supports <TAB> auto-completion. Repeat this process for each plugin you wish to remove.</p>
-            <pre class="output"><code class="output">[no project] Desktop $ forge remove-plugin org.jboss.forge.seam.persistence.plugin-seam-persistence:1.0.0-SNAPSHOT&#x000A;***SUCCESS*** Removed org.jboss.forge.seam.persistence.plugin-seam-persistence:1.0.0-SNAPSHOT&#x000A;[no project] Desktop $</code></pre>
-          </div>
-        </div>
-      </div>
+  //<![CDATA[
+    $(document).ready(function() {
+      var pathname = window.location.pathname;
+      console.log(pathname);
+      $("body > .navbar a[href='/docs/index.html']").closest("li").addClass("active");
+      $("body > .content ul.nav a[href='" + pathname + "']").closest("li").addClass("active");
+    });
+  //]]>
+</script>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>Using Forge</li>
+        <li>
+          <a href='/docs/using/'>Installation</a>
+        </li>
+        <li>
+          <a href='/docs/using/installing-new-plugins.html'>Installing new Plugins</a>
+        </li>
+        <li>
+          <a href='/docs/using/basic-javaee-app.html'>Writing Basic Java EE App</a>
+        </li>
+        <li>
+          <a href='/docs/using/samples.html'>Samples</a>
+        </li>
+        <li>
+          <a href='/docs/using/configure-proxy.html'>Configure HTTP Proxy</a>
+        </li>
+        <li>
+          <a href='/docs/using/debugging-forge.html'>Debugging Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/profiling-forge.html'>Profiling Forge</a>
+        </li>
+        <li>
+          <a href='/docs/using/faq.html'>FAQ</a>
+        </li>
+        <li>
+          <a href='/docs/using/affiliation.html'>Affiliation</a>
+        </li>
+        <li class='nav-header'>Get involved</li>
+        <li>
+          <a href='/docs/get_involved/contribute.html'>Contribute or Get Involved</a>
+        </li>
+        <li>
+          <a href='/docs/get_involved/release-guide.html'>Release Guide</a>
+        </li>
+        <li class='nav-header'>Important plugins</li>
+        <li>
+          <a href='/docs/important_plugins/arquillian-testing.html'>Arquillian Testing</a>
+        </li>
+        <li>
+          <a href='/docs/important_plugins/ui-scaffolding.html'>UI Scaffolding</a>
+        </li>
+        <li class='nav-header'>Developing plugins</li>
+        <li>
+          <a href='/docs/plugin_development/'>Developing a plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-forge-api.html'>Reference Forge API</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/implement-plugin-interface.html'>Implement the Plugin interface</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/give-your-plugin-name.html'>Give your Plugin a name</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-commands-to-plugin.html'>Add Commands to your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-options-to-command.html'>Add Options to your Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/enable-piping.html'>Enable Piping between Commands</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/facets.html'>Enable modular functionality with Facets</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/test-plugins.html'>Test your Plugin</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/reference-libraries.html'>Reference Libraries</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/make-plugin-available.html'>Make your Plugin available to Forge</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/add-plugin-cpi.html'>Add your Plugin to the Central Plugin Index</a>
+        </li>
+        <li>
+          <a href='/docs/plugin_development/important-apis.html'>Important APIs</a>
+        </li>
+      </ul>
+    </div>
+    <div class='span10'>
+      <h1>Installing new Plugins</h1>
+<p>One of the best features of Forge is the ability to install third-party plugins, adding features or behavior that do not come standard in Forge itself. Installing plugins is easy, and takes only a few moments &#8211; it should feel familiar, since it was designed after the &#8220;App Store&#8221; concept, and uses Unix package-manager style commands.</p>
+<h2>Find a Plugin in the Central Plugin Index (<span class="caps">CPI</span>)</h2>
+<p>Finding a plugin is simple, just choose a search term &#8211; &#8220;jsf&#8221;, JavaServer Faces, for example &#8211; and pass that term to the &#8220;forge find-plugin&#8221; command.</p>
+<pre class="command"><code class="command">$ forge find-plugin jsf</code></pre>
+<p>Which results in:</p>
+<pre class="output"><code class="output">[no project] ~/Desktop $ forge find-plugin jsf&#x000A;Connecting to remote repository [https://raw.github.com/forge/plugin-repository/master/repository.yaml]... connected!</code>&#x000A; &#x000A;<code class="output"> - richfaces (org.jboss.seam.persistence:plugin-seam-persistence:::1.0.0-SNAPSHOT)&#x000A;    Author: Brian Leathem &lt;bleathem@gmail.com&gt;&#x000A;    Website: http://www.jboss.org/richfaces/&#x000A;    Location: git://github.com/forge/plugin-richfaces.git&#x000A;    Tags: jsf, jsf2, richfaces, component library, jboss&#x000A;    Description: RichFaces Plugin - Streamlines installation of the JBoss RichFaces component library for JSF</code>&#x000A; &#x000A;<code class="output"> - prettyfaces (com.ocpsoft.forge:prettyfaces-plugin:::1.0.0.Alpha4)&#x000A;    Author: Lincoln Baxter, III &lt;lincoln@ocpsoft.com&gt;&#x000A;    Website: http://ocpsoft.com/prettyfaces/&#x000A;    Location: git://github.com/ocpsoft/prettyfaces-forge-plugin.git&#x000A;    Tags: url-rewrite, urlrewrite, prettyfaces, servlet, javaee, java ee, jsf, jsf2, ocpsoft&#x000A;    Description: PrettyFaces Plugin - Streamlines installation of the OCPSoft PrettyFaces URL-rewriting library&#x000A;                 for Servlet, Java EE, and JSF. Also provides streamlined commands for generating configuration&#x000A;                 and URL-mappings.</code>&#x000A; &#x000A;<code class="output">[no project] ~/Desktop $</code></pre>
+<p>This provides a list of all available plugins matching your search term.</p>
+<div class="alert alert-info">You may also use <TAB> completion support when typing, &#8220;forge install-plugin&#8221;</div>
+<p><img src="/images/install-plugin-autocomplete.png" title="Install plugin autocomplete" alt="Install plugin autocomplete" /></p>
+<h2>Installing a Plugin from the Central Plugin Index (<span class="caps">CPI</span>)</h2>
+<p>Once you have found a plugin you&#8217;d like to install, you must type the &#8220;forge install-plugin&#8221; command, passing the name of the plugin you&#8217;d like to install:</p>
+<pre class="output"><code class="output">[no project] Desktop $ forge install-plugin richfaces&#x000A;Connecting to remote repository [https://raw.github.com/forge/plugin-repository/master/repository.yaml]... connected!&#x000A;***INFO*** Preparing to install plugin: richfaces&#x000A;***INFO*** Checking out plugin source files to [/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo] via 'git'&#x000A;***INFO*** Invoking build with underlying build system.&#x000A;[INFO] Scanning for projects...&#x000A;[INFO]                                                                         &#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] Building richfaces-forge-plugin 1.0.0-SNAPSHOT&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO]&#x000A;[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ richfaces-forge-plugin ---&#x000A;[INFO]&#x000A;[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ richfaces-forge-plugin ---&#x000A;[INFO] Copying 5 resources&#x000A;[INFO]&#x000A;[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ richfaces-forge-plugin ---&#x000A;[INFO] Compiling 3 source files to /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/classes&#x000A;[INFO]&#x000A;[INFO] --- maven-resources-plugin:2.4.3:testResources (default-testResources) @ richfaces-forge-plugin ---&#x000A;[INFO] skip non existing resourceDirectory /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/src/test/resources&#x000A;[INFO]&#x000A;[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ richfaces-forge-plugin ---&#x000A;[INFO] No sources to compile&#x000A;[INFO]&#x000A;[INFO] --- maven-surefire-plugin:2.7.1:test (default-test) @ richfaces-forge-plugin ---&#x000A;[INFO] No tests to run.&#x000A;[INFO] Surefire report directory: /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/surefire-reports</code>&#x000A; &#x000A;<code class="output">-------------------------------------------------------&#x000A; T E S T S&#x000A;-------------------------------------------------------&#x000A;There are no tests to run.</code>&#x000A; &#x000A;<code class="output">Results :</code>&#x000A; &#x000A;<code class="output">Tests run: 0, Failures: 0, Errors: 0, Skipped: 0</code>&#x000A; &#x000A;<code class="output">[INFO]&#x000A;[INFO] Building jar: /private/var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/target/richfaces-forge-plugin-1.0.0-SNAPSHOT.jar&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] BUILD SUCCESS&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;[INFO] Total time: 3.565s&#x000A;[INFO] Finished at: Thu Aug 04 13:32:34 EDT 2011&#x000A;[INFO] Final Memory: 10M/81M&#x000A;[INFO] ------------------------------------------------------------------------&#x000A;***SUCCESS*** Build successful.&#x000A;***INFO*** Installing plugin artifact.&#x000A;***SUCCESS*** Installed from [git://github.com/forge/plugin-richfaces.git] successfully.&#x000A;***INFO*** Please restart Forge to complete plugin installation.&#x000A;Wrote /var/folders/lD/lD2Q5OzSGqKKKJgb0PZJBE+++TI/-Tmp-/forgetemp8092320155647288253/repo/pom.xml&#x000A;Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/1.0.0-SNAPSHOT/richfaces-forge-plugin.jar&#x000A;Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/1.0.0-SNAPSHOT/module.xml&#x000A;Wrote ~/.forge/plugins/org/richfaces/forge/richfaces-forge-plugin/dependencies/1.0.0-SNAPSHOT/module.xml&#x000A;Wrote ~/.forge/plugins/org/jboss/forge/plugins/main/module.xml&#x000A;[no project] Desktop $</code></pre>
+<h2>Remove a Plugin</h2>
+<p>If you ever need to remove a plugin, you may type the &#8220;forge remove-plugin&#8221; command, which supports <TAB> auto-completion. Repeat this process for each plugin you wish to remove.</p>
+<pre class="output"><code class="output">[no project] Desktop $ forge remove-plugin org.jboss.forge.seam.persistence.plugin-seam-persistence:1.0.0-SNAPSHOT&#x000A;***SUCCESS*** Removed org.jboss.forge.seam.persistence.plugin-seam-persistence:1.0.0-SNAPSHOT&#x000A;[no project] Desktop $</code></pre>
+    </div>
+  </div>
+</div>
       <hr />
       <footer>
         <p>&copy; JBoss 2013</p>
