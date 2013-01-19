@@ -1,6 +1,6 @@
 ---
 layout: news
-title: Forge 1.2.0.Final Released !
+title: Forge 1.2.0.Final Released
 author: Lincoln Baxter, III
 tags: [ website, announcement ]
 ---

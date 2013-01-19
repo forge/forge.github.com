@@ -35,7 +35,7 @@ layout: base
     %p A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.
   .row
     .span6
-      %h2 Quick Install
+      %h2 Quick Install 
       %p 
         %span The fastest and easiest way to install Forge on any operating system is through the use of 
         %a{:href=>"http://jboss.org/tools"} JBoss Tools
@@ -68,6 +68,8 @@ layout: base
       - for post in site.posts
         %li
           %h3
-            %a{ :href=>post.url }= post.title
+            %a{ :href=>post.url }#{post.title}
           - if (post.content.length > 0)
+            %p{:style=>"color: #666;"} 
+              %strong #{post.date.year}-#{post.date.month}-#{post.date.day}: #{post.author}
             %p= summarize(html_to_text(post.content), 50)
