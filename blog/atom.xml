@@ -2,9 +2,72 @@
 <feed xml:lang='en-US' xmlns='http://www.w3.org/2005/Atom'>
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2013-01-16T00:00:00Z</updated>
+  <updated>2013-02-16T00:00:00Z</updated>
   <link href='http://forge.jboss.org/blog/atom.xml' rel='self' type='application/atom+xml' />
   <link href='http://forge.jboss.org' rel='alternate' type='text/html' />
+  <entry>
+    <id>http://forge.jboss.org/news/2013/02/15/post-forge-1.html</id>
+    <title>Forge 1.2.1.Final Released</title>
+    <updated>2013-02-16T00:00:00Z</updated>
+    <link href='http://forge.jboss.org/news/2013/02/15/post-forge-1.html' rel='alternate' type='text/html' />
+    <category scheme='http://forge.jboss.org/' term='website' />
+    <category scheme='http://forge.jboss.org/' term='announcement' />
+    <category scheme='http://forge.jboss.org/' term='forge' />
+    <summary>
+      JBoss Forge 1.2.1.Final is now available for download !
+      Release Notes
+              Bug
+      
+      [FORGE-745] &#8211;         Can not use Java Parser in war deployment on AS7
+      [FORGE-751] &#8211;         MavenDependencyFacet cause ConcurrentModificationException
+      [FORGE-752] &#8211;         Analytics should not be enabled by default
+      [FORGE-763] &#8211;         ShellImpl &quot;noInitMode&quot; concept mismanages completers
+      [FORGE-767] &#8211;         JavaPlugin: Annotations and enums with no packages are created under the &quot;null&quot;......
+    </summary>
+    <content type='html'>
+      &lt;h1&gt;&lt;strong&gt;JBoss Forge 1.2.1.Final&lt;/strong&gt; is now available for download !&lt;/h1&gt;
+&lt;h2&gt;Release Notes&lt;/h2&gt;
+&lt;h2&gt;        Bug&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-745&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-745&lt;/a&gt;] &amp;#8211;         Can not use Java Parser in war deployment on AS7&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-751&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-751&lt;/a&gt;] &amp;#8211;         MavenDependencyFacet cause ConcurrentModificationException&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-752&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-752&lt;/a&gt;] &amp;#8211;         Analytics should not be enabled by default&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-763&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-763&lt;/a&gt;] &amp;#8211;         ShellImpl &amp;quot;noInitMode&amp;quot; concept mismanages completers&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-767&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-767&lt;/a&gt;] &amp;#8211;         JavaPlugin: Annotations and enums with no packages are created under the &amp;quot;null&amp;quot; package&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-774&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-774&lt;/a&gt;] &amp;#8211;         Have been using Forge for months.  My machine crashed, I re-installed Forge and got error on new-project command.  Error was not useful.&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-780&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-780&lt;/a&gt;] &amp;#8211;         `forge install-plugin` from central repository fails when plugin name collides with tags in other entries&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-718&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-718&lt;/a&gt;] &amp;#8211;         Ensure that the Java Parser can parse and is updated for Java 7 support&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;        Enhancement&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-150&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-150&lt;/a&gt;] &amp;#8211;         Implementations of JavaParser Interfaces should maintain equality with other implementations&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-564&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-564&lt;/a&gt;] &amp;#8211;         Allow multiple @Alias for a plugin&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-753&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-753&lt;/a&gt;] &amp;#8211;         Generate Atom feed for the Website for JBoss Weekly Editorial&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-768&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-768&lt;/a&gt;] &amp;#8211;         JavaPlugin: add &amp;#8212;named parameter for new-class, new-interface, new-annotation and new-enum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;        Feature Request&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-744&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-744&lt;/a&gt;] &amp;#8211;         BeansPlugin: add new-stereotype command&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-760&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-760&lt;/a&gt;] &amp;#8211;         When generating new member variables it would be nice if the toString method updated include the member variable name.&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-762&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-762&lt;/a&gt;] &amp;#8211;         enable completion for labeled choice selections&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-764&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-764&lt;/a&gt;] &amp;#8211;         multi-select ShellPrompt &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-765&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-765&lt;/a&gt;] &amp;#8211;         JavaPlugin new-annotation-type:  multi-select @Target ElementTypes&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-772&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-772&lt;/a&gt;] &amp;#8211;         BeansPlugin += new-scope command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.2.1.Final&amp;e=zip';return false;&quot; href=&quot;#&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+&lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2013/01/15/post-forge-1.html</id>
     <title>Forge 1.2.0.Final Released</title>
@@ -67,7 +130,7 @@
 &lt;ul&gt;
 &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-735&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-735&lt;/a&gt;] &amp;#8211;         make result of MethodImpl.getParameters() unmodifiable&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.2.0.Final&amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+&lt;p&gt;&lt;a onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.2.0.Final&amp;e=zip';return false;&quot; href=&quot;#&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
 &lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
 &lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
@@ -118,7 +181,7 @@
 &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-559&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-559&lt;/a&gt;] &amp;#8211;         Add support for listing or navigating the contents of a jar file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.1.3.Final&amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+&lt;p&gt;&lt;a onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.1.3.Final&amp;e=zip';return false;&quot; href=&quot;#&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
 &lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
 &lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
@@ -186,7 +249,7 @@ You can also &lt;code&gt;cat http://forge.jboss.org&lt;/code&gt; as well;&lt;/li
 	&lt;li&gt;&lt;strong&gt;And many more&lt;/strong&gt; &amp;#8211; for their ideas and help over the past few months.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Also many thanks to everyone who attended the Forge Hack Night. We couldn&amp;#8217;t have done it without your help !&lt;/p&gt;
-&lt;p&gt;So what are you waiting for ? &lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.1.0.Final&amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone while using this great tool !&lt;/p&gt;
+&lt;p&gt;So what are you waiting for ? &lt;a onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.1.0.Final&amp;e=zip';return false;&quot; href=&quot;#&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone while using this great tool !&lt;/p&gt;
 &lt;p&gt;Good luck and we welcome your feedback!&lt;/p&gt;
 &lt;p&gt;-The Forge Team&lt;/p&gt;
     </content>
