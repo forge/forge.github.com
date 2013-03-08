@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Forge | Forge 1.2.2.Final Released</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          padding-top: 60px;
+        }
+      /*]]>*/
+    </style>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <link href='/images/favicon.ico' rel='icon' />
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+    <script src='/javascripts/bootstrap.min.js' type='text/javascript'></script>
+    <script src='/javascripts/bootstrap-collapse.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script src='/javascripts/videoscale.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(document).ready(function() {
+          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+          prettyPrint();
+        });
+      //]]>
+    </script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34467975-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <div class='github-banner hidden-phone'>
+            <a href='https://github.com/forge/forge.github.com'>
+              <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position:absolute;top:0;right:0;border:0;' />
+            </a>
+          </div>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='/index.html'>Forge</a>
+          <div class='nav-collapse'>
+            <ul class='nav'>
+              <li>
+                <a href='/index.html'>Home</a>
+              </li>
+              <li>
+                <a href='/docs/index.html'>Documentation</a>
+              </li>
+              <li>
+                <a href='/team.html'>Team</a>
+              </li>
+              <li>
+                <a href='https://community.jboss.org/en/forge'>Forums</a>
+              </li>
+              <li>
+                <a href='/plugins.html'>Plugins</a>
+              </li>
+              <li>
+                <a href='https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' target='roadmap'>Roadmap</a>
+              </li>
+              <li>
+                <a href='/events.html'>Events</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='content'>
+      <div class='container'>
+  <h1><strong>JBoss Forge 1.2.2.Final</strong> is now available for download !</h1>
+<h2>Release Notes</h2>
+<h2>        Bug</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-725'><span class="caps">FORGE</span>-725</a>] &#8211;         Tests Failing on Windows 7</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-787'><span class="caps">FORGE</span>-787</a>] &#8211;         Forge update is not working correctly in Windows</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-799'><span class="caps">FORGE</span>-799</a>] &#8211;         RunPluginTest fails when there is a space on directory path</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-807'><span class="caps">FORGE</span>-807</a>] &#8211;         Java Parser incorrectly resolves some dependent classes to java.lang.xxx when resolving imports for an Entity</li>
+</ul>
+<h2>        Enhancement</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-576'><span class="caps">FORGE</span>-576</a>] &#8211;         Refactor RunUrlPluginTest</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-805'><span class="caps">FORGE</span>-805</a>] &#8211;         Faces Scaffold does not support <span class="caps">JPA</span> inheritance</li>
+</ul>
+<h2>        Feature Request</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-788'><span class="caps">FORGE</span>-788</a>] &#8211;         Add support for Updating Maven Pom Dependencies</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-798'><span class="caps">FORGE</span>-798</a>] &#8211;         Add support to the field plugin for specifying FetchTypes</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-806'><span class="caps">FORGE</span>-806</a>] &#8211;         Test <span class="caps">API</span>: get output of executed command</li>
+</ul>
+<h2>        Library Upgrade</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-800'><span class="caps">FORGE</span>-800</a>] &#8211;         Upgrade JGit libraries</li>
+</ul>
+<h2>        Task</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-793'><span class="caps">FORGE</span>-793</a>] &#8211;         Forge builds should be less restrictive on the <span class="caps">JDK</span> version used</li>
+</ul>
+<p><a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.2.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!</p>
+<p>You can also automatically update your current forge installation by typing the following command inside a Forge console:</p>
+<pre class="prettyprint"><code class="prettyprint">forge update</code></pre>
+<p>Happy Forging and we welcome your feedback!</p>
+<p><em>-The Forge Team</em></p>
+</div>
+      <hr />
+      <footer>
+        <p>&copy; JBoss 2013</p>
+      </footer>
+    </div>
+  </body>
+</html>
