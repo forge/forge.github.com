@@ -1,0 +1,68 @@
+---
+layout: news
+title: Forge 1.2.2.Final Released
+author: George Gastaldi
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.2.2.Final* is now available for download !
+
+h2. Release Notes
+
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-725'>FORGE-725</a>] -         Tests Failing on Windows 7
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-787'>FORGE-787</a>] -         Forge update is not working correctly in Windows
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-799'>FORGE-799</a>] -         RunPluginTest fails when there is a space on directory path
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-807'>FORGE-807</a>] -         Java Parser incorrectly resolves some dependent classes to java.lang.xxx when resolving imports for an Entity
+</li>
+</ul>
+
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-576'>FORGE-576</a>] -         Refactor RunUrlPluginTest
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-805'>FORGE-805</a>] -         Faces Scaffold does not support JPA inheritance
+</li>
+</ul>
+
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-788'>FORGE-788</a>] -         Add support for Updating Maven Pom Dependencies
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-798'>FORGE-798</a>] -         Add support to the field plugin for specifying FetchTypes
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-806'>FORGE-806</a>] -         Test API: get output of executed command
+</li>
+</ul>
+
+<h2>        Library Upgrade
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-800'>FORGE-800</a>] -         Upgrade JGit libraries
+</li>
+</ul>
+
+<h2>        Task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-793'>FORGE-793</a>] -         Forge builds should be less restrictive on the JDK version used
+</li>
+</ul>
+
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.2.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+You can also automatically update your current forge installation by typing the following command inside a Forge console:
+
+bc(prettyprint).. forge update
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+

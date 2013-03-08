@@ -4,10 +4,10 @@ layout: base
 .container
   .container.hidden-phone
     .row{:style=>'margin-bottom: 45px;'}
-      %p 
-        %center 
-          %img{:src=>'/images/forge.png'}       
-    .row  
+      %p
+        %center
+          %img{:src=>'/images/forge.png'}
+    .row
       .span6
         .row
           .span6
@@ -16,43 +16,43 @@ layout: base
           .span6
             %center
               %h2
-                %span Follow Forge on Twitter 
+                %span Follow Forge on Twitter
                 %a{ :href =>'http://twitter.com/jbossforge'} @JBossForge
       .span6
         .hero-unit
-          %h2 The new enterprise industrial evolution.    
+          %h2 The new enterprise industrial evolution.
           %p A core framework and next-generation shell for tooling and automation at a command line level; with APIs for integration in IDEs, extending built in functionality with plugins, and scripting for automating repetitive tasks, Forge is a tool every open-source developer should be looking at.
 
           %p A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.
-          %p 
-            %a.btn.btn-primary.btn-large{ :href =>'#', :onclick=>'_gaq.push([\'_trackEvent\', \'Downloads\', \'1.2.1.Final\']);document.location.href=\'https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.1.Final&e=zip\''} Download (1.2.1.Final)
+          %p
+            %a.btn.btn-primary.btn-large{ :href =>'#', :onclick=>'_gaq.push([\'_trackEvent\', \'Downloads\', \'1.2.2.Final\']);document.location.href=\'https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.2.Final&e=zip\''} Download (1.2.2.Final)
             %a.btn.btn-secondary.btn-large{ :href =>'/docs/using/'} How to Install
-  
+
   .row.visible-phone
-    %h2 The new enterprise industrial evolution.    
+    %h2 The new enterprise industrial evolution.
     %p A core framework and next-generation shell for tooling and automation at a command line level; with APIs for integration in IDEs, extending built in functionality with plugins, and scripting for automating repeditive tasks, Forge is a tool every open-source developer should be looking at.
 
     %p A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.
   .row
     .span6
-      %h2 Quick Install 
-      %p 
-        %span The fastest and easiest way to install Forge on any operating system is through the use of 
+      %h2 Quick Install
+      %p
+        %span The fastest and easiest way to install Forge on any operating system is through the use of
         %a{:href=>"http://jboss.org/tools"} JBoss Tools
-        %span or 
+        %span or
         %a{:href=>"https://devstudio.jboss.com/download/"} JBoss Developer Studio
-        %span, where Forge comes pre-installed and makes use of IDE GUI integration. Alternatively, on OSX, you can also use 
+        %span, where Forge comes pre-installed and makes use of IDE GUI integration. Alternatively, on OSX, you can also use
         %a{:href=>"http://mxcl.github.com/homebrew/"} Homebrew
         %span to install Forge natively for use on the command-line, via "brew install jboss-forge".
-      %p 
+      %p
         %ol
           %li Ensure that you have already installed a Java 6+ JDK.
-          %li 
-            %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.*.Final~~'} Download 
-            %span  and Un-zip Forge (or a recent 
+          %li
+            %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.*.Final~~'} Download
+            %span  and Un-zip Forge (or a recent
             %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand'} snapshot build
             %span ) into a folder on your hard-disk, this folder will be your FORGE_HOME
-          %li 
+          %li
             %span Add '$FORGE_HOME/bin' to your path
             %span (
             %a{:href=>'http://www.google.com/search?q=windows+edit+path'} windows
@@ -62,7 +62,7 @@ layout: base
             %a{:href=>'http://www.google.com/search?q=mac+osx+edit+path'} mac osx
             %span )
           %li * Consider installing Git and Maven 3.0+ (both optional)
-          %li Open a command prompt and run 'forge' (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)                   
+          %li Open a command prompt and run 'forge' (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)
     .span6
       %h2 News
       - for post in site.posts
@@ -70,6 +70,7 @@ layout: base
           %h3
             %a{ :href=>post.url }#{post.title}
           - if (post.content.length > 0)
-            %p{:style=>"color: #666;"} 
+            %p{:style=>"color: #666;"}
               %strong #{post.date.year}-#{post.date.month}-#{post.date.day}: #{post.author}
             %p= summarize(html_to_text(post.content), 50)
+
