@@ -6,6 +6,37 @@
   <link href='http://forge.jboss.org/blog/atom.xml' rel='self' type='application/atom+xml' />
   <link href='http://forge.jboss.org' rel='alternate' type='text/html' />
   <entry>
+    <id>http://forge.jboss.org/news/2013/03/08/post-maven-update.html</id>
+    <title>Update your maven dependencies automatically</title>
+    <updated>2013-03-09T00:00:00Z</updated>
+    <link href='http://forge.jboss.org/news/2013/03/08/post-maven-update.html' rel='alternate' type='text/html' />
+    <category scheme='http://forge.jboss.org/' term='feature' />
+    <category scheme='http://forge.jboss.org/' term='announcement' />
+    <category scheme='http://forge.jboss.org/' term='forge' />
+    <summary>
+      Update your maven dependencies automatically
+      New versions of software are released every day, and it is hard to keep your project up-to-date with the latest version of a dependency declared in your pom.xml
+      Fortunately, in 1.2.2.Final, JBoss Forge provides a new command to make things easier:
+      maven update
+      This command will scan each dependency in your current project and suggest you to update to a newer version, also displaying release notes where applicable.
+      Here is a video showing how this is possible:
+      
+      Many thanks to Aslak Knutsen for making this happen.
+      -The Forge Team......
+    </summary>
+    <content type='html'>
+      &lt;h1&gt;Update your maven dependencies automatically&lt;/h1&gt;
+&lt;p&gt;New versions of software are released every day, and it is hard to keep your project up-to-date with the latest version of a dependency declared in your pom.xml&lt;br /&gt;
+Fortunately, in 1.2.2.Final, JBoss Forge provides a new command to make things easier:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;maven update&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command will scan each dependency in your current project and suggest you to update to a newer version, also displaying release notes where applicable.&lt;br /&gt;
+Here is a video showing how this is possible:&lt;/p&gt;
+&lt;p&gt;&lt;object height=&quot;480&quot; width=&quot;853&quot;&gt;&lt;param value=&quot;http://www.youtube.com/v/M8yrhqeS6pI?hl=pt_BR&amp;amp;version=3&amp;amp;rel=0&quot; name=&quot;movie&quot; /&gt;&lt;param value=&quot;true&quot; name=&quot;allowFullScreen&quot; /&gt;&lt;param value=&quot;always&quot; name=&quot;allowscriptaccess&quot; /&gt;&lt;embed allowfullscreen=&quot;true&quot; src=&quot;http://www.youtube.com/v/M8yrhqeS6pI?hl=pt_BR&amp;amp;version=3&amp;amp;rel=0&quot; height=&quot;480&quot; allowscriptaccess=&quot;always&quot; width=&quot;853&quot; type=&quot;application/x-shockwave-flash&quot;&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/p&gt;
+&lt;p&gt;Many thanks to &lt;em&gt;Aslak Knutsen&lt;/em&gt; for making this happen.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
     <id>http://forge.jboss.org/news/2013/03/08/post-forge-1.html</id>
     <title>Forge 1.2.2.Final Released</title>
     <updated>2013-03-09T00:00:00Z</updated>
