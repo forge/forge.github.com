@@ -1,0 +1,24 @@
+---
+layout: news
+title: Update your maven dependencies automatically
+author: George Gastaldi
+tags: [ feature, announcement ]
+---
+
+h1. Update your maven dependencies automatically
+
+
+p. New versions of software are released every day, and it is hard to keep your project up-to-date with the latest version of a dependency declared in your pom.xml
+Fortunately, in 1.2.2.Final, JBoss Forge provides a new command to make things easier:
+
+bc(prettyprint).. maven update
+
+p. This command will scan each dependency in your current project and suggest you to update to a newer version, also displaying release notes where applicable.
+Here is a video showing how this is possible:
+
+<object width="853" height="480"><param name="movie" value="http://www.youtube.com/v/M8yrhqeS6pI?hl=pt_BR&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/M8yrhqeS6pI?hl=pt_BR&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="853" height="480" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+Many thanks to _Aslak Knutsen_ for making this happen.
+
+_-The Forge Team_
+
