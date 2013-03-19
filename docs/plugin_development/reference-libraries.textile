@@ -105,3 +105,9 @@ bc(command). [INFO] --- maven-shade-plugin:1.4:shade (default) @ example-plugin 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
+
+h2. Default dependencies
+
+p. During plugin installation, Forge adds certain modules as dependencies to the plugin module. Forge adds the @org.jboss.forge.javaee.api@, @org.jboss.forge.maven.api@, @org.jboss.forge.scaffold.api@, @org.jboss.forge.shell.api@, @org.jboss.seam.render@ and @javax.api@ modules as dependencies to your plugin. These modules already exist in a Forge installation and are added as dependencies to the plugin module, so they're readily available during plugin execution.
+
+p. If you chose to use the default plugin packaging mode, Forge creates an additional 'dependencies' module as a dependency for your plugin during installation. The 'dependencies' module contains all the dependencies with an effective scope of runtime, that are present anywhere in the dependency hierarchy of your plugin project. The artifacts constituting the dependencies are added as resource roots to the 'dependencies' module. In general, project POM dependencies with @org.jboss.forge@ groupId will be omitted from the 'dependencies' module.
