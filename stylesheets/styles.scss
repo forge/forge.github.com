@@ -3,3 +3,11 @@
 
 // Include responsive Bootstrap styles
 @import "bootstrap-responsive";
+
+.navbar .brand {
+    max-height: 100px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+

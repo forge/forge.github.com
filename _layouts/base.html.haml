@@ -8,7 +8,7 @@
       body {
         padding-top: 60px;
       }
-    %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }      
+    %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
     %link{ :rel=>'icon', :href=>'/images/favicon.ico' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/styles.css' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap-responsive.min.css' }
@@ -44,7 +44,8 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{ :href=>'/index.html' } Forge
+          %a.brand{ :href=>'/index.html' }
+            %img{ :src=>'/images/jbossforge_logo_100px.png', :alt=>'JBoss Forge'}
           .nav-collapse
             %ul.nav
               %li
@@ -52,7 +53,7 @@
               %li
                 %a{ :href=>'/docs/index.html'} Documentation
               %li
-                %a{ :href=>'/team.html' } Team                  
+                %a{ :href=>'/team.html' } Team
               %li
                 %a{ :href=>'https://community.jboss.org/en/forge' } Forums
               %li
@@ -60,7 +61,7 @@
               %li
                 %a{ :target=>'issue tracker', :href=>'https://issues.jboss.org/browse/FORGE' } Issue Tracker
               %li
-                %a{ :target=>'roadmap', :href=>'https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' } Roadmap 
+                %a{ :target=>'roadmap', :href=>'https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' } Roadmap
               %li
                 %a{ :href=>'/events.html' } Events
     .content
@@ -68,4 +69,4 @@
       %hr
       %footer
         %p &copy; JBoss #{Date.today.year}
-        
+
