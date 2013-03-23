@@ -4,6 +4,21 @@
 // Include responsive Bootstrap styles
 @import "bootstrap-responsive";
 
+html {
+   text-align: left;
+}
+
+body {
+   padding-top: 70px;
+   margin-left: auto;
+   margin-right: auto;
+
+    font-family: "Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+}
+
 .navbar .brand {
     max-height: 100px;
     overflow: visible;
@@ -11,3 +26,16 @@
     padding-bottom: 0;
 }
 
+.forge-logo {
+   height: 35px;
+   width: 35px;
+}
+
+ul.simple {
+   list-style-type: none;
+   margin-left: 0px;
+}
+
+.video {
+   width: 100%;
+}

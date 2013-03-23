@@ -1,4 +1,3 @@
-!!!5
 %html
   %head
     %meta{ :charset=>'utf-8' }
@@ -24,6 +23,14 @@
         $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
         prettyPrint();
       });
+
+    :javascript
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-34467975-1']);
@@ -45,7 +52,7 @@
             %span.icon-bar
             %span.icon-bar
           %a.brand{ :href=>'/index.html' }
-            %img{ :src=>'/images/jbossforge_logo_100px.png', :alt=>'JBoss Forge'}
+            %img{ :src=>'/images/jbossforge_icon_256px.png', :alt=>'JBoss Forge', :class=>"forge-logo" }
           .nav-collapse
             %ul.nav
               %li
@@ -64,7 +71,7 @@
                 %a{ :target=>'roadmap', :href=>'https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' } Roadmap
               %li
                 %a{ :href=>'/events.html' } Events
-    .content
+    .container#content
       ~ content
       %hr
       %footer

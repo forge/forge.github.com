@@ -2,26 +2,33 @@
 layout: docs
 ---
 
-%h1 Writing documentation
-We need your help! Good documentation is one of the most important things for broad adoption of Forge. It's really easy to help, so if you feel we are missing something in the docs, please add it :-)
+%h1 Get Started
+
 %p
-The documentation is written in Textile, which is a lightweight markup language. 
-%br
-Follow these steps to conribute documentation:
 %ol
-  %li Clone http://github.com/forge/forge.github.com on GitHub.
-  %li Add a new .textile file in one of the sub directories of the docs directory. 
-  %li Push the empty Textile file to your GitHub repository.
-  %li Use the GitHub Textile editor to write your docs and preview changes. Of course you can use your own editor if you prefer so.
+  %li
+    %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.*.Final~~'} Download
+    %span  and Un-zip Forge (or a recent
+    %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand'} snapshot build
+    %span ) into a folder on your hard-disk, this folder will be your FORGE_HOME
 
-The Textile Wikipedia 
-%a{ :href => 'http://en.wikipedia.org/wiki/Textile_(markup_language)'} page 
-gives a good introduction about the markup language.
+  %li
+    %span Add '$FORGE_HOME/bin' to your path
+    %span (
+    %a{:href=>'http://www.google.com/search?q=windows+edit+path'} windows
+    %span ,
+    %a{:href=>'http://www.google.com/search?q=linux+set+path'} linux
+    %span ,
+    %a{:href=>'http://www.google.com/search?q=mac+osx+edit+path'} mac osx
+    %span )
+  %li * Consider installing Git and Maven 3.0.4+ (both optional)
+  %li Open a command prompt and run 'forge' (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)
 
-%br
-%br
-%h3 Some technical details
-The Forge website is built using Awestruct, and the sources are on http://github.com/forge/forge.github.com. However you don't have to install anything to contribute documentation! If you are interested in Awestruct anyway, you'll find a guide on the github page about how to setup and use Awestruct. 
+%p
+%h3 What should I do next?
+Now you are ready to
+%a{:href=>"http://localhost:4242/docs/using/basic-javaee-app.html#content"} build an application.
 
-
-
+%p
+.video
+<iframe src="http://player.vimeo.com/video/26128736" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

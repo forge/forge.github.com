@@ -8,10 +8,6 @@ h1. Installing Forge
 
 Installing Forge is a relatively short process, and this guide will take you through the fundamentals (providing links to external materials if required;) however, if you encounter any issues with this process, please ask in the Forge Users mailing list, or if you think something is wrong with this guide, report a defect under "Documentation".
 
-h3. Get involved!
-
-If you would like to get involved, stop by the Forge Dev mailing list, file an issue, or come find us on irc.freenode.net, in channel #forge.
-
 h2. Install a Forge Distribution
 
 Follow these steps to install a Forge distribution:

@@ -2,37 +2,41 @@
 layout: base
 ---
 .container
+  .row{:style=>'margin-bottom: 45px;'}
+    %p
+      %center
+        %img{:src=>'/images/forge.png'}
+    %center
+      %pre
+        %strong The fastest way to build applications, share your software, and enjoy doing it.
+
   .container.hidden-phone
-    .row{:style=>'margin-bottom: 45px;'}
-      %p
-        %center
-          %img{:src=>'/images/forge.png'}
     .row
       .span6
         .row
           .span6
-            <iframe src="http://player.vimeo.com/video/47944743?title=0&amp;byline=0&amp;portrait=0" width="570" height="428" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            .video
+              <iframe width="560" height="315" src="http://www.youtube.com/embed/Clso5vtKu9k?rel=0" frameborder="0" allowfullscreen></iframe>
         .row
           .span6
             %center
-              %h2
+              %h5
                 %span Follow Forge on Twitter
                 %a{ :href =>'http://twitter.com/jbossforge'} @JBossForge
       .span6
-        .hero-unit
-          %h2 The new enterprise industrial evolution.
-          %p A core framework and next-generation shell for tooling and automation at a command line level; with APIs for integration in IDEs, extending built in functionality with plugins, and scripting for automating repetitive tasks, Forge is a tool every open-source developer should be looking at.
-
-          %p A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.
-          %p
-            %a.btn.btn-primary.btn-large{ :href =>'#', :onclick=>'_gaq.push([\'_trackEvent\', \'Downloads\', \'1.2.2.Final\']);document.location.href=\'https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.2.Final&e=zip\''} Download (1.2.2.Final)
-            %a.btn.btn-secondary.btn-large{ :href =>'/docs/using/'} How to Install
+        .hero-unit{:style=>"min-height: 200px;"}
+          %center
+            %h2 The new enterprise industrial evolution.
+            %a.btn.btn-primary.btn-large{ :style=>"width: 89px;", :href =>'#', :onclick=>'_gaq.push([\'_trackEvent\', \'Downloads\', \'1.2.2.Final\']);document.location.href=\'https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.2.Final&e=zip\''} Download (1.2.2.Final)
+            %a.btn.btn-secondary.btn-large{ :style=>"width: 89px;", :href =>'/docs/using/'} How to Install
 
   .row.visible-phone
-    %h2 The new enterprise industrial evolution.
-    %p A core framework and next-generation shell for tooling and automation at a command line level; with APIs for integration in IDEs, extending built in functionality with plugins, and scripting for automating repeditive tasks, Forge is a tool every open-source developer should be looking at.
+    .hero-unit
+      %center
+        %h4 The new enterprise industrial evolution.
+        %a.btn.btn-primary.btn-large{ :style=>"width: 89px;", :href =>'#', :onclick=>'_gaq.push([\'_trackEvent\', \'Downloads\', \'1.2.2.Final\']);document.location.href=\'https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.2.Final&e=zip\''} Download (1.2.2.Final)
+        %a.btn.btn-secondary.btn-large{ :style=>"width: 89px;", :href =>'/docs/using/'} How to Install
 
-    %p A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.
   .row
     .span6
       %h2 Quick Install
@@ -64,13 +68,14 @@ layout: base
           %li * Consider installing Git and Maven 3.0+ (both optional)
           %li Open a command prompt and run 'forge' (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)
     .span6
-      %h2 News
-      - for post in site.posts
-        %li
-          %h3
-            %a{ :href=>post.url }#{post.title}
-          - if (post.content.length > 0)
-            %p{:style=>"color: #666;"}
-              %strong #{post.date.year}-#{post.date.month}-#{post.date.day}: #{post.author}
-            %p= summarize(html_to_text(post.content), 50)
+      %h2 Latest News
+      %ul.simple
+        - for post in site.posts
+          %li
+            %h3
+              %a{ :href=>post.url }#{post.title}
+            - if (post.content.length > 0)
+              %p{:style=>"color: #666;"}
+                %strong #{post.date.year}-#{post.date.month}-#{post.date.day}: #{post.author}
+              %p= summarize(html_to_text(post.content), 50)
 

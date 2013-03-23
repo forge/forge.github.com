@@ -3,7 +3,6 @@ layout: docs
 title: Release Guide
 index: 1
 ---
-
 h1. Release Guide
 
 h2. Updating Plugin Tags
