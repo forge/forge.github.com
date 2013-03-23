@@ -4,7 +4,7 @@ jQuery(function() {
 	var $allVideos = jQuery("iframe[src^='http://www.youtube.com'],iframe[src^='http://www.youtube-nocookie.com'],iframe[src^='http://player.vimeo.com']"),
 
 	    // The element that is fluid width
-	    $fluidEl = jQuery(".video");
+	    $fluidEl = jQuery(".span6, .container, .row");
 
 	// Figure out and save aspect ratio for each video
 	$allVideos.each(function() {

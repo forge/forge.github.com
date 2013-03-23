@@ -1,0 +1,33 @@
+---
+layout: docs
+---
+
+%h1 Get Started
+
+%p
+%ol
+  %li
+    %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.*.Final~~'} Download
+    %span  and Un-zip Forge (or a recent
+    %a{:href=>'https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand'} snapshot build
+    %span ) into a folder on your hard-disk, this folder will be your FORGE_HOME
+
+  %li
+    %span Add '$FORGE_HOME/bin' to your path
+    %span (
+    %a{:href=>'http://www.google.com/search?q=windows+edit+path'} windows
+    %span ,
+    %a{:href=>'http://www.google.com/search?q=linux+set+path'} linux
+    %span ,
+    %a{:href=>'http://www.google.com/search?q=mac+osx+edit+path'} mac osx
+    %span )
+  %li * Consider installing Git and Maven 3.0.4+ (both optional)
+  %li Open a command prompt and run 'forge' (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)
+
+%p
+%h3 What should I do next?
+Now you are ready to
+%a{:href=>"http://localhost:4242/docs/using/basic-javaee-app.html#content"} build an application.
+
+.video
+<iframe src="http://player.vimeo.com/video/26128736" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

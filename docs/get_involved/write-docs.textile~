@@ -1,0 +1,23 @@
+---
+layout: docs
+title: Improve our documentation
+index: 2
+---
+h1. Writing documentation
+
+We need your help! Good documentation is one of the most important things for a great Forge experience. It's really easy to help, so if you feel we are missing something in the docs, please add it. Be sure to follow the "contribution guide":http://forge.jboss.org/docs/get_involved/contribute.html when contributing documentation.
+
+The documentation is written in Textile, which is a lightweight markup language. 
+
+h3. Follow these steps to conribute documentation:
+
+# Clone "forge.github.com":http://github.com/forge/forge.github.com on GitHub.
+# Add a new .textile file in one of the sub directories of the docs directory. 
+# Push the empty Textile file to your GitHub repository.
+# Use the GitHub Textile editor to write your docs and preview changes. Of course you can use your own editor if you prefer so.
+
+The "Textile Wikipedia page":http://en.wikipedia.org/wiki/Textile_(markup_language) gives a good introduction about the markup language.
+
+h3. Some technical details
+
+The Forge website is built using Awestruct, and "the sources":http://github.com/forge/forge.github.com are on "github.com":http://github.com/forge/forge.github.com. However you don't have to install anything to contribute documentation! If you are interested in Awestruct anyway, you'll find a guide on the github page about how to setup and use Awestruct.

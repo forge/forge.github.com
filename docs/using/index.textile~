@@ -1,0 +1,51 @@
+---
+layout: docs
+title: Installation
+index: 0
+---
+
+h1. Installing Forge
+
+Installing Forge is a relatively short process, and this guide will take you through the fundamentals (providing links to external materials if required;) however, if you encounter any issues with this process, please ask in the Forge Users mailing list, or if you think something is wrong with this guide, report a defect under "Documentation".
+
+h3. Get involved!
+
+If you would like to get involved, stop by the Forge Dev mailing list, file an issue, or come find us on irc.freenode.net, in channel #forge.
+
+h2. Install a Forge Distribution
+
+Follow these steps to install a Forge distribution:
+
+*1. Ensure that you have already installed a ["Java 6+ JDK":http://www.oracle.com/technetwork/java/javase/downloads/index.html].*
+
+*2. <a href='https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.&#42;.Final'>Download</a> and Un-zip Forge (or a recent ["snapshot build":https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand]) into a folder on your hard-disk, this folder will be your FORGE_HOME*
+
+*3. Add '$FORGE_HOME/bin' to your path (["windows":http://www.google.com/search?q=windows+edit+path], ["linux":http://www.google.com/search?q=linux+set+path], ["mac osx":http://www.google.com/search?q=mac+osx+edit+path])*
+
+On Unix based operating systems, this typically means editing your @~/.bashrc@ or @~/.profile;@ you will need to the following entries:
+
+bc(command). export FORGE_HOME=~/forge/
+export PATH=$PATH:$FORGE_HOME/bin
+
+While on Windows, you will need to right-click on open the "Control Panel", then click "System Properties", open the "Advanced" tab, then click "Environment Variables" and add these two entries visually. It is recommended to set User variables for Forge, unless you have placed the unzipped distribution in a folder where all users can access it.
+
+div(alert alert-success). You may also simply create a shortcut to bin\forge (Unix,) or bin\forge.bat (Windows,) and place it on your Desktop.
+
+*4. Consider installing ["Git":http://git-scm.com/] and ["Maven 3.0+":http://maven.apache.org/] (both optional)*
+
+*5. Open a command prompt and run 'forge' (if you are on Windows, you will need to run forge.bat unless using a Unix-style terminal)*
+
+bc(command). localhost:~ $ forge
+[no project] ~ $
+
+h2. That's it! You've got Forge installed, but what to do next?
+
+You can start by Forging your first Java EE webapp in about five minutes, and there are a few things you should probably check-out. If you are confused at any time, try pressing <TAB>. For instance, if you have not yet seen the Forge built-in commands, you may either press <TAB> to see a list of the currently available commands, or get a more descriptive list by typing:
+
+bc(command). $ list-commands --all
+
+You may also use the 'help' command for more detailed information about available Forge, a plugin, or a command.
+
+bc(command). $ help {plugin-name} {command-name}
+
+div(alert alert-danger).. Having problems? ["Click here and tell us":https://issues.jboss.org/secure/CreateIssue.jspa?pid=12311820&issuetype=1].

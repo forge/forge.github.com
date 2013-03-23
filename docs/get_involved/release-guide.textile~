@@ -1,0 +1,21 @@
+---
+layout: docs
+title: Release Guide
+index: 1
+---
+
+h1. Release Guide
+
+h2. Updating Plugin Tags
+
+If you are a Plugin author who wishes to ensure compatibility with the latest Forge release versions - ensure that you update your Plugin to use the corresponding "Forge API version":https://github.com/forge/core/tags. You should also create a git branch in your Plugin repository - the name of this branch should be *exactly the same* as the Forge API version you wish to support.
+
+div(alert alert-info). We recommend using branches instead of tags, because branches allow  bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.
+
+h2. Uploading Release Documentation
+
+You must have access to project documentation servers in order to upload project documentation:
+
+bc(command). cd core/git checkout {TAG}
+mvn clean javadoc:aggregate -Pjavadoc
+rsync -rv --protocol=28  target/javadoc/ forge@filemgmt.jboss.org:/docs_htdocs/forge/javadoc/

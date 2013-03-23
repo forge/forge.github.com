@@ -1,29 +1,28 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8' />
     <title>Forge |</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <style>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <style type='text/css'>
       /*<![CDATA[*/
         body {
           padding-top: 60px;
         }
       /*]]>*/
     </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <link href="/images/favicon.ico" rel="icon">
-    <link href="/stylesheets/styles.css" rel="stylesheet" type="text/css">
-    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
-    <link href="/stylesheets/prettify.css" rel="stylesheet" type="text/css">
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>
+    <link href='/images/favicon.ico' rel='icon' />
+    <link href='/stylesheets/styles.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/prettify.css' rel='stylesheet' type='text/css' />
     <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
     <![endif]-->
-    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/javascripts/bootstrap-collapse.js" type="text/javascript"></script>
-    <script src="/javascripts/prettify.js" type="text/javascript"></script>
-    <script src="/javascripts/videoscale.js" type="text/javascript"></script>
-    <script>
+    <script src='/javascripts/bootstrap.min.js' type='text/javascript'></script>
+    <script src='/javascripts/bootstrap-collapse.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script src='/javascripts/videoscale.js' type='text/javascript'></script>
+    <script type='text/javascript'>
       //<![CDATA[
         $(document).ready(function() {
           $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
@@ -31,7 +30,17 @@
         });
       //]]>
     </script>
-    <script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(document).ready(function() {
+          var pathname = window.location.pathname;
+          console.log(pathname);
+          $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+          $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+        });
+      //]]>
+    </script>
+    <script type='text/javascript'>
       //<![CDATA[
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-34467975-1']);
@@ -45,128 +54,135 @@
     </script>
   </head>
   <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <div class="github-banner hidden-phone">
-            <a href="https://github.com/forge/forge.github.com">
-              <img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position:absolute;top:0;right:0;border:0;">
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <div class='github-banner hidden-phone'>
+            <a href='https://github.com/forge/forge.github.com'>
+              <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position:absolute;top:0;right:0;border:0;' />
             </a>
           </div>
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
           </a>
-          <a class="brand" href="/index.html">
-            <img alt="JBoss Forge" src="/images/jbossforge_logo_100px.png">
+          <a class='brand' href='/index.html'>
+            <img alt='JBoss Forge' class='forge-logo' src='/images/jbossforge_icon_256px.png' />
           </a>
-          <div class="nav-collapse">
-            <ul class="nav">
+          <div class='nav-collapse'>
+            <ul class='nav'>
               <li>
-                <a href="/index.html">Home</a>
+                <a href='/index.html'>Home</a>
               </li>
               <li>
-                <a href="/docs/index.html">Documentation</a>
+                <a href='/docs/index.html'>Documentation</a>
               </li>
               <li>
-                <a href="/team.html">Team</a>
+                <a href='/team.html'>Team</a>
               </li>
               <li>
-                <a href="https://community.jboss.org/en/forge">Forums</a>
+                <a href='https://community.jboss.org/en/forge'>Forums</a>
               </li>
               <li>
-                <a href="/plugins.html">Plugins</a>
+                <a href='/plugins.html'>Plugins</a>
               </li>
               <li>
-                <a href="https://issues.jboss.org/browse/FORGE" target="issue tracker">Issue Tracker</a>
+                <a href='https://issues.jboss.org/browse/FORGE' target='issue tracker'>Issue Tracker</a>
               </li>
               <li>
-                <a href="https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel" target="roadmap">Roadmap</a>
+                <a href='https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' target='roadmap'>Roadmap</a>
               </li>
               <li>
-                <a href="/events.html">Events</a>
+                <a href='/events.html'>Events</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="content">
-      <div class="container">
-  <div class="container hidden-phone">
-    <div class="row" style="margin-bottom: 45px;">
-      <p>
-        <center>
-          <img src="/images/forge.png">
-        </center>
-      </p>
-    </div>
-    <div class="row">
-      <div class="span6">
-        <div class="row">
-          <div class="span6">
-            <iframe src="http://player.vimeo.com/video/47944743?title=0&amp;byline=0&amp;portrait=0" width="570" height="428" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <div class='container' id='content'>
+      <div class='container'>
+  <div class='row' style='margin-bottom: 45px;'>
+    <p>
+      <center>
+        <img src='/images/forge.png' />
+      </center>
+    </p>
+    <center>
+      <pre><strong>The fastest way to build applications, share your software, and enjoy doing it.</strong></pre>
+    </center>
+  </div>
+  <div class='container hidden-phone'>
+    <div class='row'>
+      <div class='span6'>
+        <div class='row'>
+          <div class='span6'>
+            <div class='video'>
+              <iframe width="560" height="315" src="http://www.youtube.com/embed/Clso5vtKu9k?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="span6">
+        <div class='row'>
+          <div class='span6'>
             <center>
-              <h2>
+              <h5>
                 <span>Follow Forge on Twitter</span>
-                <a href="http://twitter.com/jbossforge">@JBossForge</a>
-              </h2>
+                <a href='http://twitter.com/jbossforge'>@JBossForge</a>
+              </h5>
             </center>
           </div>
         </div>
       </div>
-      <div class="span6">
-        <div class="hero-unit">
-          <h2>The new enterprise industrial evolution.</h2>
-          <p>A core framework and next-generation shell for tooling and automation at a command line level; with APIs for integration in IDEs, extending built in functionality with plugins, and scripting for automating repetitive tasks, Forge is a tool every open-source developer should be looking at.</p>
-          <p>A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.</p>
-          <p>
-            <a class="btn btn-primary btn-large" href="#" onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.2.2.Final&amp;e=zip'">Download (1.2.2.Final)</a>
-            <a class="btn btn-secondary btn-large" href="/docs/using/">How to Install</a>
-          </p>
+      <div class='span6'>
+        <div class='hero-unit' style='min-height: 200px;'>
+          <center>
+            <h2>The new enterprise industrial evolution.</h2>
+            <a class='btn btn-primary btn-large' href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.2.2.Final&amp;e=zip'" style='width: 89px;'>Download (1.2.2.Final)</a>
+            <a class='btn btn-secondary btn-large' href='/docs/using/' style='width: 89px;'>How to Install</a>
+          </center>
         </div>
       </div>
     </div>
   </div>
-  <div class="row visible-phone">
-    <h2>The new enterprise industrial evolution.</h2>
-    <p>A core framework and next-generation shell for tooling and automation at a command line level; with APIs for integration in IDEs, extending built in functionality with plugins, and scripting for automating repeditive tasks, Forge is a tool every open-source developer should be looking at.</p>
-    <p>A core framework for rapid-application development in a standards-based environment. Plugins / incremental project enhancement for Java EE, and more.</p>
+  <div class='row visible-phone'>
+    <div class='hero-unit'>
+      <center>
+        <h4>The new enterprise industrial evolution.</h4>
+        <a class='btn btn-primary btn-large' href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.forge&amp;a=forge-distribution&amp;v=1.2.2.Final&amp;e=zip'" style='width: 89px;'>Download (1.2.2.Final)</a>
+        <a class='btn btn-secondary btn-large' href='/docs/using/' style='width: 89px;'>How to Install</a>
+      </center>
+    </div>
   </div>
-  <div class="row">
-    <div class="span6">
+  <div class='row'>
+    <div class='span6'>
       <h2>Quick Install</h2>
       <p>
         <span>The fastest and easiest way to install Forge on any operating system is through the use of</span>
-        <a href="http://jboss.org/tools">JBoss Tools</a>
+        <a href='http://jboss.org/tools'>JBoss Tools</a>
         <span>or</span>
-        <a href="https://devstudio.jboss.com/download/">JBoss Developer Studio</a>
+        <a href='https://devstudio.jboss.com/download/'>JBoss Developer Studio</a>
         <span>, where Forge comes pre-installed and makes use of IDE GUI integration. Alternatively, on OSX, you can also use</span>
-        <a href="http://mxcl.github.com/homebrew/">Homebrew</a>
+        <a href='http://mxcl.github.com/homebrew/'>Homebrew</a>
         <span>to install Forge natively for use on the command-line, via "brew install jboss-forge".</span>
       </p>
       <p>
         <ol>
           <li>Ensure that you have already installed a Java 6+ JDK.</li>
           <li>
-            <a href="https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.*.Final~~">Download</a>
+            <a href='https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~1.*.Final~~'>Download</a>
             <span>and Un-zip Forge (or a recent</span>
-            <a href="https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand">snapshot build</a>
+            <a href='https://repository.jboss.org/nexus/index.html#nexus-search;gav~org.jboss.forge~forge-distribution~~~~kw,versionexpand'>snapshot build</a>
             <span>) into a folder on your hard-disk, this folder will be your FORGE_HOME</span>
           </li>
           <li>
             <span>Add '$FORGE_HOME/bin' to your path</span>
             <span>(</span>
-            <a href="http://www.google.com/search?q=windows+edit+path">windows</a>
+            <a href='http://www.google.com/search?q=windows+edit+path'>windows</a>
             <span>,</span>
-            <a href="http://www.google.com/search?q=linux+set+path">linux</a>
+            <a href='http://www.google.com/search?q=linux+set+path'>linux</a>
             <span>,</span>
-            <a href="http://www.google.com/search?q=mac+osx+edit+path">mac osx</a>
+            <a href='http://www.google.com/search?q=mac+osx+edit+path'>mac osx</a>
             <span>)</span>
           </li>
           <li>* Consider installing Git and Maven 3.0+ (both optional)</li>
@@ -174,122 +190,124 @@
         </ol>
       </p>
     </div>
-    <div class="span6">
-      <h2>News</h2>
-      <li>
-        <h3>
-          <a href="/news/2013/03/08/post-maven-update.html">Update your maven dependencies automatically</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2013-3-8: George Gastaldi</strong>
-        </p>
-        <p>
-          Update your maven dependencies automatically
-          New versions of software are released every day, and it is hard to keep your project up-to-date with the latest version of a dependency declared in your pom.xml
-          Fortunately, in 1.2.2.Final, JBoss Forge provides a new command to make things easier:
-          maven update
-          This command will scan each dependency...
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="/news/2013/03/08/post-forge-1.html">Forge 1.2.2.Final Released</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2013-3-8: George Gastaldi</strong>
-        </p>
-        <p>
-          JBoss Forge 1.2.2.Final is now available for download !
-          Release Notes
-                  Bug
-          
-          [FORGE-725] &#8211;         Tests Failing on Windows 7
-          [FORGE-787] &#8211;         Forge update is not working correctly in Windows
-          [FORGE-799] &#8211;...
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="/news/2013/02/15/post-forge-1.html">Forge 1.2.1.Final Released</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2013-2-15: George Gastaldi</strong>
-        </p>
-        <p>
-          JBoss Forge 1.2.1.Final is now available for download !
-          Release Notes
-                  Bug
-          
-          [FORGE-745] &#8211;         Can not use Java Parser in war deployment on AS7
-          [FORGE-751] &#8211;         MavenDependencyFacet cause ConcurrentModificationException
-          [FORGE-752] &#8211;...
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="/news/2013/01/15/post-forge-1.html">Forge 1.2.0.Final Released</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2013-1-15: Lincoln Baxter, III</strong>
-        </p>
-        <p>
-          JBoss Forge 1.2.0.Final is now available for download !
-          Release Notes
-                  Bug
-          
-          [FORGE-621] &#8211;         Support Weblogic 12c as a container in the Persistence plugin
-          [FORGE-727] &#8211;         Starting forge with debug...
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="/news/2012/12/14/post-forge-1.html">Forge 1.1.3.Final Released</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2012-12-14: George Gastaldi</strong>
-        </p>
-        <p>
-          JBoss Forge 1.1.3.Final is now available for download !
-          Release Notes
-                  Bug
-          
-          [FORGE-704] &#8211;         org.jboss.forge.parser.java.impl.FieldImpl&lt;O&gt; do not handle byte[] class
-          [FORGE-712] &#8211;         Forge has trouble finding some Maven Central artifacts
-          [FORGE-713]...
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="/news/2012/09/20/post-forge-1.html">Forge 1.1.0.Final Released</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2012-9-20: George Gastaldi</strong>
-        </p>
-        <p>
-          It is with great pleasure that I announce that JBoss Forge 1.1.0.Final has just been released !
-          This version is loaded with new features (That&#8217;s why we decided to change the minor version &#8211; :) ). Check out the Full Release Notes or, if you just want to catch up with...
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="/news/2012/07/25/post-new-forge-website.html">New Forge Website</a>
-        </h3>
-        <p style="color: #666;">
-          <strong>2012-7-25: Paul Bakker, Lincoln Baxter III</strong>
-        </p>
-        <p>
-          We have a new website, and would like to thank several of our community members for making this possible.
-          Thanks to&#8230;
-          
-          	Paul Bakker &#8211; for getting the initial project started and doing the plugin search pages
-          	Ivan St. Ivanov &#8211; for migrating the documentation
-          	And many more &#8211; for their ideas and help over...
-        </p>
-      </li>
+    <div class='span6'>
+      <h2>Latest News</h2>
+      <ul class='simple'>
+        <li>
+          <h3>
+            <a href='/news/2013/03/08/post-maven-update.html'>Update your maven dependencies automatically</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2013-3-8: George Gastaldi</strong>
+          </p>
+          <p>
+            Update your maven dependencies automatically
+            New versions of software are released every day, and it is hard to keep your project up-to-date with the latest version of a dependency declared in your pom.xml
+            Fortunately, in 1.2.2.Final, JBoss Forge provides a new command to make things easier:
+            maven update
+            This command will scan each dependency...
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href='/news/2013/03/08/post-forge-1.html'>Forge 1.2.2.Final Released</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2013-3-8: George Gastaldi</strong>
+          </p>
+          <p>
+            JBoss Forge 1.2.2.Final is now available for download !
+            Release Notes
+                    Bug
+            
+            [FORGE-725] &#8211;         Tests Failing on Windows 7
+            [FORGE-787] &#8211;         Forge update is not working correctly in Windows
+            [FORGE-799] &#8211;...
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href='/news/2013/02/15/post-forge-1.html'>Forge 1.2.1.Final Released</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2013-2-15: George Gastaldi</strong>
+          </p>
+          <p>
+            JBoss Forge 1.2.1.Final is now available for download !
+            Release Notes
+                    Bug
+            
+            [FORGE-745] &#8211;         Can not use Java Parser in war deployment on AS7
+            [FORGE-751] &#8211;         MavenDependencyFacet cause ConcurrentModificationException
+            [FORGE-752] &#8211;...
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href='/news/2013/01/15/post-forge-1.html'>Forge 1.2.0.Final Released</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2013-1-15: Lincoln Baxter, III</strong>
+          </p>
+          <p>
+            JBoss Forge 1.2.0.Final is now available for download !
+            Release Notes
+                    Bug
+            
+            [FORGE-621] &#8211;         Support Weblogic 12c as a container in the Persistence plugin
+            [FORGE-727] &#8211;         Starting forge with debug...
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href='/news/2012/12/14/post-forge-1.html'>Forge 1.1.3.Final Released</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2012-12-14: George Gastaldi</strong>
+          </p>
+          <p>
+            JBoss Forge 1.1.3.Final is now available for download !
+            Release Notes
+                    Bug
+            
+            [FORGE-704] &#8211;         org.jboss.forge.parser.java.impl.FieldImpl&lt;O&gt; do not handle byte[] class
+            [FORGE-712] &#8211;         Forge has trouble finding some Maven Central artifacts
+            [FORGE-713]...
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href='/news/2012/09/20/post-forge-1.html'>Forge 1.1.0.Final Released</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2012-9-20: George Gastaldi</strong>
+          </p>
+          <p>
+            It is with great pleasure that I announce that JBoss Forge 1.1.0.Final has just been released !
+            This version is loaded with new features (That&#8217;s why we decided to change the minor version &#8211; :) ). Check out the Full Release Notes or, if you just want to catch up with...
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href='/news/2012/07/25/post-new-forge-website.html'>New Forge Website</a>
+          </h3>
+          <p style='color: #666;'>
+            <strong>2012-7-25: Paul Bakker, Lincoln Baxter III</strong>
+          </p>
+          <p>
+            We have a new website, and would like to thank several of our community members for making this possible.
+            Thanks to&#8230;
+            
+            	Paul Bakker &#8211; for getting the initial project started and doing the plugin search pages
+            	Ivan St. Ivanov &#8211; for migrating the documentation
+            	And many more &#8211; for their ideas and help over...
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
-      <hr>
+      <hr />
       <footer>
         <p>&copy; JBoss 2013</p>
       </footer>
