@@ -4,11 +4,9 @@
     <title>Forge | Enable modular functionality with Facets</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>
-      /*<![CDATA[*/
-        body {
-          padding-top: 60px;
-        }
-      /*]]>*/
+      body {
+        padding-top: 60px;
+      }
     </style>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link href="/images/favicon.ico" rel="icon">
@@ -23,34 +21,28 @@
     <script src="/javascripts/prettify.js" type="text/javascript"></script>
     <script src="/javascripts/videoscale.js" type="text/javascript"></script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
-          prettyPrint();
-        });
-      //]]>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
     </script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          var pathname = window.location.pathname;
-          console.log(pathname);
-          $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
-          $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
-        });
-      //]]>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
     </script>
     <script>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34467975-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34467975-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>
@@ -103,128 +95,128 @@
     </div>
     <div class="container" id="content">
       <div class="container">
-  <div class="row">
-    <div class="span3">
-      <ul class="nav nav-list">
-        <li class="nav-header">Using Forge</li>
-        <li>
-          <a href="/docs/using/#content">Installation</a>
-        </li>
-        <li>
-          <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
-        </li>
-        <li>
-          <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href="/docs/using/samples.html#content">Samples</a>
-        </li>
-        <li>
-          <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/faq.html#content">FAQ</a>
-        </li>
-        <li>
-          <a href="/docs/using/affiliation.html#content">Affiliation</a>
-        </li>
-        <li class="nav-header">Get involved</li>
-        <li>
-          <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
-        </li>
-        <li class="nav-header">Important plugins</li>
-        <li>
-          <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
-        </li>
-        <li>
-          <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
-        </li>
-        <li class="nav-header">Developing plugins</li>
-        <li>
-          <a href="/docs/plugin_development/#content">Developing a plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class="span9">
-      <h1>Enable modular functionality with Facets</h1>
-<p>Frequently when writing plugins, it is not beneficial (sometimes detrimental) to enable all functionality of a plugin at the same time. For instance, let&#8217;s say you have written a plugin that adds security to an existing web application. Your plugin handles setup of the security dependencies, creation of database tables, and also supports class-configuration of an authentication/authorization provider. It does not make sense for you to create the configuration classes before the dependencies have been installed, because you will likely create compilation errors in the project due to missing APIs. <strong>This might be a good time to use facets.</strong></p>
-<h2>What is a Facet?</h2>
-<p>Facets are classes that provide access to the state and resources of the current project (or a portion thereof) and generally useful operations on it&#8217;s resources. Some information about Facets in short terms:</p>
-<ul>
-	<li>Facets represent project state and provide operations (e.g. Git is installed, <span class="caps">JSF</span> is installed, access Java source, manipulate pom)</li>
-	<li>Facets do not work outside of projects.</li>
-	<li>Facets avoid doing anything that prints to the shell output (sometimes it is unavoidable)</li>
-	<li>Facets are for encapsulating additional functionality that is usable in one or more plugins</li>
-</ul>
-<p>As a practical example the security plugin is implement as a Facet to show the most important design principles.</p>
-<h3>Constraining Plugins &amp; Commands</h3>
-<p>Let&#8217;s assume that we are writing our security plugin. First, we need our plugin (command implementations omitted for brevity.)</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">public class SecurityPlugin implements Plugin {</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Command public void setup() {};&#x000A;   @Command public void configureDatabase() {};&#x000A;   @Command public void configureAuthentication() {};&#x000A;   @Command public void addRole() {};</code>&#x000A;&#x000A;<code class="prettyprint linenums">}</code></pre>
-<p>But as things stand, all of these commands will be available no matter the state of the project. This may not be a good thing if a user attempts to configure the authentication system before the security dependencies have been installed; they may unintentionally introduce compilation errors into their project. In order to prevent this, we can add <code>@RequiresFacet(SecurityFacet.class)</code> to our Plugin. We have not yet created our <code>SecurityFacet</code>, but that will be our next step.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@RequiresFacet(SecurityFacet.class)&#x000A;public class SecurityPlugin implements Plugin {&#x000A;}</code></pre>
-<p>The addition of <code>@RequiresFacet</code> to our Plugin does several things.</p>
-<ul>
-	<li>The plugin and enclosed commands cannot be run unless <code>SecurityFacet</code> is installed in the project.</li>
-	<li>The plugin and enclosed commands cannot be run unless there is a project active.</li>
-</ul>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">public class SecurityFacet extends BaseFacet {&#x000A;   public boolean isInstalled();&#x000A;   public boolean install();</code></pre>
-<p>Notice that we only need to implement two additional methods, <code>install()</code> and <code>isInstalled()</code>, since we have extended a base class (we will discuss these methods in the next section,) but we have a small problem now; since we have added a Facet constraint to our plugin, we can no longer call any of the commands in our plugin! This means that since we can no longer call our &#8220;setup&#8221; command, we have no way of installing the facet (except manually by editing project source files.) What we really want is for the &#8220;setup&#8221; command to be available even if the required Facets are not. To do this, we use the <code>@SetupCommand</code> annotation:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@RequiresFacet(SecurityFacet.class)&#x000A;public class SecurityPlugin implements Plugin {</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @SetupCommand public void setup() {};</code>&#x000A;&#x000A;<code class="prettyprint linenums">   //...</code>&#x000A;&#x000A;<code class="prettyprint linenums">}</code></pre>
-<p>Now our &#8220;setup&#8221; command will be available even if the <code>SecurityFacet</code> is not installed, which gives us the perfect opportunity to actually perform the installation.</p>
-<h3>Installation of new functionality</h3>
-<p>Once we have constrained our Plugin, we probably want to think about how to install our Facet, and what that means in our Project. Since Facets represent modular pieces of functionality in our project, we need to decide what functionality our Facet is going to represent; in this case, we know our Facet represents the availability of the security system for which we are writing this plugin, so the first thing we need to be able to do is install our Facet using our <code>@SetupCommand</code>.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@RequiresFacet(SecurityFacet.class)&#x000A;public class SecurityPlugin implements Plugin {</code>
-    </div>
-  </div>
-</div>
+        <div class="row">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Using Forge</li>
+              <li>
+                <a href="/docs/using/#content">Installation</a>
+              </li>
+              <li>
+                <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
+              </li>
+              <li>
+                <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href="/docs/using/samples.html#content">Samples</a>
+              </li>
+              <li>
+                <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/faq.html#content">FAQ</a>
+              </li>
+              <li>
+                <a href="/docs/using/affiliation.html#content">Affiliation</a>
+              </li>
+              <li class="nav-header">Get involved</li>
+              <li>
+                <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
+              </li>
+              <li class="nav-header">Important plugins</li>
+              <li>
+                <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
+              </li>
+              <li>
+                <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
+              </li>
+              <li class="nav-header">Developing plugins</li>
+              <li>
+                <a href="/docs/plugin_development/#content">Developing a plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span9">
+            <h1>Enable modular functionality with Facets</h1>
+            <p>Frequently when writing plugins, it is not beneficial (sometimes detrimental) to enable all functionality of a plugin at the same time. For instance, let&#8217;s say you have written a plugin that adds security to an existing web application. Your plugin handles setup of the security dependencies, creation of database tables, and also supports class-configuration of an authentication/authorization provider. It does not make sense for you to create the configuration classes before the dependencies have been installed, because you will likely create compilation errors in the project due to missing APIs. <strong>This might be a good time to use facets.</strong></p>
+            <h2>What is a Facet?</h2>
+            <p>Facets are classes that provide access to the state and resources of the current project (or a portion thereof) and generally useful operations on it&#8217;s resources. Some information about Facets in short terms:</p>
+            <ul>
+            	<li>Facets represent project state and provide operations (e.g. Git is installed, <span class="caps">JSF</span> is installed, access Java source, manipulate pom)</li>
+            	<li>Facets do not work outside of projects.</li>
+            	<li>Facets avoid doing anything that prints to the shell output (sometimes it is unavoidable)</li>
+            	<li>Facets are for encapsulating additional functionality that is usable in one or more plugins</li>
+            </ul>
+            <p>As a practical example the security plugin is implement as a Facet to show the most important design principles.</p>
+            <h3>Constraining Plugins &amp; Commands</h3>
+            <p>Let&#8217;s assume that we are writing our security plugin. First, we need our plugin (command implementations omitted for brevity.)</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class SecurityPlugin implements Plugin {</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @Command public void setup() {};&#x000A;   @Command public void configureDatabase() {};&#x000A;   @Command public void configureAuthentication() {};&#x000A;   @Command public void addRole() {};</code>&#x000A;&#x000A;<code class="prettyprint linenums">}</code></pre>
+            <p>But as things stand, all of these commands will be available no matter the state of the project. This may not be a good thing if a user attempts to configure the authentication system before the security dependencies have been installed; they may unintentionally introduce compilation errors into their project. In order to prevent this, we can add <code>@RequiresFacet(SecurityFacet.class)</code> to our Plugin. We have not yet created our <code>SecurityFacet</code>, but that will be our next step.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@RequiresFacet(SecurityFacet.class)&#x000A;public class SecurityPlugin implements Plugin {&#x000A;}</code></pre>
+            <p>The addition of <code>@RequiresFacet</code> to our Plugin does several things.</p>
+            <ul>
+            	<li>The plugin and enclosed commands cannot be run unless <code>SecurityFacet</code> is installed in the project.</li>
+            	<li>The plugin and enclosed commands cannot be run unless there is a project active.</li>
+            </ul>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class SecurityFacet extends BaseFacet {&#x000A;   public boolean isInstalled();&#x000A;   public boolean install();</code></pre>
+            <p>Notice that we only need to implement two additional methods, <code>install()</code> and <code>isInstalled()</code>, since we have extended a base class (we will discuss these methods in the next section,) but we have a small problem now; since we have added a Facet constraint to our plugin, we can no longer call any of the commands in our plugin! This means that since we can no longer call our &#8220;setup&#8221; command, we have no way of installing the facet (except manually by editing project source files.) What we really want is for the &#8220;setup&#8221; command to be available even if the required Facets are not. To do this, we use the <code>@SetupCommand</code> annotation:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@RequiresFacet(SecurityFacet.class)&#x000A;public class SecurityPlugin implements Plugin {</code>&#x000A;&#x000A;<code class="prettyprint linenums">   @SetupCommand public void setup() {};</code>&#x000A;&#x000A;<code class="prettyprint linenums">   //...</code>&#x000A;&#x000A;<code class="prettyprint linenums">}</code></pre>
+            <p>Now our &#8220;setup&#8221; command will be available even if the <code>SecurityFacet</code> is not installed, which gives us the perfect opportunity to actually perform the installation.</p>
+            <h3>Installation of new functionality</h3>
+            <p>Once we have constrained our Plugin, we probably want to think about how to install our Facet, and what that means in our Project. Since Facets represent modular pieces of functionality in our project, we need to decide what functionality our Facet is going to represent; in this case, we know our Facet represents the availability of the security system for which we are writing this plugin, so the first thing we need to be able to do is install our Facet using our <code>@SetupCommand</code>.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@RequiresFacet(SecurityFacet.class)&#x000A;public class SecurityPlugin implements Plugin {</code>
+          </div>
+        </div>
+      </div>
       <hr>
       <footer>
         <p>&copy; JBoss 2013</p>

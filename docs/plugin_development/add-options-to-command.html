@@ -4,11 +4,9 @@
     <title>Forge | Add Options to your Commands</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>
-      /*<![CDATA[*/
-        body {
-          padding-top: 60px;
-        }
-      /*]]>*/
+      body {
+        padding-top: 60px;
+      }
     </style>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link href="/images/favicon.ico" rel="icon">
@@ -23,34 +21,28 @@
     <script src="/javascripts/prettify.js" type="text/javascript"></script>
     <script src="/javascripts/videoscale.js" type="text/javascript"></script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
-          prettyPrint();
-        });
-      //]]>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
     </script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          var pathname = window.location.pathname;
-          console.log(pathname);
-          $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
-          $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
-        });
-      //]]>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
     </script>
     <script>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34467975-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34467975-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>
@@ -103,132 +95,132 @@
     </div>
     <div class="container" id="content">
       <div class="container">
-  <div class="row">
-    <div class="span3">
-      <ul class="nav nav-list">
-        <li class="nav-header">Using Forge</li>
-        <li>
-          <a href="/docs/using/#content">Installation</a>
-        </li>
-        <li>
-          <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
-        </li>
-        <li>
-          <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href="/docs/using/samples.html#content">Samples</a>
-        </li>
-        <li>
-          <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/faq.html#content">FAQ</a>
-        </li>
-        <li>
-          <a href="/docs/using/affiliation.html#content">Affiliation</a>
-        </li>
-        <li class="nav-header">Get involved</li>
-        <li>
-          <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
-        </li>
-        <li class="nav-header">Important plugins</li>
-        <li>
-          <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
-        </li>
-        <li>
-          <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
-        </li>
-        <li class="nav-header">Developing plugins</li>
-        <li>
-          <a href="/docs/plugin_development/#content">Developing a plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class="span9">
-      <h1>Add Options to your Commands</h1>
-<p>Once we have a command or two in our Plugin, it&#8217;s time to give our users some control over what it does; to do this, we use <code>@Option</code> params; options enable users to pass information of various types into our commands. Options can be named, in which case they are set by passing the <code>--name</code> followed immediately by the value, or if the option is a boolean flag, simply passing the flag will signal a `true` value. Named parameters may be passed into a command in any order, while unnamed parameters must be passed into the command in the order with which they were defined.</p>
-<h2><code>--named</code> options</h2>
-<p>As mentioned above, options can be given both a long-name and/or a short-name.  in which case, they would be defined like this:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@Option(name="one", shortName="o")</code></pre>
-<p>Short named parameters are called using a single dash followed by the letter assigned: <code>-o</code>, whereas long-named parameters are called using a double dash immediately followed by the name of the option: <code>--one</code></p>
-<p>For example, the following command accepts several options, named &#8216;one&#8217;, and &#8216;two&#8217;:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one", shortName="o") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
-<p>The above command, when executed, would produce the following output:</p>
-<pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog</code></pre>
-<div class="alert alert-success">Named parameters can be called in any order. Notice that we could have also called the command with options &#8216;one&#8217; and &#8216;two&#8217; in reverse order, or by using their short names. These commands are equivalent:<br />
-bc(command). $ exampleplugin perform &#8212;one cat &#8212;two dog<br />
-$ exampleplugin perform &#8212;two dog &#8212;one cat<br />
-$ exampleplugin perform &#8212;two dog -o cat</div>
-<h2>Ordered options</h2>
-<p>In addition to <code>--named</code> option parameters, as described above, parameters may also be passed on the command line by the order in which they are entered. These are called &#8220;ordered option parameters&#8221;, and do not require any parameters other than help or description information.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value</code></pre>
-<p>The order of the options in the method signature controls how values are assigned from parsed Forge shell command statements.</p>
-<p>For example, the following command accepts several options, named &#8216;one&#8217;, and &#8216;two&#8217;:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option String one,&#x000A;                  @Option String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
-<p>The above command, when executed, would produce the following output:</p>
-<pre class="command"><code class="command">$ exampleplugin perform cat dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog{code}</code></pre>
-<h2>Combining <code>--named</code> and ordered options</h2>
-<p>Both <code>--named</code> and ordered option parameters can be mixed in the same command; there are some constraints on how commands must be typed, but there is a great deal of flexibility as well.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value,&#x000A;@Option(name="num") int number{code}</code></pre>
-<p>The order of ordered options in the method signature controls how values are assigned from the command line shell, whereas the named options have no bearing on the order in which inputs are provided on the command line.</p>
-<p>For example, the following command accepts several options, named &#8216;one&#8217;, &#8216;two&#8217;, and several more options that are not named:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  @Option String three,&#x000A;                  @Option String four,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;       out.println("&gt;&gt; option three equals: " + three);&#x000A;       out.println("&gt;&gt; option four equals: " + four);&#x000A;   }&#x000A;}</code></pre>
-<p>The above command, when executed, would produce the following output:</p>
-<pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog bird lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard{code}</code></pre>
-<p>However, we could also achieve the same result by re-arranging parameters, and as long as the name-value pairs remain together, and the ordered values are passed in the correct order, interpretation will remain the same:</p>
-<pre class="command"><code class="command">$ exampleplugin --two dog bird --one cat lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard{code}</code></pre>
-    </div>
-  </div>
-</div>
+        <div class="row">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Using Forge</li>
+              <li>
+                <a href="/docs/using/#content">Installation</a>
+              </li>
+              <li>
+                <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
+              </li>
+              <li>
+                <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href="/docs/using/samples.html#content">Samples</a>
+              </li>
+              <li>
+                <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/faq.html#content">FAQ</a>
+              </li>
+              <li>
+                <a href="/docs/using/affiliation.html#content">Affiliation</a>
+              </li>
+              <li class="nav-header">Get involved</li>
+              <li>
+                <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
+              </li>
+              <li class="nav-header">Important plugins</li>
+              <li>
+                <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
+              </li>
+              <li>
+                <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
+              </li>
+              <li class="nav-header">Developing plugins</li>
+              <li>
+                <a href="/docs/plugin_development/#content">Developing a plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span9">
+            <h1>Add Options to your Commands</h1>
+            <p>Once we have a command or two in our Plugin, it&#8217;s time to give our users some control over what it does; to do this, we use <code>@Option</code> params; options enable users to pass information of various types into our commands. Options can be named, in which case they are set by passing the <code>--name</code> followed immediately by the value, or if the option is a boolean flag, simply passing the flag will signal a `true` value. Named parameters may be passed into a command in any order, while unnamed parameters must be passed into the command in the order with which they were defined.</p>
+            <h2><code>--named</code> options</h2>
+            <p>As mentioned above, options can be given both a long-name and/or a short-name.  in which case, they would be defined like this:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option(name="one", shortName="o")</code></pre>
+            <p>Short named parameters are called using a single dash followed by the letter assigned: <code>-o</code>, whereas long-named parameters are called using a double dash immediately followed by the name of the option: <code>--one</code></p>
+            <p>For example, the following command accepts several options, named &#8216;one&#8217;, and &#8216;two&#8217;:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one", shortName="o") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
+            <p>The above command, when executed, would produce the following output:</p>
+            <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog</code></pre>
+            <div class="alert alert-success">Named parameters can be called in any order. Notice that we could have also called the command with options &#8216;one&#8217; and &#8216;two&#8217; in reverse order, or by using their short names. These commands are equivalent:<br />
+            bc(command). $ exampleplugin perform &#8212;one cat &#8212;two dog<br />
+            $ exampleplugin perform &#8212;two dog &#8212;one cat<br />
+            $ exampleplugin perform &#8212;two dog -o cat</div>
+            <h2>Ordered options</h2>
+            <p>In addition to <code>--named</code> option parameters, as described above, parameters may also be passed on the command line by the order in which they are entered. These are called &#8220;ordered option parameters&#8221;, and do not require any parameters other than help or description information.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value</code></pre>
+            <p>The order of the options in the method signature controls how values are assigned from parsed Forge shell command statements.</p>
+            <p>For example, the following command accepts several options, named &#8216;one&#8217;, and &#8216;two&#8217;:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option String one,&#x000A;                  @Option String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
+            <p>The above command, when executed, would produce the following output:</p>
+            <pre class="command"><code class="command">$ exampleplugin perform cat dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog{code}</code></pre>
+            <h2>Combining <code>--named</code> and ordered options</h2>
+            <p>Both <code>--named</code> and ordered option parameters can be mixed in the same command; there are some constraints on how commands must be typed, but there is a great deal of flexibility as well.</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value,&#x000A;@Option(name="num") int number{code}</code></pre>
+            <p>The order of ordered options in the method signature controls how values are assigned from the command line shell, whereas the named options have no bearing on the order in which inputs are provided on the command line.</p>
+            <p>For example, the following command accepts several options, named &#8216;one&#8217;, &#8216;two&#8217;, and several more options that are not named:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  @Option String three,&#x000A;                  @Option String four,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;       out.println("&gt;&gt; option three equals: " + three);&#x000A;       out.println("&gt;&gt; option four equals: " + four);&#x000A;   }&#x000A;}</code></pre>
+            <p>The above command, when executed, would produce the following output:</p>
+            <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog bird lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard{code}</code></pre>
+            <p>However, we could also achieve the same result by re-arranging parameters, and as long as the name-value pairs remain together, and the ordered values are passed in the correct order, interpretation will remain the same:</p>
+            <pre class="command"><code class="command">$ exampleplugin --two dog bird --one cat lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard{code}</code></pre>
+          </div>
+        </div>
+      </div>
       <hr>
       <footer>
         <p>&copy; JBoss 2013</p>

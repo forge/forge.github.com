@@ -4,11 +4,9 @@
     <title>Forge | Samples</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>
-      /*<![CDATA[*/
-        body {
-          padding-top: 60px;
-        }
-      /*]]>*/
+      body {
+        padding-top: 60px;
+      }
     </style>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link href="/images/favicon.ico" rel="icon">
@@ -23,34 +21,28 @@
     <script src="/javascripts/prettify.js" type="text/javascript"></script>
     <script src="/javascripts/videoscale.js" type="text/javascript"></script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
-          prettyPrint();
-        });
-      //]]>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
     </script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          var pathname = window.location.pathname;
-          console.log(pathname);
-          $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
-          $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
-        });
-      //]]>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
     </script>
     <script>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34467975-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34467975-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>

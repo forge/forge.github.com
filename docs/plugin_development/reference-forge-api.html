@@ -4,11 +4,9 @@
     <title>Forge | Reference Forge API</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>
-      /*<![CDATA[*/
-        body {
-          padding-top: 60px;
-        }
-      /*]]>*/
+      body {
+        padding-top: 60px;
+      }
     </style>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link href="/images/favicon.ico" rel="icon">
@@ -23,34 +21,28 @@
     <script src="/javascripts/prettify.js" type="text/javascript"></script>
     <script src="/javascripts/videoscale.js" type="text/javascript"></script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
-          prettyPrint();
-        });
-      //]]>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
     </script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          var pathname = window.location.pathname;
-          console.log(pathname);
-          $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
-          $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
-        });
-      //]]>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
     </script>
     <script>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34467975-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34467975-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>
@@ -103,110 +95,110 @@
     </div>
     <div class="container" id="content">
       <div class="container">
-  <div class="row">
-    <div class="span3">
-      <ul class="nav nav-list">
-        <li class="nav-header">Using Forge</li>
-        <li>
-          <a href="/docs/using/#content">Installation</a>
-        </li>
-        <li>
-          <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
-        </li>
-        <li>
-          <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href="/docs/using/samples.html#content">Samples</a>
-        </li>
-        <li>
-          <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/faq.html#content">FAQ</a>
-        </li>
-        <li>
-          <a href="/docs/using/affiliation.html#content">Affiliation</a>
-        </li>
-        <li class="nav-header">Get involved</li>
-        <li>
-          <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
-        </li>
-        <li class="nav-header">Important plugins</li>
-        <li>
-          <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
-        </li>
-        <li>
-          <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
-        </li>
-        <li class="nav-header">Developing plugins</li>
-        <li>
-          <a href="/docs/plugin_development/#content">Developing a plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class="span9">
-      <h1>Reference Forge <span class="caps">API</span></h1>
-<p>Because Forge is based on Maven, the easiest way to get started quickly writing a plugin is to create a new maven Java project. This can be done by hand, or using Forge&#8217;s built-in plugin project facet.</p>
-<h3>Using Forge</h3>
-<p>In two short steps, you can have a new plugin-project up and running; this can be done using Forge itself!</p>
-<p>Execute $ forge from a command prompt.<br />
-Once forge is running, create a new project:</p>
-<pre class="command"><code class="command">$ new-project --named {name} --topLevelPackage {com.example.project} --projectFolder {/directory/path}</code></pre>
-<pre class="output"><code class="output">Install the Forge Plugin API, press ENTER to confirm installation of required facet dependencies, and select the API v  ersion you wish to use.</code></pre>
-<pre class="command"><code class="command">$ plugins setup</code></pre>
-<p>That&#8217;s it! Now your project is ready to be compiled and installed in Forge, but you may still want to create some Plugins.</p>
-    </div>
-  </div>
-</div>
+        <div class="row">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Using Forge</li>
+              <li>
+                <a href="/docs/using/#content">Installation</a>
+              </li>
+              <li>
+                <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
+              </li>
+              <li>
+                <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href="/docs/using/samples.html#content">Samples</a>
+              </li>
+              <li>
+                <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/faq.html#content">FAQ</a>
+              </li>
+              <li>
+                <a href="/docs/using/affiliation.html#content">Affiliation</a>
+              </li>
+              <li class="nav-header">Get involved</li>
+              <li>
+                <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
+              </li>
+              <li class="nav-header">Important plugins</li>
+              <li>
+                <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
+              </li>
+              <li>
+                <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
+              </li>
+              <li class="nav-header">Developing plugins</li>
+              <li>
+                <a href="/docs/plugin_development/#content">Developing a plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span9">
+            <h1>Reference Forge <span class="caps">API</span></h1>
+            <p>Because Forge is based on Maven, the easiest way to get started quickly writing a plugin is to create a new maven Java project. This can be done by hand, or using Forge&#8217;s built-in plugin project facet.</p>
+            <h3>Using Forge</h3>
+            <p>In two short steps, you can have a new plugin-project up and running; this can be done using Forge itself!</p>
+            <p>Execute $ forge from a command prompt.<br />
+            Once forge is running, create a new project:</p>
+            <pre class="command"><code class="command">$ new-project --named {name} --topLevelPackage {com.example.project} --projectFolder {/directory/path}</code></pre>
+            <pre class="output"><code class="output">Install the Forge Plugin API, press ENTER to confirm installation of required facet dependencies, and select the API v  ersion you wish to use.</code></pre>
+            <pre class="command"><code class="command">$ plugins setup</code></pre>
+            <p>That&#8217;s it! Now your project is ready to be compiled and installed in Forge, but you may still want to create some Plugins.</p>
+          </div>
+        </div>
+      </div>
       <hr>
       <footer>
         <p>&copy; JBoss 2013</p>

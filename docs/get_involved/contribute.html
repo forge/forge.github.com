@@ -4,11 +4,9 @@
     <title>Forge | Contribute or Get Involved</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <style>
-      /*<![CDATA[*/
-        body {
-          padding-top: 60px;
-        }
-      /*]]>*/
+      body {
+        padding-top: 60px;
+      }
     </style>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link href="/images/favicon.ico" rel="icon">
@@ -23,34 +21,28 @@
     <script src="/javascripts/prettify.js" type="text/javascript"></script>
     <script src="/javascripts/videoscale.js" type="text/javascript"></script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
-          prettyPrint();
-        });
-      //]]>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
     </script>
     <script>
-      //<![CDATA[
-        $(document).ready(function() {
-          var pathname = window.location.pathname;
-          console.log(pathname);
-          $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
-          $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
-        });
-      //]]>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
     </script>
     <script>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34467975-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34467975-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>
@@ -103,143 +95,143 @@
     </div>
     <div class="container" id="content">
       <div class="container">
-  <div class="row">
-    <div class="span3">
-      <ul class="nav nav-list">
-        <li class="nav-header">Using Forge</li>
-        <li>
-          <a href="/docs/using/#content">Installation</a>
-        </li>
-        <li>
-          <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
-        </li>
-        <li>
-          <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
-        </li>
-        <li>
-          <a href="/docs/using/samples.html#content">Samples</a>
-        </li>
-        <li>
-          <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
-        </li>
-        <li>
-          <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
-        </li>
-        <li>
-          <a href="/docs/using/faq.html#content">FAQ</a>
-        </li>
-        <li>
-          <a href="/docs/using/affiliation.html#content">Affiliation</a>
-        </li>
-        <li class="nav-header">Get involved</li>
-        <li>
-          <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
-        </li>
-        <li>
-          <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
-        </li>
-        <li class="nav-header">Important plugins</li>
-        <li>
-          <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
-        </li>
-        <li>
-          <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
-        </li>
-        <li class="nav-header">Developing plugins</li>
-        <li>
-          <a href="/docs/plugin_development/#content">Developing a plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
-        </li>
-        <li>
-          <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
-        </li>
-      </ul>
-    </div>
-    <div class="span9">
-      <h1>Contribute or Get Involved</h1>
-<h2>Build Forge from source</h2>
-<p>Got an idea? Want to get your feet wet? Do some <a href="https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&amp;jqlQuery=project+%3D+FORGE+AND+status+in+%28Open%2C+%22Coding+In+Progress%22%2C+Reopened%2C+Resolved%2C+%22Pull+Request+Sent%22%29+ORDER+BY+priority+DESC">ForgeStorming</a></p>
-<blockquote>
-<p>def: forgestorm (v.) [for-ge-st-orm] &#8211; The act of brainstorming when applied to Forge; create or grab an <a href="https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&amp;jqlQuery=project+%3D+FORGE+AND+status+in+%28Open%2C+%22Coding+In+Progress%22%2C+Reopened%2C+Resolved%2C+%22Pull+Request+Sent%22%29+ORDER+BY+priority+DESC">existing issue</a>, and see what can be done!</p>
-</blockquote>
-<p>1. Check out the code:</p>
-<pre class="command"><code class="command">git clone git://github.com/forge/core.git forge</code></pre>
-<p>2. &#8216;cd&#8217; into the project directory:</p>
-<pre class="command"><code class="command">cd forge</code></pre>
-<p>3. Build the code (requires maven, or run from within an existing Forge installation):</p>
-<pre class="command"><code class="command">mvn clean install</code></pre>
-<p>4. <a href="../using/index.html">Install</a> the resulting zip file, or use the provided convenience script for installing a distribution (<strong>power users only</strong>):</p>
-<pre class="command"><code class="command">chmod a+x forge-install.bsh&#x000A;./forge-install.bsh dist/target/forge-distribution-1.0.0-SNAPSHOT.zip</code></pre>
-<p>5. Execute Forge:</p>
-<pre class="command"><code class="command">forge</code></pre>
-<h2>Share your work (send a pull request)</h2>
-<div class="alert alert-info">Before you begin, we recommend that you configure Git to <a href="http://www.viget.com/extend/only-you-can-prevent-git-merge-commits/">automatically rebase merge-commits</a>, otherwise you may have to deal with noise in the commit logs.</div>
-<p>1. Fork the repository on GitHub: [http://github.com/forge/core|http://github.com/forge/core] and clone it to your local PC</p>
-<pre class="command"><code class="command">git clone git@github.com:{your user}/{your forge repo}.git</code></pre>
-<p>2. If you haven&#8217;t done so already, sign the JBoss <span class="caps">CLA</span>: <a href="https://cla.jboss.org/">https://cla.jboss.org/</a></p>
-<p>3. Create an issue in the <a href="https://issues.jboss.org/browse/FORGE">issue tracker</a></p>
-<p>4. Create a branch for your issue, where XX is the issue number:</p>
-<pre class="command"><code class="command">git branch FORGE-XX&#x000A;git checkout FORGE-XX</code></pre>
-<p>5. Make your changes and <strong>write unit tests</strong> for them.</p>
-<p>6. Commit your changes</p>
-<pre class="command"><code class="command">git add -A&#x000A;git commit -m "Implemented FORGE-XX"</code></pre>
-<p>7. Add the forge/core repository as a remote repository (this only needs to happen once.)</p>
-<pre class="command"><code class="command">git remote add upstream git://github.com/forge/core.git</code></pre>
-<p>8. Pull from upstream and fix any merge conflicts you may have locally:</p>
-<pre class="command"><code class="command">git pull upstream master</code></pre>
-<p>9. If you made multiple commits, or if there were any merge commits created when you pulled from upstream, use rebase to squash them into a single commit, where 5 is the number of commits to rebase:</p>
-<pre class="command"><code class="command">git rebase -i HEAD~5</code></pre>
-<p>Change &#8216;pick&#8217; to &#8216;f&#8217; for each commit you wish to fixup upwards. (If you do not change a line, it will not be modified.)</p>
-<pre>  1 pick ade2b1a Implemented FORGE-XX&#x000A;  2 f c3ae0a2 almost done&#x000A;  3 f c863bfb did more work&#x000A;  4 f af793ae Started working on FORGE-XX&#x000A;  5 pick 368bbb9 Previous commit written by someone else</pre>
-<p>Once you are done, your commits should look like this:</p>
-<pre>  1 ade2b1a Implemented FORGE-XX&#x000A;  2 368bbb9 Previous commit written by someone else</pre>
-<p>You can view your commits by typing &#8216;git log&#8217;.</p>
-<p>10. Push to your branch:</p>
-<pre class="command"><code class="command">git push origin FORGE-XX</code></pre>
-<p>11. Submit a pull request from your branch.  The pull request should include one single commit changing all of your  changes. If you have more than one commit, then you did not rebase  correctly.</p>
-<pre class="command"><code class="command">http://github.com/{your user}/{your forge repo}/tree/{FORGE-XX}</code></pre>
-<p>12. Link the pull request to the <span class="caps">JIRA</span> via Workflow &#8594; Link Pull Request</p>
-    </div>
-  </div>
-</div>
+        <div class="row">
+          <div class="span3">
+            <ul class="nav nav-list">
+              <li class="nav-header">Using Forge</li>
+              <li>
+                <a href="/docs/using/#content">Installation</a>
+              </li>
+              <li>
+                <a href="/docs/using/installing-new-plugins.html#content">Installing new Plugins</a>
+              </li>
+              <li>
+                <a href="/docs/using/basic-javaee-app.html#content">Writing Basic Java EE App</a>
+              </li>
+              <li>
+                <a href="/docs/using/samples.html#content">Samples</a>
+              </li>
+              <li>
+                <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
+              </li>
+              <li>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+              </li>
+              <li>
+                <a href="/docs/using/faq.html#content">FAQ</a>
+              </li>
+              <li>
+                <a href="/docs/using/affiliation.html#content">Affiliation</a>
+              </li>
+              <li class="nav-header">Get involved</li>
+              <li>
+                <a href="/docs/get_involved/contribute.html#content">Contribute or Get Involved</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/release-guide.html#content">Release Guide</a>
+              </li>
+              <li>
+                <a href="/docs/get_involved/write-docs.html#content">Improve our documentation</a>
+              </li>
+              <li class="nav-header">Important plugins</li>
+              <li>
+                <a href="/docs/important_plugins/arquillian-testing.html#content">Arquillian Testing</a>
+              </li>
+              <li>
+                <a href="/docs/important_plugins/ui-scaffolding.html#content">UI Scaffolding</a>
+              </li>
+              <li class="nav-header">Developing plugins</li>
+              <li>
+                <a href="/docs/plugin_development/#content">Developing a plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-forge-api.html#content">Reference Forge API</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/implement-plugin-interface.html#content">Implement the Plugin interface</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/give-your-plugin-name.html#content">Give your Plugin a name</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-commands-to-plugin.html#content">Add Commands to your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-options-to-command.html#content">Add Options to your Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/enable-piping.html#content">Enable Piping between Commands</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/facets.html#content">Enable modular functionality with Facets</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/test-plugins.html#content">Test your Plugin</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/reference-libraries.html#content">Reference Libraries</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/make-plugin-available.html#content">Make your Plugin available to Forge</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/add-plugin-cpi.html#content">Add your Plugin to the Central Plugin Index</a>
+              </li>
+              <li>
+                <a href="/docs/plugin_development/important-apis.html#content">Important APIs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="span9">
+            <h1>Contribute or Get Involved</h1>
+            <h2>Build Forge from source</h2>
+            <p>Got an idea? Want to get your feet wet? Do some <a href="https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&amp;jqlQuery=project+%3D+FORGE+AND+status+in+%28Open%2C+%22Coding+In+Progress%22%2C+Reopened%2C+Resolved%2C+%22Pull+Request+Sent%22%29+ORDER+BY+priority+DESC">ForgeStorming</a></p>
+            <blockquote>
+            <p>def: forgestorm (v.) [for-ge-st-orm] &#8211; The act of brainstorming when applied to Forge; create or grab an <a href="https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&amp;jqlQuery=project+%3D+FORGE+AND+status+in+%28Open%2C+%22Coding+In+Progress%22%2C+Reopened%2C+Resolved%2C+%22Pull+Request+Sent%22%29+ORDER+BY+priority+DESC">existing issue</a>, and see what can be done!</p>
+            </blockquote>
+            <p>1. Check out the code:</p>
+            <pre class="command"><code class="command">git clone git://github.com/forge/core.git forge</code></pre>
+            <p>2. &#8216;cd&#8217; into the project directory:</p>
+            <pre class="command"><code class="command">cd forge</code></pre>
+            <p>3. Build the code (requires maven, or run from within an existing Forge installation):</p>
+            <pre class="command"><code class="command">mvn clean install</code></pre>
+            <p>4. <a href="../using/index.html">Install</a> the resulting zip file, or use the provided convenience script for installing a distribution (<strong>power users only</strong>):</p>
+            <pre class="command"><code class="command">chmod a+x forge-install.bsh&#x000A;./forge-install.bsh dist/target/forge-distribution-1.0.0-SNAPSHOT.zip</code></pre>
+            <p>5. Execute Forge:</p>
+            <pre class="command"><code class="command">forge</code></pre>
+            <h2>Share your work (send a pull request)</h2>
+            <div class="alert alert-info">Before you begin, we recommend that you configure Git to <a href="http://www.viget.com/extend/only-you-can-prevent-git-merge-commits/">automatically rebase merge-commits</a>, otherwise you may have to deal with noise in the commit logs.</div>
+            <p>1. Fork the repository on GitHub: [http://github.com/forge/core|http://github.com/forge/core] and clone it to your local PC</p>
+            <pre class="command"><code class="command">git clone git@github.com:{your user}/{your forge repo}.git</code></pre>
+            <p>2. If you haven&#8217;t done so already, sign the JBoss <span class="caps">CLA</span>: <a href="https://cla.jboss.org/">https://cla.jboss.org/</a></p>
+            <p>3. Create an issue in the <a href="https://issues.jboss.org/browse/FORGE">issue tracker</a></p>
+            <p>4. Create a branch for your issue, where XX is the issue number:</p>
+            <pre class="command"><code class="command">git branch FORGE-XX&#x000A;git checkout FORGE-XX</code></pre>
+            <p>5. Make your changes and <strong>write unit tests</strong> for them.</p>
+            <p>6. Commit your changes</p>
+            <pre class="command"><code class="command">git add -A&#x000A;git commit -m "Implemented FORGE-XX"</code></pre>
+            <p>7. Add the forge/core repository as a remote repository (this only needs to happen once.)</p>
+            <pre class="command"><code class="command">git remote add upstream git://github.com/forge/core.git</code></pre>
+            <p>8. Pull from upstream and fix any merge conflicts you may have locally:</p>
+            <pre class="command"><code class="command">git pull upstream master</code></pre>
+            <p>9. If you made multiple commits, or if there were any merge commits created when you pulled from upstream, use rebase to squash them into a single commit, where 5 is the number of commits to rebase:</p>
+            <pre class="command"><code class="command">git rebase -i HEAD~5</code></pre>
+            <p>Change &#8216;pick&#8217; to &#8216;f&#8217; for each commit you wish to fixup upwards. (If you do not change a line, it will not be modified.)</p>
+            <pre>  1 pick ade2b1a Implemented FORGE-XX&#x000A;  2 f c3ae0a2 almost done&#x000A;  3 f c863bfb did more work&#x000A;  4 f af793ae Started working on FORGE-XX&#x000A;  5 pick 368bbb9 Previous commit written by someone else</pre>
+            <p>Once you are done, your commits should look like this:</p>
+            <pre>  1 ade2b1a Implemented FORGE-XX&#x000A;  2 368bbb9 Previous commit written by someone else</pre>
+            <p>You can view your commits by typing &#8216;git log&#8217;.</p>
+            <p>10. Push to your branch:</p>
+            <pre class="command"><code class="command">git push origin FORGE-XX</code></pre>
+            <p>11. Submit a pull request from your branch.  The pull request should include one single commit changing all of your  changes. If you have more than one commit, then you did not rebase  correctly.</p>
+            <pre class="command"><code class="command">http://github.com/{your user}/{your forge repo}/tree/{FORGE-XX}</code></pre>
+            <p>12. Link the pull request to the <span class="caps">JIRA</span> via Workflow &#8594; Link Pull Request</p>
+          </div>
+        </div>
+      </div>
       <hr>
       <footer>
         <p>&copy; JBoss 2013</p>
