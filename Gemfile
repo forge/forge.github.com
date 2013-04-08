@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 gem "archive-tar-minitar", '0.5.2'
-gem 'awestruct', '0.5.0.cr'
-gem "haml", '3.1.6'
+gem 'awestruct', '0.5.0'
+gem "haml", '4.0.1'
 gem "RedCloth", '4.2.9'
-gem 'rb-inotify', '~> 0.8.8'
+gem 'rb-inotify', '0.9'
 gem "rhc", '0.96.9'
 gem "rubypants", '0.2.0'
 gem "therubyracer", '0.10.1', :platform => :ruby

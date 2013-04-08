@@ -1,0 +1,23 @@
+---
+layout: news
+title: Forge Update Issue
+author: George Gastaldi
+tags: [ issue, announcement ]
+---
+
+h1. Forge Update issue
+
+
+p. We have recently discovered an issue with the *forge update* command that allows people to update to non-final and unstable versions.
+
+This is fixed in 1.2.3.Final, so we kindly ask you to avoid using "forge update" on previous versions since it will prompt you
+to update to Forge 2.0.0.Alpha versions (More info about this version soon).
+
+For the meantime, just unzip the desired distribution version until 1.2.3.Final is released (April 15th,2013)
+
+More details in <a href="https://issues.jboss.org/browse/FORGE-849">https://issues.jboss.org/browse/FORGE-849</a>
+
+Thanks for your attention
+
+_-The Forge Team_
+
