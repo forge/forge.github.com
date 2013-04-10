@@ -1,0 +1,66 @@
+---
+layout: news
+title: Forge 1.2.3.Final Released
+author: George Gastaldi
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.2.3.Final* is now available for download !
+
+h2. Release Notes
+
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-830'>FORGE-830</a>] -         RestPlugin should throw IllegalArgumentException if no domain entity is provided
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-849'>FORGE-849</a>] -         Forge update asks to upgrade to incompatible 2.0.0.Alpha2 when run
+</li>
+</ul>
+
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-822'>FORGE-822</a>] -         Proxy settings utility for plugin writers
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-842'>FORGE-842</a>] -         Add managed plugin support to MavenPluginFacet
+</li>
+</ul>
+
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-813'>FORGE-813</a>] -         Implement a strategy to fix the open session in view problem in the generated REST resources
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-814'>FORGE-814</a>] -         Add support to the field plugin for specifying optional associations
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-817'>FORGE-817</a>] -         Add support for SAP&#39;s Lean Java Server container
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-826'>FORGE-826</a>] -         Display a ***WARNING*** when executing a @Deprecated command or plugin.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-827'>FORGE-827</a>] -         Provide a mechanism for vetoing commands before they are executed.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-828'>FORGE-828</a>] -         Support Strikethrough typographical presentation
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-829'>FORGE-829</a>] -         Support Underline typographical presentation
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-835'>FORGE-835</a>] -         Forge field plugin doesn&#39;t support lobs / byte arrays
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-836'>FORGE-836</a>] -         Remove java parser classes from core
+</li>
+</ul>
+
+<h2>        Patch
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-834'>FORGE-834</a>] -         [RestPlugin]  Fire a RestGeneratedResources event containing the resources for which a rest endpoint have been created
+</li>
+</ul>
+
+
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.2.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.2.3.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+
