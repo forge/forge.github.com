@@ -197,8 +197,10 @@
             <pre class="command"><code class="command">forge install-plugin arquillian</code></pre>
             <h2>Setting up containers</h2>
             <p>Before you can start writing tests you first need to add Arquillian to your project and set up a container to test in.</p>
-            <pre class="command"><code class="command">arquillian setup --container &lt;TAB&gt;</code></pre>
-            <p>Upon the tab key the plugin will list all containers that are currently supported. Start typing one of the container names and remember to hit the <TAB> key a lot to make your live easy.</p>
+            <pre class="command"><code class="command">arquillian setup --containerType &lt;TAB&gt;</code></pre>
+            <p>Upon the tab key the plugin will list all container types (Eg. <span class="caps">MANAGED</span>,<span class="caps">REMOTE</span>,<span class="caps">EMBEDDED</span>). Choose one of these options and then choose the container name</p>
+            <pre class="command"><code class="command">arquillian setup --containerType MANAGED --containerName &lt;TAB&gt;</code></pre>
+            <p>Upon the tab key the plugin will list all supported containers. Start typing one of the container names and remember to hit the <TAB> key a lot to make your life easy.</p>
             <p>The plugin will now prompt you which versions you want to use for Arquillian, JUnit and the container connector. Depending on which container you are installing Forge will prompt for information such as the installation directory of the container.</p>
             <p>That&#8217;s it! Arquillian is fully set up now. Take a look at your pom file and notice the new dependencies for JUnit and Arquillian and a profile for the selected container.</p>
             <h3>Adding multiple containers</h3>
