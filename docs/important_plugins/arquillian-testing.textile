@@ -82,9 +82,13 @@ h2. Setting up containers
 
 Before you can start writing tests you first need to add Arquillian to your project and set up a container to test in.
 
-bc(command). arquillian setup --container <TAB>
+bc(command). arquillian setup --containerType <TAB>
 
-p. Upon the tab key the plugin will list all containers that are currently supported. Start typing one of the container names and remember to hit the <TAB> key a lot to make your live easy.
+p. Upon the tab key the plugin will list all container types (Eg. MANAGED,REMOTE,EMBEDDED). Choose one of these options and then choose the container name
+
+bc(command). arquillian setup --containerType MANAGED --containerName <TAB>
+
+p. Upon the tab key the plugin will list all supported containers. Start typing one of the container names and remember to hit the <TAB> key a lot to make your life easy.
 
 The plugin will now prompt you which versions you want to use for Arquillian, JUnit and the container connector. Depending on which container you are installing Forge will prompt for information such as the installation directory of the container.
 
@@ -127,3 +131,4 @@ First navigate to the test class that you want to export, then use the arquillia
 
 bc(command). cd src/test/java/demo/CoolBeanTest.java
 arquillian export
+
