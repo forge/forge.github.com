@@ -37,6 +37,7 @@ bc(command). $ exampleplugin perform --one cat --two dog
 >> option two equals: dog
 
 div(alert alert-success). Named parameters can be called in any order. Notice that we could have also called the command with options 'one' and 'two' in reverse order, or by using their short names. These commands are equivalent:
+
 bc(command). $ exampleplugin perform --one cat --two dog
 $ exampleplugin perform --two dog --one cat
 $ exampleplugin perform --two dog -o cat
@@ -66,14 +67,14 @@ p. The above command, when executed, would produce the following output:
 
 bc(command). $ exampleplugin perform cat dog
 >> option one equals: cat
->> option two equals: dog{code}
+>> option two equals: dog
 
 h2. Combining @--named@ and ordered options
 
 Both @--named@ and ordered option parameters can be mixed in the same command; there are some constraints on how commands must be typed, but there is a great deal of flexibility as well.
 
 bc(prettyprint linenums).. @Option String value,
-@Option(name="num") int number{code}
+@Option(name="num") int number
 
 p. The order of ordered options in the method signature controls how values are assigned from the command line shell, whereas the named options have no bearing on the order in which inputs are provided on the command line.
 
@@ -100,7 +101,7 @@ bc(command). $ exampleplugin perform --one cat --two dog bird lizard
 >> option one equals: cat
 >> option two equals: dog
 >> option three equals: bird
->> option four equals: lizard{code}
+>> option four equals: lizard
 
 p. However, we could also achieve the same result by re-arranging parameters, and as long as the name-value pairs remain together, and the ordered values are passed in the correct order, interpretation will remain the same:
 
@@ -108,4 +109,5 @@ bc(command). $ exampleplugin --two dog bird --one cat lizard
 >> option one equals: cat
 >> option two equals: dog
 >> option three equals: bird
->> option four equals: lizard{code}
+>> option four equals: lizard
+
