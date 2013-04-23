@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem "archive-tar-minitar", '0.5.2'
 gem 'awestruct', '0.5.0'
 gem "haml", '4.0.1'
+gem "htmlcompressor"
+gem "uglifier"
+gem "coffee-script"
 gem "RedCloth", '4.2.9'
 gem 'rb-inotify', '0.9'
 gem "rhc", '0.96.9'
