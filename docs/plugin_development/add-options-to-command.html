@@ -115,10 +115,10 @@
                 <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
               </li>
               <li>
-                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
               </li>
               <li>
-                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
               </li>
               <li>
                 <a href="/docs/using/faq.html#content">FAQ</a>
@@ -196,10 +196,8 @@
             <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one", shortName="o") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
             <p>The above command, when executed, would produce the following output:</p>
             <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog</code></pre>
-            <div class="alert alert-success">Named parameters can be called in any order. Notice that we could have also called the command with options &#8216;one&#8217; and &#8216;two&#8217; in reverse order, or by using their short names. These commands are equivalent:<br />
-            bc(command). $ exampleplugin perform &#8212;one cat &#8212;two dog<br />
-            $ exampleplugin perform &#8212;two dog &#8212;one cat<br />
-            $ exampleplugin perform &#8212;two dog -o cat</div>
+            <div class="alert alert-success">Named parameters can be called in any order. Notice that we could have also called the command with options &#8216;one&#8217; and &#8216;two&#8217; in reverse order, or by using their short names. These commands are equivalent:</div>
+            <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog&#x000A;$ exampleplugin perform --two dog --one cat&#x000A;$ exampleplugin perform --two dog -o cat</code></pre>
             <h2>Ordered options</h2>
             <p>In addition to <code>--named</code> option parameters, as described above, parameters may also be passed on the command line by the order in which they are entered. These are called &#8220;ordered option parameters&#8221;, and do not require any parameters other than help or description information.</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value</code></pre>
@@ -207,17 +205,17 @@
             <p>For example, the following command accepts several options, named &#8216;one&#8217;, and &#8216;two&#8217;:</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option String one,&#x000A;                  @Option String two,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;   }&#x000A;}</code></pre>
             <p>The above command, when executed, would produce the following output:</p>
-            <pre class="command"><code class="command">$ exampleplugin perform cat dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog{code}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin perform cat dog&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog</code></pre>
             <h2>Combining <code>--named</code> and ordered options</h2>
             <p>Both <code>--named</code> and ordered option parameters can be mixed in the same command; there are some constraints on how commands must be typed, but there is a great deal of flexibility as well.</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value,&#x000A;@Option(name="num") int number{code}</code></pre>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@Option String value,&#x000A;@Option(name="num") int number</code></pre>
             <p>The order of ordered options in the method signature controls how values are assigned from the command line shell, whereas the named options have no bearing on the order in which inputs are provided on the command line.</p>
             <p>For example, the following command accepts several options, named &#8216;one&#8217;, &#8216;two&#8217;, and several more options that are not named:</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand(&#x000A;                  @Option(name="one") String one,&#x000A;                  @Option(name="two") String two,&#x000A;                  @Option String three,&#x000A;                  @Option String four,&#x000A;                  PipeOut out) {&#x000A;       out.println("&gt;&gt; option one equals: " + one);&#x000A;       out.println("&gt;&gt; option two equals: " + two);&#x000A;       out.println("&gt;&gt; option three equals: " + three);&#x000A;       out.println("&gt;&gt; option four equals: " + four);&#x000A;   }&#x000A;}</code></pre>
             <p>The above command, when executed, would produce the following output:</p>
-            <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog bird lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard{code}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin perform --one cat --two dog bird lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard</code></pre>
             <p>However, we could also achieve the same result by re-arranging parameters, and as long as the name-value pairs remain together, and the ordered values are passed in the correct order, interpretation will remain the same:</p>
-            <pre class="command"><code class="command">$ exampleplugin --two dog bird --one cat lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard{code}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin --two dog bird --one cat lizard&#x000A;&gt;&gt; option one equals: cat&#x000A;&gt;&gt; option two equals: dog&#x000A;&gt;&gt; option three equals: bird&#x000A;&gt;&gt; option four equals: lizard</code></pre>
           </div>
         </div>
       </div>

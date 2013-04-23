@@ -115,10 +115,10 @@
                 <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
               </li>
               <li>
-                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
               </li>
               <li>
-                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
               </li>
               <li>
                 <a href="/docs/using/faq.html#content">FAQ</a>
@@ -199,7 +199,7 @@
             <p>Named commands must, to little surprise, be given a name with which they are invoked. This is done by placing the {{@Command(&#8220;&#8230;&#8221;)}} annotation on a public Java method in your {{Plugin}} class.</p>
             <p>The following command would be executed by executing the plugin by its name, followed by the name of the command:</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">public class ExamplePlugin implements Plugin {&#x000A;   @Command("perform")&#x000A;   public void exampleCommand( @Option String opt, PipeOut out) {&#x000A;       out.println("&gt;&gt; the command \"perform\" was invoked with the value: " + opt);&#x000A;   }&#x000A;}</code></pre>
-            <pre class="command"><code class="command">$ exampleplugin perform&#x000A;&gt;&gt; the command "perform" was invoked with the value: null{code}</code></pre>
+            <pre class="command"><code class="command">$ exampleplugin perform&#x000A;&gt;&gt; the command "perform" was invoked with the value: null</code></pre>
             <p>Notice that our command method has a parameter called <code>PipeOut</code> in addition to our &#8216;opt&#8217; parameter. <code>PipeOut</code> is a special parameter, which can be placed in any order. It provides access to a variety of shell output functions, including enabling color and controlling piping between plugins.</p>
             <p>Along with <code>PipeOut</code>, there is also a <code>@PipeIn InputStream stream</code> annotation, which is used to inject a piped input stream (output from another Plugin&#8217;s <code>PipeOut</code>.) These concepts will be described more in the section on piping, but for now, you should just know that <code>PipeOut</code> is used to write output to the Forge console.</p>
           </div>
