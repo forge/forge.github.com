@@ -15,6 +15,9 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Docs::Index.new( '/docs/plugin_development', :docs_plugin_development)
   extension Awestruct::Extensions::Plugins::PluginIndex.new()
   # extension Awestruct::Extensions::Indexifier.new
+
+  helper Awestruct::Extensions::Partial
+  helper Awestruct::Extensions::GoogleAnalytics
   extension Awestruct::Extensions::PatchedAtomizer.new(:posts, '/blog/atom.xml', :additional_tags => ['forge'])
 
 end

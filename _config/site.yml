@@ -4,3 +4,5 @@ profiles:
       deploy:
          host: github_pages 
          branch: master
+      google_analytics: UA-34467975-1
+      metrics_base_url: http://www.redhat.com
