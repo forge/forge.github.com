@@ -1,0 +1,114 @@
+---
+layout: news
+title: Forge 1.3.0.Final Released
+author: George Gastaldi
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.3.0.Final* is now available for download !
+
+p. It is with great pleasure that we announce that JBoss Forge 1.3.0.Final is now available. Why the minor update ? Check it out.
+
+h2. New and Noteworthy
+
+* *Scaffold-x plugin:* We have taken the Scaffold plugin to another level. This plugin was designed from ground up for better flexibility and performance.
+
+p. <code>scaffold-x from resource.java</code>
+
+* *Maven Mirrors are now fully supported:* Now you can add your mirrors in your maven settings.xml file and Forge will use that to resolve the necessary artifacts.
+
+* *Proxy is globally enabled:* Do you use proxies ? Well, fear no more, as now Forge will correctly use your proxy settings when resolving external artifacts
+
+* *EAR Support:*: Now you can create EAR projects easily as:
+
+p. <code>new-project --type ear</code>
+
+* *Wildfly support:* That's right ! Now you can choose <a href='http://www.wildfly.org'>WildFly</a>, one of the best AS in the planet in the list of supported JPA Containers, as in:
+
+p. <code>persistence setup --provider HIBERNATE --container WILDFLY</code>
+
+And much more, check out the release notes below and see why Forge IS the best JavaEE development tool
+
+h2. Release Notes
+
+<h3>        Bug
+</h3>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-572'>FORGE-572</a>] -         Forge scaffold faces creates view beans with Id always Long against user-generated Entities
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-698'>FORGE-698</a>] -         Forge must try to box identifiers when they are primitives
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-858'>FORGE-858</a>] -         Forge can&#39;t find dependencies from Maven Central if there is an active profile with repository setup in settings.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-863'>FORGE-863</a>] -         Maven mirror settings not used within forge
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-866'>FORGE-866</a>] -         Forge cannot handle &#39;p2&#39; repository layout in settings.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-870'>FORGE-870</a>] -         Faces scaffold does not generate form fields for @Id fields not annotated with @GeneratedValue
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-871'>FORGE-871</a>] -         Faces scaffold generates incorrect initializers for OneToOne fields with property based accessors
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-872'>FORGE-872</a>] -         Faces scaffold generates incorrect EL expressions for expansions of @Embedded entities and 1:1 relationships
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-874'>FORGE-874</a>] -         Proxy settings not used for maven web project
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-880'>FORGE-880</a>] -         Running &#39;persistence setup&#39; adds an non-versioned dependency
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-881'>FORGE-881</a>] -         ScopedConfigurationAdapter throws IllegalStateException but API defines IllegalArgumentException should be thrown
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-884'>FORGE-884</a>] -         EntityWidgetBuilderTest is failing
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-887'>FORGE-887</a>] -         project add-dependency lists SNAPSHOT dependencies
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-888'>FORGE-888</a>] -         toString() is not rewritten when a field is removed using the RmPlugin
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-892'>FORGE-892</a>] -         Forge fails to load javax.xml classes
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-895'>FORGE-895</a>] -         Shell crops Strings with UTF-8 charaters
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-901'>FORGE-901</a>] -         Error while running persistence setup when current persistence.xml is deleted
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-902'>FORGE-902</a>] -         RmPlugin should not prompt for non-existing resources
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-903'>FORGE-903</a>] -         RestFacet is not properly installed
+</li>
+</ul>
+
+<h3>        Enhancement
+</h3>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-360'>FORGE-360</a>] -         FacesPlugin should automatically add the faces mapping if the servlet version &lt; 3
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-794'>FORGE-794</a>] -         Refactor PropertyCompleter from Java EE Impl to Forge Core
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-864'>FORGE-864</a>] -         --type ear support for new-project
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-865'>FORGE-865</a>] -         Extend the maven plugin with a set-name command
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-867'>FORGE-867</a>] -         Faces scaffold reformats the source code of JPA entities with no changes
+</li>
+</ul>
+
+<h3>        Feature Request
+</h3>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-815'>FORGE-815</a>] -         Add support to the field plugin for specifying CascadeTypes
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-857'>FORGE-857</a>] -         Forge 1 Configuration Folder should be configurable
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-862'>FORGE-862</a>] -         Implement MavenPluginInstaller: responsible for installing a given plugin into the current project
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-879'>FORGE-879</a>] -         pass an unitname to the EntityManager in the REST plugin
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-890'>FORGE-890</a>] -         Design and implement the next-generation Forge scaffold plugin
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-900'>FORGE-900</a>] -         Add Wildfly as a persistence container
+</li>
+</ul>
+
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.3.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.3.0.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+
