@@ -105,10 +105,10 @@
                 <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
               </li>
               <li>
-                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
               </li>
               <li>
-                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
               </li>
               <li>
                 <a href="/docs/using/faq.html#content">FAQ</a>
@@ -182,7 +182,7 @@
             <div class="alert alert-info">We recommend using branches instead of tags, because branches allow  bug-fixes; whereas, tags are fixed, and require more work to re-tag a new version with appropriate enhancements of bug-fixes.</div>
             <h2>Uploading Release Documentation</h2>
             <p>You must have access to project documentation servers in order to upload project documentation:</p>
-            <pre class="command"><code class="command">cd core/git checkout {TAG}&#x000A;mvn clean javadoc:aggregate -Pjavadoc&#x000A;rsync -rv --protocol=28  target/javadoc/ forge@filemgmt.jboss.org:/docs_htdocs/forge/javadoc/&#x000A;</code></pre>
+            <pre class="command"><code class="command">cd core/git checkout {TAG}<br />&#x000A;mvn clean javadoc:aggregate -Pjavadoc<br />&#x000A;rsync -rv &#8212;protocol=28</code>
           </div>
         </div>
       </div>
