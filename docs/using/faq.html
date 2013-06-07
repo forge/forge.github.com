@@ -105,10 +105,10 @@
                 <a href="/docs/using/configure-proxy.html#content">Configure HTTP Proxy</a>
               </li>
               <li>
-                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
+                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
               </li>
               <li>
-                <a href="/docs/using/profiling-forge.html#content">Profiling Forge</a>
+                <a href="/docs/using/debugging-forge.html#content">Debugging Forge</a>
               </li>
               <li>
                 <a href="/docs/using/faq.html#content">FAQ</a>
@@ -179,12 +179,36 @@
             <h1><span class="caps">FAQ</span></h1>
             <ol>
             	<li><a href="faq.html#roo">How is forge different from Spring Roo</a></li>
-            	<li><a href="faq.html#seam-gen"></a></li>
+            	<li><a href="faq.html#seam-gen">﻿How is Forge different from seam-gen</a></li>
             	<li><a href="faq.html#issue">I found an issue, where can I report it?</a></li>
             	<li><a href="faq.html#contribute">How can I contribute to forge?</a></li>
             </ol>
             <p><a name="roo"><br />
             </a></p>
+            <h3>﻿How is Forge different from Spring Roo?</h3>
+            <p>The tools are similar in the way that they are both command line tools that help setting up and configuring a project, and both have the ability to generate code. There are some major design differences however:</p>
+            <p>1) Forge is designed to be used on any kind of Maven project. Roo is pretty much tied to Spring. Because Forge is more general you can find or write plugins for any kind of technology that you use in projects. This is also true for Roo, but only technology on top of Spring. You could say that Forge is a (more) generic framework for building plugins that work on Maven projects, while Roo is (just) a Spring tool.</p>
+            <p>2) Roo is also a programming framework, not only a tool. The code generation makes heavy use of AspectJ to make the code generation almost invisible to the programmer, and gives features that are otherwise only found in frameworks based on dynamic languages (e.g. dynamic finder methods on entities). This can be both a good and a bad thing. It&#8217;s good because it&#8217;s powerful and more elegant because you don&#8217;t &#8220;see&#8221; the generated code. The bad point is that it gives a massive lock-in on Roo. This is technically not true, because it&#8217;s just &#8220;plain&#8221; AspectJ, but it&#8217;s far from normal Java/Spring code. AspectJ also doesn&#8217;t work well in all IDEs (Eclipse and IntelliJ are fine). Because of this programming model I would never use Roo. If I want a framework with dynamic language features I use Grails, not something halfway there. Of course this is just my personal opinion.</p>
+            <p>Code generation in Forge is more of the traditional kind, with all its flaws, but you will never lock into anything non-standard. The built-in code generation is based on plain Java EE 6.</p>
+            <p><a name="seam-gen"><br />
+            </a></p>
+            <h3>﻿How is Forge different from seam-gen?</h3>
+            <ul>
+            	<li>seam-gen was oriented at Seam 2; Forge at standard Java EE 6 and Java SE projects.</li>
+            	<li>seam-gen is a batch process built over Ant; Forge is an interactive shell built over Maven.</li>
+            	<li>seam-gen is a one-time generation; Forge allows you to add new Entities, fields within them, and so on, at any time.</li>
+            </ul>
+            <p>In fact, Forge is much more dynamic, allowing you to load new plug-ins while running, and extend the framework with any functionality that can be written in Java.</p>
+            <p><a name="issue"><br />
+            </a></p>
+            <h3>I found an issue, where can I report it?</h3>
+            <p>Create an issue in the <a href="https://issues.jboss.org/browse/FORGE">issue tracker</a></p>
+            <p><a name="contribute"><br />
+            </a></p>
+            <h3>How can I contribute to forge?</h3>
+            <p>Forge is entirely plug-in based. To write your own plug-in, see <a href="../plugin_development/index.html">this</a>.</p>
+            <p>More generally, see <a href="../get_involved/contribute.html">this</a></p>
+            <p>Please give a link to the forge community rules.</p>
           </div>
         </div>
       </div>
