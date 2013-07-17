@@ -218,8 +218,7 @@
             <p>Many plugins will have to read/write <span class="caps">XML</span> files (e.g. to generate configuration files). Forge has a convenient <span class="caps">XML</span> <span class="caps">API</span>.</p>
             <pre class="prettyprint linenums"><code class="prettyprint linenums">Node xml = XMLParser.parse(resource.getResourceInputStream());&#x000A;Node config = xml.getOrCreate("someelement");&#x000A;config.createChild("sub").createChild("property@name=test").text("hello");</code>&#x000A;&#x000A;<code class="prettyprint linenums">resource.setContents(XMLParser.toXMLString(xml));</code></pre>
             <p>This will result in the following <span class="caps">XML</span>:</p>
-            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;someelement&gt;&#x000A;  &lt;sub&gt;&#x000A;     &lt;property name="test"&gt;hello&lt;/property&gt;&#x000A;  &lt;/sub&gt;&#x000A;&lt;/someelement&gt;</code></pre>
-            <h2>Code templates</h2>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;someelement&gt;&#x000A;  &lt;sub&gt;&#x000A;     &lt;property name="test"&gt;hello&lt;/property&gt;&#x000A;  &lt;/sub&gt;&#x000A;&lt;/someelement&gt;</code>&#x000A;</pre>
           </div>
         </div>
       </div>

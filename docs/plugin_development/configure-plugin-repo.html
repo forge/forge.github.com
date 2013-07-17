@@ -182,18 +182,19 @@
             </ul>
           </div>
           <div class="span9">
-            <h1>The default plugin repository</h1>
+            <h1>Configure a plugin repository for Forge</h1>
+            <h2>The default plugin repository</h2>
             <p>Forge uses the Central Plugin Index (introduced in an earlier section) as the default plugin repository. However, you may not be in a position to publish your plugins to everyone &#8211; they could be in private repositories sealed off from the rest of the world. In such an event, you can use your own custom plugin repository. This could be an organization-wide plugin repository.</p>
             <h2>How does Forge locate the default plugin repository?</h2>
             <p>Forge locates the default plugin repository through the <code>DEFAULT_PLUGIN_REPO</code> environment variable. The default value is <code>https://raw.github.com/forge/plugin-repository/master/repository.yaml</code> which is none other than the location of the <span class="caps">YAML</span> file for the Central Plugin Index.</p>
             <h2>Modifying the location of the default plugin repository</h2>
             <p>The location of the default plugin repository can be modified by setting a new value to the <code>DEFAULT_PLUGIN_REPO</code> environment variable:</p>
-            <p><code>set DEFAULT_PLUGIN_REPO http://example.com/repository.yaml</code></p>
+            <p><code>set DEFAULT_PLUGIN_REPO "http://example.com/repository.yaml"</code></p>
             <p>To make this change permanent, you can create or modify the Forge script file that is executed by Forge on startup. The script file is named <code>config</code> and is located in directory identified by the <code>FORGE_CONFIG_DIR</code> environment variable. On most installations, the <code>config</code> file would be present in the <code>.forge</code> directory under your user home directory. On Linux/Unix/Mac OS, this is <code>~/.forge</code>. On Windows 7 and higher, this would be <code>C:\Users\&lt;username&gt;\.forge\</code>.</p>
             <p>The contents of this file include the following lines:</p>
-            <pre class="command"><code class="command">---&#x000A;@/* Automatically generated config file */;&#x000A;about;&#x000A;set HISTORY true;&#x000A;set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";&#x000A;set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";&#x000A;set DEFAULT_PLUGIN_REPO "https://raw.github.com/forge/plugin-repository/master/repository.yaml";&#x000A;set IGNOREEOF 1;&#x000A;---</code></pre>
-            <p>To modify the default plugin repository permanently, modify the value of the environment variable, like so:</p>
-            <pre class="command"><code class="command">---&#x000A;@/* Automatically generated config file */;&#x000A;about;&#x000A;set HISTORY true;&#x000A;set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";&#x000A;set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";&#x000A;set DEFAULT_PLUGIN_REPO "http://example.com/repository.yaml";&#x000A;set IGNOREEOF 1;&#x000A;---</code></pre>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@/* Automatically generated config file */;&#x000A;about;&#x000A;set HISTORY true;&#x000A;set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";&#x000A;set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";&#x000A;set DEFAULT_PLUGIN_REPO "https://raw.github.com/forge/plugin-repository/master/repository.yaml";&#x000A;set IGNOREEOF 1;</code></pre>
+            <p>To modify the default plugin repository permanently, modify the value of the environment variable (in line 6), like so:</p>
+            <pre class="prettyprint linenums"><code class="prettyprint linenums">@/* Automatically generated config file */;&#x000A;about;&#x000A;set HISTORY true;&#x000A;set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";&#x000A;set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";&#x000A;set DEFAULT_PLUGIN_REPO "http://example.com/repository.yaml";&#x000A;set IGNOREEOF 1;</code></pre>
             <p>We recommend that the contents of this custom plugin repository file, be synchronized with the contents of the default Central Plugin Index from time to time. The best way to do this, would be to maintain a fork of the Central Plugin Index. This will ensure that you can install plugins from both the central plugin index as well as from the private repositories.</p>
           </div>
         </div>
