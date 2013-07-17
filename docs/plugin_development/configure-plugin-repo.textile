@@ -18,7 +18,7 @@ h2. Modifying the location of the default plugin repository
 
 The location of the default plugin repository can be modified by setting a new value to the @DEFAULT_PLUGIN_REPO@ environment variable:
 
-@set DEFAULT_PLUGIN_REPO http://example.com/repository.yaml@
+@set DEFAULT_PLUGIN_REPO "http://example.com/repository.yaml"@
 
 To make this change permanent, you can create or modify the Forge script file that is executed by Forge on startup. The script file is named @config@ and is located in directory identified by the @FORGE_CONFIG_DIR@ environment variable. On most installations, the @config@ file would be present in the @.forge@ directory under your user home directory. On Linux/Unix/Mac OS, this is @~/.forge@. On Windows 7 and higher, this would be @C:\Users\<username>\.forge\@.
 
