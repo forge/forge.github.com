@@ -24,27 +24,23 @@ To make this change permanent, you can create or modify the Forge script file th
 
 The contents of this file include the following lines:
 
-bc(command). ---
-@/* Automatically generated config file */;
+bc(prettyprint linenums).. @/* Automatically generated config file */;
 about;
 set HISTORY true;
 set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";
 set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";
 set DEFAULT_PLUGIN_REPO "https://raw.github.com/forge/plugin-repository/master/repository.yaml";
 set IGNOREEOF 1;
----
 
-To modify the default plugin repository permanently, modify the value of the environment variable, like so:
+p. To modify the default plugin repository permanently, modify the value of the environment variable (in line 6), like so:
 
-bc(command). ---
-@/* Automatically generated config file */;
+bc(prettyprint linenums).. @/* Automatically generated config file */;
 about;
 set HISTORY true;
 set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";
 set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";
 set DEFAULT_PLUGIN_REPO "http://example.com/repository.yaml";
 set IGNOREEOF 1;
----
 
-We recommend that the contents of this custom plugin repository file, be synchronized with the contents of the default Central Plugin Index from time to time. The best way to do this, would be to maintain a fork of the Central Plugin Index. This will ensure that you can install plugins from both the central plugin index as well as from the private repositories.
+p. We recommend that the contents of this custom plugin repository file, be synchronized with the contents of the default Central Plugin Index from time to time. The best way to do this, would be to maintain a fork of the Central Plugin Index. This will ensure that you can install plugins from both the central plugin index as well as from the private repositories.
 
