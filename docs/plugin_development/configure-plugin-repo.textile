@@ -1,0 +1,47 @@
+---
+layout: docs
+title: Configure a plugin repository for Forge
+index: 13
+---
+
+h1. The default plugin repository
+
+Forge uses the Central Plugin Index (introduced in an earlier section) as the default plugin repository. However, you may not be in a position to publish your plugins to everyone - they could be in private repositories sealed off from the rest of the world. In such an event, you can use your own custom plugin repository. This could be an organization-wide plugin repository.
+
+h2. How does Forge locate the default plugin repository?
+
+Forge locates the default plugin repository through the @DEFAULT_PLUGIN_REPO@ environment variable. The default value is @https://raw.github.com/forge/plugin-repository/master/repository.yaml@ which is none other than the location of the YAML file for the Central Plugin Index.
+
+h2. Modifying the location of the default plugin repository
+
+The location of the default plugin repository can be modified by setting a new value to the @DEFAULT_PLUGIN_REPO@ environment variable:
+
+@set DEFAULT_PLUGIN_REPO http://example.com/repository.yaml@
+
+To make this change permanent, you can create or modify the Forge script file that is executed by Forge on startup. The script file is named @config@ and is located in directory identified by the @FORGE_CONFIG_DIR@ environment variable. On most installations, the @config@ file would be present in the @.forge@ directory under your user home directory. On Linux/Unix/Mac OS, this is @~/.forge@. On Windows 7 and higher, this would be @C:\Users\<username>\.forge\@.
+
+The contents of this file include the following lines:
+
+bc(command). ---
+@/* Automatically generated config file */;
+about;
+set HISTORY true;
+set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";
+set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";
+set DEFAULT_PLUGIN_REPO "https://raw.github.com/forge/plugin-repository/master/repository.yaml";
+set IGNOREEOF 1;
+---
+
+To modify the default plugin repository permanently, modify the value of the environment variable, like so:
+
+bc(command). ---
+@/* Automatically generated config file */;
+about;
+set HISTORY true;
+set PROMPT "[\c{green}$PROJECT_NAME\c] \c{blue}\W\c \c{green}\$\c ";
+set PROMPT_NOPROJ "[\c{red}no project\c] \c{blue}\W\c \c{red}\$\c ";
+set DEFAULT_PLUGIN_REPO "http://example.com/repository.yaml";
+set IGNOREEOF 1;
+---
+
+We recommend that the contents of this custom plugin repository file, be synchronized with the contents of the default Central Plugin Index from time to time. The best way to do this, would be to maintain a fork of the Central Plugin Index. This will ensure that you can install plugins from both the central plugin index as well as from the private repositories.
