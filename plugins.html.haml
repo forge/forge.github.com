@@ -9,23 +9,23 @@ layout: base
 :javascript
   $(document).ready(function() {
     var filterInput = $('#filterInput');
-    filterInput.keyup(function() {      
+    filterInput.keyup(function() {
       $("#pluginTable tr").show();
       $("#pluginTable tr").slice(1).each(function() {
 
       var name = $.trim($(this).children().first().text()).toLowerCase();
       var desc = $.trim($(this).children().last().text()).toLowerCase();
-      
-        if(name.indexOf(filterInput.val().toLowerCase()) == -1 
+
+        if(name.indexOf(filterInput.val().toLowerCase()) == -1
            && desc.indexOf(filterInput.val().toLowerCase()) == -1) {
           $(this).hide();
-        } 
+        }
       });
     });
   });
 
 .container{:style=>'padding-top: 30px;'}
-  %input{:type=>'text', :id=>'filterInput', :placeholder=>'Start typing to search'}
+  %input{:type=>'search', :id=>'filterInput', :placeholder=>'Start typing to search'}
   %table.table.table-striped.table-bordered.table-condensed{:id=>'pluginTable'}
     %tr
       %th
@@ -37,9 +37,10 @@ layout: base
     - for plugin in site.plugins
       %tr
         %td
-          %a{:title=>plugin.name+' repository', :href=>plugin.gitrepo, :target=>'_blank'} 
+          %a{:title=>plugin.name+' repository', :href=>plugin.gitrepo, :target=>'_blank'}
             =plugin.name
-        %td 
+        %td
           =plugin.author
         %td
           =plugin.description
+
