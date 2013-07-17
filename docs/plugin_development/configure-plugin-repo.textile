@@ -4,7 +4,9 @@ title: Configure a plugin repository for Forge
 index: 13
 ---
 
-h1. The default plugin repository
+h1. Configure a plugin repository for Forge
+
+h2. The default plugin repository
 
 Forge uses the Central Plugin Index (introduced in an earlier section) as the default plugin repository. However, you may not be in a position to publish your plugins to everyone - they could be in private repositories sealed off from the rest of the world. In such an event, you can use your own custom plugin repository. This could be an organization-wide plugin repository.
 
@@ -45,3 +47,4 @@ set IGNOREEOF 1;
 ---
 
 We recommend that the contents of this custom plugin repository file, be synchronized with the contents of the default Central Plugin Index from time to time. The best way to do this, would be to maintain a fork of the Central Plugin Index. This will ensure that you can install plugins from both the central plugin index as well as from the private repositories.
+
