@@ -95,23 +95,23 @@
       <script>
         $(document).ready(function() {
           var filterInput = $('#filterInput');
-          filterInput.keyup(function() {      
+          filterInput.keyup(function() {
             $("#pluginTable tr").show();
             $("#pluginTable tr").slice(1).each(function() {
         
             var name = $.trim($(this).children().first().text()).toLowerCase();
             var desc = $.trim($(this).children().last().text()).toLowerCase();
-            
-              if(name.indexOf(filterInput.val().toLowerCase()) == -1 
+        
+              if(name.indexOf(filterInput.val().toLowerCase()) == -1
                  && desc.indexOf(filterInput.val().toLowerCase()) == -1) {
                 $(this).hide();
-              } 
+              }
             });
           });
         });
       </script>
       <div class="container" style="padding-top: 30px;">
-        <input id="filterInput" placeholder="Start typing to search" type="text">
+        <input id="filterInput" placeholder="Start typing to search" type="search">
         <table class="table table-striped table-bordered table-condensed" id="pluginTable">
           <tr>
             <th>
