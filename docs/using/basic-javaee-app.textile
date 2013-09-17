@@ -89,6 +89,12 @@ public::toString()::String
 
 Customer.java $
 
+h3. Picking up other files
+
+As stated above, creating a new entity will automatically "pick-up" and "hold" that file.  When a file is "held", that file is the context that operations are performed in.  To change that context and "pickup" another file, use the @pick-up@ command.  
+
+Eg. @$ pick-up src/main/java/com/company/Client.java@ 
+
 h2. Generate some UI scaffolding!
 
 Once you have created fields in the entity, it's time to generate some scaffolding. Since we have already installed our scaffold, this step is easy. While "holding" Customer.java, type:
