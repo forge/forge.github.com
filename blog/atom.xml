@@ -16,20 +16,18 @@
     <category scheme="http://forge.jboss.org/" term="forge" />
     <summary>
       JBoss Forge 1.4.1.Final is now available!
-      From now on, we decided that new 1.4.x versions goes into maintenance mode. New features will target Forge 2.x and just bug-fixes will be accepted for the 1.x stream. 
-      The next JBoss Forge generation (Forge 2.0.0.Final) is due in November and we&#8217;re working really hard on making it happen. Stay in the loop!
+      It&#8217;s a great day for progress &#8211; Going forward, we&#8217;re putting Forge 1.x into maintenance mode. This means that new features will target Forge 2.x; only bug-fixes will be accepted for the 1.x stream.  The next JBoss Forge generation (Forge 2.0.0.Final) is due in November, and we&#8217;re working really hard on making it happen. Stay in the loop by checking out our Forge 2 development guide!
       Release Notes
               Bug
       
       
       [FORGE-1030] &#8211;         Support multi-module Forge plugins
-      [FORGE-1133] &#8211;         Error and exception handling for Maven dependency resolution does not warn......
+      [FORGE-1133] &#8211;     ......
     </summary>
     <content type="html">
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.4.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
-      &lt;p&gt;From now on, we decided that new 1.4.x versions goes into maintenance mode. New features will target Forge 2.x and just bug-fixes will be accepted for the 1.x stream. &lt;br&gt;
-      The next JBoss Forge generation (Forge 2.0.0.Final) is due in November and we&amp;#8217;re working really hard on making it happen. Stay in the loop!&lt;/p&gt;
+      &lt;p&gt;It&amp;#8217;s a great day for progress &amp;#8211; Going forward, we&amp;#8217;re putting Forge 1.x into maintenance mode. This means that new features will target Forge 2.x; only bug-fixes will be accepted for the 1.x stream.  The next JBoss Forge generation (Forge 2.0.0.Final) is due in November, and we&amp;#8217;re working really hard on making it happen. Stay in the loop by checking out our &lt;a href=&quot;https://github.com/forge/core#readme&quot;&gt;Forge 2 development guide&lt;/a&gt;!&lt;/p&gt;
       &lt;h2&gt;Release Notes&lt;br&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
