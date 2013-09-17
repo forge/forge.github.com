@@ -1,0 +1,59 @@
+---
+layout: news
+title: Forge 1.4.1.Final Released
+author: George Gastaldi
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.4.1.Final* is now available! 
+
+From now on, we decided that new 1.4.x versions goes into maintenance mode. New features will target Forge 2.x and just bug-fixes will be accepted for the 1.x stream. 
+The next JBoss Forge generation (Forge 2.0.0.Final) is due in November and we're working really hard on making it happen. Stay in the loop!
+
+h2. Release Notes
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1030'>FORGE-1030</a>] -         Support multi-module Forge plugins
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1133'>FORGE-1133</a>] -         Error and exception handling for Maven dependency resolution does not warn of unresolved dependencies
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1134'>FORGE-1134</a>] -         Forge fails to resolve dependencies in password protected Maven repositories
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1135'>FORGE-1135</a>] -         ServletFacetImpl overrides isInstalled of BaseJavaEEFacet but doesnt call super.isInstalled
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1142'>FORGE-1142</a>] -         beans new-bean broken in Windows cmd
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1147'>FORGE-1147</a>] -         Java parser does not handle package-info creation.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1163'>FORGE-1163</a>] -         No @XmlRootElement on Entities
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1166'>FORGE-1166</a>] -         Servlet javax.ws.rs.core.Application not defined in web.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1191'>FORGE-1191</a>] -         Template title has wrong EL
+</li>
+</ul>
+                
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1138'>FORGE-1138</a>] -         &quot;forge update&quot; should be disabled in the IDE (using -Pforge.compatability.ide or similar)
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1006'>FORGE-1006</a>] -         Provide a command to generate equals and hashcode implementations considering all suitable fields in the JPA entity
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1200'>FORGE-1200</a>] -         Add A@Column(length) on Entity attributes of type String 
+</li>
+</ul>
+
+
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.4.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.4.1.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+
