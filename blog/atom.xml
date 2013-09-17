@@ -2,9 +2,64 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2013-08-21T00:00:00+00:00</updated>
+  <updated>2013-09-17T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2013/09/17/post-forge-1.html</id>
+    <title>Forge 1.4.1.Final Released</title>
+    <updated>2013-09-17T00:00:00+00:00</updated>
+    <published>2013-09-17T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2013/09/17/post-forge-1.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 1.4.1.Final is now available!
+      From now on, we decided that new 1.4.x versions goes into maintenance mode. New features will target Forge 2.x and just bug-fixes will be accepted for the 1.x stream. 
+      The next JBoss Forge generation (Forge 2.0.0.Final) is due in November and we&#8217;re working really hard on making it happen. Stay in the loop!
+      Release Notes
+              Bug
+      
+      
+      [FORGE-1030] &#8211;         Support multi-module Forge plugins
+      [FORGE-1133] &#8211;         Error and exception handling for Maven dependency resolution does not warn......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 1.4.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;From now on, we decided that new 1.4.x versions goes into maintenance mode. New features will target Forge 2.x and just bug-fixes will be accepted for the 1.x stream. &lt;br&gt;
+      The next JBoss Forge generation (Forge 2.0.0.Final) is due in November and we&amp;#8217;re working really hard on making it happen. Stay in the loop!&lt;/p&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1030&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1030&lt;/a&gt;] &amp;#8211;         Support multi-module Forge plugins&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1133&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1133&lt;/a&gt;] &amp;#8211;         Error and exception handling for Maven dependency resolution does not warn of unresolved dependencies&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1134&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1134&lt;/a&gt;] &amp;#8211;         Forge fails to resolve dependencies in password protected Maven repositories&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1135&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1135&lt;/a&gt;] &amp;#8211;         ServletFacetImpl overrides isInstalled of BaseJavaEEFacet but doesnt call super.isInstalled&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1142&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1142&lt;/a&gt;] &amp;#8211;         beans new-bean broken in Windows cmd&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1147&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1147&lt;/a&gt;] &amp;#8211;         Java parser does not handle package-info creation.&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1163&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1163&lt;/a&gt;] &amp;#8211;         No @XmlRootElement on Entities&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1166&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1166&lt;/a&gt;] &amp;#8211;         Servlet javax.ws.rs.core.Application not defined in web.xml&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1191&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1191&lt;/a&gt;] &amp;#8211;         Template title has wrong EL&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1138&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1138&lt;/a&gt;] &amp;#8211;         &quot;forge update&quot; should be disabled in the &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; (using -Pforge.compatability.ide or similar)&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1006&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1006&lt;/a&gt;] &amp;#8211;         Provide a command to generate equals and hashcode implementations considering all suitable fields in the &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entity&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1200&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1200&lt;/a&gt;] &amp;#8211;         Add A@Column(length) on Entity attributes of type String&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
+      &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2013/08/21/post-forge-1.html</id>
     <title>Forge 1.4.0.Final Released, and Forge 2.0 is just around the corner</title>
