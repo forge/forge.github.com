@@ -1,14 +1,13 @@
 ---
 layout: news
 title: Forge 1.4.1.Final Released
-author: George Gastaldi
+author: Lincoln Baxter, III, George Gastaldi
 tags: [ website, announcement ]
 ---
 
 h1. *JBoss Forge 1.4.1.Final* is now available! 
 
-From now on, we decided that new 1.4.x versions goes into maintenance mode. New features will target Forge 2.x and just bug-fixes will be accepted for the 1.x stream. 
-The next JBoss Forge generation (Forge 2.0.0.Final) is due in November and we're working really hard on making it happen. Stay in the loop!
+It's a great day for progress - Going forward, we're putting Forge 1.x into maintenance mode. This means that new features will target Forge 2.x; only bug-fixes will be accepted for the 1.x stream.  The next JBoss Forge generation (Forge 2.0.0.Final) is due in November, and we're working really hard on making it happen. Stay in the loop by checking out our <a href='https://github.com/forge/core#readme'>Forge 2 development guide</a>!
 
 h2. Release Notes
 <h2>        Bug
