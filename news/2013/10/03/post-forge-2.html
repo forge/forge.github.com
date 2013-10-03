@@ -95,21 +95,17 @@
         </ul>
         <h2>Resource Transactions and Resource Change Monitoring</h2>
         <p>There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.</p>
-        <ul>
-        	<li>Resource Transactions:</li>
-        </ul>
+        <h3>Resource Transactions:</h3>
         <p>If you are familiar with UserTransaction in Java EE applications, this should feel pretty comfortable.</p>
-        <p><code>&#x000A;ResourceTransaction transaction = factory.getTransaction();&#x000A;try {&#x000A;   // Starts the transaction&#x000A;   transaction.begin();</p>&#x000A;FileResource&lt;?&gt; resource = factory.create(&#8230;);&#x000A;// The file won&#8217;t be updated until commit is performed&#x000A;resource.setContents(&#8220;Hello World&#8221;);&#x000A;&#x000A;String contents = resource.getContents(); // Returns &#8220;Hello World&#8221;&#x000A;&#x000A;FileResource&lt;?&gt; anotherResource = factory.create(&#8230;);&#x000A;// The file won&#8217;t be deleted until commit is performed&#x000A;anotherResource.delete();&#x000A;&#x000A;FileResource&lt;?&gt; newResource = factory.create(&#8230;);&#x000A;// The file won&#8217;t be created until commit is performed&#x000A;newResource.createNewFile();&#x000A;&#x000A;transaction.commit();&#x000A;<p>} catch (Exception e){<br />&#x000A;    // Discard all changes since the beginning of this transaction <br />&#x000A;    transaction.rollback();<br />&#x000A;}<br /></code></p>
+        <pre lang="java">&#x000A;ResourceTransaction transaction = factory.getTransaction();&#x000A;try {&#x000A;   // Starts the transaction&#x000A;   transaction.begin();&#x000A;   &#x000A;   FileResource&lt;?&gt; resource = factory.create(...);&#x000A;   // The file won't be updated until commit is performed&#x000A;   resource.setContents("Hello World");      &#x000A;   &#x000A;   String contents = resource.getContents(); // Returns "Hello World"&#x000A;   &#x000A;   FileResource&lt;?&gt; anotherResource = factory.create(...);&#x000A;   // The file won't be deleted until commit is performed&#x000A;   anotherResource.delete();&#x000A;   &#x000A;   FileResource&lt;?&gt; newResource = factory.create(...);&#x000A;   // The file won't be created until commit is performed&#x000A;   newResource.createNewFile();&#x000A;   &#x000A;   transaction.commit();&#x000A;} catch (Exception e){&#x000A;    // Discard all changes since the beginning of this transaction &#x000A;    transaction.rollback();&#x000A;}</pre>
         <p>Additionally, transactions support change-set inspection, so you can compare file contents before deciding whether or not a given transaction should be committed or rolled back:</p>
-        <p><code>&#x000A;   ...&#x000A;   Collection&lt;ResourceEvent&gt; changeSet = transaction.getChangeSet();&#x000A;   ...   &#x000A;   transaction.commit();</code></p>
+        <pre lang="java">&#x000A;   ...&#x000A;   Collection&lt;ResourceEvent&gt; changeSet = transaction.getChangeSet();&#x000A;   ...   &#x000A;   transaction.commit();</pre>
         <p>Following the example above, this change set contains the following entries:</p>
-        <p><code>&#x000A;Collection [&#x000A;    ResourceCreated: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceModified: &lt;DirectoryResource&gt;, &#x000A;    ResourceModified: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceDeleted: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceCreated: &lt;FileResource&lt;?&gt;&gt;&#x000A;]</code></p>
-        <ul>
-        	<li>Resource Monitors:</li>
-        </ul>
-        <p><code>&#x000A;@Inject &#x000A;private ResourceFactory factory;&#x000A;...&#x000A;Resource&lt;?&gt; resource = factory.create(...);&#x000A;ResourceMonitor monitor = factory.monitor(resource);&#x000A;monitor.addResourceListener(new ResourceListener() {&#x000A;    @Override&#x000A;    public void processEvent(ResourceEvent evt) {&#x000A;        ...&#x000A;    }&#x000A;});</code><br />
-        Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:</p>
-        <p><code> &#x000A;monitor.cancel();</code></p>
+        <pre lang="java">&#x000A;Collection [&#x000A;    ResourceCreated: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceModified: &lt;DirectoryResource&gt;, &#x000A;    ResourceModified: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceDeleted: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceCreated: &lt;FileResource&lt;?&gt;&gt;&#x000A;]</pre>
+        <h3>Resource Monitors:</h3>
+        <pre lang="java">&#x000A;@Inject &#x000A;private ResourceFactory factory;&#x000A;...&#x000A;Resource&lt;?&gt; resource = factory.create(...);&#x000A;ResourceMonitor monitor = factory.monitor(resource);&#x000A;monitor.addResourceListener(new ResourceListener() {&#x000A;    @Override&#x000A;    public void processEvent(ResourceEvent evt) {&#x000A;        ...&#x000A;    }&#x000A;});</pre>
+        <p>Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:</p>
+        <pre lang="java"> &#x000A;monitor.cancel();</pre>
         <h3>@CommandScoped support:</h3>
         <p>You may now use the @CommandScoped annotation to share data between pages in UIWizard implementations. No more context attribute passing!</p>
         <h2>Release Notes &#8211; Check out all the new stuff!</h2>
