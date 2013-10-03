@@ -2,9 +2,149 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2013-09-17T00:00:00+00:00</updated>
+  <updated>2013-10-03T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2013/10/03/post-forge-2.html</id>
+    <title>Forge 2.0.0.Alpha13 (Lucky Thirteen) Released</title>
+    <updated>2013-10-03T00:00:00+00:00</updated>
+    <published>2013-10-03T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2013/10/03/post-forge-2.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.0.0.Alpha13 is now available!
+      We are pleased to announce the release of &#8220;Lucky Thirteen&#8221;, a Forge Runtime that features a streamlined programming model for Addon developers (no more @Exported annotation,) as well as a wide array of new Commands for developing Java EE applications.
+      Try out Forge 2 in Eclipse via our Update Site
+      Use Forge 2 in your CLI / Terminal by downloading and installing the Alpha13 release. You can learn how to run the downloaded installation via our docs.
+      
+      .h2 Resource Transactions and Resource Change Monitoring
+      There are a lot of exciting features (as you can see by the release notes......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.0.0.Alpha13&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;We are pleased to announce the release of &amp;#8220;Lucky Thirteen&amp;#8221;, a Forge Runtime that features a streamlined programming model for Addon developers (no more @Exported annotation,) as well as a wide array of new Commands for developing Java EE applications.&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Alpha13&amp;amp;e=zip&quot;&gt;Alpha13 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;.h2 Resource Transactions and Resource Change Monitoring&lt;/p&gt;
+      &lt;p&gt;There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.&lt;/p&gt;
+      &lt;ul&gt;
+      	&lt;li&gt;Resource Transactions:&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;If you are familiar with UserTransaction in Java EE applications, this should feel pretty comfortable.&lt;/p&gt;
+      &lt;p&gt;&lt;code&gt;
+      ResourceTransaction transaction = factory.getTransaction();
+      try {
+         // Starts the transaction
+         transaction.begin();&lt;/code&gt;&lt;/p&gt;
+      FileResource&amp;lt;?&amp;gt; resource = factory.create(&amp;#8230;);
+      // The file won&amp;#8217;t be updated until commit is performed
+      resource.setContents(&amp;#8220;Hello World&amp;#8221;);
+      
+      String contents = resource.getContents(); // Returns &amp;#8220;Hello World&amp;#8221;
+      
+      FileResource&amp;lt;?&amp;gt; anotherResource = factory.create(&amp;#8230;);
+      // The file won&amp;#8217;t be deleted until commit is performed
+      anotherResource.delete();
+      
+      FileResource&amp;lt;?&amp;gt; newResource = factory.create(&amp;#8230;);
+      // The file won&amp;#8217;t be created until commit is performed
+      newResource.createNewFile();
+      
+      transaction.commit();
+      &lt;p&gt;} catch (Exception e){&lt;br&gt;
+          // Discard all changes since the beginning of this transaction &lt;br&gt;
+          transaction.rollback();&lt;br&gt;
+      }&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;Additionally, transactions support change-set inspection, so you can compare file contents before deciding whether or not a given transaction should be committed or rolled back:&lt;/p&gt;
+      &lt;p&gt;&lt;code&gt;
+         ...
+         Collection&amp;lt;ResourceEvent&amp;gt; changeSet = transaction.getChangeSet();
+         ...   
+         transaction.commit();&lt;/code&gt;&lt;/p&gt;
+      &lt;p&gt;Following the example above, this change set contains the following entries:&lt;/p&gt;
+      &lt;p&gt;&lt;code&gt;
+      Collection [
+          ResourceCreated: &amp;lt;FileResource&amp;lt;?&amp;gt;&amp;gt;, 
+          ResourceModified: &amp;lt;DirectoryResource&amp;gt;, 
+          ResourceModified: &amp;lt;FileResource&amp;lt;?&amp;gt;&amp;gt;, 
+          ResourceDeleted: &amp;lt;FileResource&amp;lt;?&amp;gt;&amp;gt;, 
+          ResourceCreated: &amp;lt;FileResource&amp;lt;?&amp;gt;&amp;gt;
+      ]&lt;/code&gt;&lt;/p&gt;
+      &lt;ul&gt;
+      	&lt;li&gt;Resource Monitors:&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;&lt;code&gt;
+      @Inject 
+      private ResourceFactory factory;
+      ...
+      Resource&amp;lt;?&amp;gt; resource = factory.create(...);
+      ResourceMonitor monitor = factory.monitor(resource);
+      monitor.addResourceListener(new ResourceListener() {
+          @Override
+          public void processEvent(ResourceEvent evt) {
+              ...
+          }
+      });&lt;/code&gt;&lt;br&gt;
+      Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:&lt;/p&gt;
+      &lt;p&gt;&lt;code&gt; 
+      monitor.cancel();&lt;/code&gt;&lt;/p&gt;
+      &lt;p&gt;.h2 @CommandScoped support:&lt;/p&gt;
+      &lt;p&gt;.h2 Release Notes &amp;#8211; Check out all the new stuff!&lt;/p&gt;
+      &lt;p&gt;.h3 Bug&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1192&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1192&lt;/a&gt;] &amp;#8211;         Ill behaved addons can screw up the command popup in Eclipse&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1203&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1203&lt;/a&gt;] &amp;#8211;         Furnace &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; is unable to create proxies for services that are backed by Weld proxies (@ApplicationScoped, etc)&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1206&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1206&lt;/a&gt;] &amp;#8211;         Imported&amp;lt;?&amp;gt;.get() has a different behavior compared to iterator()&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1223&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1223&lt;/a&gt;] &amp;#8211;         CheckboxTableControlBuilder does not properly initialize data collection when default values are set&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;p&gt;.h3 Enhancement&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-757&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-757&lt;/a&gt;] &amp;#8211;         Forge tests should delete the created folders&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1196&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1196&lt;/a&gt;] &amp;#8211;         Rename flag forge.compatibility.&lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; to forge.standalone&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1239&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1239&lt;/a&gt;] &amp;#8211;         UISelectOne and UISelectMany components could have dynamic value choices&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;p&gt;.h3 Feature Request&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-220&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-220&lt;/a&gt;] &amp;#8211;         Forge should listen to filesystem changes on the system and publish events for plugins to observe&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-801&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-801&lt;/a&gt;] &amp;#8211;         Support for Transactional Resources&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-846&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-846&lt;/a&gt;] &amp;#8211;         Create a template processor addon&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1193&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1193&lt;/a&gt;] &amp;#8211;         Eclipse plugin doesn't handle subflows correctly&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1194&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1194&lt;/a&gt;] &amp;#8211;         Support addition of warnings to a validation context&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1195&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1195&lt;/a&gt;] &amp;#8211;         Support addition of information messages to a validation context&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1197&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1197&lt;/a&gt;] &amp;#8211;         Eclipse plugin should render a Spinner component for Number types&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1198&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1198&lt;/a&gt;] &amp;#8211;         UIValidationContext should reference the current input being validated&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1200&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1200&lt;/a&gt;] &amp;#8211;         Add A@Column(length) on Entity attributes of type String&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1202&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1202&lt;/a&gt;] &amp;#8211;         Furnace Maven plugin should allow generation of the full addon dependency graph&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1205&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1205&lt;/a&gt;] &amp;#8211;         Migrate CommandScoped to Forge 2&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1217&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1217&lt;/a&gt;] &amp;#8211;         UIProvider should provide a isGUI() method&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;p&gt;.h3 Task&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1111&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1111&lt;/a&gt;] &amp;#8211;         Write a test to ensure that furnace fails deployment if multiple containers are specified&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;p&gt;.h3 Sub-task&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1171&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1171&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JMS&lt;/span&gt; commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1174&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1174&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JSTL&lt;/span&gt; commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1175&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1175&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JTA&lt;/span&gt; commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1176&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1176&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JAX&lt;/span&gt;-RS (&lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt;) commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1177&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1177&lt;/a&gt;] &amp;#8211;         Port the Servlet commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1178&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1178&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JAX&lt;/span&gt;-WS (&lt;span class=&quot;caps&quot;&gt;SOAP&lt;/span&gt;) commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1179&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1179&lt;/a&gt;] &amp;#8211;         Port the Bean validation commands&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2013/09/17/post-forge-1.html</id>
     <title>Forge 1.4.1.Final Released</title>

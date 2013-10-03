@@ -1,0 +1,222 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forge | Forge 2.0.0.Alpha13 (Lucky Thirteen) Released</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link href="/images/favicon.ico" rel="icon">
+    <link href="/stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/prettify.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap-collapse.js" type="text/javascript"></script>
+    <script src="/javascripts/prettify.js" type="text/javascript"></script>
+    <script src="/javascripts/videoscale.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="github-banner hidden-phone hidden-tablet">
+            <a href="https://github.com/forge/core">
+              <img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position:absolute;top:0;right:0;border:0;">
+            </a>
+          </div>
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">
+            <img alt="JBoss Forge" class="forge-logo" src="/images/jbossforge_icon_256px.png">
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/index.html">Home</a>
+              </li>
+              <li>
+                <a href="/docs/index.html">Documentation</a>
+              </li>
+              <li>
+                <a href="/team.html">Team</a>
+              </li>
+              <li>
+                <a href="https://community.jboss.org/en/forge">Forums</a>
+              </li>
+              <li>
+                <a href="https://github.com/forge/core">Source</a>
+              </li>
+              <li>
+                <a href="/plugins.html">Plugins</a>
+              </li>
+              <li>
+                <a href="https://issues.jboss.org/browse/FORGE" target="issue tracker">Issue Tracker</a>
+              </li>
+              <li>
+                <a href="https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel" target="roadmap">Roadmap</a>
+              </li>
+              <li>
+                <a href="/events.html">Events</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="content">
+      <div class="container">
+        <h1><strong>JBoss Forge 2.0.0.Alpha13</strong> is now available!</h1>
+        <p>We are pleased to announce the release of &#8220;Lucky Thirteen&#8221;, a Forge Runtime that features a streamlined programming model for Addon developers (no more @Exported annotation,) as well as a wide array of new Commands for developing Java EE applications.</p>
+        <ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+        <li>Use Forge 2 in your <span class="caps">CLI</span> / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.0.0.Alpha13&e=zip">Alpha13 release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+        </ul>
+        <p>.h2 Resource Transactions and Resource Change Monitoring</p>
+        <p>There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.</p>
+        <ul>
+        	<li>Resource Transactions:</li>
+        </ul>
+        <p>If you are familiar with UserTransaction in Java EE applications, this should feel pretty comfortable.</p>
+        <p><code>&#x000A;ResourceTransaction transaction = factory.getTransaction();&#x000A;try {&#x000A;   // Starts the transaction&#x000A;   transaction.begin();</p>&#x000A;FileResource&lt;?&gt; resource = factory.create(&#8230;);&#x000A;// The file won&#8217;t be updated until commit is performed&#x000A;resource.setContents(&#8220;Hello World&#8221;);&#x000A;&#x000A;String contents = resource.getContents(); // Returns &#8220;Hello World&#8221;&#x000A;&#x000A;FileResource&lt;?&gt; anotherResource = factory.create(&#8230;);&#x000A;// The file won&#8217;t be deleted until commit is performed&#x000A;anotherResource.delete();&#x000A;&#x000A;FileResource&lt;?&gt; newResource = factory.create(&#8230;);&#x000A;// The file won&#8217;t be created until commit is performed&#x000A;newResource.createNewFile();&#x000A;&#x000A;transaction.commit();&#x000A;<p>} catch (Exception e){<br />&#x000A;    // Discard all changes since the beginning of this transaction <br />&#x000A;    transaction.rollback();<br />&#x000A;}<br /></code></p>
+        <p>Additionally, transactions support change-set inspection, so you can compare file contents before deciding whether or not a given transaction should be committed or rolled back:</p>
+        <p><code>&#x000A;   ...&#x000A;   Collection&lt;ResourceEvent&gt; changeSet = transaction.getChangeSet();&#x000A;   ...   &#x000A;   transaction.commit();</code></p>
+        <p>Following the example above, this change set contains the following entries:</p>
+        <p><code>&#x000A;Collection [&#x000A;    ResourceCreated: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceModified: &lt;DirectoryResource&gt;, &#x000A;    ResourceModified: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceDeleted: &lt;FileResource&lt;?&gt;&gt;, &#x000A;    ResourceCreated: &lt;FileResource&lt;?&gt;&gt;&#x000A;]</code></p>
+        <ul>
+        	<li>Resource Monitors:</li>
+        </ul>
+        <p><code>&#x000A;@Inject &#x000A;private ResourceFactory factory;&#x000A;...&#x000A;Resource&lt;?&gt; resource = factory.create(...);&#x000A;ResourceMonitor monitor = factory.monitor(resource);&#x000A;monitor.addResourceListener(new ResourceListener() {&#x000A;    @Override&#x000A;    public void processEvent(ResourceEvent evt) {&#x000A;        ...&#x000A;    }&#x000A;});</code><br />
+        Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:</p>
+        <p><code> &#x000A;monitor.cancel();</code></p>
+        <p>.h2 @CommandScoped support:</p>
+        <p>.h2 Release Notes &#8211; Check out all the new stuff!</p>
+        <p>.h3 Bug</p>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1192'><span class="caps">FORGE</span>-1192</a>] &#8211;         Ill behaved addons can screw up the command popup in Eclipse</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1203'><span class="caps">FORGE</span>-1203</a>] &#8211;         Furnace <span class="caps">CDI</span> is unable to create proxies for services that are backed by Weld proxies (@ApplicationScoped, etc)</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1206'><span class="caps">FORGE</span>-1206</a>] &#8211;         Imported&lt;?&gt;.get() has a different behavior compared to iterator()</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1223'><span class="caps">FORGE</span>-1223</a>] &#8211;         CheckboxTableControlBuilder does not properly initialize data collection when default values are set</li>
+        </ul>
+        
+        <p>.h3 Enhancement</p>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-757'><span class="caps">FORGE</span>-757</a>] &#8211;         Forge tests should delete the created folders</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1196'><span class="caps">FORGE</span>-1196</a>] &#8211;         Rename flag forge.compatibility.<span class="caps">IDE</span> to forge.standalone</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1239'><span class="caps">FORGE</span>-1239</a>] &#8211;         UISelectOne and UISelectMany components could have dynamic value choices</li>
+        </ul>
+        
+        <p>.h3 Feature Request</p>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-220'><span class="caps">FORGE</span>-220</a>] &#8211;         Forge should listen to filesystem changes on the system and publish events for plugins to observe</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-801'><span class="caps">FORGE</span>-801</a>] &#8211;         Support for Transactional Resources</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-846'><span class="caps">FORGE</span>-846</a>] &#8211;         Create a template processor addon</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1193'><span class="caps">FORGE</span>-1193</a>] &#8211;         Eclipse plugin doesn&#39;t handle subflows correctly</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1194'><span class="caps">FORGE</span>-1194</a>] &#8211;         Support addition of warnings to a validation context</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1195'><span class="caps">FORGE</span>-1195</a>] &#8211;         Support addition of information messages to a validation context</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1197'><span class="caps">FORGE</span>-1197</a>] &#8211;         Eclipse plugin should render a Spinner component for Number types</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1198'><span class="caps">FORGE</span>-1198</a>] &#8211;         UIValidationContext should reference the current input being validated</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1200'><span class="caps">FORGE</span>-1200</a>] &#8211;         Add A@Column(length) on Entity attributes of type String</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1202'><span class="caps">FORGE</span>-1202</a>] &#8211;         Furnace Maven plugin should allow generation of the full addon dependency graph</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1205'><span class="caps">FORGE</span>-1205</a>] &#8211;         Migrate CommandScoped to Forge 2</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1217'><span class="caps">FORGE</span>-1217</a>] &#8211;         UIProvider should provide a isGUI() method</li>
+        </ul>
+        
+        <p>.h3 Task</p>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1111'><span class="caps">FORGE</span>-1111</a>] &#8211;         Write a test to ensure that furnace fails deployment if multiple containers are specified</li>
+        </ul>
+        
+        <p>.h3 Sub-task</p>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1171'><span class="caps">FORGE</span>-1171</a>] &#8211;         Port the <span class="caps">JMS</span> commands</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1174'><span class="caps">FORGE</span>-1174</a>] &#8211;         Port the <span class="caps">JSTL</span> commands</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1175'><span class="caps">FORGE</span>-1175</a>] &#8211;         Port the <span class="caps">JTA</span> commands</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1176'><span class="caps">FORGE</span>-1176</a>] &#8211;         Port the <span class="caps">JAX</span>-RS (<span class="caps">REST</span>) commands</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1177'><span class="caps">FORGE</span>-1177</a>] &#8211;         Port the Servlet commands</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1178'><span class="caps">FORGE</span>-1178</a>] &#8211;         Port the <span class="caps">JAX</span>-WS (<span class="caps">SOAP</span>) commands</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1179'><span class="caps">FORGE</span>-1179</a>] &#8211;         Port the Bean validation commands</li>
+        </ul>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; JBoss 2013</p>
+      </footer>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount','UA-34467975-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="http://www.redhat.com/j/elqNow/elqCfg.js" type="text/javascript"></script>
+    <script src="http://www.redhat.com/j/elqNow/elqImg.js" type="text/javascript"></script>
+    <div id="oTags">
+      <script src="http://www.redhat.com/j/s_code.js" type="text/javascript"></script>
+      <script>
+        var coreUrl = encodeURI(document.URL.split("?")[0]);
+        var urlSplit = coreUrl.toLowerCase().split(/\//);
+        var urlLast = urlSplit[urlSplit.length-1];
+        var pageNameString = "";
+        var siteName = "";
+        var minorSectionIndex = 3
+        if (urlLast == "") {
+          urlSplit.splice(-1,1);
+        }
+        if (urlLast.search(/\./) >= 0) {
+          if (urlLast == "index.html") {
+            urlSplit.splice(-1,1);
+          }
+          else {
+            urlSplit[urlSplit.length-1] = urlLast.split(".").splice(0,1);
+          }
+        }
+        siteName = urlSplit[2].split(".")[1];
+        s.prop14 = s.eVar27 = siteName || "";
+        s.prop15 = s.eVar28 = urlSplit[minorSectionIndex] || "";
+        s.prop16 = s.eVar29 = urlSplit[minorSectionIndex+1] || "";
+        pageNameString = urlSplit.splice(3).join(" | ");
+        s.pageName = "jboss | community | " + siteName + " | " + pageNameString;
+        s.channel = "jboss | community";
+        s.prop4 = s.eVar23 = encodeURI(document.URL);
+        s.prop21 = s.eVar18 = coreUrl;
+        s.prop2 = s.eVar22 = "en";
+        s.prop3 = s.eVar19 = "us";
+      </script>
+      <script src="http://www.redhat.com/j/rh_omni_footer.js" type="text/javascript"></script>
+      <script language="JavaScript" type="text/javascript">
+        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+      </script>
+      <noscript>
+        <a href="http://www.omniture.com" title="Web Analytics">
+          <img alt="" border="0" height="1" src="https://smtrcs.redhat.com/b/ss/redhatcom,redhatglobal/1/H.25.4--NS/0?[AQB]&amp;cdp=3&amp;[AQE]" width="1">
+        </a>
+      </noscript>
+    </div>
+  </body>
+</html>
