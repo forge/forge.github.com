@@ -17,11 +17,11 @@ h2. Resource Transactions and Resource Change Monitoring
 
 There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.
 
-* Resource Transactions:
+h3. Resource Transactions:
 
 If you are familiar with UserTransaction in Java EE applications, this should feel pretty comfortable.
 
-<code>
+<pre lang="java">
 ResourceTransaction transaction = factory.getTransaction();
 try {
    // Starts the transaction
@@ -46,20 +46,20 @@ try {
     // Discard all changes since the beginning of this transaction 
     transaction.rollback();
 }
-</code>
+</pre>
 
 Additionally, transactions support change-set inspection, so you can compare file contents before deciding whether or not a given transaction should be committed or rolled back:
 
-<code>
+<pre lang="java">
    ...
    Collection<ResourceEvent> changeSet = transaction.getChangeSet();
    ...   
    transaction.commit();
-</code>
+</pre>
 
 Following the example above, this change set contains the following entries:
 
-<code>
+<pre lang="java">
 Collection [
     ResourceCreated: <FileResource<?>>, 
     ResourceModified: <DirectoryResource>, 
@@ -67,11 +67,11 @@ Collection [
     ResourceDeleted: <FileResource<?>>, 
     ResourceCreated: <FileResource<?>>
 ]
-</code>
+</pre>
 
-* Resource Monitors:
+h3. Resource Monitors:
 
-<code>
+<pre lang="java">
 @Inject 
 private ResourceFactory factory;
 ...
@@ -83,12 +83,12 @@ monitor.addResourceListener(new ResourceListener() {
         ...
     }
 });
-</code>
+</pre>
 Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:
 
-<code> 
+<pre lang="java"> 
 monitor.cancel();
-</code>
+</pre>
 
 h3. @CommandScoped support:
 
