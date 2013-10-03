@@ -93,7 +93,7 @@
         <ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
         <li>Use Forge 2 in your <span class="caps">CLI</span> / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.0.0.Alpha13&e=zip">Alpha13 release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
         </ul>
-        <p>.h2 Resource Transactions and Resource Change Monitoring</p>
+        <h2>Resource Transactions and Resource Change Monitoring</h2>
         <p>There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.</p>
         <ul>
         	<li>Resource Transactions:</li>
@@ -110,9 +110,10 @@
         <p><code>&#x000A;@Inject &#x000A;private ResourceFactory factory;&#x000A;...&#x000A;Resource&lt;?&gt; resource = factory.create(...);&#x000A;ResourceMonitor monitor = factory.monitor(resource);&#x000A;monitor.addResourceListener(new ResourceListener() {&#x000A;    @Override&#x000A;    public void processEvent(ResourceEvent evt) {&#x000A;        ...&#x000A;    }&#x000A;});</code><br />
         Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:</p>
         <p><code> &#x000A;monitor.cancel();</code></p>
-        <p>.h2 @CommandScoped support:</p>
-        <p>.h2 Release Notes &#8211; Check out all the new stuff!</p>
-        <p>.h3 Bug</p>
+        <h3>@CommandScoped support:</h3>
+        <p>You may now use the @CommandScoped annotation to share data between pages in UIWizard implementations. No more context attribute passing!</p>
+        <h2>Release Notes &#8211; Check out all the new stuff!</h2>
+        <h3>Bug</h3>
         <ul>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1192'><span class="caps">FORGE</span>-1192</a>] &#8211;         Ill behaved addons can screw up the command popup in Eclipse</li>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1203'><span class="caps">FORGE</span>-1203</a>] &#8211;         Furnace <span class="caps">CDI</span> is unable to create proxies for services that are backed by Weld proxies (@ApplicationScoped, etc)</li>
@@ -120,14 +121,14 @@
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1223'><span class="caps">FORGE</span>-1223</a>] &#8211;         CheckboxTableControlBuilder does not properly initialize data collection when default values are set</li>
         </ul>
         
-        <p>.h3 Enhancement</p>
+        <h3>Enhancement</h3>
         <ul>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-757'><span class="caps">FORGE</span>-757</a>] &#8211;         Forge tests should delete the created folders</li>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1196'><span class="caps">FORGE</span>-1196</a>] &#8211;         Rename flag forge.compatibility.<span class="caps">IDE</span> to forge.standalone</li>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1239'><span class="caps">FORGE</span>-1239</a>] &#8211;         UISelectOne and UISelectMany components could have dynamic value choices</li>
         </ul>
         
-        <p>.h3 Feature Request</p>
+        <h3>Feature Request</h3>
         <ul>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-220'><span class="caps">FORGE</span>-220</a>] &#8211;         Forge should listen to filesystem changes on the system and publish events for plugins to observe</li>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-801'><span class="caps">FORGE</span>-801</a>] &#8211;         Support for Transactional Resources</li>
@@ -143,12 +144,12 @@
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1217'><span class="caps">FORGE</span>-1217</a>] &#8211;         UIProvider should provide a isGUI() method</li>
         </ul>
         
-        <p>.h3 Task</p>
+        <h3>Task</h3>
         <ul>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1111'><span class="caps">FORGE</span>-1111</a>] &#8211;         Write a test to ensure that furnace fails deployment if multiple containers are specified</li>
         </ul>
         
-        <p>.h3 Sub-task</p>
+        <h3>Sub-task</h3>
         <ul>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1171'><span class="caps">FORGE</span>-1171</a>] &#8211;         Port the <span class="caps">JMS</span> commands</li>
         <li>[<a href='https://issues.jboss.org/browse/FORGE-1174'><span class="caps">FORGE</span>-1174</a>] &#8211;         Port the <span class="caps">JSTL</span> commands</li>

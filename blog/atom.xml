@@ -20,8 +20,8 @@
       Try out Forge 2 in Eclipse via our Update Site
       Use Forge 2 in your CLI / Terminal by downloading and installing the Alpha13 release. You can learn how to run the downloaded installation via our docs.
       
-      .h2 Resource Transactions and Resource Change Monitoring
-      There are a lot of exciting features (as you can see by the release notes......
+      Resource Transactions and Resource Change Monitoring
+      There are a lot of exciting features (as you can see by the release notes below);......
     </summary>
     <content type="html">
       &lt;h1&gt;
@@ -32,7 +32,7 @@
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Alpha13&amp;amp;e=zip&quot;&gt;Alpha13 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;p&gt;.h2 Resource Transactions and Resource Change Monitoring&lt;/p&gt;
+      &lt;h2&gt;Resource Transactions and Resource Change Monitoring&lt;/h2&gt;
       &lt;p&gt;There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.&lt;/p&gt;
       &lt;ul&gt;
       	&lt;li&gt;Resource Transactions:&lt;/li&gt;
@@ -95,9 +95,10 @@
       Once a monitor is no longer needed, it must be manually disposed of by calling the cancel() method:&lt;/p&gt;
       &lt;p&gt;&lt;code&gt; 
       monitor.cancel();&lt;/code&gt;&lt;/p&gt;
-      &lt;p&gt;.h2 @CommandScoped support:&lt;/p&gt;
-      &lt;p&gt;.h2 Release Notes &amp;#8211; Check out all the new stuff!&lt;/p&gt;
-      &lt;p&gt;.h3 Bug&lt;/p&gt;
+      &lt;h3&gt;@CommandScoped support:&lt;/h3&gt;
+      &lt;p&gt;You may now use the @CommandScoped annotation to share data between pages in UIWizard implementations. No more context attribute passing!&lt;/p&gt;
+      &lt;h2&gt;Release Notes &amp;#8211; Check out all the new stuff!&lt;/h2&gt;
+      &lt;h3&gt;Bug&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1192&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1192&lt;/a&gt;] &amp;#8211;         Ill behaved addons can screw up the command popup in Eclipse&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1203&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1203&lt;/a&gt;] &amp;#8211;         Furnace &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; is unable to create proxies for services that are backed by Weld proxies (@ApplicationScoped, etc)&lt;/li&gt;
@@ -105,14 +106,14 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1223&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1223&lt;/a&gt;] &amp;#8211;         CheckboxTableControlBuilder does not properly initialize data collection when default values are set&lt;/li&gt;
       &lt;/ul&gt;
       
-      &lt;p&gt;.h3 Enhancement&lt;/p&gt;
+      &lt;h3&gt;Enhancement&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-757&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-757&lt;/a&gt;] &amp;#8211;         Forge tests should delete the created folders&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1196&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1196&lt;/a&gt;] &amp;#8211;         Rename flag forge.compatibility.&lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; to forge.standalone&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1239&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1239&lt;/a&gt;] &amp;#8211;         UISelectOne and UISelectMany components could have dynamic value choices&lt;/li&gt;
       &lt;/ul&gt;
       
-      &lt;p&gt;.h3 Feature Request&lt;/p&gt;
+      &lt;h3&gt;Feature Request&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-220&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-220&lt;/a&gt;] &amp;#8211;         Forge should listen to filesystem changes on the system and publish events for plugins to observe&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-801&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-801&lt;/a&gt;] &amp;#8211;         Support for Transactional Resources&lt;/li&gt;
@@ -128,12 +129,12 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1217&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1217&lt;/a&gt;] &amp;#8211;         UIProvider should provide a isGUI() method&lt;/li&gt;
       &lt;/ul&gt;
       
-      &lt;p&gt;.h3 Task&lt;/p&gt;
+      &lt;h3&gt;Task&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1111&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1111&lt;/a&gt;] &amp;#8211;         Write a test to ensure that furnace fails deployment if multiple containers are specified&lt;/li&gt;
       &lt;/ul&gt;
       
-      &lt;p&gt;.h3 Sub-task&lt;/p&gt;
+      &lt;h3&gt;Sub-task&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1171&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1171&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JMS&lt;/span&gt; commands&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1174&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1174&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JSTL&lt;/span&gt; commands&lt;/li&gt;
