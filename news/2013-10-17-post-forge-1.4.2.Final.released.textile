@@ -1,0 +1,29 @@
+---
+layout: news
+title: Forge 1.4.2.Final Released
+author: Lincoln Baxter, III, George Gastaldi
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.4.2.Final* is now available! 
+
+After exactly 1 month since the last release, we are proud to announce the immediate availability of Forge 1.4.2.Final.
+
+h2. Release Notes
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1212'>FORGE-1212</a>] -         REST endpoint findById doesn&#39;t handle NoResultException
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1219'>FORGE-1219</a>] -         --createMain doesn&#39;t work with --type war
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1261'>FORGE-1261</a>] -         &quot;rest endpoint-from-entity&quot; fails, ClassNotFoundException: org.apache.log4j.Priority
+</li>
+</ul>
+                                                                                
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.4.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.4.2.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+
