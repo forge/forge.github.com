@@ -1,0 +1,29 @@
+---
+layout: news
+title: Forge 1.4.3.Final Released
+author: Lincoln Baxter, III, George Gastaldi
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.4.3.Final* is now available! 
+
+The Forge Team is proud to announce the immediate availability of Forge 1.4.3.Final.
+
+h2. Release Notes
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1221'>FORGE-1221</a>] -         scaffold views template uses backslashes instead of forward slashes
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1279'>FORGE-1279</a>] -         forge install-plugin gives NullPointerException
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1310'>FORGE-1310</a>] -         REGRESSION: SecurityException while running tests
+</li>
+</ul>
+                                                                                
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.4.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.4.3.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+
