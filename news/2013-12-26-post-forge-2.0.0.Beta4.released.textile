@@ -1,0 +1,144 @@
+---
+layout: news
+title: Forge 2.0.0.Beta4 (Pound) Released
+author: Vineet Reynolds, Lincoln Baxter, III, George Gastaldi
+tags: [ website, announcement ]
+---
+h1. *JBoss Forge 2.0.0.Beta4* is now available!
+
+We are pleased to announce the release of JBoss Forge 2.0.0.Beta4, a Forge Runtime that features a streamlined programming model for Addon developers as well as a wide array of new Commands for developing Java EE applications.
+In this version, we did a lot of refactoring, making it easier for new UI providers (other IDEs) to interact with our UI addon.
+<ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.0.0.Alpha13&e=zip">Alpha13 release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+</ul>
+
+h2. JDK 7 minimum runtime
+
+From Beta4 and onward, Forge 2 and Furnace require JDK 7 as the minimum runtime requirement. Java 6 has been around for quite some time, and while we are sorry that some of you may be required to upgrade to Java 7 to use Forge, we are pleased to help move Java forward as a community, and continue to support the latest language version.
+
+h2. Scaffold is now available
+
+Support for JavaServer Faces scaffolding is now complete. Stay tuned for an introductory video coming soon. This provides the same scaffold functionality that Forge 1 provided, but the commands have been refactored slightly to work better in the Forge 2 environment.
+
+h2. New and Re-named Commands
+
+In order to achieve a consistent user experience, `new-project` has been renamed to `project-new`, and several Shell-only commands have been migrated (eg. mkdir, touch) - we will continue to bring more standard shell functionality to Forge 2, but if you would like something prioritized, please feel free to file an issue in the <a href="https://issues.jboss.org/browse/FORGE">JBoss Forge JIRA</a> or in the <a href="https://community.jboss.org/en/forge">Forums</a>
+
+h2. Release Notes 
+
+h3. 39 issues were resolved in this release. Check out all the new stuff!
+   
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-875'>FORGE-875</a>] -         the `scaffold setup --scaffoldType faces;` command. failed to create beans.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1314'>FORGE-1314</a>] -         Faces setup should create an empty faces-config.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1321'>FORGE-1321</a>] -         Failure to install addons when using secure repositories
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1347'>FORGE-1347</a>] -         Subflow order is incorrect when changes are made in the fields of the currently displayed command
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1353'>FORGE-1353</a>] -         getValue() for UIInput&lt;File&gt; and UIInput&lt;FileResource&gt; should return null if the input path value is an empty string
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1356'>FORGE-1356</a>] -         UIContextListeners.destroy listeners are not called after the command is executed
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1357'>FORGE-1357</a>] -         &#39;exit&#39; hangs the console instead of terminating Forge
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1368'>FORGE-1368</a>] -         Required shell options should not be highlighted when default values are available
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1372'>FORGE-1372</a>] -         WizardCommandController must not cache initialized commands
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1378'>FORGE-1378</a>] -         Furnace maven plugin ignores the settings used in the Maven session
+</li>
+</ul>
+        
+<h2>        Component  Upgrade
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1338'>FORGE-1338</a>] -         Make JDK 7 the minimum runtime requirement
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1352'>FORGE-1352</a>] -         Upgrade to jboss-parent 12
+</li>
+</ul>
+            
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-162'>FORGE-162</a>] -         Reload the current project/resource metadata when filesystem changes occur
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-808'>FORGE-808</a>] -         Design the next-generation scaffold addon
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1315'>FORGE-1315</a>] -         Command and Wizard Testers should return Results on execute()/finish()
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1316'>FORGE-1316</a>] -         facet.get****Folder() should be renamed to facet.get****Directory() for consistency with DirectoryResource 
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1377'>FORGE-1377</a>] -         Rename UIValidationMessage to UIMessage
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-934'>FORGE-934</a>] -         Provide method &quot;public void visitResources(ResourceVisitor visitor);&quot; in ResourceFacet
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1153'>FORGE-1153</a>] -         ForgeDeployableContainer should allow specifying a different classifier
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1210'>FORGE-1210</a>] -         PostStartup and PreShutdown should be fired to all addons, and include the addon being started/stopped.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1274'>FORGE-1274</a>] -         Move/Encapsulate Aesh as implementation detail until its APIs better support Proxying
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1324'>FORGE-1324</a>] -         &#39;forge --install addon&#39; should restrict to the latest compatible major running version
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1325'>FORGE-1325</a>] -         Forge should provide a ProgressMonitor feature to allow commands to report progress
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1340'>FORGE-1340</a>] -         MavenContainer should return exceptions stored in the Aether result objects
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1344'>FORGE-1344</a>] -         &#39;forge --install addon&#39; should not install SNAPSHOT versions if released versions are available
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1348'>FORGE-1348</a>] -         Port the ResourceUtil class to Forge 2
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1376'>FORGE-1376</a>] -         Introduce UINavigationContext
+</li>
+</ul>
+                
+<h2>        Quality Risk
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1334'>FORGE-1334</a>] -         Addon installation &quot;forge -i core&quot; takes forever and repeatedly downloads metadata files
+</li>
+</ul>
+                        
+<h2>        Task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1370'>FORGE-1370</a>] -         Update Forge 2 shell launch scripts to require Java 7
+</li>
+</ul>
+                
+<h2>        Sub-task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1328'>FORGE-1328</a>] -         Rename addon commands
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1329'>FORGE-1329</a>] -         --named or --xxxname ?
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1330'>FORGE-1330</a>] -         Rename new-project
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1331'>FORGE-1331</a>] -         Rename list-services
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1332'>FORGE-1332</a>] -         No default nor completion for --typeName
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1339'>FORGE-1339</a>] -         Mandatory attributes in CLI
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1349'>FORGE-1349</a>] -         Port the Resources API methods in ResourceUtil
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1364'>FORGE-1364</a>] -         Tab completion in filesystem appends extra trailing `/` slash to paths
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1374'>FORGE-1374</a>] -         Need an `mkdir` command
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1375'>FORGE-1375</a>] -         Need a `touch` command
+</li>
+</ul>
+    
+
