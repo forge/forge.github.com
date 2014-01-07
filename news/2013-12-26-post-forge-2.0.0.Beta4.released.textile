@@ -9,7 +9,7 @@ h1. *JBoss Forge 2.0.0.Beta4* is now available!
 We are pleased to announce the release of JBoss Forge 2.0.0.Beta4, a Forge Runtime that features a streamlined programming model for Addon developers as well as a wide array of new Commands for developing Java EE applications.
 In this version, we did a lot of refactoring, making it easier for new UI providers (other IDEs) to interact with our UI addon.
 <ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
-<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.0.0.Alpha13&e=zip">Alpha13 release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.0.0.Beta4&e=zip">Beta4 release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
 </ul>
 
 h2. JDK 7 minimum runtime
