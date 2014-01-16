@@ -2,9 +2,96 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2013-12-26T00:00:00+00:00</updated>
+  <updated>2014-01-15T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/01/15/post-forge-2.html</id>
+    <title>Forge 2.0.0.CR1 (Heat) Released</title>
+    <updated>2014-01-15T00:00:00+00:00</updated>
+    <published>2014-01-15T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/01/15/post-forge-2.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.0.0.CR1 is now available!
+      New year, new releases. The Forge Team proudly presents the release of JBoss Forge 2.0.0.CR1. 
+      We are very close to releasing the Final version of Forge 2; however, given some Windows issues in the Shell addon, we decided to postpone 2.0.0.Final after they can be resolved.
+      Starting today, prepare to take over your IDE in a way like you&#8217;ve never seen before!
+      In this version, we believe we have reached a stable API in both Furnace and the Forge UI Addon. Future versions should suffer from little to no changes to the API, so we are releasing......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.0.0.CR1&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;New year, new releases. The Forge Team proudly presents the release of JBoss Forge 2.0.0.CR1. &lt;br&gt;
+      We are very close to releasing the Final version of Forge 2; however, given some Windows issues in the Shell addon, we decided to postpone 2.0.0.Final after they can be resolved.&lt;/p&gt;
+      &lt;p&gt;Starting today, prepare to take over your &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; in a way like you&amp;#8217;ve never seen before!&lt;/p&gt;
+      &lt;p&gt;In this version, we believe we have reached a stable &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; in both Furnace and the Forge UI Addon. Future versions should suffer from little to no changes to the &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, so we are releasing 2.0.0.CR1 today.&lt;/p&gt;
+      &lt;p&gt;You should be able to develop Addons with confidence, and run them in Eclipse using the Forge 2 Eclipse plugin. The &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; should also work well, but you may notice a hiccup here or there. Once the remaining issues with the &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; are resolved, you should be able to expect a shiny, well formed, Final release.&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.CR1&amp;amp;e=zip&quot;&gt;CR1 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes &amp;#8211; 40 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1254&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1254&lt;/a&gt;] &amp;#8211;         calling setStatic(true) on a static method add keyword &quot;static&quot; twice&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1312&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1312&lt;/a&gt;] &amp;#8211;         UICommand.execute is executed out of sequence when a list of commands or wizards are to be executed&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1365&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1365&lt;/a&gt;] &amp;#8211;         RmCommand does not warn or inform the user when it can not delete a folder&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1382&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1382&lt;/a&gt;] &amp;#8211;         MavenPluginFacet does not get plugin dependencies&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1383&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1383&lt;/a&gt;] &amp;#8211;         ConfigurationElementImpl searches by content in hasChildByName(String, boolean)&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1414&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1414&lt;/a&gt;] &amp;#8211;         CommandExecutionListeners are not called when native Aesh Commands are run&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1425&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1425&lt;/a&gt;] &amp;#8211;         Shell issues on Windows&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1428&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1428&lt;/a&gt;] &amp;#8211;         ManProviderTest tests are failing with timeout&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1431&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1431&lt;/a&gt;] &amp;#8211;         Only first argument is passed to commands that accept argument lists.&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1117&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1117&lt;/a&gt;] &amp;#8211;         Display a warning message when Forge boots up without any addons&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1379&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1379&lt;/a&gt;] &amp;#8211;         Scaffold module should be part of the core&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1409&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1409&lt;/a&gt;] &amp;#8211;         Expose UIContext's Attributes as a Map&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1412&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1412&lt;/a&gt;] &amp;#8211;         ForgeManProvider should consume the UICommandMetadata.getDocLocation() method&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1426&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1426&lt;/a&gt;] &amp;#8211;         Introduce a simpler programming model for UI commands&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1242&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1242&lt;/a&gt;] &amp;#8211;         Improve default layout of components on wizard pages&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1366&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1366&lt;/a&gt;] &amp;#8211;         Support prompt-like interaction&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1380&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1380&lt;/a&gt;] &amp;#8211;         Introduce a ValueChangeListener for InputComponents&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1407&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1407&lt;/a&gt;] &amp;#8211;         Shell is missing options in wizards where default values allow immediately moving to next step&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1417&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1417&lt;/a&gt;] &amp;#8211;         Piping a forge command to another command succeeds then fails&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1418&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1418&lt;/a&gt;] &amp;#8211;         Once a man page has been displayed, no other man pages may be displayed (It gets stuck)&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1420&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1420&lt;/a&gt;] &amp;#8211;         Create a UICommand to create test classes&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1299&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1299&lt;/a&gt;] &amp;#8211;         command-list missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1333&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1333&lt;/a&gt;] &amp;#8211;         Forge &quot;man&quot; pages are missing for most UI Commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1367&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1367&lt;/a&gt;] &amp;#8211;         Support Prompt-like interaction in Shell&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1369&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1369&lt;/a&gt;] &amp;#8211;         Support prompt-like interaction in Eclipse&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1388&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1388&lt;/a&gt;] &amp;#8211;         set command missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1389&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1389&lt;/a&gt;] &amp;#8211;         rm doesn't remove a none empty directory&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1390&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1390&lt;/a&gt;] &amp;#8211;         Cannot set the &amp;#8212;finalName on a new project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1393&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1393&lt;/a&gt;] &amp;#8211;         constraint commands are missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1394&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1394&lt;/a&gt;] &amp;#8211;         Rename bean-validation-setup command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1395&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1395&lt;/a&gt;] &amp;#8211;         Rename register-as-serviceloader-service command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1397&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1397&lt;/a&gt;] &amp;#8211;         How to create a jpa-new-field of type Date ?&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1400&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1400&lt;/a&gt;] &amp;#8211;         java command is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1411&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1411&lt;/a&gt;] &amp;#8211;         Rename jax-ws-setup to soap-setup&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1416&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1416&lt;/a&gt;] &amp;#8211;         How to know which addons are installed and available ?&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1430&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1430&lt;/a&gt;] &amp;#8211;         Prompt colors are a little borked on Windows 7&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1434&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1434&lt;/a&gt;] &amp;#8211;         version command is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1435&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1435&lt;/a&gt;] &amp;#8211;         about command is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1438&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1438&lt;/a&gt;] &amp;#8211;         new-project  &amp;#8212;finalName is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1441&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1441&lt;/a&gt;] &amp;#8211;         new-project  &amp;#8212;createMain is missing&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2013/12/26/post-forge-2.html</id>
     <title>Forge 2.0.0.Beta4 (Pound) Released</title>
