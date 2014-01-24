@@ -1,0 +1,28 @@
+---
+layout: news
+title: Forge 1.4.4.Final Released
+author: George Gastaldi, Lincoln Baxter, III
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 1.4.4.Final* is now available! 
+
+The Forge Team is proud to announce the immediate availability of Forge 1.4.4.Final.
+
+h2. Release Notes
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1254'>FORGE-1254</a>] -         calling setStatic(true) on a static method add keyword &quot;static&quot; twice
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1343'>FORGE-1343</a>] -         FreemarkerClient should not be Project scoped
+</li>
+</ul>
+                                                                                        
+                                                                                
+p. <a href='#' onclick="_gaq.push(['_trackEvent', 'Downloads', '1.4.4.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=1.4.4.Final&e=zip';return false;">Grab it</a> while is hot and amaze everyone with this new version!
+
+p. Happy Forging and we welcome your feedback!
+
+p. _-The Forge Team_
+
