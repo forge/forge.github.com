@@ -2,9 +2,89 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-01-24T00:00:00+00:00</updated>
+  <updated>2014-01-28T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/01/28/post-forge-2.html</id>
+    <title>Forge 2.0.0.CR2 (Heat) Released</title>
+    <updated>2014-01-28T00:00:00+00:00</updated>
+    <published>2014-01-28T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/01/28/post-forge-2.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.0.0.CR2 is now available!
+      Almost there. The Forge Team proudly presents the release of JBoss Forge 2.0.0.CR2. Final should be released in just two more days. As we near the end of waiting, it&#8217;s crucial that you give us your feedback, so please try CR2 (codename &#8220;Smolder&#8221;) and let us know if you encounter any issues, or have any feedback on usability at http://issues.jboss.org/browse/FORGE
+      Thank you for your patience and for all of your help!
+      Try out Forge 2 in Eclipse via our Update Site
+      Use Forge 2 in your CLI / Terminal by downloading and installing the CR2 release. You can......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.0.0.CR2&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;Almost there. The Forge Team proudly presents the release of JBoss Forge 2.0.0.CR2. Final should be released in just two more days. As we near the end of waiting, it&amp;#8217;s crucial that you give us your feedback, so please try CR2 (codename &amp;#8220;Smolder&amp;#8221;) and let us know if you encounter any issues, or have any feedback on usability at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;Thank you for your patience and for all of your help!&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.CR2&amp;amp;e=zip&quot;&gt;CR2 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes &amp;#8211; 40 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1427&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1427&lt;/a&gt;] &amp;#8211;         Forge.bat throws error while attempting to install addons&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1459&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1459&lt;/a&gt;] &amp;#8211;         WizardCommandController implementation is not invalidating stale entries&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1460&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1460&lt;/a&gt;] &amp;#8211;         ClassCastException in &lt;span class=&quot;caps&quot;&gt;CLAC&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1466&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1466&lt;/a&gt;] &amp;#8211;         Multi-step wizards that pass validation cannot be &quot;finished&quot; on first page&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1475&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1475&lt;/a&gt;] &amp;#8211;         InputType should be changed to String for better flexibility&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1476&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1476&lt;/a&gt;] &amp;#8211;         Show/use default value for &quot;targetDirectory&quot; input of &quot;Scaffold&quot; wizards&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1492&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1492&lt;/a&gt;] &amp;#8211;         Exported variables defined in shell should be available as attributes in UIContext&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1313&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1313&lt;/a&gt;] &amp;#8211;         Support commands without UI&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1458&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1458&lt;/a&gt;] &amp;#8211;         Implement missing java-new-annotation, java-new-class, and java-new-interface commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1464&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1464&lt;/a&gt;] &amp;#8211;         Add a tooltip for target directory field in scaffold setup wizard&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1467&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1467&lt;/a&gt;] &amp;#8211;         Display a &quot;Did you Mean?&quot; if a command does not exist&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1494&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1494&lt;/a&gt;] &amp;#8211;         New UI Command command throws &lt;span class=&quot;caps&quot;&gt;NPE&lt;/span&gt; if no categories are specified.&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1502&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1502&lt;/a&gt;] &amp;#8211;         ArrayIndexOutOfBounds with ls command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1503&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1503&lt;/a&gt;] &amp;#8211;         Need a method of specifying Categories on Annotation-based @Command &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1167&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1167&lt;/a&gt;] &amp;#8211;         Port the Java EE Forge 1 commands to Forge 2&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1169&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1169&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; list-* commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1170&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1170&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;EJB&lt;/span&gt; commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1173&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1173&lt;/a&gt;] &amp;#8211;         Create Faces Command to set Project Stage&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1373&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1373&lt;/a&gt;] &amp;#8211;         Native Aesh commands do not properly receive/resolve file paths&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1391&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1391&lt;/a&gt;] &amp;#8211;         cd~~ not going back to the project root directory&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1432&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1432&lt;/a&gt;] &amp;#8211;         run command is missing (and with it, scripting)&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1439&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1439&lt;/a&gt;] &amp;#8211;         Verbose output is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1440&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1440&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;TAB&lt;/span&gt; on export repeats ACCEPT_DEFAULTS&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1443&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1443&lt;/a&gt;] &amp;#8211;         database.action property in persistence.xml should be drop-and-create&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1454&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1454&lt;/a&gt;] &amp;#8211;         project-remove-dependency command is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1455&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1455&lt;/a&gt;] &amp;#8211;         project-add/remove(-managed)-dependency commands are missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1456&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1456&lt;/a&gt;] &amp;#8211;         project-add/remove-repository command is missing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1477&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1477&lt;/a&gt;] &amp;#8211;         Being able to create mapped superclasses&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1484&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1484&lt;/a&gt;] &amp;#8211;         &amp;#8212;packageName should be renamed &amp;#8212;targetPackage&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1493&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1493&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; new-* commands&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/01/24/post-forge-1.html</id>
     <title>Forge 1.4.4.Final Released</title>
