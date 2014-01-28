@@ -31,7 +31,7 @@
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.CR2&amp;amp;e=zip&quot;&gt;CR2 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;h2&gt;Release Notes &amp;#8211; 40 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;Release Notes &amp;#8211; 30 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1427&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1427&lt;/a&gt;] &amp;#8211;         Forge.bat throws error while attempting to install addons&lt;/li&gt;
