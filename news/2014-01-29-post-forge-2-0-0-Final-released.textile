@@ -1,0 +1,112 @@
+---
+layout: news
+title: Forge 2.0.0.Final (Furnace) Released
+author: Lincoln Baxter, III, George Gastaldi, Vineet Reynolds, Stäle Pedersen
+tags: [ website, announcement ]
+---
+h1. *JBoss Forge 2.0.0.Final* is now available!
+
+After two years of hard work, the Forge Team proudly presents the release of JBoss Forge 2.0.0.Final (codename Furnace).
+
+Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/FORGE. Thank you for your patience and for all of your help! We have worked hard to make this release happen, and we are not going to stop here. We know there are still some issues to fix, and that we need to put more work into the Shell to bring it to the place where Forge 1 was, but the benefits of Forge 2 far outweigh the costs. The things that are possible with Forge 2 truly make our vision of an extendable tool, addons that share functionality a reality.
+
+For those of you who want to try Forge 2 and write addons of your own, we are ready for you! Check out our documentation on addons development <a href="https://github.com/forge/core#jboss-forge-20">here</a>, and let your imagination run wild. This release marks the stable API, so you can now develop with full confidence that your addon will continue to compile as we continue to improve.
+
+With regard to the functionality of our built-in addons, such as the Java EE and Scaffolding generation - we will be continuing to make changes and improvements in how these addons function, as well as some behavior of the shell, to attempt to make the experience as friendly as possible (there is something to be desired when compared to Forge 1).
+
+But please go forth and Forge apps, addons, and experiements. We will be in the #forge IRC channel on irc.freenode.net, and at forge-dev@lists.jboss.org to help as much as we can. Additionally, you can check out our forums at: https://community.jboss.org/en/forge to contact us as well.
+
+Our next goal, in addition to continuous improvement, is to bring the Forge 2 website to life so that you, our community, can share your addons and explore those of others. Work has already begun, so expect a site that is as extendable as Forge 2 itself.
+
+
+<h1> What’s new and noteworthy?</h1>
+
+<ul><li><strong>Addons</strong>: What were previously called "Plugins" in Forge 1, are now "Addons" in Forge 2. This decision was made to clear up confusing verbiage like, "Plugin X has N Plugins" (due to the org.jboss.forge.plugins.Plugin interface.) A list of addons can be found <a href="https://github.com/forge/core#available-addons">here</a>.</li>
+<li><strong>Modular Container fully rewritten</strong>: The Forge runtime (called <a href="https://github.com/forge/furnace#furnace">Furnace</a> is now a fully functional Java module system based on JBoss Modules (The same engine behind JBoss AS 7+ and JBoss EAP). This means you may now pick-and-choose which addons are important for you.</li>
+<li><strong>Smaller, leaner, and faster</strong>: Forge 2 now sports a slimmer four megabyte download size, and starts up in under three seconds. (Compared to upwards of 10+ seconds for Forge 1)</li>
+<li><strong>Better IDE Integration</strong>: Forge 2 addons have been de-coupled from the command line, providing true WORA (Write Once, Run Anywhere), meaning you can create addons that run as wizards in the IDE, as well as commands in the shell - the same code works in both environments.</li>
+<li><strong>A New Shell</strong>: The shell technology used in Forge 1.x was not as flexible as we needed it to be, and had some limitations that brought us to consider new options. With the help of Ståle Pedersen, Forge 2.x now uses Æsh (http://aeshell.github.io). Æsh is a Java API that provides functionality to write command-based programs in a terminal-independent manner. </li>
+<li><strong>Java EE 7 Support</strong>: Forge 2.x introduces some initial support for the Java EE 7 specification. Now it is possible to configure a project to take advantage of the latest features of CDI, JSF, Servlet, JPA and so on.</li>
+<lI><strong>CDI 1.1 based programming</strong>: Addons take full advantage of the CDI 1.1 specification (well, not everything but enough for you to have fun writing addons)</li>
+<lI><strong>Test harness improved</strong>: Based on <a href="http://arquillian.org">Arquillian</a>, you can now test your addons in a real runtime environment, ensuring the same behavior as when the addons are installed into a user's Forge. Additionally, commands and wizards may be tested using a shell-based approach, or with the CommandController APIs. (<code>shell-test-harness</code> or <code>ui-test-harness</code>).</li>
+<lI><strong>Maven and Gradle integration</strong>: Forge 1.x had a strong dependency on Maven, making it harder to use another build system. Would you like to use Gradle in your next/current project? No problem! Forge 2 supports Gradle projects using the <a href="https://github.com/forge/addon-gradle#gradle">gradle addon</a>, by Adam Wyluda, our 2013 Google Summer of Code student, who quickly exceeded all expectations. Adam still contributes to, and maintains this addon.</li>
+<lI><strong>Database tools</strong>: Forge 2 now provides standard functionality for generating JPA entities from existing databases, and integrates with Eclipse and JBoss Developer Studio  to share connection profiles so you can re-use your existing Eclipse data-sources from Forge.</li>
+<li><strong>Resource Transactions</strong>: Forge 2 now allows file and resource operations to execute under a transaction (`transaction-start`). This means that after you start a transaction, you can make changes in your project, then choose whether to commit (`transaction-commit`) them or roll them back (`transaction-rollback`). Forge 2 CLI also provides a resource change tracking mode ('track-changes'), which will print a summary of all changes made after each command.</li>
+</ul>
+
+We've worked on so many features over the past two years, it's hard to remember them all, or give them all mention, but we hope that as you explore Forge 2, you will have as much fun using it as we did creating it.
+
+Expect more news about our website, and the Forge JBoss Tools plugin over the next few months.
+
+<ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.0.0.Final&e=zip">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+</ul>
+
+h2. Release Notes - 25 issues were resolved in this release. Check out all the new stuff!
+
+    
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1508'>FORGE-1508</a>] -         CommandFactory should not return UIWIzardStep implementations
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1526'>FORGE-1526</a>] -         Scaffold setup fails with an exception
+</li>
+</ul>
+                            
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1433'>FORGE-1433</a>] -         Missing commands in Forge 2.Beta
+</li>
+</ul>
+                                                        
+<h2>        Sub-task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1399'>FORGE-1399</a>] -         Cannot create a relationship between two entities
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1437'>FORGE-1437</a>] -         project-new --type jar-resources is confusing
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1448'>FORGE-1448</a>] -         Cannot cd an Entity with TAB completion
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1480'>FORGE-1480</a>] -         Mulitple --value parameters for Min constraint
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1481'>FORGE-1481</a>] -         Code completion missing for --targetPackage on java-new-enum
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1483'>FORGE-1483</a>] -         Rename entities-from-tables command
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1485'>FORGE-1485</a>] -         Rename  --target for faces-new-validator-method command
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1506'>FORGE-1506</a>] -         Cannot create a field on a Mapped Superclass
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1507'>FORGE-1507</a>] -         Mapped super classes are not generated under the model package
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1510'>FORGE-1510</a>] -         When executing jpa-setup it cd the persistence.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1511'>FORGE-1511</a>] -         Rename rest-endpoint-from-entity command
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1513'>FORGE-1513</a>] -         persistence-unit name should not be &quot;forge-default&quot; but projectNamePU
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1514'>FORGE-1514</a>] -         Command project-add-managed-dependency should be renamed
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1515'>FORGE-1515</a>] -         Commands connection-profile-create/remove should be renamed connection-create/remove-profile  
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1516'>FORGE-1516</a>] -         On command ejb-set, --ejb should be renamed --targetEjb
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1517'>FORGE-1517</a>] -         EJBs shouldn&#39;t be created under the model subpackage
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1518'>FORGE-1518</a>] -         --packageName on rest-setup should be renamed to --targetPackage
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1519'>FORGE-1519</a>] -         Template title has wrong EL
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1522'>FORGE-1522</a>] -         View could not be restored in WildFly
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1527'>FORGE-1527</a>] -         JSF converters shouldn&#39;t be created under the model subpackage
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1528'>FORGE-1528</a>] -         JSF validators shouldn&#39;t be created under the model subpackage
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1529'>FORGE-1529</a>] -         Command faces-project-stage should be renamed
+</li>
+</ul>
+    
