@@ -2,9 +2,104 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-01-28T00:00:00+00:00</updated>
+  <updated>2014-01-29T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/01/29/post-forge-2-0-0-Final-released.html</id>
+    <title>Forge 2.0.0.Final (Furnace) Released</title>
+    <updated>2014-01-29T00:00:00+00:00</updated>
+    <published>2014-01-29T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/01/29/post-forge-2-0-0-Final-released.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.0.0.Final is now available!
+      After two years of hard work, the Forge Team proudly presents the release of JBoss Forge 2.0.0.Final (codename Furnace).
+      Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/FORGE. Thank you for your patience and for all of your help! We have worked hard to make this release happen, and we are not going to stop here. We know there are still some issues to fix, and that we need to put more work into the Shell to bring it to the place where Forge 1 was, but the......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.0.0.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;After two years of hard work, the Forge Team proudly presents the release of JBoss Forge 2.0.0.Final (codename Furnace).&lt;/p&gt;
+      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;. Thank you for your patience and for all of your help! We have worked hard to make this release happen, and we are not going to stop here. We know there are still some issues to fix, and that we need to put more work into the Shell to bring it to the place where Forge 1 was, but the benefits of Forge 2 far outweigh the costs. The things that are possible with Forge 2 truly make our vision of an extendable tool, addons that share functionality a reality.&lt;/p&gt;
+      &lt;p&gt;For those of you who want to try Forge 2 and write addons of your own, we are ready for you! Check out our documentation on addons development &lt;a href=&quot;https://github.com/forge/core#jboss-forge-20&quot;&gt;here&lt;/a&gt;, and let your imagination run wild. This release marks the stable &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, so you can now develop with full confidence that your addon will continue to compile as we continue to improve.&lt;/p&gt;
+      &lt;p&gt;With regard to the functionality of our built-in addons, such as the Java EE and Scaffolding generation – we will be continuing to make changes and improvements in how these addons function, as well as some behavior of the shell, to attempt to make the experience as friendly as possible (there is something to be desired when compared to Forge 1).&lt;/p&gt;
+      &lt;p&gt;But please go forth and Forge apps, addons, and experiements. We will be in the #forge &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; channel on irc.freenode.net, and at forge-dev@lists.jboss.org to help as much as we can. Additionally, you can check out our forums at: https://community.jboss.org/en/forge to contact us as well.&lt;/p&gt;
+      &lt;p&gt;Our next goal, in addition to continuous improvement, is to bring the Forge 2 website to life so that you, our community, can share your addons and explore those of others. Work has already begun, so expect a site that is as extendable as Forge 2 itself.&lt;/p&gt;
+      &lt;h1&gt; What’s new and noteworthy?&lt;/h1&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Addons&lt;/strong&gt;: What were previously called “Plugins” in Forge 1, are now “Addons” in Forge 2. This decision was made to clear up confusing verbiage like, “Plugin X has N Plugins” (due to the org.jboss.forge.plugins.Plugin interface.) A list of addons can be found &lt;a href=&quot;https://github.com/forge/core#available-addons&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Modular Container fully rewritten&lt;/strong&gt;: The Forge runtime (called &lt;a href=&quot;https://github.com/forge/furnace#furnace&quot;&gt;Furnace&lt;/a&gt; is now a fully functional Java module system based on JBoss Modules (The same engine behind JBoss AS 7+ and JBoss &lt;span class=&quot;caps&quot;&gt;EAP&lt;/span&gt;). This means you may now pick-and-choose which addons are important for you.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Smaller, leaner, and faster&lt;/strong&gt;: Forge 2 now sports a slimmer four megabyte download size, and starts up in under three seconds. (Compared to upwards of 10+ seconds for Forge 1)&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Better &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; Integration&lt;/strong&gt;: Forge 2 addons have been de-coupled from the command line, providing true &lt;span class=&quot;caps&quot;&gt;WORA&lt;/span&gt; (Write Once, Run Anywhere), meaning you can create addons that run as wizards in the &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt;, as well as commands in the shell – the same code works in both environments.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;A New Shell&lt;/strong&gt;: The shell technology used in Forge 1.x was not as flexible as we needed it to be, and had some limitations that brought us to consider new options. With the help of Ståle Pedersen, Forge 2.x now uses Æsh (http://aeshell.github.io). Æsh is a Java &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; that provides functionality to write command-based programs in a terminal-independent manner. &lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Java EE 7 Support&lt;/strong&gt;: Forge 2.x introduces some initial support for the Java EE 7 specification. Now it is possible to configure a project to take advantage of the latest features of &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt;, &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt;, Servlet, &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; and so on.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; 1.1 based programming&lt;/strong&gt;: Addons take full advantage of the &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; 1.1 specification (well, not everything but enough for you to have fun writing addons)&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Test harness improved&lt;/strong&gt;: Based on &lt;a href=&quot;http://arquillian.org&quot;&gt;Arquillian&lt;/a&gt;, you can now test your addons in a real runtime environment, ensuring the same behavior as when the addons are installed into a user’s Forge. Additionally, commands and wizards may be tested using a shell-based approach, or with the CommandController APIs. (&lt;code&gt;shell-test-harness&lt;/code&gt; or &lt;code&gt;ui-test-harness&lt;/code&gt;).&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Maven and Gradle integration&lt;/strong&gt;: Forge 1.x had a strong dependency on Maven, making it harder to use another build system. Would you like to use Gradle in your next/current project? No problem! Forge 2 supports Gradle projects using the &lt;a href=&quot;https://github.com/forge/addon-gradle#gradle&quot;&gt;gradle addon&lt;/a&gt;, by Adam Wyluda, our 2013 Google Summer of Code student, who quickly exceeded all expectations. Adam still contributes to, and maintains this addon.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Database tools&lt;/strong&gt;: Forge 2 now provides standard functionality for generating &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entities from existing databases, and integrates with Eclipse and JBoss Developer Studio  to share connection profiles so you can re-use your existing Eclipse data-sources from Forge.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Resource Transactions&lt;/strong&gt;: Forge 2 now allows file and resource operations to execute under a transaction (`transaction-start`). This means that after you start a transaction, you can make changes in your project, then choose whether to commit (`transaction-commit`) them or roll them back (`transaction-rollback`). Forge 2 &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; also provides a resource change tracking mode (‘track-changes’), which will print a summary of all changes made after each command.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;We’ve worked on so many features over the past two years, it’s hard to remember them all, or give them all mention, but we hope that as you explore Forge 2, you will have as much fun using it as we did creating it.&lt;/p&gt;
+      &lt;p&gt;Expect more news about our website, and the Forge JBoss Tools plugin over the next few months.&lt;/p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Final&amp;amp;e=zip&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes – 25 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1508&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1508&lt;/a&gt;] –         CommandFactory should not return UIWIzardStep implementations&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1526&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1526&lt;/a&gt;] –         Scaffold setup fails with an exception&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1433&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1433&lt;/a&gt;] –         Missing commands in Forge 2.Beta&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1399&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1399&lt;/a&gt;] –         Cannot create a relationship between two entities&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1437&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1437&lt;/a&gt;] –         project-new —type jar-resources is confusing&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1448&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1448&lt;/a&gt;] –         Cannot cd an Entity with &lt;span class=&quot;caps&quot;&gt;TAB&lt;/span&gt; completion&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1480&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1480&lt;/a&gt;] –         Mulitple —value parameters for Min constraint&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1481&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1481&lt;/a&gt;] –         Code completion missing for —targetPackage on java-new-enum&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1483&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1483&lt;/a&gt;] –         Rename entities-from-tables command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1485&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1485&lt;/a&gt;] –         Rename  —target for faces-new-validator-method command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1506&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1506&lt;/a&gt;] –         Cannot create a field on a Mapped Superclass&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1507&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1507&lt;/a&gt;] –         Mapped super classes are not generated under the model package&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1510&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1510&lt;/a&gt;] –         When executing jpa-setup it cd the persistence.xml&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1511&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1511&lt;/a&gt;] –         Rename rest-endpoint-from-entity command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1513&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1513&lt;/a&gt;] –         persistence-unit name should not be &quot;forge-default&quot; but projectNamePU&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1514&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1514&lt;/a&gt;] –         Command project-add-managed-dependency should be renamed&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1515&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1515&lt;/a&gt;] –         Commands connection-profile-create/remove should be renamed connection-create/remove-profile&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1516&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1516&lt;/a&gt;] –         On command ejb-set, —ejb should be renamed —targetEjb&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1517&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1517&lt;/a&gt;] –         EJBs shouldn't be created under the model subpackage&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1518&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1518&lt;/a&gt;] –         —packageName on rest-setup should be renamed to —targetPackage&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1519&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1519&lt;/a&gt;] –         Template title has wrong EL&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1522&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1522&lt;/a&gt;] –         View could not be restored in WildFly&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1527&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1527&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; converters shouldn't be created under the model subpackage&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1528&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1528&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; validators shouldn't be created under the model subpackage&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1529&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1529&lt;/a&gt;] –         Command faces-project-stage should be renamed&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/01/28/post-forge-2.html</id>
     <title>Forge 2.0.0.CR2 (Heat) Released</title>
