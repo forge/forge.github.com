@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Forge 2.0.0.Final (Furnace) Released
-author: Lincoln Baxter, III, George Gastaldi, Vineet Reynolds, Stäle Pedersen
+author: Lincoln Baxter, III, George Gastaldi, Koen Aers, Vineet Reynolds, Stäle Pedersen
 tags: [ website, announcement ]
 ---
 h1. *JBoss Forge 2.0.0.Final* is now available!
