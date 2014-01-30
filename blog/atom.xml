@@ -38,7 +38,7 @@
       &lt;li&gt;
       &lt;strong&gt;Addons&lt;/strong&gt;: What were previously called “Plugins” in Forge 1, are now “Addons” in Forge 2. This decision was made to clear up confusing verbiage like, “Plugin X has N Plugins” (due to the org.jboss.forge.plugins.Plugin interface.) A list of addons can be found &lt;a href=&quot;https://github.com/forge/core#available-addons&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
       &lt;li&gt;
-      &lt;strong&gt;Modular Container fully rewritten&lt;/strong&gt;: The Forge runtime (called &lt;a href=&quot;https://github.com/forge/furnace#furnace&quot;&gt;Furnace&lt;/a&gt; is now a fully functional Java module system based on JBoss Modules (The same engine behind JBoss AS 7+ and JBoss &lt;span class=&quot;caps&quot;&gt;EAP&lt;/span&gt;). This means you may now pick-and-choose which addons are important for you.&lt;/li&gt;
+      &lt;strong&gt;Modular Container fully rewritten&lt;/strong&gt;: The Forge runtime (called &lt;a href=&quot;https://github.com/forge/furnace#furnace&quot;&gt;Furnace&lt;/a&gt;) is now a fully functional Java module system based on JBoss Modules (The same engine behind JBoss AS 7+ and JBoss &lt;span class=&quot;caps&quot;&gt;EAP&lt;/span&gt;). This means you may now pick-and-choose which addons are important for you.&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Smaller, leaner, and faster&lt;/strong&gt;: Forge 2 now sports a slimmer four megabyte download size, and starts up in under three seconds. (Compared to upwards of 10+ seconds for Forge 1)&lt;/li&gt;
       &lt;li&gt;
