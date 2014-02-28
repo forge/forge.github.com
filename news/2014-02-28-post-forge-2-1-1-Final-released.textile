@@ -1,13 +1,13 @@
 ---
 layout: news
 title: Forge 2.1.1.Final (Silversmith) Released
-author: Lincoln Baxter, III, George Gastaldi, Vineet Reynolds
+author: George Gastaldi, Lincoln Baxter, III, Vineet Reynolds
 tags: [ website, announcement ]
 ---
 
 h1. *JBoss Forge 2.1.1.Final* is now available!
 
-The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far.
+The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we've fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.
 
 h2. This is great, but what happened to 2.1.0.Final? 
 
@@ -19,12 +19,12 @@ h1. What’s new and noteworthy?
 <li><strong>Merged Wizards</strong>: Starting in 2.1.1.Final, you can merge multiple commands into one. For example, if you don't want the user to navigate between two wizard pages in order to setup two different technologies.</li>
 <li><strong>More CDI commands</strong>: We migrated some missing commands from CDI: <code>cdi-new-scope</code>,<code>cdi-new-stereotype</code>,<code>cdi-new-qualifier</code>,<code>cdi-new-bean</code> and <code>cdi-new-conversation</code> are now available</li>
 <li><strong>Offline Distribution</strong>: Tired of waiting for Forge to download the core addons after you downloaded the slim ZIP? No problem, we now provide an offline ZIP that you can extract and start using Forge right away</li>
-<li><strong>Shell improvements</strong>: The shell is more stable and it was updated to Aesh 0.49</li>
+<li><strong>Shell improvements</strong>: The shell is more stable and it was updated to Aesh 0.49, this includes a working 'run' script command. You can now create Forge scripts and run them on demand. Note, we are still working on porting the Forge 1 script language.</li>
 </ul>
 
-And much more! Check the issues below for more info.
+All this and much more! Check the issues below for more info.
 
-At last but not least, we would like to thank the following contributors, that without their help this release wouldn't be perfect: 
+h2. Last but not least, we would like to thank the following contributors, that without their help this release wouldn't be perfect: 
 
 <ul>
 <li><strong>Antonio Gonçalves</strong>: For submitting JIRAs and providing pull-requests with fixes;</li>
