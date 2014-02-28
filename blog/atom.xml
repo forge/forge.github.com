@@ -2,9 +2,142 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-01-29T00:00:00+00:00</updated>
+  <updated>2014-02-28T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/02/28/post-forge-2-1-1-Final-released.html</id>
+    <title>Forge 2.1.1.Final (Silversmith) Released</title>
+    <updated>2014-02-28T00:00:00+00:00</updated>
+    <published>2014-02-28T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/02/28/post-forge-2-1-1-Final-released.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.1.1.Final is now available!
+      The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we&#8217;ve fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.
+      This is great, but what happened to 2.1.0.Final?
+      We introduced some minor fixes that was much needed one day after the release of......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.1.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we’ve fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.&lt;/p&gt;
+      &lt;h2&gt;This is great, but what happened to 2.1.0.Final?&lt;/h2&gt;
+      &lt;p&gt;We introduced some minor fixes that was much needed one day after the release of 2.1.0.FInal. We changed some &lt;span class=&quot;caps&quot;&gt;SPI&lt;/span&gt; code (which will &lt;span class=&quot;caps&quot;&gt;NOT&lt;/span&gt; affect your code directly, so rest assured) , and we didn’t want to release 2.2.0.Final, because that would be too much for now.&lt;/p&gt;
+      &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Prerequisite Wizards&lt;/strong&gt;: It is now possible to configure prerequisite wizards for a command. For example, now you can run &lt;code&gt;jpa-new-entity&lt;/code&gt; in a Maven project without running &lt;code&gt;jpa-setup&lt;/code&gt; before that. Forge will automatically detect if &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; is installed in your project and invoke the setup command to get you started quickly than ever!&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Merged Wizards&lt;/strong&gt;: Starting in 2.1.1.Final, you can merge multiple commands into one. For example, if you don’t want the user to navigate between two wizard pages in order to setup two different technologies.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;More &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; commands&lt;/strong&gt;: We migrated some missing commands from &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt;: &lt;code&gt;cdi-new-scope&lt;/code&gt;,&lt;code&gt;cdi-new-stereotype&lt;/code&gt;,&lt;code&gt;cdi-new-qualifier&lt;/code&gt;,&lt;code&gt;cdi-new-bean&lt;/code&gt; and &lt;code&gt;cdi-new-conversation&lt;/code&gt; are now available&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Offline Distribution&lt;/strong&gt;: Tired of waiting for Forge to download the core addons after you downloaded the slim &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt;? No problem, we now provide an offline &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt; that you can extract and start using Forge right away&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Shell improvements&lt;/strong&gt;: The shell is more stable and it was updated to Aesh 0.49, this includes a working ‘run’ script command. You can now create Forge scripts and run them on demand. Note, we are still working on porting the Forge 1 script language.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;All this and much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;h2&gt;Last but not least, we would like to thank the following contributors, that without their help this release wouldn’t be perfect:&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Antonio Gonçalves&lt;/strong&gt;: For submitting JIRAs and providing pull-requests with fixes;&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Ivan St. Ivannov&lt;/strong&gt;: For providing pull-requests and organizing the Forge Hack Night;&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Adam Wyluda&lt;/strong&gt;: For helping solve some Windows compatibility issues (especially in shell);&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Stäle Pedersen&lt;/strong&gt;: For the enhancements and bugfixes in Aesh.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
+      &lt;h2&gt;Download Forge&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.1.1.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes – 51 issues were resolved since the last release (2 days ago). Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-779&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-779&lt;/a&gt;] –         Class parameters are not correctly loaded for the consuming addon's classloader&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1289&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1289&lt;/a&gt;] –         Furnace test harness cannot resolve versions of @AddonDependencies in single-module addon layout projects&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1500&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1500&lt;/a&gt;] –         ProjectFactoryImpl.findProject() should iterate over directories first then over build systems&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1541&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1541&lt;/a&gt;] –         Problems running tests when conflicting Javassist version is on the classpath&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1544&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1544&lt;/a&gt;] –         Shell throws weird exceptions if &amp;lt;&lt;span class=&quot;caps&quot;&gt;TAB&lt;/span&gt;&amp;gt; is kept pressed while booting up&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1553&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1553&lt;/a&gt;] –         DefaultShellTest is not fully compatible with Results from a Wizard execution&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1557&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1557&lt;/a&gt;] –         Version must be explicitly set when the test is inside the addon project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1558&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1558&lt;/a&gt;] –         Unable to launch forge 2.0.0.Final shell in a linux (opensuse) machine.&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1565&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1565&lt;/a&gt;] –         ClassCastExceptions while retrieving services from ServiceRegistry&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1586&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1586&lt;/a&gt;] –         Forge 2.x lacks ability to deploy to &lt;span class=&quot;caps&quot;&gt;EAR&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1597&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1597&lt;/a&gt;] –         Optional facets are preventing installation of facets&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1598&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1598&lt;/a&gt;] –         MavenFacetImpl retains stale building results&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1459&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1459&lt;/a&gt;] –         WizardCommandController implementation is not invalidating stale entries&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1547&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1547&lt;/a&gt;] –         Adding debug information on &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; pages&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1556&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1556&lt;/a&gt;] –         Shell history, aliases and exported files should be placed in ~/.forge&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1587&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1587&lt;/a&gt;] –         FurnaceAddonSetupStep should split between addons and containers&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1588&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1588&lt;/a&gt;] –         New Forge Addon Wizard should add the addon dependencies to the &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; subproject in the complex layout&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1596&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1596&lt;/a&gt;] –         Forge doesn't discover &lt;span class=&quot;caps&quot;&gt;JVM&lt;/span&gt; properly on OS X&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1606&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1606&lt;/a&gt;] –         ShellUIPromptImpl.prompt() and promptSecret() accepts only one keystroke&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-238&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-238&lt;/a&gt;] –         Log forge commands run against a project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1201&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1201&lt;/a&gt;] –         getSearchPredicates should use case insensitive search&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1266&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1266&lt;/a&gt;] –         Implement IgnoreEOF in Forge 2 Shell&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1549&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1549&lt;/a&gt;] –         Add unitName to @PersistenceContext&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1551&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1551&lt;/a&gt;] –         After executing faces-setup command, facesFacet isn't available on project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1560&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1560&lt;/a&gt;] –         Migrate the edit command from Forge 1&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1561&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1561&lt;/a&gt;] –         Migrate the list-config command from Forge 1&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1562&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1562&lt;/a&gt;] –         Migrate the wait command from Forge 1&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1566&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1566&lt;/a&gt;] –         Create a command to setup addon dependencies&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1570&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1570&lt;/a&gt;] –         Introduce UICommandTransformer to the UI &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1574&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1574&lt;/a&gt;] –         JavaWebProjectType should have a more important priority than JavaProjectType&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1575&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1575&lt;/a&gt;] –         Map Entities and Columns From the Forge Command Line&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1581&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1581&lt;/a&gt;] –         User configuration file should be configurable&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1583&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1583&lt;/a&gt;] –         Provide a distribution with the core addons&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1590&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1590&lt;/a&gt;] –         Forge2 behind proxy&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1591&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1591&lt;/a&gt;] –         Not possible to exit shell using ctrl-d&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1592&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1592&lt;/a&gt;] –         Migrate the file monitor feature to &lt;span class=&quot;caps&quot;&gt;JDK&lt;/span&gt; 7 WatchService&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1600&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1600&lt;/a&gt;] –         Support PreStep wizards&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1607&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1607&lt;/a&gt;] –         UIPrompt.promptBoolean should allow a defaultValue&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1465&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1465&lt;/a&gt;] –         Allow setup wizard fields to be combined into a single wizard page&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1589&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1589&lt;/a&gt;] –         TouchCommandTest fails sporadically&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-925&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-925&lt;/a&gt;] –         Publish JavaDoc to our Forge Website&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1568&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1568&lt;/a&gt;] –         ui-test-harness should be moved to package org.jboss.forge.addon.ui.test&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1432&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1432&lt;/a&gt;] –         run command is missing (and with it, scripting)&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1449&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1449&lt;/a&gt;] –         Copy/pasting several line in the Forge only pastes and executes the 1st line&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1479&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1479&lt;/a&gt;] –         Explicitly setup in Bean Validation, not in &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1493&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1493&lt;/a&gt;] –         Port the &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; new-* commands&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1531&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1531&lt;/a&gt;] –         Aesh Read Loop&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1533&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1533&lt;/a&gt;] –         error.xhtml page has invalid ressource path&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1534&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1534&lt;/a&gt;] –         Being able to create transient fields in an entity&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1535&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1535&lt;/a&gt;] –         Being able to update a field in an entity instead of &quot;Field already exists&quot;&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1537&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1537&lt;/a&gt;] –         Able to create a constraint on a non existing field&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/01/29/post-forge-2-0-0-Final-released.html</id>
     <title>Forge 2.0.0.Final (Furnace) Released</title>
