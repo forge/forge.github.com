@@ -15,6 +15,7 @@ h1. What’s new and noteworthy?
 <li><strong>BOM BOM BOM</strong>: Forge 2 now provides a forge-bom module for usage with other addons.</li>
 <li><strong>Commands, Commands everywhere</strong>: New commands were introduced: project-has-dependencies, addon-setup-dependencies, constraint-new-annotation, constraint-new-group.</li>
 <li><strong>JSON Addon</strong>: Forge 2 addons now support parsing of JSON data using the <a href="https://jsonp.java.net/">JSR 353 - Java API for JSON Processing</a></li>
+<li><strong>Changes to the Scaffolding provider APIs and SPIs</strong>: Scaffolding providers now have control over the content of the dialogs required by them. Dialogs to setup Forge Facets can now be aggregated into a single dialog by the providers.</li>
 </ul>
 
 And much more! Check the issues below for more info.
