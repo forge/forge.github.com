@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forge | Forge 2.2.0.Final (Goldsmith) Released</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link href="/images/favicon.ico" rel="icon">
+    <link href="/stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/prettify.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap-collapse.js" type="text/javascript"></script>
+    <script src="/javascripts/prettify.js" type="text/javascript"></script>
+    <script src="/javascripts/videoscale.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="github-banner hidden-phone hidden-tablet">
+            <a href="https://github.com/forge/core">
+              <img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position:absolute;top:0;right:0;border:0;">
+            </a>
+          </div>
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">
+            <img alt="JBoss Forge" class="forge-logo" src="/images/jbossforge_icon_256px.png">
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/index.html">Home</a>
+              </li>
+              <li>
+                <a href="https://github.com/forge/core#jboss-forge-20">Forge 2</a>
+              </li>
+              <li>
+                <a href="/docs/index.html">Documentation</a>
+              </li>
+              <li>
+                <a href="/team.html">Team</a>
+              </li>
+              <li>
+                <a href="https://community.jboss.org/en/forge">Forums</a>
+              </li>
+              <li>
+                <a href="https://github.com/forge/core">Source</a>
+              </li>
+              <li>
+                <a href="/plugins.html">Plugins</a>
+              </li>
+              <li>
+                <a href="https://issues.jboss.org/browse/FORGE" target="issue tracker">Issue Tracker</a>
+              </li>
+              <li>
+                <a href="https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel" target="roadmap">Roadmap</a>
+              </li>
+              <li>
+                <a href="/events.html">Events</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="content">
+      <div class="container">
+        <h1><strong>JBoss Forge 2.2.0.Final</strong> is now available!</h1>
+        <p>The Forge Team is proud to announce that JBoss Forge 2.2.0.Final is now available! This is the best release so far.</p>
+        <h1>What’s new and noteworthy?</h1>
+        <ul><li><strong>The Prompts are back in town</strong>: Required options are now prompted for you if you forgot to fill in a value.</li>
+        <li><strong><span class="caps">BOM</span> <span class="caps">BOM</span> <span class="caps">BOM</span></strong>: Forge 2 now provides a forge-bom module for usage with other addons.</li>
+        <li><strong>Commands, Commands everywhere</strong>: New commands were introduced: project-has-dependencies, addon-setup-dependencies, constraint-new-annotation, constraint-new-group.</li>
+        <li><strong><span class="caps">JSON</span> Addon</strong>: Forge 2 addons now support parsing of <span class="caps">JSON</span> data using the <a href="https://jsonp.java.net/"><span class="caps">JSR</span> 353 &#8211; Java <span class="caps">API</span> for <span class="caps">JSON</span> Processing</a></li>
+        <li><strong>Changes to the Scaffolding provider APIs and SPIs</strong>: Scaffolding providers now have control over the content of the dialogs required by them. Dialogs to setup Forge Facets can now be aggregated into a single dialog by the providers.</li>
+        </ul>
+        <p>And much more! Check the issues below for more info.</p>
+        <p>Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/<span class="caps">FORGE</span>.</p>
+        <h2>Download Forge</h2>
+        <ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+        <li>Use Forge 2 in your <span class="caps">CLI</span> / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.2.0.Final&e=zip&c=offline">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+        </ul>
+        <h2>Release Notes &#8211; 28 issues were resolved since the last release. Check out all the new stuff!</h2>
+        <h2>        Bug</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1623'><span class="caps">FORGE</span>-1623</a>] &#8211;         Could not register resource monitor with track-changes</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1636'><span class="caps">FORGE</span>-1636</a>] &#8211;         RmCommand same label for force and recousive</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1637'><span class="caps">FORGE</span>-1637</a>] &#8211;         UIInput.hasDefaultValue() returns true if defaultValue is explicitly set to null</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1661'><span class="caps">FORGE</span>-1661</a>] &#8211;         project-add-dependency ignore new scope</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1662'><span class="caps">FORGE</span>-1662</a>] &#8211;         addon-build-and-install ignores &#8212;projectRoot argument</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1672'><span class="caps">FORGE</span>-1672</a>] &#8211;         Creating a nested &quot;Forge Addon&quot; project can break parent <span class="caps">POM</span> &lt;modules&gt; definition</li>
+        </ul>
+        
+        <h2>        Component  Upgrade</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1611'><span class="caps">FORGE</span>-1611</a>] &#8211;         Update to jboss-parent 14</li>
+        </ul>
+        
+        <h2>        Enhancement</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1632'><span class="caps">FORGE</span>-1632</a>] &#8211;         Deprecate createResource methods in facets</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1633'><span class="caps">FORGE</span>-1633</a>] &#8211;         Refactor the Resources <span class="caps">API</span> to support writeable Resources</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1666'><span class="caps">FORGE</span>-1666</a>] &#8211;         Add <span class="caps">BOM</span> to new addon projects</li>
+        </ul>
+        
+        <h2>        Feature Request</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1461'><span class="caps">FORGE</span>-1461</a>] &#8211;         &quot;project-new&quot; command fails while a ResourceTransaction is active</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1566'><span class="caps">FORGE</span>-1566</a>] &#8211;         Create a command to setup addon dependencies</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1613'><span class="caps">FORGE</span>-1613</a>] &#8211;         FileWatcher should handle missing folders after deleting a project root directory.</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1624'><span class="caps">FORGE</span>-1624</a>] &#8211;         Create JPASetupWizard interface so <span class="caps">JPA</span> setup can be invoked from other plugins</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1625'><span class="caps">FORGE</span>-1625</a>] &#8211;         Prevent UIWizards from being merged into dialogs</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1628'><span class="caps">FORGE</span>-1628</a>] &#8211;         Support a facet for templates that are provided by the project</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1635'><span class="caps">FORGE</span>-1635</a>] &#8211;         Shouldn&#39;t these commands be isProjectRequired() return true</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1651'><span class="caps">FORGE</span>-1651</a>] &#8211;         Introduce a parser-json addon</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1660'><span class="caps">FORGE</span>-1660</a>] &#8211;         Add project-has(-managed)-dependencies command</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1665'><span class="caps">FORGE</span>-1665</a>] &#8211;         Create a <span class="caps">BOM</span> project located at forge/core/bom</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1668'><span class="caps">FORGE</span>-1668</a>] &#8211;         Prompt for input of required unpopulated inputs</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1673'><span class="caps">FORGE</span>-1673</a>] &#8211;         javax.sound.* classes cannot be resolved using ServiceLoader</li>
+        </ul>
+        
+        <h2>        Sub-task</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1616'><span class="caps">FORGE</span>-1616</a>] &#8211;         Command constraint-new-annotation to create a new constraint</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1619'><span class="caps">FORGE</span>-1619</a>] &#8211;         Command constraint-new-group to create a new group</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1631'><span class="caps">FORGE</span>-1631</a>] &#8211;         The output is out of sync and duplicated</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1655'><span class="caps">FORGE</span>-1655</a>] &#8211;         parser-xml should use the simple container instead of <span class="caps">CDI</span></li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1657'><span class="caps">FORGE</span>-1657</a>] &#8211;         Migrate facets addon to simple container</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1658'><span class="caps">FORGE</span>-1658</a>] &#8211;         Migrate environment addon to simple container</li>
+        </ul>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; JBoss 2014</p>
+      </footer>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount','UA-34467975-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="http://www.redhat.com/j/elqNow/elqCfg.js" type="text/javascript"></script>
+    <script src="http://www.redhat.com/j/elqNow/elqImg.js" type="text/javascript"></script>
+    <div id="oTags">
+      <script src="http://www.redhat.com/j/s_code.js" type="text/javascript"></script>
+      <script>
+        var coreUrl = encodeURI(document.URL.split("?")[0]);
+        var urlSplit = coreUrl.toLowerCase().split(/\//);
+        var urlLast = urlSplit[urlSplit.length-1];
+        var pageNameString = "";
+        var siteName = "";
+        var minorSectionIndex = 3
+        if (urlLast == "") {
+          urlSplit.splice(-1,1);
+        }
+        if (urlLast.search(/\./) >= 0) {
+          if (urlLast == "index.html") {
+            urlSplit.splice(-1,1);
+          }
+          else {
+            urlSplit[urlSplit.length-1] = urlLast.split(".").splice(0,1);
+          }
+        }
+        siteName = urlSplit[2].split(".")[1];
+        s.prop14 = s.eVar27 = siteName || "";
+        s.prop15 = s.eVar28 = urlSplit[minorSectionIndex] || "";
+        s.prop16 = s.eVar29 = urlSplit[minorSectionIndex+1] || "";
+        pageNameString = urlSplit.splice(3).join(" | ");
+        s.pageName = "jboss | community | " + siteName + " | " + pageNameString;
+        s.channel = "jboss | community";
+        s.prop4 = s.eVar23 = encodeURI(document.URL);
+        s.prop21 = s.eVar18 = coreUrl;
+        s.prop2 = s.eVar22 = "en";
+        s.prop3 = s.eVar19 = "us";
+      </script>
+      <script src="http://www.redhat.com/j/rh_omni_footer.js" type="text/javascript"></script>
+      <script language="JavaScript" type="text/javascript">
+        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+      </script>
+      <noscript>
+        <a href="http://www.omniture.com" title="Web Analytics">
+          <img alt="" border="0" height="1" src="https://smtrcs.redhat.com/b/ss/redhatcom,redhatglobal/1/H.25.4--NS/0?[AQB]&amp;cdp=3&amp;[AQE]" width="1">
+        </a>
+      </noscript>
+    </div>
+  </body>
+</html>

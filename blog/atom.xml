@@ -2,9 +2,105 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-02-28T00:00:00+00:00</updated>
+  <updated>2014-03-17T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/03/17/post-forge-2-2-0-Final-released.html</id>
+    <title>Forge 2.2.0.Final (Goldsmith) Released</title>
+    <updated>2014-03-17T00:00:00+00:00</updated>
+    <published>2014-03-17T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/03/17/post-forge-2-2-0-Final-released.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.2.0.Final is now available!
+      The Forge Team is proud to announce that JBoss Forge 2.2.0.Final is now available! This is the best release so far.
+      What’s new and noteworthy?
+      The Prompts are back in town: Required options are now prompted for you if you forgot to fill in a value.
+      BOM BOM BOM: Forge 2 now provides a forge-bom module for usage with other addons.
+      Commands, Commands everywhere: New commands were introduced: project-has-dependencies, addon-setup-dependencies, constraint-new-annotation, constraint-new-group.
+      JSON Addon: Forge 2 addons now support parsing of JSON data using the JSR 353 &#8211; Java API for JSON Processing
+      Changes to the Scaffolding provider APIs and SPIs:......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.2.0.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.2.0.Final is now available! This is the best release so far.&lt;/p&gt;
+      &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;The Prompts are back in town&lt;/strong&gt;: Required options are now prompted for you if you forgot to fill in a value.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt;&lt;/strong&gt;: Forge 2 now provides a forge-bom module for usage with other addons.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Commands, Commands everywhere&lt;/strong&gt;: New commands were introduced: project-has-dependencies, addon-setup-dependencies, constraint-new-annotation, constraint-new-group.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; Addon&lt;/strong&gt;: Forge 2 addons now support parsing of &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; data using the &lt;a href=&quot;https://jsonp.java.net/&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JSR&lt;/span&gt; 353 – Java &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; Processing&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Changes to the Scaffolding provider APIs and SPIs&lt;/strong&gt;: Scaffolding providers now have control over the content of the dialogs required by them. Dialogs to setup Forge Facets can now be aggregated into a single dialog by the providers.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
+      &lt;h2&gt;Download Forge&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.2.0.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes – 28 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1623&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1623&lt;/a&gt;] –         Could not register resource monitor with track-changes&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1636&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1636&lt;/a&gt;] –         RmCommand same label for force and recousive&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1637&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1637&lt;/a&gt;] –         UIInput.hasDefaultValue() returns true if defaultValue is explicitly set to null&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1661&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1661&lt;/a&gt;] –         project-add-dependency ignore new scope&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1662&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1662&lt;/a&gt;] –         addon-build-and-install ignores —projectRoot argument&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1672&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1672&lt;/a&gt;] –         Creating a nested &quot;Forge Addon&quot; project can break parent &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; &amp;lt;modules&amp;gt; definition&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1611&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1611&lt;/a&gt;] –         Update to jboss-parent 14&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1632&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1632&lt;/a&gt;] –         Deprecate createResource methods in facets&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1633&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1633&lt;/a&gt;] –         Refactor the Resources &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; to support writeable Resources&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1666&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1666&lt;/a&gt;] –         Add &lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt; to new addon projects&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1461&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1461&lt;/a&gt;] –         &quot;project-new&quot; command fails while a ResourceTransaction is active&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1566&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1566&lt;/a&gt;] –         Create a command to setup addon dependencies&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1613&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1613&lt;/a&gt;] –         FileWatcher should handle missing folders after deleting a project root directory.&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1624&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1624&lt;/a&gt;] –         Create JPASetupWizard interface so &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; setup can be invoked from other plugins&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1625&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1625&lt;/a&gt;] –         Prevent UIWizards from being merged into dialogs&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1628&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1628&lt;/a&gt;] –         Support a facet for templates that are provided by the project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1635&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1635&lt;/a&gt;] –         Shouldn't these commands be isProjectRequired() return true&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1651&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1651&lt;/a&gt;] –         Introduce a parser-json addon&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1660&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1660&lt;/a&gt;] –         Add project-has(-managed)-dependencies command&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1665&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1665&lt;/a&gt;] –         Create a &lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt; project located at forge/core/bom&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1668&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1668&lt;/a&gt;] –         Prompt for input of required unpopulated inputs&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1673&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1673&lt;/a&gt;] –         javax.sound.* classes cannot be resolved using ServiceLoader&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1616&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1616&lt;/a&gt;] –         Command constraint-new-annotation to create a new constraint&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1619&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1619&lt;/a&gt;] –         Command constraint-new-group to create a new group&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1631&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1631&lt;/a&gt;] –         The output is out of sync and duplicated&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1655&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1655&lt;/a&gt;] –         parser-xml should use the simple container instead of &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1657&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1657&lt;/a&gt;] –         Migrate facets addon to simple container&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1658&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1658&lt;/a&gt;] –         Migrate environment addon to simple container&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/02/28/post-forge-2-1-1-Final-released.html</id>
     <title>Forge 2.1.1.Final (Silversmith) Released</title>
@@ -16,14 +112,14 @@
     <category scheme="http://forge.jboss.org/" term="forge" />
     <summary>
       JBoss Forge 2.1.1.Final is now available!
-      The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we&#8217;ve fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.
+      The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far.
       This is great, but what happened to 2.1.0.Final?
-      We introduced some minor fixes that was much needed one day after the release of......
+      We introduced some minor fixes that was much needed one day after the release of 2.1.0.FInal. We changed some SPI code (which will NOT affect your code directly, so rest assured) , and we didn&#8217;t want to release 2.2.0.Final, because that would be too much for......
     </summary>
     <content type="html">
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 2.1.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
-      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we’ve fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.&lt;/p&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far.&lt;/p&gt;
       &lt;h2&gt;This is great, but what happened to 2.1.0.Final?&lt;/h2&gt;
       &lt;p&gt;We introduced some minor fixes that was much needed one day after the release of 2.1.0.FInal. We changed some &lt;span class=&quot;caps&quot;&gt;SPI&lt;/span&gt; code (which will &lt;span class=&quot;caps&quot;&gt;NOT&lt;/span&gt; affect your code directly, so rest assured) , and we didn’t want to release 2.2.0.Final, because that would be too much for now.&lt;/p&gt;
       &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
@@ -37,10 +133,10 @@
       &lt;li&gt;
       &lt;strong&gt;Offline Distribution&lt;/strong&gt;: Tired of waiting for Forge to download the core addons after you downloaded the slim &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt;? No problem, we now provide an offline &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt; that you can extract and start using Forge right away&lt;/li&gt;
       &lt;li&gt;
-      &lt;strong&gt;Shell improvements&lt;/strong&gt;: The shell is more stable and it was updated to Aesh 0.49, this includes a working ‘run’ script command. You can now create Forge scripts and run them on demand. Note, we are still working on porting the Forge 1 script language.&lt;/li&gt;
+      &lt;strong&gt;Shell improvements&lt;/strong&gt;: The shell is more stable and it was updated to Aesh 0.49&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;p&gt;All this and much more! Check the issues below for more info.&lt;/p&gt;
-      &lt;h2&gt;Last but not least, we would like to thank the following contributors, that without their help this release wouldn’t be perfect:&lt;/h2&gt;
+      &lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;p&gt;At last but not least, we would like to thank the following contributors, that without their help this release wouldn’t be perfect:&lt;/p&gt;
       &lt;ul&gt;
       &lt;li&gt;
       &lt;strong&gt;Antonio Gonçalves&lt;/strong&gt;: For submitting JIRAs and providing pull-requests with fixes;&lt;/li&gt;
