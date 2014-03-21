@@ -2,9 +2,78 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-03-17T00:00:00+00:00</updated>
+  <updated>2014-03-20T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/03/20/post-forge-2-3-0-Final-released.html</id>
+    <title>Forge 2.3.0.Final (Platinumsmith) Released</title>
+    <updated>2014-03-20T00:00:00+00:00</updated>
+    <published>2014-03-20T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/03/20/post-forge-2-3-0-Final-released.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.3.0.Final is now available!
+      The Forge Team is proud to announce that JBoss Forge 2.3.0.Final is now available! This is the best release so far.
+      What’s new and noteworthy?
+      Highlight your files: The cat command now supports a -c (or &#8212;color if you like to type more) to colorize a file.
+      Meet Roaster: Roaster, the java-parser 2.0 is now available as a dependency of the java-parser addon. Roaster is a complete refactoring of java-parser, foreseeing parsing of binary classes. It also provides javabean-like properties manipulation (creation of getters/setters). Due to backward compatibility, java-parser is still present, and should be discontinued in future......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.3.0.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.3.0.Final is now available! This is the best release so far.&lt;/p&gt;
+      &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Highlight your files&lt;/strong&gt;: The &lt;code&gt;cat&lt;/code&gt; command now supports a -c (or —color if you like to type more) to colorize a file.&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Meet Roaster&lt;/strong&gt;: &lt;a href=&quot;https://github.com/forge/roaster&quot;&gt;Roaster&lt;/a&gt;, the java-parser 2.0 is now available as a dependency of the java-parser addon. Roaster is a complete refactoring of java-parser, foreseeing parsing of binary classes. It also provides javabean-like properties manipulation (creation of getters/setters). Due to backward compatibility, java-parser is still present, and should be discontinued in future versions.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
+      &lt;h2&gt;Download Forge&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.3.0.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes – 12 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1675&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1675&lt;/a&gt;] –         ClassNotFoundException for the class javax.rmi.&lt;span class=&quot;caps&quot;&gt;CORBA&lt;/span&gt;.Tie&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1677&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1677&lt;/a&gt;] –         ForgeTestMethodExecutor does not handle AssumptionViolatedException&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1678&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1678&lt;/a&gt;] –         Shell displays all command names (even the disabled ones) when &amp;lt;&lt;span class=&quot;caps&quot;&gt;TAB&lt;/span&gt;&amp;gt; is pressed&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1679&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1679&lt;/a&gt;] –         WatchService on Windows fires ResourceModified events when file.delete() is invoked&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1686&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1686&lt;/a&gt;] –         Not setting up a provider in &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; doesn't add properties in persistence.xml&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1687&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1687&lt;/a&gt;] –         Create and View pages have a wrong Bean name&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1689&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1689&lt;/a&gt;] –         Multiple scaffold providers cannot be installed and used&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1690&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1690&lt;/a&gt;] –         Scaffold generate command does not allow changing of the provider type&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1327&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1327&lt;/a&gt;] –         Add Roaster (formerly known as java-parser 2.0) to parser-java addon&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1676&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1676&lt;/a&gt;] –         Expose FreemarkerTemplate to addons&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1646&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1646&lt;/a&gt;] –         Add convenience &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for syntax coloring in shell&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1688&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1688&lt;/a&gt;] –         TemplateFacet should be moved to templates addon&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/03/17/post-forge-2-2-0-Final-released.html</id>
     <title>Forge 2.2.0.Final (Goldsmith) Released</title>
