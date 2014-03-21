@@ -1,0 +1,77 @@
+---
+layout: news
+title: Forge 2.3.0.Final (Platinumsmith) Released
+author: George Gastaldi, Lincoln Baxter, III, Vineet Reynolds
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 2.3.0.Final* is now available!
+
+The Forge Team is proud to announce that JBoss Forge 2.3.0.Final is now available! This is the best release so far.
+
+h1. What’s new and noteworthy?
+
+<ul><li><strong>Highlight your files</strong>: The <code>cat</code> command now supports a -c (or --color if you like to type more) to colorize a file.</li>
+<li><strong>Meet Roaster</strong>: <a href="https://github.com/forge/roaster">Roaster</a>, the java-parser 2.0 is now available as a dependency of the java-parser addon. Roaster is a complete refactoring of java-parser, foreseeing parsing of binary classes. It also provides javabean-like properties manipulation (creation of getters/setters). Due to backward compatibility, java-parser is still present, and should be discontinued in future versions.</li>
+</ul>
+
+And much more! Check the issues below for more info.
+
+Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/FORGE.
+
+h2. Download Forge
+
+<ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.3.0.Final&e=zip&c=offline">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+</ul>
+
+h2. Release Notes - 12 issues were resolved since the last release. Check out all the new stuff!
+    
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1675'>FORGE-1675</a>] -         ClassNotFoundException for the class javax.rmi.CORBA.Tie
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1677'>FORGE-1677</a>] -         ForgeTestMethodExecutor does not handle AssumptionViolatedException
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1678'>FORGE-1678</a>] -         Shell displays all command names (even the disabled ones) when &lt;TAB&gt; is pressed
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1679'>FORGE-1679</a>] -         WatchService on Windows fires ResourceModified events when file.delete() is invoked
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1686'>FORGE-1686</a>] -         Not setting up a provider in JPA doesn&#39;t add properties in persistence.xml
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1687'>FORGE-1687</a>] -         Create and View pages have a wrong Bean name
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1689'>FORGE-1689</a>] -         Multiple scaffold providers cannot be installed and used
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1690'>FORGE-1690</a>] -         Scaffold generate command does not allow changing of the provider type
+</li>
+</ul>
+        
+<h2>        Component  Upgrade
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1327'>FORGE-1327</a>] -         Add Roaster (formerly known as java-parser 2.0) to parser-java addon
+</li>
+</ul>
+            
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1676'>FORGE-1676</a>] -         Expose FreemarkerTemplate to addons
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1646'>FORGE-1646</a>] -         Add convenience API for syntax coloring in shell 
+</li>
+</ul>
+                
+<h2>        Quality Risk
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1688'>FORGE-1688</a>] -         TemplateFacet should be moved to templates addon 
+</li>
+</ul>
