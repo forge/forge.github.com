@@ -19,9 +19,9 @@
       The Forge Team is proud to announce that JBoss Forge 2.4.1.Final is now available! This is the best release so far.
       What’s new and noteworthy?
       
-      Performance: Weve introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!
+      Performance: We have introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!
       Component Upgrades: We&#8217;ve upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box
-      Introducing Roaster (definitely): Our first-gen Java parser has been replaced by Roaster, which has been refactored and enhanced to support lots of new features......
+      Introducing Roaster (definitely): Our first-gen Java parser has been replaced by Roaster, which has been refactored and enhanced to support lots of new......
     </summary>
     <content type="html">
       &lt;h1&gt;
@@ -30,7 +30,7 @@
       &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
       &lt;ul&gt;
       &lt;li&gt;
-      &lt;strong&gt;Performance&lt;/strong&gt;: Weve introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!&lt;/li&gt;
+      &lt;strong&gt;Performance&lt;/strong&gt;: We have introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Component Upgrades&lt;/strong&gt;: We’ve upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box&lt;/li&gt;
       &lt;li&gt;
