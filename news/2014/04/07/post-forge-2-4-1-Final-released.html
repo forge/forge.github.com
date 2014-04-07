@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forge | Forge 2.4.1.Final (Roasted) Released</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link href="/images/favicon.ico" rel="icon">
+    <link href="/stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/prettify.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap-collapse.js" type="text/javascript"></script>
+    <script src="/javascripts/prettify.js" type="text/javascript"></script>
+    <script src="/javascripts/videoscale.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
+        prettyPrint();
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $("body > .navbar a[href='" + pathname + "']").closest("li").addClass("active");
+        $("body > #content ul.nav a[href='" + pathname + "#content']").closest("li").addClass("active");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="github-banner hidden-phone hidden-tablet">
+            <a href="https://github.com/forge/core">
+              <img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position:absolute;top:0;right:0;border:0;">
+            </a>
+          </div>
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/index.html">
+            <img alt="JBoss Forge" class="forge-logo" src="/images/jbossforge_icon_256px.png">
+          </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>
+                <a href="/index.html">Home</a>
+              </li>
+              <li>
+                <a href="https://github.com/forge/core#jboss-forge-20">Forge 2</a>
+              </li>
+              <li>
+                <a href="/docs/index.html">Documentation</a>
+              </li>
+              <li>
+                <a href="/team.html">Team</a>
+              </li>
+              <li>
+                <a href="https://community.jboss.org/en/forge">Forums</a>
+              </li>
+              <li>
+                <a href="https://github.com/forge/core">Source</a>
+              </li>
+              <li>
+                <a href="/plugins.html">Plugins</a>
+              </li>
+              <li>
+                <a href="https://issues.jboss.org/browse/FORGE" target="issue tracker">Issue Tracker</a>
+              </li>
+              <li>
+                <a href="https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel" target="roadmap">Roadmap</a>
+              </li>
+              <li>
+                <a href="/events.html">Events</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="content">
+      <div class="container">
+        <h1><strong>JBoss Forge 2.4.1.Final</strong> is now available!</h1>
+        <p>The Forge Team is proud to announce that JBoss Forge 2.4.1.Final is now available! This is the best release so far.</p>
+        <h1>What’s new and noteworthy?</h1>
+        <ul>
+        <li><strong>Performance</strong>: Weve introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!</li>
+        <li><strong>Component Upgrades</strong>: We&#8217;ve upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box</li>
+        <li><strong>Introducing Roaster (definitely)</strong>: Our first-gen Java parser has been replaced by <a href="https://github.com/forge/roaster">Roaster</a>, which has been refactored and enhanced to support lots of new features such as Nested Types, Java Properties, and more.</li>
+        </ul>
+        <p>And that&#8217;s not all! Check out the issues below for more info.</p>
+        <p>Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/<span class="caps">FORGE</span>.</p>
+        <h2>Download Forge</h2>
+        <ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+        <li>Use Forge 2 in your <span class="caps">CLI</span> / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.4.1.Final&e=zip&c=offline">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+        </ul>
+        <h2>Release Notes &#8211; 32 issues were resolved since the last release. Check out all the new stuff!</h2>
+        <h2>        Bug</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1674'><span class="caps">FORGE</span>-1674</a>] &#8211;         Forge should add <span class="caps">EJB</span> 3.1 dependency</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1692'><span class="caps">FORGE</span>-1692</a>] &#8211;         Freemarker includes present in the classpath are not resolved.</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1701'><span class="caps">FORGE</span>-1701</a>] &#8211;         <span class="caps">REST</span> resource generation fails when DTOs are generated</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1706'><span class="caps">FORGE</span>-1706</a>] &#8211;         Adding constraint with regular expression throws an Error</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1714'><span class="caps">FORGE</span>-1714</a>] &#8211;         JavaClass.getProperties() returns wrong number of items</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1724'><span class="caps">FORGE</span>-1724</a>] &#8211;         Errors in PlexusContainer inutilizes shell</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1728'><span class="caps">FORGE</span>-1728</a>] &#8211;         ClassCastException when a wizard is invoked in Eclipse plugin</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1734'><span class="caps">FORGE</span>-1734</a>] &#8211;         <span class="caps">CCE</span> when starting up the integrated Forge console in <span class="caps">JBT</span></li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1735'><span class="caps">FORGE</span>-1735</a>] &#8211;         No commands are displayed sporadically</li>
+        </ul>
+        
+        <h2>        Component  Upgrade</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1584'><span class="caps">FORGE</span>-1584</a>] &#8211;         Upgrade to Arquillian 1.1.4.Final</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1736'><span class="caps">FORGE</span>-1736</a>] &#8211;         Upgrade to Aesh 0.52</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1737'><span class="caps">FORGE</span>-1737</a>] &#8211;         Upgrade to Roaster 2.1.0.Final</li>
+        </ul>
+        
+        <h2>        Enhancement</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1471'><span class="caps">FORGE</span>-1471</a>] &#8211;         Selection of page template is both unclear, and too prominently displayed in Scaffold Setup in Eclipse</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1682'><span class="caps">FORGE</span>-1682</a>] &#8211;         Highlighter Scanners should be more extensible</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1685'><span class="caps">FORGE</span>-1685</a>] &#8211;         Move the utility classes from the scaffold-api project to a scaffold-spi project</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1698'><span class="caps">FORGE</span>-1698</a>] &#8211;         MavenJavaCompilerFacet should use user properties instead of declaring the compiler plugin</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1715'><span class="caps">FORGE</span>-1715</a>] &#8211;         Migrate Property used in Validation/constraint support in JavaEE to Roaster</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1720'><span class="caps">FORGE</span>-1720</a>] &#8211;         Property should extend AnnotationTarget</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1721'><span class="caps">FORGE</span>-1721</a>] &#8211;         Use Roaster in the JavaEE addon instead of java-parser</li>
+        </ul>
+        
+        <h2>        Feature Request</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-833'><span class="caps">FORGE</span>-833</a>] &#8211;         java new-field improvements</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1626'><span class="caps">FORGE</span>-1626</a>] &#8211;         Install addon from git repository</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1681'><span class="caps">FORGE</span>-1681</a>] &#8211;         Extend the Highlighter for Properties files</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1684'><span class="caps">FORGE</span>-1684</a>] &#8211;         Port the MetawidgetInspectorFacade <span class="caps">API</span> from the Forge 1 scaffold-x <span class="caps">API</span></li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1695'><span class="caps">FORGE</span>-1695</a>] &#8211;         Add highlighter for <span class="caps">SQL</span></li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1696'><span class="caps">FORGE</span>-1696</a>] &#8211;         Add Highlighter for Groovy</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1697'><span class="caps">FORGE</span>-1697</a>] &#8211;         Add Highlighter for <span class="caps">YAML</span></li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1700'><span class="caps">FORGE</span>-1700</a>] &#8211;         Create a ProjectType for a <span class="caps">POM</span> packaging type project</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1702'><span class="caps">FORGE</span>-1702</a>] &#8211;         Implement possibility to add CommandExecutionHandler to ShellHandle</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1726'><span class="caps">FORGE</span>-1726</a>] &#8211;         Remove java-parser in favor of Roaster</li>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1732'><span class="caps">FORGE</span>-1732</a>] &#8211;         Shell does not display execution progress through UIProgressMonitor</li>
+        </ul>
+        
+        <h2>        Quality Risk</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1699'><span class="caps">FORGE</span>-1699</a>] &#8211;         High <span class="caps">CPU</span> consumption on Windows and Linux</li>
+        </ul>
+        
+        <h2>        Task</h2>
+        <ul>
+        <li>[<a href='https://issues.jboss.org/browse/FORGE-1730'><span class="caps">FORGE</span>-1730</a>] &#8211;         Move git addon to core</li>
+        </ul>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; JBoss 2014</p>
+      </footer>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount','UA-34467975-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script src="http://www.redhat.com/j/elqNow/elqCfg.js" type="text/javascript"></script>
+    <script src="http://www.redhat.com/j/elqNow/elqImg.js" type="text/javascript"></script>
+    <div id="oTags">
+      <script src="http://www.redhat.com/j/s_code.js" type="text/javascript"></script>
+      <script>
+        var coreUrl = encodeURI(document.URL.split("?")[0]);
+        var urlSplit = coreUrl.toLowerCase().split(/\//);
+        var urlLast = urlSplit[urlSplit.length-1];
+        var pageNameString = "";
+        var siteName = "";
+        var minorSectionIndex = 3
+        if (urlLast == "") {
+          urlSplit.splice(-1,1);
+        }
+        if (urlLast.search(/\./) >= 0) {
+          if (urlLast == "index.html") {
+            urlSplit.splice(-1,1);
+          }
+          else {
+            urlSplit[urlSplit.length-1] = urlLast.split(".").splice(0,1);
+          }
+        }
+        siteName = urlSplit[2].split(".")[1];
+        s.prop14 = s.eVar27 = siteName || "";
+        s.prop15 = s.eVar28 = urlSplit[minorSectionIndex] || "";
+        s.prop16 = s.eVar29 = urlSplit[minorSectionIndex+1] || "";
+        pageNameString = urlSplit.splice(3).join(" | ");
+        s.pageName = "jboss | community | " + siteName + " | " + pageNameString;
+        s.channel = "jboss | community";
+        s.prop4 = s.eVar23 = encodeURI(document.URL);
+        s.prop21 = s.eVar18 = coreUrl;
+        s.prop2 = s.eVar22 = "en";
+        s.prop3 = s.eVar19 = "us";
+      </script>
+      <script src="http://www.redhat.com/j/rh_omni_footer.js" type="text/javascript"></script>
+      <script language="JavaScript" type="text/javascript">
+        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+      </script>
+      <noscript>
+        <a href="http://www.omniture.com" title="Web Analytics">
+          <img alt="" border="0" height="1" src="https://smtrcs.redhat.com/b/ss/redhatcom,redhatglobal/1/H.25.4--NS/0?[AQB]&amp;cdp=3&amp;[AQE]" width="1">
+        </a>
+      </noscript>
+    </div>
+  </body>
+</html>

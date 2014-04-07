@@ -2,9 +2,110 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-03-20T00:00:00+00:00</updated>
+  <updated>2014-04-07T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/04/07/post-forge-2-4-1-Final-released.html</id>
+    <title>Forge 2.4.1.Final (Roasted) Released</title>
+    <updated>2014-04-07T00:00:00+00:00</updated>
+    <published>2014-04-07T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/04/07/post-forge-2-4-1-Final-released.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.4.1.Final is now available!
+      The Forge Team is proud to announce that JBoss Forge 2.4.1.Final is now available! This is the best release so far.
+      What’s new and noteworthy?
+      
+      Performance: Weve introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!
+      Component Upgrades: We&#8217;ve upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box
+      Introducing Roaster (definitely): Our first-gen Java parser has been replaced by Roaster, which has been refactored and enhanced to support lots of new features......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.4.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.4.1.Final is now available! This is the best release so far.&lt;/p&gt;
+      &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Performance&lt;/strong&gt;: Weve introduced some major performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Component Upgrades&lt;/strong&gt;: We’ve upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Introducing Roaster (definitely)&lt;/strong&gt;: Our first-gen Java parser has been replaced by &lt;a href=&quot;https://github.com/forge/roaster&quot;&gt;Roaster&lt;/a&gt;, which has been refactored and enhanced to support lots of new features such as Nested Types, Java Properties, and more.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;And that’s not all! Check out the issues below for more info.&lt;/p&gt;
+      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
+      &lt;h2&gt;Download Forge&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.4.1.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes – 32 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1674&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1674&lt;/a&gt;] –         Forge should add &lt;span class=&quot;caps&quot;&gt;EJB&lt;/span&gt; 3.1 dependency&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1692&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1692&lt;/a&gt;] –         Freemarker includes present in the classpath are not resolved.&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1701&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1701&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resource generation fails when DTOs are generated&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1706&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1706&lt;/a&gt;] –         Adding constraint with regular expression throws an Error&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1714&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1714&lt;/a&gt;] –         JavaClass.getProperties() returns wrong number of items&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1724&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1724&lt;/a&gt;] –         Errors in PlexusContainer inutilizes shell&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1728&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1728&lt;/a&gt;] –         ClassCastException when a wizard is invoked in Eclipse plugin&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1734&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1734&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;CCE&lt;/span&gt; when starting up the integrated Forge console in &lt;span class=&quot;caps&quot;&gt;JBT&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1735&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1735&lt;/a&gt;] –         No commands are displayed sporadically&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1584&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1584&lt;/a&gt;] –         Upgrade to Arquillian 1.1.4.Final&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1736&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1736&lt;/a&gt;] –         Upgrade to Aesh 0.52&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1737&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1737&lt;/a&gt;] –         Upgrade to Roaster 2.1.0.Final&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1471&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1471&lt;/a&gt;] –         Selection of page template is both unclear, and too prominently displayed in Scaffold Setup in Eclipse&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1682&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1682&lt;/a&gt;] –         Highlighter Scanners should be more extensible&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1685&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1685&lt;/a&gt;] –         Move the utility classes from the scaffold-api project to a scaffold-spi project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1698&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1698&lt;/a&gt;] –         MavenJavaCompilerFacet should use user properties instead of declaring the compiler plugin&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1715&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1715&lt;/a&gt;] –         Migrate Property used in Validation/constraint support in JavaEE to Roaster&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1720&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1720&lt;/a&gt;] –         Property should extend AnnotationTarget&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1721&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1721&lt;/a&gt;] –         Use Roaster in the JavaEE addon instead of java-parser&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-833&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-833&lt;/a&gt;] –         java new-field improvements&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1626&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1626&lt;/a&gt;] –         Install addon from git repository&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1681&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1681&lt;/a&gt;] –         Extend the Highlighter for Properties files&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1684&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1684&lt;/a&gt;] –         Port the MetawidgetInspectorFacade &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; from the Forge 1 scaffold-x &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1695&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1695&lt;/a&gt;] –         Add highlighter for &lt;span class=&quot;caps&quot;&gt;SQL&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1696&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1696&lt;/a&gt;] –         Add Highlighter for Groovy&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1697&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1697&lt;/a&gt;] –         Add Highlighter for &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1700&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1700&lt;/a&gt;] –         Create a ProjectType for a &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; packaging type project&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1702&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1702&lt;/a&gt;] –         Implement possibility to add CommandExecutionHandler to ShellHandle&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1726&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1726&lt;/a&gt;] –         Remove java-parser in favor of Roaster&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1732&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1732&lt;/a&gt;] –         Shell does not display execution progress through UIProgressMonitor&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1699&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1699&lt;/a&gt;] –         High &lt;span class=&quot;caps&quot;&gt;CPU&lt;/span&gt; consumption on Windows and Linux&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1730&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1730&lt;/a&gt;] –         Move git addon to core&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/03/20/post-forge-2-3-0-Final-released.html</id>
     <title>Forge 2.3.0.Final (Platinumsmith) Released</title>
@@ -181,14 +282,14 @@
     <category scheme="http://forge.jboss.org/" term="forge" />
     <summary>
       JBoss Forge 2.1.1.Final is now available!
-      The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far.
+      The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we&#8217;ve fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.
       This is great, but what happened to 2.1.0.Final?
-      We introduced some minor fixes that was much needed one day after the release of 2.1.0.FInal. We changed some SPI code (which will NOT affect your code directly, so rest assured) , and we didn&#8217;t want to release 2.2.0.Final, because that would be too much for......
+      We introduced some minor fixes that was much needed one day after the release of......
     </summary>
     <content type="html">
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 2.1.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
-      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far.&lt;/p&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.1.1.Final is now available! 51 issues were resolved since the last release and we migrated more commands and introduced some neat features in the UI addon. This is the best release so far. In addition, we’ve fixed several issues in the Furnace runtime that had caused random proxy errors (yay, hashcode collisions!) This version of Forge should be faster and more reliable than ever.&lt;/p&gt;
       &lt;h2&gt;This is great, but what happened to 2.1.0.Final?&lt;/h2&gt;
       &lt;p&gt;We introduced some minor fixes that was much needed one day after the release of 2.1.0.FInal. We changed some &lt;span class=&quot;caps&quot;&gt;SPI&lt;/span&gt; code (which will &lt;span class=&quot;caps&quot;&gt;NOT&lt;/span&gt; affect your code directly, so rest assured) , and we didn’t want to release 2.2.0.Final, because that would be too much for now.&lt;/p&gt;
       &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
@@ -202,10 +303,10 @@
       &lt;li&gt;
       &lt;strong&gt;Offline Distribution&lt;/strong&gt;: Tired of waiting for Forge to download the core addons after you downloaded the slim &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt;? No problem, we now provide an offline &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt; that you can extract and start using Forge right away&lt;/li&gt;
       &lt;li&gt;
-      &lt;strong&gt;Shell improvements&lt;/strong&gt;: The shell is more stable and it was updated to Aesh 0.49&lt;/li&gt;
+      &lt;strong&gt;Shell improvements&lt;/strong&gt;: The shell is more stable and it was updated to Aesh 0.49, this includes a working ‘run’ script command. You can now create Forge scripts and run them on demand. Note, we are still working on porting the Forge 1 script language.&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
-      &lt;p&gt;At last but not least, we would like to thank the following contributors, that without their help this release wouldn’t be perfect:&lt;/p&gt;
+      &lt;p&gt;All this and much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;h2&gt;Last but not least, we would like to thank the following contributors, that without their help this release wouldn’t be perfect:&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;
       &lt;strong&gt;Antonio Gonçalves&lt;/strong&gt;: For submitting JIRAs and providing pull-requests with fixes;&lt;/li&gt;
