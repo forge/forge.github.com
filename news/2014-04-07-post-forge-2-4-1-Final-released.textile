@@ -1,0 +1,125 @@
+---
+layout: news
+title: Forge 2.4.1.Final (Roasted) Released
+author: George Gastaldi, Lincoln Baxter, III, Vineet Reynolds
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 2.4.1.Final* is now available!
+
+The Forge Team is proud to announce that JBoss Forge 2.4.1.Final is now available! This is the best release so far.
+
+h1. What’s new and noteworthy?
+
+<ul>
+<li><strong>Performance</strong>: We introduced some major performance enhancements. We welcome you to give it a try and tell us about it.</li>
+<li><strong>Component Upgrades</strong>: We upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box</li>
+<li><strong>Meet Roaster (definitely)</strong>: We replaced our old java-parser implementation with <a href="https://github.com/forge/roaster">Roaster</a> so lots of new features were introduced and bugs were squashed</li>
+</ul>
+
+And much more! Check the issues below for more info.
+
+Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/FORGE.
+
+h2. Download Forge
+
+<ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.4.1.Final&e=zip&c=offline">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+</ul>
+
+h2. Release Notes - 32 issues were resolved since the last release. Check out all the new stuff!
+    
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1674'>FORGE-1674</a>] -         Forge should add EJB 3.1 dependency
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1692'>FORGE-1692</a>] -         Freemarker includes present in the classpath are not resolved.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1701'>FORGE-1701</a>] -         REST resource generation fails when DTOs are generated
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1706'>FORGE-1706</a>] -         Adding constraint with regular expression throws an Error
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1714'>FORGE-1714</a>] -         JavaClass.getProperties() returns wrong number of items
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1724'>FORGE-1724</a>] -         Errors in PlexusContainer inutilizes shell
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1728'>FORGE-1728</a>] -         ClassCastException when a wizard is invoked in Eclipse plugin
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1734'>FORGE-1734</a>] -         CCE when starting up the integrated Forge console in JBT
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1735'>FORGE-1735</a>] -         No commands are displayed sporadically
+</li>
+</ul>
+        
+<h2>        Component  Upgrade
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1584'>FORGE-1584</a>] -         Upgrade to Arquillian 1.1.4.Final
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1736'>FORGE-1736</a>] -         Upgrade to Aesh 0.52
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1737'>FORGE-1737</a>] -         Upgrade to Roaster 2.1.0.Final
+</li>
+</ul>
+            
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1471'>FORGE-1471</a>] -         Selection of page template is both unclear, and too prominently displayed in Scaffold Setup in Eclipse
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1682'>FORGE-1682</a>] -         Highlighter Scanners should be more extensible
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1685'>FORGE-1685</a>] -         Move the utility classes from the scaffold-api project to a scaffold-spi project
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1698'>FORGE-1698</a>] -         MavenJavaCompilerFacet should use user properties instead of declaring the compiler plugin
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1715'>FORGE-1715</a>] -         Migrate Property used in Validation/constraint support in JavaEE to Roaster
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1720'>FORGE-1720</a>] -         Property should extend AnnotationTarget
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1721'>FORGE-1721</a>] -         Use Roaster in the JavaEE addon instead of java-parser
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-833'>FORGE-833</a>] -         java new-field improvements
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1626'>FORGE-1626</a>] -         Install addon from git repository
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1681'>FORGE-1681</a>] -         Extend the Highlighter for Properties files
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1684'>FORGE-1684</a>] -         Port the MetawidgetInspectorFacade API from the Forge 1 scaffold-x API
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1695'>FORGE-1695</a>] -         Add highlighter for SQL
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1696'>FORGE-1696</a>] -         Add Highlighter for Groovy
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1697'>FORGE-1697</a>] -         Add Highlighter for YAML
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1700'>FORGE-1700</a>] -         Create a ProjectType for a POM packaging type project
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1702'>FORGE-1702</a>] -         Implement possibility to add CommandExecutionHandler to ShellHandle
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1726'>FORGE-1726</a>] -         Remove java-parser in favor of Roaster
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1732'>FORGE-1732</a>] -         Shell does not display execution progress through UIProgressMonitor
+</li>
+</ul>
+                
+<h2>        Quality Risk
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1699'>FORGE-1699</a>] -         High CPU consumption on Windows and Linux
+</li>
+</ul>
+                        
+<h2>        Task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1730'>FORGE-1730</a>] -         Move git addon to core
+</li>
+</ul>
+                    
