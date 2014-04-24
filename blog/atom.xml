@@ -2,9 +2,136 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://forge.jboss.org/</id>
   <title>http://forge.jboss.org</title>
-  <updated>2014-04-07T00:00:00+00:00</updated>
+  <updated>2014-04-24T00:00:00+00:00</updated>
   <link href="http://forge.jboss.org/blog/atom.xml" rel="self" type="application/atom+xml" />
   <link href="http://forge.jboss.org" rel="alternate" type="text/html" />
+  <entry>
+    <id>http://forge.jboss.org/news/2014/04/24/post-forge-2-5-0-Final-released.html</id>
+    <title>Forge 2.5.0.Final (Coal) Released</title>
+    <updated>2014-04-24T00:00:00+00:00</updated>
+    <published>2014-04-24T00:00:00+00:00</published>
+    <link href="http://forge.jboss.org/news/2014/04/24/post-forge-2-5-0-Final-released.html" rel="alternate" type="text/html" />
+    <category scheme="http://forge.jboss.org/" term="website" />
+    <category scheme="http://forge.jboss.org/" term="announcement" />
+    <category scheme="http://forge.jboss.org/" term="forge" />
+    <summary>
+      JBoss Forge 2.5.0.Final is now available!
+      The Forge Team is proud to announce that JBoss Forge 2.5.0.Final is now available! This is the best release so far.
+      What’s new and noteworthy?
+      
+      Performance: We have introduced more performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!
+      Templates addon refactoring: We refactored the templates addon with a cleaner and leaner API, check it out!
+      Component Upgrades: We&#8217;ve upgraded to Weld 2.0.5.Final, Aesh 0.53 and Roaster 2.3.0.Final. More stability and new features available out-of-the-box!
+      
+      And that&#8217;s not all! Check out the issues......
+    </summary>
+    <content type="html">
+      &lt;h1&gt;
+      &lt;strong&gt;JBoss Forge 2.5.0.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
+      &lt;p&gt;The Forge Team is proud to announce that JBoss Forge 2.5.0.Final is now available! This is the best release so far.&lt;/p&gt;
+      &lt;h1&gt;What’s new and noteworthy?&lt;/h1&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Performance&lt;/strong&gt;: We have introduced more performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Templates addon refactoring&lt;/strong&gt;: We refactored the templates addon with a cleaner and leaner &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, check it out!&lt;/li&gt;
+      &lt;li&gt;
+      &lt;strong&gt;Component Upgrades&lt;/strong&gt;: We’ve upgraded to Weld 2.0.5.Final, Aesh 0.53 and Roaster 2.3.0.Final. More stability and new features available out-of-the-box!&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;And that’s not all! Check out the issues below for more info.&lt;/p&gt;
+      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
+      &lt;h2&gt;Contributors&lt;/h2&gt;
+      &lt;p&gt;A huge thank you to the following contributors of this release. You are awesome:&lt;/p&gt;
+      &lt;ul&gt;
+      	&lt;li&gt;
+      &lt;a href=&quot;https://github.com/mbriskar&quot;&gt;Matej Briskar&lt;/a&gt;
+      	&lt;ul&gt;
+      		&lt;li&gt;
+      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1603: AbstractJavaSourceCommand should have an overwrite flag&lt;/li&gt;
+      		&lt;li&gt;
+      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1755: NewFurnaceTestCommand should add test dependencies to &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; file as ‘test’ scope, and avoid putting addon versions in the test case itself&lt;/li&gt;
+      	&lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul&gt;
+      	&lt;li&gt;
+      &lt;a href=&quot;https://github.com/ivannov&quot;&gt;Ivan St. Ivanov&lt;/a&gt;
+      	&lt;ul&gt;
+      		&lt;li&gt;Add a SetVersionCommand for the Java Compiled Projects&lt;/li&gt;
+      		&lt;li&gt;
+      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1746 Make sure that scaffolded ManyToOne relationships without one part do not throw NullPointerException upon rendering&lt;/li&gt;
+      	&lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul&gt;
+      	&lt;li&gt;
+      &lt;a href=&quot;https://github.com/rbalent&quot;&gt;Robert Balent&lt;/a&gt;
+      	&lt;ul&gt;
+      		&lt;li&gt;
+      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1450 – Forge will correctly create enum attribute on entity.&lt;/li&gt;
+      	&lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul&gt;
+      	&lt;li&gt;
+      &lt;a href=&quot;https://github.com/adamwy&quot;&gt;Adam Wyłuda&lt;/a&gt;
+      	&lt;ul&gt;
+      		&lt;li&gt;Fix ProjectFactoryImpl.findProject() bug&lt;/li&gt;
+      	&lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Download Forge&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.4.1.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;h2&gt;Release Notes – 23 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1738&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1738&lt;/a&gt;] –         addon-git-install fails to install projects from git if the project is not available in any configured maven repository&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1745&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1745&lt;/a&gt;] –         Cannot handle Freemaker templates from a main&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1746&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1746&lt;/a&gt;] –         NullPointerException when running scaffolded app in Wildfly&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1748&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1748&lt;/a&gt;] –         Furnace &lt;span class=&quot;caps&quot;&gt;CLAC&lt;/span&gt; Whitelist throws &lt;span class=&quot;caps&quot;&gt;NPE&lt;/span&gt; if accessed after removing an addon&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1754&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1754&lt;/a&gt;] –         Configuration subsets are not writable&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1769&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1769&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; version is not being set in the addon registry file when an addon is installed&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1759&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1759&lt;/a&gt;] –         Upgrade Furnace-&lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; to Weld 2.0.5.Final&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1765&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1765&lt;/a&gt;] –         Upgrade to Roaster 2.3.0.Final&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1766&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1766&lt;/a&gt;] –         Upgrade to Aesh 0.53&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1015&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1015&lt;/a&gt;] –         Java source/target versions should be configurable in JavaCompilerFacet&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1729&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1729&lt;/a&gt;] –         Test harness should set the Configuration directory to use the test temp dir by default&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1752&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1752&lt;/a&gt;] –         JavaEE dependencies from facets are not in the provided scope&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1755&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1755&lt;/a&gt;] –         NewFurnaceTestCommand should add test dependencies to &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; file as 'test' scope, and avoid putting addon versions in the test case itself&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1767&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1767&lt;/a&gt;] –         Addon: new command improvements&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1603&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1603&lt;/a&gt;] –         AbstractJavaSourceCommand should have an overwrite flag&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1753&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1753&lt;/a&gt;] –         Support InputTypes.&lt;span class=&quot;caps&quot;&gt;TEXTAREA&lt;/span&gt; rendering in Eclipse&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1756&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1756&lt;/a&gt;] –         Furnace.startAsync() should return a Future that can be used to block until the container has started.&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1760&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1760&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; Commands do not follow naming guidelines for &lt;span class=&quot;caps&quot;&gt;GUI&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1761&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1761&lt;/a&gt;] –         Allow @WithAttributes to configure the command line parameter name for a UICommand&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1762&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1762&lt;/a&gt;] –         Generated &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resources reference a 'Customer' class&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1763&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1763&lt;/a&gt;] –         Support setup of WebSockets dependencies&lt;/li&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1768&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1768&lt;/a&gt;] –         Create &quot;Addon: New Annotated UI Command&quot; command&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;ul&gt;
+      &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1450&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1450&lt;/a&gt;] –         Cannot create an enum attribute on an Entity&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
   <entry>
     <id>http://forge.jboss.org/news/2014/04/07/post-forge-2-4-1-Final-released.html</id>
     <title>Forge 2.4.1.Final (Roasted) Released</title>
