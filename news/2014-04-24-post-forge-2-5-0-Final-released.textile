@@ -1,0 +1,113 @@
+---
+layout: news
+title: Forge 2.5.0.Final (Coal) Released
+author: George Gastaldi, Lincoln Baxter, III, Vineet Reynolds
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 2.5.0.Final* is now available!
+
+The Forge Team is proud to announce that JBoss Forge 2.5.0.Final is now available! This is the best release so far.
+
+h1. What’s new and noteworthy?
+
+<ul>
+<li><strong>Performance</strong>: We have introduced more performance enhancements in the Furnace runtime, so the shell and other features should feel quite a bit snappier. Try it out and tell us your thoughts!</li>
+<li><strong>Templates addon refactoring</strong>: We refactored the templates addon with a cleaner and leaner API, check it out!</li>
+<li><strong>Component Upgrades</strong>: We've upgraded to Weld 2.0.5.Final, Aesh 0.53 and Roaster 2.3.0.Final. More stability and new features available out-of-the-box!</li>
+</ul>
+
+And that's not all! Check out the issues below for more info.
+
+Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/FORGE.
+
+h2. Contributors
+
+A huge thank you to the following contributors of this release. You are awesome:
+
+- Matej Briskar
+- Ivan St. Ivanov
+- Robert Balent
+- Adam Wyłuda
+
+
+h2. Download Forge
+
+<ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.4.1.Final&e=zip&c=offline">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+</ul>
+
+h2. Release Notes - 23 issues were resolved since the last release. Check out all the new stuff!
+
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1738'>FORGE-1738</a>] -         addon-git-install fails to install projects from git if the project is not available in any configured maven repository
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1745'>FORGE-1745</a>] -         Cannot handle Freemaker templates from a main
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1746'>FORGE-1746</a>] -         NullPointerException when running scaffolded app in Wildfly
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1748'>FORGE-1748</a>] -         Furnace CLAC Whitelist throws NPE if accessed after removing an addon
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1754'>FORGE-1754</a>] -         Configuration subsets are not writable 
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1769'>FORGE-1769</a>] -         API version is not being set in the addon registry file when an addon is installed
+</li>
+</ul>
+        
+<h2>        Component  Upgrade
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1759'>FORGE-1759</a>] -         Upgrade Furnace-CDI to Weld 2.0.5.Final
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1765'>FORGE-1765</a>] -         Upgrade to Roaster 2.3.0.Final
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1766'>FORGE-1766</a>] -         Upgrade to Aesh 0.53
+</li>
+</ul>
+            
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1015'>FORGE-1015</a>] -         Java source/target versions should be configurable in JavaCompilerFacet
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1729'>FORGE-1729</a>] -         Test harness should set the Configuration directory to use the test temp dir by default
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1752'>FORGE-1752</a>] -         JavaEE dependencies from facets are not in the provided scope
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1755'>FORGE-1755</a>] -         NewFurnaceTestCommand should add test dependencies to POM file as &#39;test&#39; scope, and avoid putting addon versions in the test case itself
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1767'>FORGE-1767</a>] -         Addon: new command improvements
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1603'>FORGE-1603</a>] -         AbstractJavaSourceCommand should have an overwrite flag
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1753'>FORGE-1753</a>] -         Support InputTypes.TEXTAREA rendering in Eclipse
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1756'>FORGE-1756</a>] -         Furnace.startAsync() should return a Future that can be used to block until the container has started.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1760'>FORGE-1760</a>] -         CDI Commands do not follow naming guidelines for GUI
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1761'>FORGE-1761</a>] -         Allow @WithAttributes to configure the command line parameter name for a UICommand
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1762'>FORGE-1762</a>] -         Generated REST resources reference a &#39;Customer&#39; class
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1763'>FORGE-1763</a>] -         Support setup of WebSockets dependencies
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1768'>FORGE-1768</a>] -         Create &quot;Addon: New Annotated UI Command&quot; command
+</li>
+</ul>
+                                                        
+<h2>        Sub-task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1450'>FORGE-1450</a>] -         Cannot create an enum attribute on an Entity
+</li>
+</ul>
+        
+
