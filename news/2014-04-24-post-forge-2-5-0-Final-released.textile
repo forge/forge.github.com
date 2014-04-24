@@ -25,10 +25,19 @@ h2. Contributors
 
 A huge thank you to the following contributors of this release. You are awesome:
 
-- Matej Briskar
-- Ivan St. Ivanov
-- Robert Balent
-- Adam Wyłuda
+* <a href="https://github.com/mbriskar">Matej Briskar</a>
+** FORGE-1603: AbstractJavaSourceCommand should have an overwrite flag
+** FORGE-1755: NewFurnaceTestCommand should add test dependencies to POM file as 'test' scope, and avoid putting addon versions in the test case itself
+
+* <a href="https://github.com/ivannov">Ivan St. Ivanov</a>
+** Add a SetVersionCommand for the Java Compiled Projects
+** FORGE-1746 Make sure that scaffolded ManyToOne relationships without one part do not throw NullPointerException upon rendering
+
+* <a href="https://github.com/rbalent">Robert Balent</a>
+** FORGE-1450 - Forge will correctly create enum attribute on entity.
+
+* <a href="https://github.com/adamwy">Adam Wyłuda</a>
+** Fix ProjectFactoryImpl.findProject() bug
 
 
 h2. Download Forge
