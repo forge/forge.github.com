@@ -37,56 +37,50 @@
       &lt;strong&gt;Templates addon refactoring&lt;/strong&gt;: We refactored the templates addon with a cleaner and leaner &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, check it out!&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Component Upgrades&lt;/strong&gt;: We’ve upgraded to Weld 2.0.5.Final, Aesh 0.53 and Roaster 2.3.0.Final. More stability and new features available out-of-the-box!&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;And that’s not all! Check out the issues below for more info.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;And that’s not all! Check out the issues below for more info.&lt;/p&gt;
       &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
       &lt;h2&gt;Contributors&lt;/h2&gt;
       &lt;p&gt;A huge thank you to the following contributors of this release. You are awesome:&lt;/p&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;a href=&quot;https://github.com/mbriskar&quot;&gt;Matej Briskar&lt;/a&gt;
       	&lt;ul&gt;
-      		&lt;li&gt;
+      &lt;li&gt;
       &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1603: AbstractJavaSourceCommand should have an overwrite flag&lt;/li&gt;
       		&lt;li&gt;
       &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1755: NewFurnaceTestCommand should add test dependencies to &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; file as ‘test’ scope, and avoid putting addon versions in the test case itself&lt;/li&gt;
       	&lt;/ul&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;a href=&quot;https://github.com/ivannov&quot;&gt;Ivan St. Ivanov&lt;/a&gt;
       	&lt;ul&gt;
-      		&lt;li&gt;Add a SetVersionCommand for the Java Compiled Projects&lt;/li&gt;
+      &lt;li&gt;Add a SetVersionCommand for the Java Compiled Projects&lt;/li&gt;
       		&lt;li&gt;
       &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1746 Make sure that scaffolded ManyToOne relationships without one part do not throw NullPointerException upon rendering&lt;/li&gt;
       	&lt;/ul&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;a href=&quot;https://github.com/rbalent&quot;&gt;Robert Balent&lt;/a&gt;
       	&lt;ul&gt;
-      		&lt;li&gt;
+      &lt;li&gt;
       &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1450 – Forge will correctly create enum attribute on entity.&lt;/li&gt;
       	&lt;/ul&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;a href=&quot;https://github.com/adamwy&quot;&gt;Adam Wyłuda&lt;/a&gt;
       	&lt;ul&gt;
-      		&lt;li&gt;Fix ProjectFactoryImpl.findProject() bug&lt;/li&gt;
+      &lt;li&gt;Fix ProjectFactoryImpl.findProject() bug&lt;/li&gt;
       	&lt;/ul&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Download Forge&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Download Forge&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
-      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.4.1.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes – 23 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.5.0.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes – 23 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1738&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1738&lt;/a&gt;] –         addon-git-install fails to install projects from git if the project is not available in any configured maven repository&lt;/li&gt;
@@ -95,25 +89,19 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1748&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1748&lt;/a&gt;] –         Furnace &lt;span class=&quot;caps&quot;&gt;CLAC&lt;/span&gt; Whitelist throws &lt;span class=&quot;caps&quot;&gt;NPE&lt;/span&gt; if accessed after removing an addon&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1754&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1754&lt;/a&gt;] –         Configuration subsets are not writable&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1769&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1769&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; version is not being set in the addon registry file when an addon is installed&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1759&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1759&lt;/a&gt;] –         Upgrade Furnace-&lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; to Weld 2.0.5.Final&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1765&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1765&lt;/a&gt;] –         Upgrade to Roaster 2.3.0.Final&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1766&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1766&lt;/a&gt;] –         Upgrade to Aesh 0.53&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1015&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1015&lt;/a&gt;] –         Java source/target versions should be configurable in JavaCompilerFacet&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1729&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1729&lt;/a&gt;] –         Test harness should set the Configuration directory to use the test temp dir by default&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1752&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1752&lt;/a&gt;] –         JavaEE dependencies from facets are not in the provided scope&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1755&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1755&lt;/a&gt;] –         NewFurnaceTestCommand should add test dependencies to &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; file as 'test' scope, and avoid putting addon versions in the test case itself&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1767&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1767&lt;/a&gt;] –         Addon: new command improvements&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1603&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1603&lt;/a&gt;] –         AbstractJavaSourceCommand should have an overwrite flag&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1753&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1753&lt;/a&gt;] –         Support InputTypes.&lt;span class=&quot;caps&quot;&gt;TEXTAREA&lt;/span&gt; rendering in Eclipse&lt;/li&gt;
@@ -124,9 +112,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1762&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1762&lt;/a&gt;] –         Generated &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resources reference a 'Customer' class&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1763&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1763&lt;/a&gt;] –         Support setup of WebSockets dependencies&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1768&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1768&lt;/a&gt;] –         Create &quot;Addon: New Annotated UI Command&quot; command&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1450&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1450&lt;/a&gt;] –         Cannot create an enum attribute on an Entity&lt;/li&gt;
       &lt;/ul&gt;
@@ -162,16 +148,14 @@
       &lt;strong&gt;Component Upgrades&lt;/strong&gt;: We’ve upgraded to Arquillian 1.1.4.Final, Aesh 0.52 and Roaster 2.1.0.Final. More stability and new features available out-of-the-box&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Introducing Roaster (definitely)&lt;/strong&gt;: Our first-gen Java parser has been replaced by &lt;a href=&quot;https://github.com/forge/roaster&quot;&gt;Roaster&lt;/a&gt;, which has been refactored and enhanced to support lots of new features such as Nested Types, Java Properties, and more.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;And that’s not all! Check out the issues below for more info.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;And that’s not all! Check out the issues below for more info.&lt;/p&gt;
       &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
       &lt;h2&gt;Download Forge&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.4.1.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes – 32 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes – 32 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1674&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1674&lt;/a&gt;] –         Forge should add &lt;span class=&quot;caps&quot;&gt;EJB&lt;/span&gt; 3.1 dependency&lt;/li&gt;
@@ -184,16 +168,12 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1734&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1734&lt;/a&gt;] –         &lt;span class=&quot;caps&quot;&gt;CCE&lt;/span&gt; when starting up the integrated Forge console in &lt;span class=&quot;caps&quot;&gt;JBT&lt;/span&gt;
       &lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1735&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1735&lt;/a&gt;] –         No commands are displayed sporadically&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1584&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1584&lt;/a&gt;] –         Upgrade to Arquillian 1.1.4.Final&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1736&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1736&lt;/a&gt;] –         Upgrade to Aesh 0.52&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1737&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1737&lt;/a&gt;] –         Upgrade to Roaster 2.1.0.Final&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1471&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1471&lt;/a&gt;] –         Selection of page template is both unclear, and too prominently displayed in Scaffold Setup in Eclipse&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1682&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1682&lt;/a&gt;] –         Highlighter Scanners should be more extensible&lt;/li&gt;
@@ -202,9 +182,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1715&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1715&lt;/a&gt;] –         Migrate Property used in Validation/constraint support in JavaEE to Roaster&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1720&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1720&lt;/a&gt;] –         Property should extend AnnotationTarget&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1721&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1721&lt;/a&gt;] –         Use Roaster in the JavaEE addon instead of java-parser&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-833&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-833&lt;/a&gt;] –         java new-field improvements&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1626&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1626&lt;/a&gt;] –         Install addon from git repository&lt;/li&gt;
@@ -220,14 +198,10 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1702&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1702&lt;/a&gt;] –         Implement possibility to add CommandExecutionHandler to ShellHandle&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1726&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1726&lt;/a&gt;] –         Remove java-parser in favor of Roaster&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1732&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1732&lt;/a&gt;] –         Shell does not display execution progress through UIProgressMonitor&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Quality Risk&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1699&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1699&lt;/a&gt;] –         High &lt;span class=&quot;caps&quot;&gt;CPU&lt;/span&gt; consumption on Windows and Linux&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1730&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1730&lt;/a&gt;] –         Move git addon to core&lt;/li&gt;
       &lt;/ul&gt;
@@ -259,16 +233,14 @@
       &lt;strong&gt;Highlight your files&lt;/strong&gt;: The &lt;code&gt;cat&lt;/code&gt; command now supports a -c (or —color if you like to type more) to colorize a file.&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Meet Roaster&lt;/strong&gt;: &lt;a href=&quot;https://github.com/forge/roaster&quot;&gt;Roaster&lt;/a&gt;, the java-parser 2.0 is now available as a dependency of the java-parser addon. Roaster is a complete refactoring of java-parser, foreseeing parsing of binary classes. It also provides javabean-like properties manipulation (creation of getters/setters). Due to backward compatibility, java-parser is still present, and should be discontinued in future versions.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
       &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
       &lt;h2&gt;Download Forge&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.3.0.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes – 12 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes – 12 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1675&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1675&lt;/a&gt;] –         ClassNotFoundException for the class javax.rmi.&lt;span class=&quot;caps&quot;&gt;CORBA&lt;/span&gt;.Tie&lt;/li&gt;
@@ -279,24 +251,16 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1687&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1687&lt;/a&gt;] –         Create and View pages have a wrong Bean name&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1689&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1689&lt;/a&gt;] –         Multiple scaffold providers cannot be installed and used&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1690&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1690&lt;/a&gt;] –         Scaffold generate command does not allow changing of the provider type&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1327&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1327&lt;/a&gt;] –         Add Roaster (formerly known as java-parser 2.0) to parser-java addon&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1676&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1676&lt;/a&gt;] –         Expose FreemarkerTemplate to addons&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1646&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1646&lt;/a&gt;] –         Add convenience &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for syntax coloring in shell&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Quality Risk&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1688&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1688&lt;/a&gt;] –         TemplateFacet should be moved to templates addon&lt;/li&gt;
       &lt;/ul&gt;
@@ -338,16 +302,14 @@
       &lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Changes to the Scaffolding provider APIs and SPIs&lt;/strong&gt;: Scaffolding providers now have control over the content of the dialogs required by them. Dialogs to setup Forge Facets can now be aggregated into a single dialog by the providers.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;And much more! Check the issues below for more info.&lt;/p&gt;
       &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
       &lt;h2&gt;Download Forge&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.2.0.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes – 28 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes – 28 issues were resolved since the last release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1623&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1623&lt;/a&gt;] –         Could not register resource monitor with track-changes&lt;/li&gt;
@@ -356,21 +318,15 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1661&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1661&lt;/a&gt;] –         project-add-dependency ignore new scope&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1662&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1662&lt;/a&gt;] –         addon-build-and-install ignores —projectRoot argument&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1672&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1672&lt;/a&gt;] –         Creating a nested &quot;Forge Addon&quot; project can break parent &lt;span class=&quot;caps&quot;&gt;POM&lt;/span&gt; &amp;lt;modules&amp;gt; definition&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1611&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1611&lt;/a&gt;] –         Update to jboss-parent 14&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1632&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1632&lt;/a&gt;] –         Deprecate createResource methods in facets&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1633&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1633&lt;/a&gt;] –         Refactor the Resources &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; to support writeable Resources&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1666&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1666&lt;/a&gt;] –         Add &lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt; to new addon projects&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1461&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1461&lt;/a&gt;] –         &quot;project-new&quot; command fails while a ResourceTransaction is active&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1566&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1566&lt;/a&gt;] –         Create a command to setup addon dependencies&lt;/li&gt;
@@ -384,9 +340,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1665&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1665&lt;/a&gt;] –         Create a &lt;span class=&quot;caps&quot;&gt;BOM&lt;/span&gt; project located at forge/core/bom&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1668&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1668&lt;/a&gt;] –         Prompt for input of required unpopulated inputs&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1673&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1673&lt;/a&gt;] –         javax.sound.* classes cannot be resolved using ServiceLoader&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1616&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1616&lt;/a&gt;] –         Command constraint-new-annotation to create a new constraint&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1619&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1619&lt;/a&gt;] –         Command constraint-new-group to create a new group&lt;/li&gt;
@@ -431,8 +385,7 @@
       &lt;strong&gt;Offline Distribution&lt;/strong&gt;: Tired of waiting for Forge to download the core addons after you downloaded the slim &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt;? No problem, we now provide an offline &lt;span class=&quot;caps&quot;&gt;ZIP&lt;/span&gt; that you can extract and start using Forge right away&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Shell improvements&lt;/strong&gt;: The shell is more stable and it was updated to Aesh 0.49, this includes a working ‘run’ script command. You can now create Forge scripts and run them on demand. Note, we are still working on porting the Forge 1 script language.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;All this and much more! Check the issues below for more info.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;All this and much more! Check the issues below for more info.&lt;/p&gt;
       &lt;h2&gt;Last but not least, we would like to thank the following contributors, that without their help this release wouldn’t be perfect:&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;
@@ -443,15 +396,13 @@
       &lt;strong&gt;Adam Wyluda&lt;/strong&gt;: For helping solve some Windows compatibility issues (especially in shell);&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Stäle Pedersen&lt;/strong&gt;: For the enhancements and bugfixes in Aesh.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;.&lt;/p&gt;
       &lt;h2&gt;Download Forge&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.1.1.Final&amp;amp;e=zip&amp;amp;c=offline&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes – 51 issues were resolved since the last release (2 days ago). Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes – 51 issues were resolved since the last release (2 days ago). Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-779&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-779&lt;/a&gt;] –         Class parameters are not correctly loaded for the consuming addon's classloader&lt;/li&gt;
@@ -468,9 +419,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1597&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1597&lt;/a&gt;] –         Optional facets are preventing installation of facets&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1598&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1598&lt;/a&gt;] –         MavenFacetImpl retains stale building results&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1459&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1459&lt;/a&gt;] –         WizardCommandController implementation is not invalidating stale entries&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1547&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1547&lt;/a&gt;] –         Adding debug information on &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; pages&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1556&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1556&lt;/a&gt;] –         Shell history, aliases and exported files should be placed in ~/.forge&lt;/li&gt;
@@ -478,9 +427,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1588&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1588&lt;/a&gt;] –         New Forge Addon Wizard should add the addon dependencies to the &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; subproject in the complex layout&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1596&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1596&lt;/a&gt;] –         Forge doesn't discover &lt;span class=&quot;caps&quot;&gt;JVM&lt;/span&gt; properly on OS X&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1606&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1606&lt;/a&gt;] –         ShellUIPromptImpl.prompt() and promptSecret() accepts only one keystroke&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-238&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-238&lt;/a&gt;] –         Log forge commands run against a project&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1201&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1201&lt;/a&gt;] –         getSearchPredicates should use case insensitive search&lt;/li&gt;
@@ -503,20 +450,14 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1600&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1600&lt;/a&gt;] –         Support PreStep wizards&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1607&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1607&lt;/a&gt;] –         UIPrompt.promptBoolean should allow a defaultValue&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1465&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1465&lt;/a&gt;] –         Allow setup wizard fields to be combined into a single wizard page&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Quality Risk&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1589&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1589&lt;/a&gt;] –         TouchCommandTest fails sporadically&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-925&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-925&lt;/a&gt;] –         Publish JavaDoc to our Forge Website&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1568&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1568&lt;/a&gt;] –         ui-test-harness should be moved to package org.jboss.forge.addon.ui.test&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1432&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1432&lt;/a&gt;] –         run command is missing (and with it, scripting)&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1449&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1449&lt;/a&gt;] –         Copy/pasting several line in the Forge only pastes and executes the 1st line&lt;/li&gt;
@@ -554,8 +495,7 @@
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Final&amp;amp;e=zip&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;For those of you who want to try Forge 2 and write addons of your own, we are ready for you! Check out our &lt;a href=&quot;https://github.com/forge/core#jboss-forge-20&quot;&gt;documentation on addons development&lt;/a&gt;, and let your imagination run wild. This release marks the stable &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, so you can now develop with full confidence that your addon will continue to compile as we continue to improve.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;For those of you who want to try Forge 2 and write addons of your own, we are ready for you! Check out our &lt;a href=&quot;https://github.com/forge/core#jboss-forge-20&quot;&gt;documentation on addons development&lt;/a&gt;, and let your imagination run wild. This release marks the stable &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, so you can now develop with full confidence that your addon will continue to compile as we continue to improve.&lt;/p&gt;
       &lt;p&gt;With regard to the functionality of our built-in addons, such as the Java EE and Scaffolding generation – we will be continuing to make changes and improvements in how these addons function, as well as some behavior of the shell, to attempt to make the experience as friendly as possible (there is something to be desired when compared to Forge 1).&lt;/p&gt;
       &lt;p&gt;But please go forth and Forge apps, addons, and experiements. We will be in the #forge &lt;span class=&quot;caps&quot;&gt;IRC&lt;/span&gt; channel on irc.freenode.net, and at forge-dev@lists.jboss.org to help as much as we can. Additionally, you can check out our forums at: https://community.jboss.org/en/forge to contact us as well.&lt;/p&gt;
       &lt;p&gt;Our next goal, in addition to continuous improvement, is to bring the Forge 2 website to life so that you, our community, can share your addons and explore those of others. Work has already begun, so expect a site that is as extendable as Forge 2 itself.&lt;/p&gt;
@@ -583,28 +523,22 @@
       &lt;strong&gt;Database tools&lt;/strong&gt;: Forge 2 now provides standard functionality for generating &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entities from existing databases, and integrates with Eclipse and JBoss Developer Studio  to share connection profiles so you can re-use your existing Eclipse data-sources from Forge.&lt;/li&gt;
       &lt;li&gt;
       &lt;strong&gt;Resource Transactions&lt;/strong&gt;: Forge 2 now allows file and resource operations to execute under a transaction (`transaction-start`). This means that after you start a transaction, you can make changes in your project, then choose whether to commit (`transaction-commit`) them or roll them back (`transaction-rollback`). Forge 2 &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; also provides a resource change tracking mode (‘track-changes’), which will print a summary of all changes made after each command.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;We’ve worked on so many features over the past two years, it’s hard to remember them all, or give them all mention, but we hope that as you explore Forge 2, you will have as much fun using it as we did creating it.&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;We’ve worked on so many features over the past two years, it’s hard to remember them all, or give them all mention, but we hope that as you explore Forge 2, you will have as much fun using it as we did creating it.&lt;/p&gt;
       &lt;p&gt;Expect more news about our website, and the Forge JBoss Tools plugin over the next few months.&lt;/p&gt;
       &lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Final&amp;amp;e=zip&quot;&gt;Final release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes – 25 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes – 25 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
       
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1508&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1508&lt;/a&gt;] –         CommandFactory should not return UIWIzardStep implementations&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1526&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1526&lt;/a&gt;] –         Scaffold setup fails with an exception&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1433&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1433&lt;/a&gt;] –         Missing commands in Forge 2.Beta&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1399&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1399&lt;/a&gt;] –         Cannot create a relationship between two entities&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1437&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1437&lt;/a&gt;] –         project-new —type jar-resources is confusing&lt;/li&gt;
@@ -656,8 +590,7 @@
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.CR2&amp;amp;e=zip&quot;&gt;CR2 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes &amp;#8211; 30 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes &amp;#8211; 30 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1427&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1427&lt;/a&gt;] &amp;#8211;         Forge.bat throws error while attempting to install addons&lt;/li&gt;
@@ -665,16 +598,12 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1460&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1460&lt;/a&gt;] &amp;#8211;         ClassCastException in &lt;span class=&quot;caps&quot;&gt;CLAC&lt;/span&gt;
       &lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1466&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1466&lt;/a&gt;] &amp;#8211;         Multi-step wizards that pass validation cannot be &quot;finished&quot; on first page&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1475&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1475&lt;/a&gt;] &amp;#8211;         InputType should be changed to String for better flexibility&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1476&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1476&lt;/a&gt;] &amp;#8211;         Show/use default value for &quot;targetDirectory&quot; input of &quot;Scaffold&quot; wizards&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1492&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1492&lt;/a&gt;] &amp;#8211;         Exported variables defined in shell should be available as attributes in UIContext&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1313&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1313&lt;/a&gt;] &amp;#8211;         Support commands without UI&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1458&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1458&lt;/a&gt;] &amp;#8211;         Implement missing java-new-annotation, java-new-class, and java-new-interface commands&lt;/li&gt;
@@ -684,14 +613,10 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1502&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1502&lt;/a&gt;] &amp;#8211;         ArrayIndexOutOfBounds with ls command&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1503&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1503&lt;/a&gt;] &amp;#8211;         Need a method of specifying Categories on Annotation-based @Command &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1167&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1167&lt;/a&gt;] &amp;#8211;         Port the Java EE Forge 1 commands to Forge 2&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1169&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1169&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; list-* commands&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1170&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1170&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;EJB&lt;/span&gt; commands&lt;/li&gt;
@@ -740,16 +665,12 @@
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.4.4.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
       &lt;p&gt;The Forge Team is proud to announce the immediate availability of Forge 1.4.4.Final.&lt;/p&gt;
-      &lt;h2&gt;Release Notes&lt;br&gt;
-      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;&lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1254&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1254&lt;/a&gt;] &amp;#8211;         calling setStatic(true) on a static method add keyword &quot;static&quot; twice&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1343&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1343&lt;/a&gt;] &amp;#8211;         FreemarkerClient should not be Project scoped&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.4.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.4.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.4.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.4.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -782,8 +703,7 @@
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.CR1&amp;amp;e=zip&quot;&gt;CR1 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Release Notes &amp;#8211; 40 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Release Notes &amp;#8211; 40 issues were resolved in this release. Check out all the new stuff!&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1254&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1254&lt;/a&gt;] &amp;#8211;         calling setStatic(true) on a static method add keyword &quot;static&quot; twice&lt;/li&gt;
@@ -795,18 +715,14 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1425&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1425&lt;/a&gt;] &amp;#8211;         Shell issues on Windows&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1428&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1428&lt;/a&gt;] &amp;#8211;         ManProviderTest tests are failing with timeout&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1431&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1431&lt;/a&gt;] &amp;#8211;         Only first argument is passed to commands that accept argument lists.&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1117&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1117&lt;/a&gt;] &amp;#8211;         Display a warning message when Forge boots up without any addons&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1379&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1379&lt;/a&gt;] &amp;#8211;         Scaffold module should be part of the core&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1409&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1409&lt;/a&gt;] &amp;#8211;         Expose UIContext's Attributes as a Map&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1412&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1412&lt;/a&gt;] &amp;#8211;         ForgeManProvider should consume the UICommandMetadata.getDocLocation() method&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1426&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1426&lt;/a&gt;] &amp;#8211;         Introduce a simpler programming model for UI commands&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1242&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1242&lt;/a&gt;] &amp;#8211;         Improve default layout of components on wizard pages&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1366&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1366&lt;/a&gt;] &amp;#8211;         Support prompt-like interaction&lt;/li&gt;
@@ -815,9 +731,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1417&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1417&lt;/a&gt;] &amp;#8211;         Piping a forge command to another command succeeds then fails&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1418&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1418&lt;/a&gt;] &amp;#8211;         Once a man page has been displayed, no other man pages may be displayed (It gets stuck)&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1420&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1420&lt;/a&gt;] &amp;#8211;         Create a UICommand to create test classes&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1299&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1299&lt;/a&gt;] &amp;#8211;         command-list missing&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1333&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1333&lt;/a&gt;] &amp;#8211;         Forge &quot;man&quot; pages are missing for most UI Commands&lt;/li&gt;
@@ -863,14 +777,11 @@
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 2.0.0.Beta4&lt;/strong&gt; is now available!&lt;/h1&gt;
       &lt;p&gt;We are pleased to announce the release of JBoss Forge 2.0.0.Beta4, a Forge Runtime that features a streamlined programming model for Addon developers as well as a wide array of new Commands for developing Java EE applications.&lt;br&gt;
-      In this version, we did a lot of refactoring, making it easier for new UI providers (other IDEs) to interact with our UI addon.&lt;br&gt;
-      &lt;/p&gt;&lt;ul&gt;
+      In this version, we did a lot of refactoring, making it easier for new UI providers (other IDEs) to interact with our UI addon.&lt;br&gt;&lt;/p&gt;&lt;ul&gt;
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
-      &lt;br&gt;
-      &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Beta4&amp;amp;e=zip&quot;&gt;Beta4 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;
+      &lt;br&gt;&lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Beta4&amp;amp;e=zip&quot;&gt;Beta4 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
+      &lt;/ul&gt;&lt;h2&gt;
       &lt;span class=&quot;caps&quot;&gt;JDK&lt;/span&gt; 7 minimum runtime&lt;/h2&gt;
       &lt;p&gt;From Beta4 and onward, Forge 2 and Furnace require &lt;span class=&quot;caps&quot;&gt;JDK&lt;/span&gt; 7 as the minimum runtime requirement. Java 6 has been around for quite some time, and while we are sorry that some of you may be required to upgrade to Java 7 to use Forge, we are pleased to help move Java forward as a community, and continue to support the latest language version.&lt;/p&gt;
       &lt;h2&gt;Scaffold is now available&lt;/h2&gt;
@@ -891,24 +802,18 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1368&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1368&lt;/a&gt;] &amp;#8211;         Required shell options should not be highlighted when default values are available&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1372&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1372&lt;/a&gt;] &amp;#8211;         WizardCommandController must not cache initialized commands&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1378&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1378&lt;/a&gt;] &amp;#8211;         Furnace maven plugin ignores the settings used in the Maven session&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1338&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1338&lt;/a&gt;] &amp;#8211;         Make &lt;span class=&quot;caps&quot;&gt;JDK&lt;/span&gt; 7 the minimum runtime requirement&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1352&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1352&lt;/a&gt;] &amp;#8211;         Upgrade to jboss-parent 12&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-162&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-162&lt;/a&gt;] &amp;#8211;         Reload the current project/resource metadata when filesystem changes occur&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-808&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-808&lt;/a&gt;] &amp;#8211;         Design the next-generation scaffold addon&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1315&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1315&lt;/a&gt;] &amp;#8211;         Command and Wizard Testers should return Results on execute()/finish()&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1316&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1316&lt;/a&gt;] &amp;#8211;         facet.get****Folder() should be renamed to facet.get****Directory() for consistency with DirectoryResource&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1377&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1377&lt;/a&gt;] &amp;#8211;         Rename UIValidationMessage to UIMessage&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-934&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-934&lt;/a&gt;] &amp;#8211;         Provide method &quot;public void visitResources(ResourceVisitor visitor);&quot; in ResourceFacet&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1153&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1153&lt;/a&gt;] &amp;#8211;         ForgeDeployableContainer should allow specifying a different classifier&lt;/li&gt;
@@ -920,19 +825,13 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1344&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1344&lt;/a&gt;] &amp;#8211;         'forge &amp;#8212;install addon' should not install &lt;span class=&quot;caps&quot;&gt;SNAPSHOT&lt;/span&gt; versions if released versions are available&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1348&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1348&lt;/a&gt;] &amp;#8211;         Port the ResourceUtil class to Forge 2&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1376&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1376&lt;/a&gt;] &amp;#8211;         Introduce UINavigationContext&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Quality Risk&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Quality Risk&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1334&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1334&lt;/a&gt;] &amp;#8211;         Addon installation &quot;forge -i core&quot; takes forever and repeatedly downloads metadata files&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1370&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1370&lt;/a&gt;] &amp;#8211;         Update Forge 2 shell launch scripts to require Java 7&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1328&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1328&lt;/a&gt;] &amp;#8211;         Rename addon commands&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1329&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1329&lt;/a&gt;] &amp;#8211;         &amp;#8212;named or &amp;#8212;xxxname ?&lt;/li&gt;
@@ -977,16 +876,13 @@
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.4.3.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
       &lt;p&gt;The Forge Team is proud to announce the immediate availability of Forge 1.4.3.Final.&lt;/p&gt;
-      &lt;h2&gt;Release Notes&lt;br&gt;
-      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;&lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1221&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1221&lt;/a&gt;] &amp;#8211;         scaffold views template uses backslashes instead of forward slashes&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1279&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1279&lt;/a&gt;] &amp;#8211;         forge install-plugin gives NullPointerException&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1310&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1310&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;REGRESSION&lt;/span&gt;: SecurityException while running tests&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1020,16 +916,13 @@
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.4.2.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
       &lt;p&gt;After exactly 1 month since the last release, we are proud to announce the immediate availability of Forge 1.4.2.Final.&lt;/p&gt;
-      &lt;h2&gt;Release Notes&lt;br&gt;
-      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;&lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1212&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1212&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; endpoint findById doesn't handle NoResultException&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1219&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1219&lt;/a&gt;] &amp;#8211;         &amp;#8212;createMain doesn't work with &amp;#8212;type war&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1261&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1261&lt;/a&gt;] &amp;#8211;         &quot;rest endpoint-from-entity&quot; fails, ClassNotFoundException: org.apache.log4j.Priority&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.2.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.2.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1060,8 +953,7 @@
       &lt;li&gt;Try out Forge 2 in Eclipse via our &lt;a href=&quot;http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/&quot;&gt;Update Site&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;Use Forge 2 in your &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; / Terminal by downloading and installing the &lt;a href=&quot;https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=2.0.0.Alpha13&amp;amp;e=zip&quot;&gt;Alpha13 release&lt;/a&gt;. You can &lt;a href=&quot;https://github.com/forge/core#get-started-with-the-command-line-tools&quot;&gt;learn how to run the downloaded installation&lt;/a&gt; via our docs.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;Resource Transactions and Resource Change Monitoring&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;Resource Transactions and Resource Change Monitoring&lt;/h2&gt;
       &lt;p&gt;There are a lot of exciting features (as you can see by the release notes below); however, there are some outstanding features that we are proud to present. The first of which are resource transactions and monitoring.&lt;/p&gt;
       &lt;h3&gt;Resource Transactions:&lt;/h3&gt;
       &lt;p&gt;If you are familiar with UserTransaction in Java EE applications, this should feel pretty comfortable.&lt;/p&gt;
@@ -1130,16 +1022,12 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1203&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1203&lt;/a&gt;] &amp;#8211;         Furnace &lt;span class=&quot;caps&quot;&gt;CDI&lt;/span&gt; is unable to create proxies for services that are backed by Weld proxies (@ApplicationScoped, etc)&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1206&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1206&lt;/a&gt;] &amp;#8211;         Imported&amp;lt;?&amp;gt;.get() has a different behavior compared to iterator()&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1223&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1223&lt;/a&gt;] &amp;#8211;         CheckboxTableControlBuilder does not properly initialize data collection when default values are set&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h3&gt;Enhancement&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;Enhancement&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-757&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-757&lt;/a&gt;] &amp;#8211;         Forge tests should delete the created folders&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1196&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1196&lt;/a&gt;] &amp;#8211;         Rename flag forge.compatibility.&lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; to forge.standalone&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1239&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1239&lt;/a&gt;] &amp;#8211;         UISelectOne and UISelectMany components could have dynamic value choices&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h3&gt;Feature Request&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;Feature Request&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-220&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-220&lt;/a&gt;] &amp;#8211;         Forge should listen to filesystem changes on the system and publish events for plugins to observe&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-801&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-801&lt;/a&gt;] &amp;#8211;         Support for Transactional Resources&lt;/li&gt;
@@ -1153,14 +1041,10 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1202&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1202&lt;/a&gt;] &amp;#8211;         Furnace Maven plugin should allow generation of the full addon dependency graph&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1205&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1205&lt;/a&gt;] &amp;#8211;         Migrate CommandScoped to Forge 2&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1217&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1217&lt;/a&gt;] &amp;#8211;         UIProvider should provide a isGUI() method&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h3&gt;Task&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;Task&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1111&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1111&lt;/a&gt;] &amp;#8211;         Write a test to ensure that furnace fails deployment if multiple containers are specified&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h3&gt;Sub-task&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;Sub-task&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1171&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1171&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JMS&lt;/span&gt; commands&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1174&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1174&lt;/a&gt;] &amp;#8211;         Port the &lt;span class=&quot;caps&quot;&gt;JSTL&lt;/span&gt; commands&lt;/li&gt;
@@ -1195,8 +1079,7 @@
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.4.1.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
       &lt;p&gt;It&amp;#8217;s a great day for progress &amp;#8211; Going forward, we&amp;#8217;re putting Forge 1.x into maintenance mode. This means that new features will target Forge 2.x; only bug-fixes will be accepted for the 1.x stream.  The next JBoss Forge generation (Forge 2.0.0.Final) is due in November, and we&amp;#8217;re working really hard on making it happen. Stay in the loop by checking out our &lt;a href=&quot;https://github.com/forge/core#readme&quot;&gt;Forge 2 development guide&lt;/a&gt;!&lt;/p&gt;
-      &lt;h2&gt;Release Notes&lt;br&gt;
-      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;&lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1030&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1030&lt;/a&gt;] &amp;#8211;         Support multi-module Forge plugins&lt;/li&gt;
@@ -1208,19 +1091,14 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1163&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1163&lt;/a&gt;] &amp;#8211;         No @XmlRootElement on Entities&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1166&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1166&lt;/a&gt;] &amp;#8211;         Servlet javax.ws.rs.core.Application not defined in web.xml&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1191&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1191&lt;/a&gt;] &amp;#8211;         Template title has wrong EL&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1138&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1138&lt;/a&gt;] &amp;#8211;         &quot;forge update&quot; should be disabled in the &lt;span class=&quot;caps&quot;&gt;IDE&lt;/span&gt; (using -Pforge.compatability.ide or similar)&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1006&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1006&lt;/a&gt;] &amp;#8211;         Provide a command to generate equals and hashcode implementations considering all suitable fields in the &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entity&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1200&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1200&lt;/a&gt;] &amp;#8211;         Add A@Column(length) on Entity attributes of type String&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1246,14 +1124,13 @@
       &lt;strong&gt;JBoss Forge 1.4.0.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
       &lt;p&gt;After month of hard work, we are pleased to announce that JBoss Forge 1.4.0.Final is now available &amp;#8211; with a metric ton of new features and bug-fixes. Check out what&amp;#8217;s new and noteworthy in this lovely release!&lt;/p&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Improved Microsoft Windows experience&lt;/strong&gt; &amp;#8211; The Windows experience just got better. Now the file paths are corrected to backward-slash &amp;#8216;\&amp;#8217; in Windows.&lt;/li&gt;
       	&lt;li&gt;
       &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;DTO&lt;/span&gt; generation in the &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin (tech preview)&lt;/strong&gt; &amp;#8211; &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resource generation just got better. Some of you prefer generating DTOs for your &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resources instead of using &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entities. This is now possible; the DTOs generated by the &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin avoid common issues associated with cyclic and bidirectional relationships. This feature will be enhanced in future releases to support various generation strategies.&lt;/li&gt;
       	&lt;li&gt;
       &lt;strong&gt;The answer to life, the universe and everything&lt;/strong&gt; &amp;#8211; Guess how many issues were resolved? That&amp;#8217;s right! 42! Check the full list below.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h3&gt;Forge 2.0 is just around the corner.&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;Forge 2.0 is just around the corner.&lt;/h3&gt;
       &lt;p&gt;In addition to the vast improvements in Forge 1.4.0, we have been working tirelessly to prepare Forge 2.0, which offers a whole new world of possibilities. Including modular addons (plugins), a completely re-designed plugin system, a faster (2-3s) bootup time &amp;#8211; a 5x improvement &amp;#8211; and more. To get a preview of what&amp;#8217;s to come, check out the &lt;a href=&quot;https://github.com/forge/core/tree/2.0&quot;&gt;Forge 2 branch&lt;/a&gt; in our GitHub repository. We expect to have this in your hands by November, and we&amp;#8217;ll be launching a re-designed website to make using, learning, and extending Forge easier than ever.&lt;/p&gt;
       &lt;h2&gt;Release Notes&lt;/h2&gt;
       &lt;h2&gt;        Bug&lt;/h2&gt;
@@ -1287,19 +1164,13 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1104&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1104&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin stores the path of the Activator class instead of the classname in the project config&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1112&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1112&lt;/a&gt;] &amp;#8211;         Support paths with spaces&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1119&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1119&lt;/a&gt;] &amp;#8211;         HeadlessException with OpenPlugin&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1027&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1027&lt;/a&gt;] &amp;#8211;         Update the Forge Java Parser&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1017&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1017&lt;/a&gt;] &amp;#8211;         A valid package name should be computed as default when prompting for a replacement in a JAVA_PACKAGE prompt&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1060&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1060&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin should support creation of DTOs for the underlying &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entities of &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resources&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1081&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1081&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin should create the &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resources in the same package as the @ApplicationPath annotated class&lt;/li&gt;
@@ -1311,18 +1182,13 @@
       &lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1108&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1108&lt;/a&gt;] &amp;#8211;         Add support in the Scaffold-X Forge Inspector for scanning @Embeddable and @Embedded types&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1125&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1125&lt;/a&gt;] &amp;#8211;         Images path in forge-style.css is missing the contextPath&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-919&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-919&lt;/a&gt;] &amp;#8211;         Document how to configure your own plugin repository&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Sub-task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Sub-task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1076&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1076&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin should detect conflicting top-level paths&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;p. &lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;p. &lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.4.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.4.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1351,8 +1217,7 @@
     <content type="html">
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.3.3.Final&lt;/strong&gt; is now available!&lt;/h1&gt;
-      &lt;h2&gt;Release Notes&lt;br&gt;
-      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;&lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-593&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-593&lt;/a&gt;] &amp;#8211;         Forge swallows first character of user input after restarting (typically from plugin installation)&lt;/li&gt;
@@ -1363,18 +1228,15 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-996&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-996&lt;/a&gt;] &amp;#8211;         Incorrect deletion logic is generation for OneToOne relationships and inverse sides of ManyToMany relationships&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1001&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1001&lt;/a&gt;] &amp;#8211;         Duplicate local variables are created in the View beans of the generated Faces scaffold&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1009&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1009&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;NPE&lt;/span&gt; in SetPlugin when no value is provided&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-995&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-995&lt;/a&gt;] &amp;#8211;         The generated hashcode() and equals() methods should not reference the hardcoded 'id' field&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1005&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1005&lt;/a&gt;] &amp;#8211;         Consider primitive field types, array types and class hierarchies for generation of equals and hashcode implementations&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-1003&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1003&lt;/a&gt;] &amp;#8211;         Parse a JavaClass from an &lt;span class=&quot;caps&quot;&gt;URL&lt;/span&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1405,24 +1267,20 @@
       &lt;h1&gt;
       &lt;strong&gt;JBoss Forge 1.3.2.Final&lt;/strong&gt; is now available for download!&lt;/h1&gt;
       &lt;p&gt;We are so excited in releasing new versions that we decided to release another one just in time for the next version of JBoss Tools.&lt;/p&gt;
-      &lt;h2&gt;Release Notes&lt;br&gt;
-      &lt;h2&gt;        Bug&lt;/h2&gt;
+      &lt;h2&gt;Release Notes&lt;br&gt;&lt;h2&gt;        Bug&lt;/h2&gt;
       &lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-913&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-913&lt;/a&gt;] &amp;#8211;         RichFaces scaffolding does not handle temporal fields in &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entities correctly&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-916&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-916&lt;/a&gt;] &amp;#8211;         Faces scaffold does not handle deletion of entities with bidirectional relationships&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-963&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-963&lt;/a&gt;] &amp;#8211;         NullPointerException if no pluginName is provided forge install-plugin&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-976&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-976&lt;/a&gt;] &amp;#8211;         Forge icon is placed on dock menu in Mac &lt;span class=&quot;caps&quot;&gt;OSX&lt;/span&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-975&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-975&lt;/a&gt;] &amp;#8211;         RestPlugin should provide a default value when no package is informed and ACCEPT_DEFAULTS is true&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.2.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.2.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1454,25 +1312,21 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-907&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-907&lt;/a&gt;] &amp;#8211;         Project finalName is expected in a Maven project during scaffold setup&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-915&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-915&lt;/a&gt;] &amp;#8211;         Faces scaffold should use the server timezone instead of &lt;span class=&quot;caps&quot;&gt;UTC&lt;/span&gt; for date and time fields&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-917&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-917&lt;/a&gt;] &amp;#8211;         Faces scaffolding omits fields in the create/edit/search views when they do not have setter methods&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-929&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-929&lt;/a&gt;] &amp;#8211;         Validate when a facet is injecting a Project&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-931&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-931&lt;/a&gt;] &amp;#8211;         rest endpoint-from-entity adds unnecessary imports to generated rest resources&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-943&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-943&lt;/a&gt;] &amp;#8211;         When Forge encounter a maven project try to display some info of the project befure user start execute command&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-811&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-811&lt;/a&gt;] &amp;#8211;         MavenPlugin: Add maven plugin&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-848&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-848&lt;/a&gt;] &amp;#8211;         Forge should support a @CommandScoped annotation&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-953&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-953&lt;/a&gt;] &amp;#8211;         validation setup should default to JAVA_EE, not hibernate&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-340&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-340&lt;/a&gt;] &amp;#8211;         Change default plugin checkout location to use the .forge/plugins-sources directory&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-583&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-583&lt;/a&gt;] &amp;#8211;         Include Forge JavaDoc in Distribution download.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1506,28 +1360,23 @@
       &lt;p&gt;It is with great pleasure that we announce that JBoss Forge 1.3.0.Final is now available. Why the minor update ? Check it out.&lt;/p&gt;
       &lt;h2&gt;New and Noteworthy&lt;/h2&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Scaffold-x plugin:&lt;/strong&gt; We have taken the Scaffold plugin to another level. This plugin was designed from ground up for better flexibility and performance.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;code&gt;scaffold-x from resource.java&lt;/code&gt;&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;code&gt;scaffold-x from resource.java&lt;/code&gt;&lt;/p&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Maven Mirrors are now fully supported:&lt;/strong&gt; Now you can add your mirrors in your maven settings.xml file and Forge will use that to resolve the necessary artifacts.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Proxy is globally enabled:&lt;/strong&gt; Do you use proxies ? Well, fear no more, as now Forge will correctly use your proxy settings when resolving external artifacts&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;EAR&lt;/span&gt; Support:&lt;/strong&gt;: Now you can create &lt;span class=&quot;caps&quot;&gt;EAR&lt;/span&gt; projects easily as:&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;code&gt;new-project --type ear&lt;/code&gt;&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;code&gt;new-project --type ear&lt;/code&gt;&lt;/p&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Wildfly support:&lt;/strong&gt; That&amp;#8217;s right ! Now you can choose &lt;a href=&quot;http://www.wildfly.org&quot;&gt;WildFly&lt;/a&gt;, one of the best AS in the planet in the list of supported &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; Containers, as in:&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;code&gt;persistence setup --provider HIBERNATE --container WILDFLY&lt;/code&gt;&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;code&gt;persistence setup --provider HIBERNATE --container WILDFLY&lt;/code&gt;&lt;/p&gt;
       &lt;p&gt;And much more, check out the release notes below and see why Forge IS the best JavaEE development tool&lt;/p&gt;
       &lt;h2&gt;Release Notes&lt;/h2&gt;
       &lt;h3&gt;        Bug&lt;/h3&gt;
@@ -1551,16 +1400,14 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-901&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-901&lt;/a&gt;] &amp;#8211;         Error while running persistence setup when current persistence.xml is deleted&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-902&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-902&lt;/a&gt;] &amp;#8211;         RmPlugin should not prompt for non-existing resources&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-903&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-903&lt;/a&gt;] &amp;#8211;         RestFacet is not properly installed&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h3&gt;        Enhancement&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;        Enhancement&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-360&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-360&lt;/a&gt;] &amp;#8211;         FacesPlugin should automatically add the faces mapping if the servlet version &amp;lt; 3&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-794&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-794&lt;/a&gt;] &amp;#8211;         Refactor PropertyCompleter from Java EE Impl to Forge Core&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-864&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-864&lt;/a&gt;] &amp;#8211;         &amp;#8212;type ear support for new-project&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-865&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-865&lt;/a&gt;] &amp;#8211;         Extend the maven plugin with a set-name command&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-867&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-867&lt;/a&gt;] &amp;#8211;         Faces scaffold reformats the source code of &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; entities with no changes&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h3&gt;        Feature Request&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;        Feature Request&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-815&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-815&lt;/a&gt;] &amp;#8211;         Add support to the field plugin for specifying CascadeTypes&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-857&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-857&lt;/a&gt;] &amp;#8211;         Forge 1 Configuration Folder should be configurable&lt;/li&gt;
@@ -1568,8 +1415,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-879&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-879&lt;/a&gt;] &amp;#8211;         pass an unitname to the EntityManager in the &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; plugin&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-890&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-890&lt;/a&gt;] &amp;#8211;         Design and implement the next-generation Forge scaffold plugin&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-900&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-900&lt;/a&gt;] &amp;#8211;         Add Wildfly as a persistence container&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.3.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.3.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1606,13 +1452,11 @@
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-830&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-830&lt;/a&gt;] &amp;#8211;         RestPlugin should throw IllegalArgumentException if no domain entity is provided&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-849&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-849&lt;/a&gt;] &amp;#8211;         Forge update asks to upgrade to incompatible 2.0.0.Alpha2 when run&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-822&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-822&lt;/a&gt;] &amp;#8211;         Proxy settings utility for plugin writers&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-842&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-842&lt;/a&gt;] &amp;#8211;         Add managed plugin support to MavenPluginFacet&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-813&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-813&lt;/a&gt;] &amp;#8211;         Implement a strategy to fix the open session in view problem in the generated &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; resources&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-814&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-814&lt;/a&gt;] &amp;#8211;         Add support to the field plugin for specifying optional associations&lt;/li&gt;
@@ -1623,12 +1467,10 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-829&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-829&lt;/a&gt;] &amp;#8211;         Support Underline typographical presentation&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-835&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-835&lt;/a&gt;] &amp;#8211;         Forge field plugin doesn't support lobs / byte arrays&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-836&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-836&lt;/a&gt;] &amp;#8211;         Remove java parser classes from core&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Patch&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Patch&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-834&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-834&lt;/a&gt;] &amp;#8211;         [RestPlugin]  Fire a RestGeneratedResources event containing the resources for which a rest endpoint have been created&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;&lt;em&gt;-The Forge Team&lt;/em&gt;&lt;/p&gt;
     </content>
@@ -1731,27 +1573,22 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-787&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-787&lt;/a&gt;] &amp;#8211;         Forge update is not working correctly in Windows&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-799&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-799&lt;/a&gt;] &amp;#8211;         RunPluginTest fails when there is a space on directory path&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-807&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-807&lt;/a&gt;] &amp;#8211;         Java Parser incorrectly resolves some dependent classes to java.lang.xxx when resolving imports for an Entity&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-576&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-576&lt;/a&gt;] &amp;#8211;         Refactor RunUrlPluginTest&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-805&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-805&lt;/a&gt;] &amp;#8211;         Faces Scaffold does not support &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; inheritance&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-788&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-788&lt;/a&gt;] &amp;#8211;         Add support for Updating Maven Pom Dependencies&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-798&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-798&lt;/a&gt;] &amp;#8211;         Add support to the field plugin for specifying FetchTypes&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-806&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-806&lt;/a&gt;] &amp;#8211;         Test &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;: get output of executed command&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Library Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Library Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-800&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-800&lt;/a&gt;] &amp;#8211;         Upgrade JGit libraries&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h2&gt;        Task&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Task&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-793&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-793&lt;/a&gt;] &amp;#8211;         Forge builds should be less restrictive on the &lt;span class=&quot;caps&quot;&gt;JDK&lt;/span&gt; version used&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.2.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.2.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.2.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
       &lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
@@ -1791,22 +1628,16 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-767&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-767&lt;/a&gt;] &amp;#8211;         JavaPlugin: Annotations and enums with no packages are created under the &quot;null&quot; package&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-774&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-774&lt;/a&gt;] &amp;#8211;         Have been using Forge for months.  My machine crashed, I re-installed Forge and got error on new-project command.  Error was not useful.&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-780&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-780&lt;/a&gt;] &amp;#8211;         `forge install-plugin` from central repository fails when plugin name collides with tags in other entries&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Component  Upgrade&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-718&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-718&lt;/a&gt;] &amp;#8211;         Ensure that the Java Parser can parse and is updated for Java 7 support&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-150&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-150&lt;/a&gt;] &amp;#8211;         Implementations of JavaParser Interfaces should maintain equality with other implementations&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-564&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-564&lt;/a&gt;] &amp;#8211;         Allow multiple @Alias for a plugin&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-753&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-753&lt;/a&gt;] &amp;#8211;         Generate Atom feed for the Website for JBoss Weekly Editorial&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-768&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-768&lt;/a&gt;] &amp;#8211;         JavaPlugin: add &amp;#8212;named parameter for new-class, new-interface, new-annotation and new-enum&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-744&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-744&lt;/a&gt;] &amp;#8211;         BeansPlugin: add new-stereotype command&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-760&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-760&lt;/a&gt;] &amp;#8211;         When generating new member variables it would be nice if the toString method updated include the member variable name.&lt;/li&gt;
@@ -1815,9 +1646,7 @@
       &lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-765&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-765&lt;/a&gt;] &amp;#8211;         JavaPlugin new-annotation-type:  multi-select @Target ElementTypes&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-772&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-772&lt;/a&gt;] &amp;#8211;         BeansPlugin += new-scope command&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.1.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.1.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
       &lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
@@ -1859,9 +1688,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-743&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-743&lt;/a&gt;] &amp;#8211;         NamedValueOptionParser should reject varargs options&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-747&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-747&lt;/a&gt;] &amp;#8211;         ForgePlugin list-plugins ignores &lt;span class=&quot;caps&quot;&gt;GREP&lt;/span&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Enhancement&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Enhancement&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-119&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-119&lt;/a&gt;] &amp;#8211;         org.jboss.forge.parser.java.Parameter should support examining annotations&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-613&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-613&lt;/a&gt;] &amp;#8211;         Create a &lt;span class=&quot;caps&quot;&gt;XML&lt;/span&gt; Schema for forge.xml&lt;/li&gt;
@@ -1871,9 +1698,7 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-731&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-731&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; support for nested annotations as annotation element values&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-746&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-746&lt;/a&gt;] &amp;#8211;         fully handle annotation elements of enum, class, and arrays of each, type&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-748&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-748&lt;/a&gt;] &amp;#8211;         org.jboss.forge.parser.java.util.Types does not handle type names that combine generics and arrays&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Feature Request&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Feature Request&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-224&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-224&lt;/a&gt;] &amp;#8211;         Create means for measuring usage via analytics&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-436&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-436&lt;/a&gt;] &amp;#8211;         JavaSource needs a way to parse nested annotations&lt;/li&gt;
@@ -1883,13 +1708,10 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-733&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-733&lt;/a&gt;] &amp;#8211;         &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for annotation elements in JavaAnnotation type definitions&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-739&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-739&lt;/a&gt;] &amp;#8211;         BeansPlugin: add new command 'new-qualifier'&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-741&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-741&lt;/a&gt;] &amp;#8211;         JavaPlugin: new-annotation-type += retentionPolicy, documented options&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h2&gt;        Patch&lt;/h2&gt;
+      &lt;/ul&gt;&lt;h2&gt;        Patch&lt;/h2&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-735&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-735&lt;/a&gt;] &amp;#8211;         make result of MethodImpl.getParameters() unmodifiable&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.2.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.2.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
       &lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
@@ -1930,19 +1752,13 @@
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-713&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-713&lt;/a&gt;] &amp;#8211;         Reverse-side of self-referenced entity not generated&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-714&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-714&lt;/a&gt;] &amp;#8211;         FieldPlugin should check if field already exists in target&lt;/li&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-717&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-717&lt;/a&gt;] &amp;#8211;         GitIgnorePluginTest fails when running in maven&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h3&gt;        Enhancement&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;        Enhancement&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-706&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-706&lt;/a&gt;] &amp;#8211;         Support for .gitignore creation&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;h3&gt;        Feature Request&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;        Feature Request&lt;/h3&gt;
       &lt;ul&gt;
       &lt;li&gt;[&lt;a href=&quot;https://issues.jboss.org/browse/FORGE-559&quot;&gt;&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-559&lt;/a&gt;] &amp;#8211;         Add support for listing or navigating the contents of a jar file&lt;/li&gt;
-      &lt;/ul&gt;
-      
-      &lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.1.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;&lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.3.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.1.3.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone with this new version!&lt;/p&gt;
       &lt;p&gt;You can also automatically update your current forge installation by typing the following command inside a Forge console:&lt;/p&gt;
       &lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;prettyprint&quot;&gt;forge update&lt;/code&gt;&lt;/pre&gt;
       &lt;p&gt;Happy Forging and we welcome your feedback!&lt;/p&gt;
@@ -1972,60 +1788,51 @@
       &lt;p&gt;It is with great pleasure that I announce that &lt;strong&gt;JBoss Forge 1.1.0.Final&lt;/strong&gt; has just been released !&lt;/p&gt;
       &lt;p&gt;This version is loaded with new features (That&amp;#8217;s why we decided to change the minor version &amp;#8211; :) ). Check out the &lt;a href=&quot;https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12311820&amp;amp;version=12319934&quot;&gt;Full Release Notes&lt;/a&gt; or, if you just want to catch up with what&amp;#8217;s new, keep reading :&lt;/p&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;SNAPSHOTS&lt;/span&gt; ? No siree !!&lt;/strong&gt; &amp;#8211; Now Forge won&amp;#8217;t prompt for &lt;span class=&quot;caps&quot;&gt;SNAPSHOT&lt;/span&gt; dependencies when you need to choose a dependency.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Forge Update&lt;/strong&gt; &amp;#8211; Yes!!! Now you can update your Forge installation by simply typing &lt;code&gt;forge update&lt;/code&gt;. &lt;br&gt;
       Forge will automatically detect the latest version and prompt you for update;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Metamodel Generation&lt;/strong&gt; &amp;#8211; When you run &lt;code&gt;persistence setup&lt;/code&gt;, you will now be asked to install a &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; 2 metamodel generator &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;BASED&lt;/span&gt; ON &lt;span class=&quot;caps&quot;&gt;YOUR&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;PERSISTENCE&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;PROVIDER&lt;/span&gt; !! :)&lt;/strong&gt;&lt;br&gt;
       Many thanks to Thomas Hug for making this happen;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Class attributes in the right place&lt;/strong&gt; &amp;#8211; When you create a new field, the newly created attribute will be placed near to the others, and no longer in the end of the class;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Improvements to the &amp;#8220;Did you mean ?&amp;#8221; feature&lt;/strong&gt; &amp;#8211; If you typed something wrong, Forge will suggest you which command may be similar to what you were looking for. &lt;br&gt;
       Now supporting aliased commands;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Plugins Diff&lt;/strong&gt; &amp;#8211; Now when you install a plugin, Forge will show you the newly available commands, as well the removed commands when you uninstall;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;open http://www.sesame.com (or &lt;em&gt;cat&lt;/em&gt;)&lt;/strong&gt; &amp;#8211; Now you can open any &lt;span class=&quot;caps&quot;&gt;URL&lt;/span&gt; inside Forge using &lt;code&gt;open http://forge.jboss.org&lt;/code&gt;. &lt;br&gt;
       You can also &lt;code&gt;cat http://forge.jboss.org&lt;/code&gt; as well;&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;/ul&gt;&lt;ul&gt;
+      &lt;li&gt;
       &lt;strong&gt;Colossal changes&lt;/strong&gt; to our &lt;strong&gt;most beloved plugins ever&lt;/strong&gt; !!!
       	&lt;ul&gt;
-      		&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Hibernate-Tools&lt;/strong&gt;: Now you can count on a database reverse engineering plugin that supports oracle databases in addition to the plethora of others already included;&lt;/li&gt;
       		&lt;li&gt;
       &lt;strong&gt;AS7&lt;/strong&gt; : This little piece of love will download, install, start, stop, deploy, undeploy, execute &lt;span class=&quot;caps&quot;&gt;CLI&lt;/span&gt; commands &lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;ALL&lt;/span&gt;-IN-&lt;span class=&quot;caps&quot;&gt;ONE&lt;/span&gt; ! &lt;span class=&quot;caps&quot;&gt;YOU&lt;/span&gt; CAN&amp;#8217;T &lt;span class=&quot;caps&quot;&gt;AFFORD&lt;/span&gt; TO &lt;span class=&quot;caps&quot;&gt;MISS&lt;/span&gt; IT !&lt;/strong&gt;
       &lt;/li&gt;
       	&lt;/ul&gt;
       &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;and much more &amp;#8230;&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;and much more &amp;#8230;&lt;/p&gt;
       &lt;h3&gt;Thanks to&amp;#8230;&lt;/h3&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Thomas Hug&lt;/strong&gt; &amp;#8211; for getting the &lt;span class=&quot;caps&quot;&gt;JPA&lt;/span&gt; 2 metamodel generator done&lt;/li&gt;
       	&lt;li&gt;
       &lt;strong&gt;Ivan &amp;#8216;The Enforcer&amp;#8217; St. Ivanov&lt;/strong&gt; &amp;#8211; for correctly configuring the maven enforcer plugin and making us relieved while building the sources;&lt;/li&gt;
       	&lt;li&gt;
       &lt;strong&gt;And many more&lt;/strong&gt; &amp;#8211; for their ideas and help over the past few months.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;p&gt;Also many thanks to everyone who attended the Forge Hack Night. We couldn&amp;#8217;t have done it without your help !&lt;/p&gt;
+      &lt;/ul&gt;&lt;p&gt;Also many thanks to everyone who attended the Forge Hack Night. We couldn&amp;#8217;t have done it without your help !&lt;/p&gt;
       &lt;p&gt;So what are you waiting for ? &lt;a href=&quot;#&quot; onclick=&quot;_gaq.push(['_trackEvent', 'Downloads', '1.1.0.Final']);document.location.href='https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;amp;g=org.jboss.forge&amp;amp;a=forge-distribution&amp;amp;v=1.1.0.Final&amp;amp;e=zip';return false;&quot;&gt;Grab it&lt;/a&gt; while is hot and amaze everyone while using this great tool !&lt;/p&gt;
       &lt;p&gt;Good luck and we welcome your feedback!&lt;/p&gt;
       &lt;p&gt;-The Forge Team&lt;/p&gt;
@@ -2056,14 +1863,13 @@
       &lt;p&gt;We have a new website, and would like to thank several of our community members for making this possible.&lt;/p&gt;
       &lt;h3&gt;Thanks to&amp;#8230;&lt;/h3&gt;
       &lt;ul&gt;
-      	&lt;li&gt;
+      &lt;li&gt;
       &lt;strong&gt;Paul Bakker&lt;/strong&gt; &amp;#8211; for getting the initial project started and doing the plugin search pages&lt;/li&gt;
       	&lt;li&gt;
       &lt;strong&gt;Ivan St. Ivanov&lt;/strong&gt; &amp;#8211; for migrating the documentation&lt;/li&gt;
       	&lt;li&gt;
       &lt;strong&gt;And many more&lt;/strong&gt; &amp;#8211; for their ideas and help over the past few months.&lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;h3&gt;Getting involved&lt;/h3&gt;
+      &lt;/ul&gt;&lt;h3&gt;Getting involved&lt;/h3&gt;
       &lt;p&gt;If you would like to get involved and help with the web site, please feel free to &lt;a href=&quot;http://github.com/forge/forge.github.com&quot;&gt;fork our repository&lt;/a&gt; on github and send pull requests. You will need to &lt;a href=&quot;http://awestruct.org&quot;&gt;install Awestruct&lt;/a&gt; to build and run the website locally (`awestruct -d`).&lt;/p&gt;
       &lt;p&gt;Good luck and we welcome your feedback!&lt;br&gt;
       -The Forge Team&lt;/p&gt;
