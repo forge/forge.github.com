@@ -23,33 +23,12 @@ h2. Contributors
 
 A huge thank you to the following contributors of this release. You are awesome:
 
-* <a href="https://github.com/danielsoro">Daniel Cunha</a>:
-**      String refactoring
-**      FORGE-1783: Create a Git Constants and altered the string references.
-**      FORGE-1780: Created method to create default commandName based on type name camelcase. Create test class: NewUiCommandWizardTest
-**      [FORGE-1857] Updated aesh version
-**      [FORGE-1836] Refactor towards JDK 1.7 enhancements
-**      [FORGE-1832] Upgrade to Roaster 2.5.0.Final
-**      Added new argument to forge command line
-
-* <a href="https://github.com/agoncal">Antonio Goncalves</a>:
-**      Implemented FORGE-1671
-**      Implemented [FORGE-1595] - Being able to create an empty JSF backing bean
-
+* <a href="https://github.com/danielsoro">Daniel Cunha</a>
+* <a href="https://github.com/agoncal">Antonio Goncalves</a>
 * <a href="https://github.com/mbriskar">Matej Briskar</a>
-**      FORGE-1750, FORGE-1749: Create command to generate getters and setters
-**      Fixing test JavaParserResourcesTest after the maven-optional cleanup
-
 * <a href="https://github.com/rbalent">Robert Balent</a>
-**      FORGE-1445 : Enchanted ls command on Java class to show fields and methods separately
-**      FORGE-1487 : ls command - Changed formatting to match bash
-
 * <a href="https://github.com/ivannov">Ivan St. Ivanov</a>
-**      FORGE-1546 Entity fields larger than 800 symbols should generate text area upon scaffolding.
-**      FORGE-1787 Reflect an explicit webroot, entered in the scaffold-generate command, to search.xhtml and view.xhtml
-
 * <a href="https://github.com/jsight">Jess Sightler</a>
-**      Changed while to if
 
 h2. Download Forge
 
