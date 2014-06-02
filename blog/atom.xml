@@ -27,10 +27,14 @@
       A huge thank you to the following contributors of this release. You are awesome:
       
       	Daniel Cunha:
-      	
-      		String refactoring
-      		FORGE-1783: Create a Git Constants and altered the string references.
-      		FORGE-1780: Created method......
+      	Antonio Goncalves:
+      	Matej Briskar
+      	Robert Balent
+      	Ivan St. Ivanov
+      	Jess Sightler
+      
+      Download Forge
+      Try out Forge 2 in Eclipse......
     </summary>
     <content type="html">
       &lt;h1&gt;
@@ -47,68 +51,13 @@
       &lt;p&gt;A huge thank you to the following contributors of this release. You are awesome:&lt;/p&gt;
       &lt;ul&gt;
       	&lt;li&gt;
-      &lt;a href=&quot;https://github.com/danielsoro&quot;&gt;Daniel Cunha&lt;/a&gt;:
-      	&lt;ul&gt;
-      		&lt;li&gt;String refactoring&lt;/li&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1783: Create a Git Constants and altered the string references.&lt;/li&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1780: Created method to create default commandName based on type name camelcase. Create test class: NewUiCommandWizardTest&lt;/li&gt;
-      		&lt;li&gt;[&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1857] Updated aesh version&lt;/li&gt;
-      		&lt;li&gt;[&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1836] Refactor towards &lt;span class=&quot;caps&quot;&gt;JDK&lt;/span&gt; 1.7 enhancements&lt;/li&gt;
-      		&lt;li&gt;[&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1832] Upgrade to Roaster 2.5.0.Final&lt;/li&gt;
-      		&lt;li&gt;Added new argument to forge command line&lt;/li&gt;
-      	&lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
+      &lt;a href=&quot;https://github.com/danielsoro&quot;&gt;Daniel Cunha&lt;/a&gt;:&lt;/li&gt;
       	&lt;li&gt;
-      &lt;a href=&quot;https://github.com/agoncal&quot;&gt;Antonio Goncalves&lt;/a&gt;:
-      	&lt;ul&gt;
-      		&lt;li&gt;Implemented &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1671&lt;/li&gt;
-      		&lt;li&gt;Implemented [&lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1595] – Being able to create an empty &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; backing bean&lt;/li&gt;
-      	&lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
-      &lt;a href=&quot;https://github.com/mbriskar&quot;&gt;Matej Briskar&lt;/a&gt;
-      	&lt;ul&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1750, &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1749: Create command to generate getters and setters&lt;/li&gt;
-      		&lt;li&gt;Fixing test JavaParserResourcesTest after the maven-optional cleanup&lt;/li&gt;
-      	&lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
-      &lt;a href=&quot;https://github.com/rbalent&quot;&gt;Robert Balent&lt;/a&gt;
-      	&lt;ul&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1445 : Enchanted ls command on Java class to show fields and methods separately&lt;/li&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1487 : ls command – Changed formatting to match bash&lt;/li&gt;
-      	&lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
-      &lt;a href=&quot;https://github.com/ivannov&quot;&gt;Ivan St. Ivanov&lt;/a&gt;
-      	&lt;ul&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1546 Entity fields larger than 800 symbols should generate text area upon scaffolding.&lt;/li&gt;
-      		&lt;li&gt;
-      &lt;span class=&quot;caps&quot;&gt;FORGE&lt;/span&gt;-1787 Reflect an explicit webroot, entered in the scaffold-generate command, to search.xhtml and view.xhtml&lt;/li&gt;
-      	&lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;
-      &lt;ul&gt;
-      	&lt;li&gt;
-      &lt;a href=&quot;https://github.com/jsight&quot;&gt;Jess Sightler&lt;/a&gt;
-      	&lt;ul&gt;
-      		&lt;li&gt;Changed while to if&lt;/li&gt;
-      	&lt;/ul&gt;
-      &lt;/li&gt;
+      &lt;a href=&quot;https://github.com/agoncal&quot;&gt;Antonio Goncalves&lt;/a&gt;:&lt;/li&gt;
+      	&lt;li&gt;&lt;a href=&quot;https://github.com/mbriskar&quot;&gt;Matej Briskar&lt;/a&gt;&lt;/li&gt;
+      	&lt;li&gt;&lt;a href=&quot;https://github.com/rbalent&quot;&gt;Robert Balent&lt;/a&gt;&lt;/li&gt;
+      	&lt;li&gt;&lt;a href=&quot;https://github.com/ivannov&quot;&gt;Ivan St. Ivanov&lt;/a&gt;&lt;/li&gt;
+      	&lt;li&gt;&lt;a href=&quot;https://github.com/jsight&quot;&gt;Jess Sightler&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
       &lt;h2&gt;Download Forge&lt;/h2&gt;
       &lt;ul&gt;
