@@ -1,0 +1,182 @@
+---
+layout: news
+title: Forge 2.6.0.Final Released
+author: George Gastaldi, Lincoln Baxter, III, Vineet Reynolds
+tags: [ website, announcement ]
+---
+
+h1. *JBoss Forge 2.6.0.Final* is now available!
+
+The Forge Team is proud to announce that JBoss Forge 2.6.0.Final is now available! This is the best release so far.
+
+h1. What’s new and noteworthy?
+
+<ul>
+<li><strong>Component Upgrades</strong>: We've upgraded to Weld 2.2.1.Final, Aesh 0.54 and Roaster 2.4.0.Final. More stability and new features available out-of-the-box!</li>
+</ul>
+
+And that's not all! Check out the issues below for more info.
+
+Please let us know if you encounter any issues, or have any feedback on usability, at http://issues.jboss.org/browse/FORGE.
+
+h2. Contributors
+
+A huge thank you to the following contributors of this release. You are awesome:
+
+* <a href="https://github.com/danielsoro">Daniel Cunha</a>:
+**      String refactoring
+**      FORGE-1783: Create a Git Constants and altered the string references.
+**      FORGE-1780: Created method to create default commandName based on type name camelcase. Create test class: NewUiCommandWizardTest
+**      [FORGE-1857] Updated aesh version
+**      [FORGE-1836] Refactor towards JDK 1.7 enhancements
+**      [FORGE-1832] Upgrade to Roaster 2.5.0.Final
+**      Added new argument to forge command line
+
+* <a href="https://github.com/agoncal">Antonio Goncalves</a>:
+**      Implemented FORGE-1671
+**      Implemented [FORGE-1595] - Being able to create an empty JSF backing bean
+
+* <a href="https://github.com/mbriskar">Matej Briskar</a>
+**      FORGE-1750, FORGE-1749: Create command to generate getters and setters
+**      Fixing test JavaParserResourcesTest after the maven-optional cleanup
+
+* <a href="https://github.com/rbalent">Robert Balent</a>
+**      FORGE-1445 : Enchanted ls command on Java class to show fields and methods separately
+**      FORGE-1487 : ls command - Changed formatting to match bash
+
+* <a href="https://github.com/ivannov">Ivan St. Ivanov</a>
+**      FORGE-1546 Entity fields larger than 800 symbols should generate text area upon scaffolding.
+**      FORGE-1787 Reflect an explicit webroot, entered in the scaffold-generate command, to search.xhtml and view.xhtml
+
+* <a href="https://github.com/jsight">Jess Sightler</a>
+**      Changed while to if
+
+h2. Download Forge
+
+<ul><li>Try out Forge 2 in Eclipse via our <a href="http://download.jboss.org/jbosstools/builds/staging/jbosstools-forge_master/all/repo/">Update Site</a></li>
+<li>Use Forge 2 in your CLI / Terminal by downloading and installing the <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.6.0.Final&e=zip&c=offline">Final release</a>. You can <a href="https://github.com/forge/core#get-started-with-the-command-line-tools">learn how to run the downloaded installation</a> via our docs.</li>
+</ul>
+
+h2. Release Notes - 45 issues were resolved since the last release. Check out all the new stuff!
+
+<h2>        Bug
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1764'>FORGE-1764</a>] -         Forge Eclipse does not seem to be properly syncing with the workspace selection
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1775'>FORGE-1775</a>] -         Maven project nesting fails if parent project inherits its version information from a parent
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1781'>FORGE-1781</a>] -         UI Commands with unparameterized @Injected UIInput fields cause all commands to fail
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1782'>FORGE-1782</a>] -         Errors reported on the CLI when failures occur do not log or show enough information to determine a root cause
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1786'>FORGE-1786</a>] -         Generated index.html is broken in 2.5.1-SNAPSHOT
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1794'>FORGE-1794</a>] -         addon-git-install fails to checkout a remote branch
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1796'>FORGE-1796</a>] -         JTA facets should not be necessary for activating EJB facets.
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1803'>FORGE-1803</a>] -         Created EJB goes into the view package
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1835'>FORGE-1835</a>] -         BootstrapClassLoader should use temporary dir to unpack furnace JARs
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1847'>FORGE-1847</a>] -         UIContext.getSelection() always return null
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1851'>FORGE-1851</a>] -         scaffold-generate requires a webRoot value to be provided for additional parameters to be displayed.
+</li>
+</ul>
+        
+<h2>        Component  Upgrade
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1276'>FORGE-1276</a>] -         Upgrade Furnace-CDI to Weld 2.2.0
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1789'>FORGE-1789</a>] -         Upgrade to Roaster 2.4.0.Final
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1791'>FORGE-1791</a>] -         Upgrade to Aesh 0.54
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1831'>FORGE-1831</a>] -         javaee addon should depend on JavaEE 7 JARs
+</li>
+</ul>
+            
+<h2>        Enhancement
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1487'>FORGE-1487</a>] -         Columns do not line up on certain CLI outputs
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1546'>FORGE-1546</a>] -         Generate inputTextarea instead of inputText
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1716'>FORGE-1716</a>] -         Specify package, in addition to class name, for generating JSF scaffolds
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1717'>FORGE-1717</a>] -         Comments in script file
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1780'>FORGE-1780</a>] -         &quot;Addon: New UI Command&quot; should default commandName based on type name camelcase
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1785'>FORGE-1785</a>] -         Explicitly setup in scaffolding, not in Bean Validation nor in JPA
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1812'>FORGE-1812</a>] -         Rename command faces-project-stage to faces-set-project-stage
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1814'>FORGE-1814</a>] -         UISelectOne and UISelectMany&#39;s getValueChoices() should never return null
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1815'>FORGE-1815</a>] -         UISelectMany and UIInputMany getValue() should never return null
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1823'>FORGE-1823</a>] -         Furnace addon-manager should include optional non-addon dependencies as if they were not optional
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1824'>FORGE-1824</a>] -         IMPL modules of all addons should be marked as optional to prevent transitive compilation
+</li>
+</ul>
+        
+<h2>        Feature Request
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1326'>FORGE-1326</a>] -         Furnace proxies should attempt to honor Thread interrupted state. 
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1743'>FORGE-1743</a>] -         Rename addon-git-install command to addon-install-from-git
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1749'>FORGE-1749</a>] -         Create command to generate getters and setters for a given Java source file
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1750'>FORGE-1750</a>] -         Create command to generate getters and setters for a given Java source file using the builder pattern
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1773'>FORGE-1773</a>] -         EJB creation should optionally setup EJB and/or JMS Maven dependencies
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1793'>FORGE-1793</a>] -         Commands faces-new-validator and faces-new-converter do not work with faces-setup
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1795'>FORGE-1795</a>] -         UITestHarness usage of UIPrompt should be configurable
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1798'>FORGE-1798</a>] -         Create a SubSet annotation to allow injection of configuration subsets
+</li>
+</ul>
+                                        
+<h2>        Task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1167'>FORGE-1167</a>] -         Port the Java EE Forge 1 commands to Forge 2
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1783'>FORGE-1783</a>] -         Create an interface (eg. GitConstants) and add the constants there
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1826'>FORGE-1826</a>] -         Review all custom Exception types and ensure that they require a String message in all public constructors
+</li>
+</ul>
+                
+<h2>        Sub-task
+</h2>
+<ul>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1445'>FORGE-1445</a>] -         ls command on an entity is not as clear
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1451'>FORGE-1451</a>] -         Cannot scaffold REST endpoints using a * target
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1453'>FORGE-1453</a>] -         Cannot scaffold JSF pages using a * target
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1595'>FORGE-1595</a>] -         Being able to create an empty JSF backing bean
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1629'>FORGE-1629</a>] -         Being able to add comments to a script
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1671'>FORGE-1671</a>] -         Add nested annotation to a constraint annotation
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1742'>FORGE-1742</a>] -         When having a build command in a script, it times out
+</li>
+<li>[<a href='https://issues.jboss.org/browse/FORGE-1784'>FORGE-1784</a>] -         When having a scaffold-generate command in a script, it times out
+</li>
+</ul>
+            
+
