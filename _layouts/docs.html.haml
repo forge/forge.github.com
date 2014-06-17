@@ -9,18 +9,18 @@ layout: base
         %li.nav-header Using Forge
         - for doc in site.docs_using
           %li
-            %a{ :href=>doc.url + "#content"}= doc.title        
+            %a{ :href=>"/1.x"+doc.url + "#content"}= doc.title        
         %li.nav-header Get involved
         - for doc in site.docs_get_involved
           %li
-            %a{ :href=>doc.url + "#content"}= doc.title        
+            %a{ :href=>"/1.x"+doc.url + "#content"}= doc.title        
         %li.nav-header Important plugins
         - for doc in site.docs_important_plugins
           %li
-            %a{ :href=>doc.url + "#content"}= doc.title        
+            %a{ :href=>"/1.x"+doc.url + "#content"}= doc.title        
         %li.nav-header Developing plugins
         - for doc in site.docs_plugin_development
           %li
-            %a{ :href=>doc.url + "#content"}= doc.title        
+            %a{ :href=>"/1.x"+doc.url + "#content"}= doc.title        
     .span9
       ~ content

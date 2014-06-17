@@ -8,16 +8,16 @@
         padding-top: 60px;
       }
     %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
-    %link{ :rel=>'icon', :href=>'/images/favicon.ico' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/styles.css' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/bootstrap-responsive.min.css' }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/prettify.css' }
+    %link{ :rel=>'icon', :href=>'/1.x/images/favicon.ico' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/1.x/stylesheets/styles.css' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/1.x/stylesheets/bootstrap-responsive.min.css' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/1.x/stylesheets/prettify.css' }
     /[if lt IE 9]
       %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/bootstrap.min.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/bootstrap-collapse.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/prettify.js' }
-    %script{ :type=>'text/javascript', :src=>'/javascripts/videoscale.js' }
+    %script{ :type=>'text/javascript', :src=>'/1.x/javascripts/bootstrap.min.js' }
+    %script{ :type=>'text/javascript', :src=>'/1.x/javascripts/bootstrap-collapse.js' }
+    %script{ :type=>'text/javascript', :src=>'/1.x/javascripts/prettify.js' }
+    %script{ :type=>'text/javascript', :src=>'/1.x/javascripts/videoscale.js' }
     :javascript
       $(document).ready(function() {
         $("pre.prettyprint code").removeClass("prettyprint").removeClass("linenums");
@@ -43,30 +43,30 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{ :href=>'/index.html' }
-            %img{ :src=>'/images/jbossforge_icon_256px.png', :alt=>'JBoss Forge', :class=>"forge-logo" }
+          %a.brand{ :href=>'/1.x/index.html' }
+            %img{ :src=>'/1.x/images/jbossforge_icon_256px.png', :alt=>'JBoss Forge', :class=>"forge-logo" }
           .nav-collapse
             %ul.nav
               %li
-                %a{ :href=>'/index.html' } Home
+                %a{ :href=>'/1.x/index.html' } Home
               %li
                 %a{ :href=>'https://github.com/forge/core#jboss-forge-20' } Forge 2
               %li
-                %a{ :href=>'/docs/index.html'} Documentation
+                %a{ :href=>'/1.x/docs/index.html'} Documentation
               %li
-                %a{ :href=>'/team.html' } Team
+                %a{ :href=>'/1.x/team.html' } Team
               %li
                 %a{ :href=>'https://community.jboss.org/en/forge' } Forums
               %li
                 %a{ :href=>'https://github.com/forge/core' } Source
               %li
-                %a{ :href=>'/plugins.html' } Plugins
+                %a{ :href=>'/1.x/plugins.html' } Plugins
               %li
                 %a{ :target=>'issue tracker', :href=>'https://issues.jboss.org/browse/FORGE' } Issue Tracker
               %li
                 %a{ :target=>'roadmap', :href=>'https://issues.jboss.org/browse/FORGE#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel' } Roadmap
               %li
-                %a{ :href=>'/events.html' } Events
+                %a{ :href=>'/1.x/events.html' } Events
     .container#content
       ~ content
       %hr

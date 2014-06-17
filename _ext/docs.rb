@@ -2,7 +2,7 @@ module Awestruct
   module Extensions
     module Docs
       class Index      
-        def initialize(path_prefix='docs', assign_to=:docs)
+        def initialize(path_prefix='1.x/docs', assign_to=:docs)
           @path_prefix = path_prefix
           @assign_to = assign_to
         end
